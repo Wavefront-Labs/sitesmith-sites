@@ -29,6 +29,9 @@ blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-r
 .gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
 ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
 iframe{width:100%;height:320px;border:0;border-radius:16px}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
@@ -38,7 +41,7 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
     <h1>Harbour Lane Kitchen</h1>
     <p class="tag">Relaxed waterfront cafe serving breakfast, specialty coffee and lunch bowls.</p>
     <p class="rating">4.6 ★ on Google (212 reviews)</p>
-    <a class="btn" href="tel:0755550100">Call (07) 5555 0100</a> <a class="btn ghost" href="mailto:hello@example.com">Email us</a>
+    <a class="btn" href="tel:0755550100">Call (07) 5555 0100</a>
   </div>
 </header>
 
@@ -53,6 +56,11 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   <div class="grid"><blockquote><p>“Best eggs benedict on the Gold Coast, and the coffee is consistently excellent. Staff remember your order by the second visit.”</p><footer>★★★★★ Sarah M.</footer></blockquote><blockquote><p>“Great spot for a slow Sunday breakfast by the water. Kids loved the pancakes, we loved the view.”</p><footer>★★★★★ Daniel K.</footer></blockquote><blockquote><p>“Lunch bowls are fresh and generous. Gets busy, so come early.”</p><footer>★★★★ Priya R.</footer></blockquote></div>
 </section>
 
+<section class="wrap" hidden>
+  <h2>Menu</h2>
+  
+</section>
+
 <section class="wrap" >
   <h2>Gallery</h2>
   <div class="gallery"><img src="https://picsum.photos/seed/harbour1/1600/1000" alt="Harbour Lane Kitchen" loading="lazy"><img src="https://picsum.photos/seed/harbour2/1600/1000" alt="Harbour Lane Kitchen" loading="lazy"><img src="https://picsum.photos/seed/harbour3/1600/1000" alt="Harbour Lane Kitchen" loading="lazy"><img src="https://picsum.photos/seed/harbour4/1600/1000" alt="Harbour Lane Kitchen" loading="lazy"></div>
@@ -61,7 +69,7 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
 <section class="wrap">
   <div class="grid">
     <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>6:30 AM – 2:30 PM</td></tr><tr><th>Tuesday</th><td>6:30 AM – 2:30 PM</td></tr><tr><th>Wednesday</th><td>6:30 AM – 2:30 PM</td></tr><tr><th>Thursday</th><td>6:30 AM – 2:30 PM</td></tr><tr><th>Friday</th><td>6:30 AM – 2:30 PM</td></tr><tr><th>Saturday</th><td>7:00 AM – 2:00 PM</td></tr><tr><th>Sunday</th><td>7:00 AM – 1:00 PM</td></tr></table></div>
-    <div class="card"><h2>Find us</h2><p>12 Marine Parade, Southport QLD 4215, Australia</p><p><a href="https://maps.google.com/?q=Southport+QLD">Open in Google Maps</a></p><a class="btn" href="tel:0755550100">Call (07) 5555 0100</a> <a class="btn ghost" href="mailto:hello@example.com">Email us</a></div>
+    <div class="card"><h2>Find us</h2><p>12 Marine Parade, Southport QLD 4215, Australia</p><p><a href="https://maps.google.com/?q=Southport+QLD">Open in Google Maps</a></p><a class="btn" href="tel:0755550100">Call (07) 5555 0100</a></div>
   </div>
 </section>
 
