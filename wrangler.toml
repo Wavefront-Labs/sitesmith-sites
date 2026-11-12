@@ -9,5 +9,5 @@ workers_dev = false
 routes = [{ pattern = "*-preview.wavefrontlabs.dev/*", zone_name = "wavefrontlabs.dev" }]
 
 [assets]
-directory = "./"
+directory = "./sites"   # only the site folders (plus sites/404.html) are uploaded; repo files stay out
 binding = "ASSETS"
