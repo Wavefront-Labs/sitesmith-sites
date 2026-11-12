@@ -32,12 +32,19 @@ iframe{width:100%;height:320px;border:0;border-radius:16px}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
 <body>
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#about-us">About Us</a><a href="#gallery">Gallery</a><a href="#hours">Hours &amp; location</a></div></nav>
 <header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcFctPllqhmmJCH3ES65ap4u8F3C1ReYDdkCi3IdF4Fla4qLCcmP79Hyp_3W26FjazHOBn_mJktHsDBXSmr2GcUhOC_VUFLWMuPSWtiDG4K0NrhFSXHwTRH5GAZ1cVOj0V9WK86Kg=s4800-w1600)">
   <div class="wrap">
+    <img class="logo" src="http://thesurfersparadisebeachcafe.com/wp-content/uploads/2020/01/BEACH-CAFE-logo.png" alt="The Surfers Paradise Beach Cafe logo">
     <h1>The Surfers Paradise Beach Cafe</h1>
     <p class="tag">Grills and seafood in a modern setup with wall-mounted surfboards and a terrace with ocean views.</p>
     <p class="rating">3.5 ★ on Google (1873 reviews)</p>
@@ -45,7 +52,7 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap">
+<section class="wrap" id="about">
   <h2>About</h2>
   <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
   <p>Grills and seafood in a modern setup with wall-mounted surfboards and a terrace with ocean views.</p>
@@ -60,17 +67,19 @@ I had a fantastic experience at this beach cafe. I ordered the eggs benedict, an
 What really sets this place…”</p><footer>★★★★ Lowell Smith</footer></blockquote><blockquote><p>“Was crazy to see them rated so low on Google… whatever is happening! This spot has fantastic “moorish” food and super warm staff, and the experience is really well priced. Those who liked the food here, please consider rating the cafe and help them out (not that…”</p><footer>★★★★★ Rish Singh</footer></blockquote></div>
 </section>
 
-<section class="wrap" hidden>
+<section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
   
 </section>
 
+<section class="wrap content" id="about-us"><h2>About Us</h2><h3>Welcome</h3><p>The Surfers Paradise Beach Cafe is a modern cafe, pizzeria and bar, located on the Esplanade in Surfers Paradise overlooking the beautiful pacific ocean.</p><p>With a large selection of breakfast, lunch and dinner in a breathtaking setting overlooking the beach. Serving speciality pizzas, pasta, big breakfasts, pancakes, sandwiches, burgers, steaks – the choice is endless!!</p><p>Family friendly with a full kids menu, so there is something for all the family.</p><p>Daily specials also available. Fully licensed. Open from 6.30am to late</p><h3>More About Us</h3><p>Located in the heart of Surfers Paradise, overlooking our famous Beach and the Pacific Ocean, we provide the Perfect venue for every occasion. From 6.30am we serve an extensive Breakfast menu with our renowned Mediterranean Eggs Benedict, Belgian Waffles, Fresh Tropical Fruits, our infamous Big Brekkie and so much more. Freshly baked Scones and a large variety of Cakes and home made Muffins are available from 11am onwards throughout the day. Home made Pastas, Stone Baked Pizzas, Grilled Barramundi and Steaks are just a few of our many Lunch and Dinner Suggestions. We are fully Licensed and offer a Selection of wine and Beers. But there is really nothing better than watching the waves while s</p></section><section class="wrap content" id="gallery"><h2>Gallery</h2><h3>surfersparadisebeachcafe</h3><p>Breakfast ⇢ Lunch ⇢ Dinner Beachfront dining at its best 🌊☀️🍴 Check out our bar @surfersparadisebeach_bar 🍹 ⏰open 7 days 6.30am til late</p><img src="http://thesurfersparadisebeachcafe.com/wp-content/uploads/sb-instagram-feed-images/surfersparadisebeachcafe.jpg" alt="Gallery" loading="lazy"><img src="http://thesurfersparadisebeachcafe.com/wp-content/plugins/instagram-feed/img/placeholder.png" alt="Gallery" loading="lazy"></section>
+
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdxOr1fcfv4q4IumB81ppBGcez0ue73CAc1dUJbGdFkEFvRr33dvofsNS5jgs9pN4Vw2ZXTWcAoRiI6WALeugo8d5teD9IihS9h41jF7RuxgXKGqYc2UtGB7dA9rRipp2ZSM-hbNg=s4800-w1600" alt="The Surfers Paradise Beach Cafe" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfvZPp6IZlSIzZgyiUHmKOW7wSK-_6vHsDkQBMNr8z1c8xHpdCFseKEOmgQw6EzP3G01bQclEL4-BfrekzVvFnxFTtHXE5NV4BDq-FIwxBgimBE8BJJPOQAh_KlQxUeGciitZKshmTJ1Hg=s4800-w1600" alt="The Surfers Paradise Beach Cafe" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdCIyzHCq8ZTw2adBwUD-N-Rui5G8QFk9OO1uFB4FPjqj5XUeUPyt1H6kLrr0lLiMOBnWWFv33M170JCRjTYngcQcKQsz53s9k2Jf0jRtDXQ_abj2rYch4RC7MU74Ziz5hja3nqlQ=s4800-w1600" alt="The Surfers Paradise Beach Cafe" loading="lazy"></div>
+  <div class="gallery"><img src="http://thesurfersparadisebeachcafe.com/wp-content/uploads/sb-instagram-feed-images/surfersparadisebeachcafe.jpg" alt="The Surfers Paradise Beach Cafe" loading="lazy"><img src="http://thesurfersparadisebeachcafe.com/wp-content/plugins/instagram-feed/img/placeholder.png" alt="The Surfers Paradise Beach Cafe" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdxOr1fcfv4q4IumB81ppBGcez0ue73CAc1dUJbGdFkEFvRr33dvofsNS5jgs9pN4Vw2ZXTWcAoRiI6WALeugo8d5teD9IihS9h41jF7RuxgXKGqYc2UtGB7dA9rRipp2ZSM-hbNg=s4800-w1600" alt="The Surfers Paradise Beach Cafe" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfvZPp6IZlSIzZgyiUHmKOW7wSK-_6vHsDkQBMNr8z1c8xHpdCFseKEOmgQw6EzP3G01bQclEL4-BfrekzVvFnxFTtHXE5NV4BDq-FIwxBgimBE8BJJPOQAh_KlQxUeGciitZKshmTJ1Hg=s4800-w1600" alt="The Surfers Paradise Beach Cafe" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdCIyzHCq8ZTw2adBwUD-N-Rui5G8QFk9OO1uFB4FPjqj5XUeUPyt1H6kLrr0lLiMOBnWWFv33M170JCRjTYngcQcKQsz53s9k2Jf0jRtDXQ_abj2rYch4RC7MU74Ziz5hja3nqlQ=s4800-w1600" alt="The Surfers Paradise Beach Cafe" loading="lazy"></div>
 </section>
 
-<section class="wrap">
+<section class="wrap" id="hours">
   <div class="grid">
     <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>6:30 AM – 9:00 PM</td></tr><tr><th>Tuesday</th><td>6:30 AM – 9:00 PM</td></tr><tr><th>Wednesday</th><td>6:30 AM – 9:00 PM</td></tr><tr><th>Thursday</th><td>6:30 AM – 9:00 PM</td></tr><tr><th>Friday</th><td>6:30 AM – 10:00 PM</td></tr><tr><th>Saturday</th><td>6:30 AM – 10:00 PM</td></tr><tr><th>Sunday</th><td>6:30 AM – 9:00 PM</td></tr></table></div>
     <div class="card"><h2>Find us</h2><p>4 Esplanade, Surfers Paradise QLD 4217, Australia</p><p><a href="https://maps.google.com/?cid=18262724160502631789&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0755276183">Call (07) 5527 6183</a> <a class="btn ghost" href="mailto:surfersbeachcafe@gmail.com">Email us</a></div>
@@ -81,6 +90,6 @@ What really sets this place…”</p><footer>★★★★ Lowell Smith</footer><
   <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=4%20Esplanade%2C%20Surfers%20Paradise%20QLD%204217%2C%20Australia&output=embed" title="Map"></iframe>
 </section>
 
-<footer class="site">&copy; 2026 The Surfers Paradise Beach Cafe &middot; Restaurant</footer>
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/TheSurfersParadiseBeachCafe" rel="noopener">Facebook</a><a href="https://www.instagram.com/surfersparadisebeachcafe" rel="noopener">Instagram</a></div>&copy; 2026 The Surfers Paradise Beach Cafe &middot; Restaurant</footer>
 </body>
 </html>

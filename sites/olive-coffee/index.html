@@ -32,12 +32,19 @@ iframe{width:100%;height:320px;border:0;border-radius:16px}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
 <body>
+<nav class="top" hidden><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
 <header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdGlXFVMx6sbNgt1pFJAJqXf2yr08rYkip8d2LqBZha-EuEcQyiytUMBFUcq-IbJxnbgntLRp8EPsVwPzvdj_Q6ghnLfJDru9zeITumLqmv29ly0NdCaEyfDUFzCwHyBCPm_MWr=s4800-w1600)">
   <div class="wrap">
+    
     <h1>Olive Coffee</h1>
     <p class="tag">Cafe in Surfers Paradise</p>
     <p class="rating">4.8 ★ on Google (578 reviews)</p>
@@ -45,7 +52,7 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap">
+<section class="wrap" id="about">
   <h2>About</h2>
   <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
   <p>Olive Coffee is a local cafe in Surfers Paradise, rated 4.8 from 578 Google reviews.</p>
@@ -58,17 +65,19 @@ Visited Olive Coffee and absolutely loved it! The atmosphere is warm and welcomi
 The Italian sandwiches were delicious — fresh ingredients, perfectly balanced flavours, and beautifully made. You can really taste the…”</p><footer>★★★★★ Moe Far</footer></blockquote><blockquote><p>“We are visiting from out of state and as Olive cafe is conveniently located we decided to try their coffee after being disappointed by another local cafe. Olive cafe didn’t disappoint - great coffee. So we have visited a further couple times including having a…”</p><footer>★★★★★ Ves S</footer></blockquote></div>
 </section>
 
-<section class="wrap" hidden>
+<section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
   
 </section>
+
+
 
 <section class="wrap" >
   <h2>Gallery</h2>
   <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLei5rcN7HQFK6f788G_-CdTmNONT4mEZShPqZMXUTS4p4TWw1hdCGMa5KJeft246ovfv6GsxFKx8fc_lp6niti7kazzaeyMyhRkxzQ08XwS9cOMtt4Iow5GJemaobD1fmxHTIiK=s4800-w1600" alt="Olive Coffee" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfh9Hszs-xm-OaImcmss5G3eYyPJoJTJUVVntRqG0LFvDpUyYlgvxRPJAqG4ghOCCAG-UpL1eGkESWPDoD5q6F4-JIpOKsvq8uH0ejaCTjaRcimy8PTZcnqYT-AwBfEln_7k7x_2fHR4Fcn=s4800-w1600" alt="Olive Coffee" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcAfzYsyQ85pfscnad_kAbT0VCebnHnFtMp67VUuO8v6QIFkxzGkMrEZAsTCWkHs4kdYxoJ5LaCQ1EYHTrQHOpU9XW-ev5RyliWJO5bvbubwSzFBMizQbnpvyG5k4yAuzko5wYy4NoVCU0W=s4800-w1600" alt="Olive Coffee" loading="lazy"></div>
 </section>
 
-<section class="wrap">
+<section class="wrap" id="hours">
   <div class="grid">
     <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>6:00 AM – 2:00 PM</td></tr><tr><th>Tuesday</th><td>6:00 AM – 2:00 PM</td></tr><tr><th>Wednesday</th><td>6:00 AM – 2:00 PM</td></tr><tr><th>Thursday</th><td>6:00 AM – 2:00 PM</td></tr><tr><th>Friday</th><td>6:00 AM – 2:00 PM</td></tr><tr><th>Saturday</th><td>6:00 AM – 12:00 PM</td></tr><tr><th>Sunday</th><td>6:00 AM – 12:00 PM</td></tr></table></div>
     <div class="card"><h2>Find us</h2><p>Shop 3/3046 Surfers Paradise Blvd, Surfers Paradise QLD 4217, Australia</p><p><a href="https://maps.google.com/?cid=8682821264203773887&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0434189152">Call 0434 189 152</a></div>

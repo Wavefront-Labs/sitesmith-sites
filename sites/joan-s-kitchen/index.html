@@ -32,12 +32,19 @@ iframe{width:100%;height:320px;border:0;border-radius:16px}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
 <body>
+<nav class="top" hidden><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
 <header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLd_kcLBUw575KJ5L0ItSiocN3QxSPZd4xliFt7NZE5nX2OjFzv30qU3IsakU2v7r1p8b5740yUpbaJmEqQwVCiheZzMEBD7sfAGtAxzQpnKv3MJ38Pm1kXZZ_lJ4lb_oAk4mADBcWINjKQ=s4800-w1600)">
   <div class="wrap">
+    
     <h1>Joan’s Kitchen</h1>
     <p class="tag">Takeout Restaurant in Southport</p>
     <p class="rating">4.9 ★ on Google (205 reviews)</p>
@@ -45,7 +52,7 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap">
+<section class="wrap" id="about">
   <h2>About</h2>
   <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
   <p>Joan’s Kitchen is a local takeout restaurant in Southport, rated 4.9 from 205 Google reviews.</p>
@@ -61,17 +68,19 @@ Joan’s Kitchen is my go-to spot I usually grab the all day breakfast for just 
 The staff are lovely and welcoming, and the atmosphere makes it a really comfortable…”</p><footer>★★★★★ MAD WXRLD</footer></blockquote><blockquote><p>“A hidden gem of a small corner shop serving a well crafted classic burger with plenty of fillings (cooked onions, lettuce, beetroot, tomato, cheese, and your choice of sauces) not just patty and bun! The fries were fluffy and well seasoned with chicken salt. The…”</p><footer>★★★★★ WJ</footer></blockquote></div>
 </section>
 
-<section class="wrap" hidden>
+<section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
   
 </section>
+
+
 
 <section class="wrap" >
   <h2>Gallery</h2>
   <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLe0Ke5lBcOuvHp04VTQskABFbxHT1Hmzvb3ZbO67oOO99qtPU27ww8LXj5tCK0e4QkCQXbiT01QSv6By0mb12bybSGdpvw7Z6pMe55uxFWD3lxY152zg_wn9iNyl2bmZD00mydh=s4800-w956" alt="Joan’s Kitchen" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeEnB0ojUqnscaOtLFlMfBU7Adl1NRDFiFuSo3_90U5RieA6L_60PSi6kj8hxz0xWiVv3hVvLuT8GPzpWsiJfyXxZTZFxEJZG13mydxd2f5-6axLmGtlcJVwR7iuSQ1f2F5T-LBTA=s4800-w1600" alt="Joan’s Kitchen" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLd5Hc1zQvKyck0KUj48jYOU7tje1qCo_ybluxqvFemVjBUgXTtHbKPhJUIjLNYx2qnEX--J_3MExbs3WP2bF1V9ArZvnky_GX0Mf3hDQI22ubsVL_kHNeAPtiDDwdVoPd4hunymS6swMQVk=s4800-w1600" alt="Joan’s Kitchen" loading="lazy"></div>
 </section>
 
-<section class="wrap">
+<section class="wrap" id="hours">
   <div class="grid">
     <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>8:30 AM – 2:30 PM</td></tr><tr><th>Tuesday</th><td>8:30 AM – 2:30 PM</td></tr><tr><th>Wednesday</th><td>8:30 AM – 2:30 PM</td></tr><tr><th>Thursday</th><td>8:30 AM – 2:30 PM</td></tr><tr><th>Friday</th><td>8:30 AM – 2:30 PM</td></tr><tr><th>Saturday</th><td>8:30 AM – 12:30 PM</td></tr><tr><th>Sunday</th><td>Closed</td></tr></table></div>
     <div class="card"><h2>Find us</h2><p>Unit 1/11 Bailey Cres, Southport QLD 4215, Australia</p><p><a href="https://maps.google.com/?cid=6705819683965502332&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0474472477">Call 0474 472 477</a></div>

@@ -32,12 +32,19 @@ iframe{width:100%;height:320px;border:0;border-radius:16px}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
 <body>
+<nav class="top" hidden><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
 <header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLczvDEzNbLXKGszyOA4rfQODxlUtu5SbvfpXCtQMWEbJvG55Q81oqssSQ7tTQecq4lrrPIplH7c1IXVxG0m68cEvO7zkeECDAQ_Cr6VWG7ThfEHYA7vjPgFROdjEuuY--DCdH1GwQ=s4800-w1600)">
   <div class="wrap">
+    
     <h1>Pelicano Espresso</h1>
     <p class="tag">Coffee Shop in Labrador</p>
     <p class="rating">4.4 ★ on Google (78 reviews)</p>
@@ -45,7 +52,7 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap">
+<section class="wrap" id="about">
   <h2>About</h2>
   <ul class="tags"><li>Dine in</li><li>Takeaway</li></ul>
   <p>Pelicano Espresso is a local coffee shop in Labrador, rated 4.4 from 78 Google reviews.</p>
@@ -65,17 +72,19 @@ The Byron Bay been coffee Brewers delicious in my…”</p><footer>★★★★�
 Was walking along the Broadwater with the intention of stopping at a cafe.  Stopped here to look at the menu and the lady was so friendly and welcoming.  So I stopped here instead of the cafe, enjoyed my iced mocha whilst watching…”</p><footer>★★★★ Nikki Plant</footer></blockquote></div>
 </section>
 
-<section class="wrap" hidden>
+<section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
   
 </section>
+
+
 
 <section class="wrap" >
   <h2>Gallery</h2>
   <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfUAEstwTp-nJksENJDc-lHAfvoXNm3QzYS0SC9WnzL3eMpo7gT2KF1Uel2vnFPzYUqTL13nfejqXnzJuUgLhV84nr7uDeLidrNFgraNZUoe__S-JIATafSVUfRICIl8wYtn9JrJw=s4800-w1600" alt="Pelicano Espresso" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfGqg7SB-ruW6GzCUpiwr3hHa2dhNiy0iOeJ8OoHLq_JxxWAaVGnZ_9Eai_N66R0Bwv-NWwwpm0wTsJnL0nN03ILbiFNqKO0BAateFQhbVbk86TxSgUPC-FFlPsy8E0gTSWwsWQAIhez1Tr=s4800-w1600" alt="Pelicano Espresso" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfjlM3WnyLoK8tsGzvCEhmIyHMpJhN8OxTNuVwgEycs6nxI53bPBvmc5HYOdWVsD5yfrG0H-qVNpWZ2AAwXjSp_dmd-cyhN59UEuNZjJJL-PhxvlljYPolAsP2SaMvTuFK77WcV=s4800-w1600" alt="Pelicano Espresso" loading="lazy"></div>
 </section>
 
-<section class="wrap">
+<section class="wrap" id="hours">
   <div class="grid">
     <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>5:30 AM – 2:00 PM</td></tr><tr><th>Tuesday</th><td>5:30 AM – 2:00 PM</td></tr><tr><th>Wednesday</th><td>5:30 AM – 2:00 PM</td></tr><tr><th>Thursday</th><td>5:30 AM – 2:00 PM</td></tr><tr><th>Friday</th><td>5:30 AM – 2:00 PM</td></tr><tr><th>Saturday</th><td>5:30 AM – 3:00 PM</td></tr><tr><th>Sunday</th><td>5:30 AM – 3:00 PM</td></tr></table></div>
     <div class="card"><h2>Find us</h2><p>371 Marine Parade, Labrador QLD 4215, Australia</p><p><a href="https://maps.google.com/?cid=6771869244133761733&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0434791050">Call 0434 791 050</a></div>

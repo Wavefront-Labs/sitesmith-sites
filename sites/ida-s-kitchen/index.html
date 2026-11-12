@@ -32,12 +32,19 @@ iframe{width:100%;height:320px;border:0;border-radius:16px}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
 <body>
+<nav class="top" hidden><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
 <header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcqDSSGyW1SdCs7yfGHps7vuQTXGGFTAahmP6xYAvfpdsPHc73Db-LpCiV1Xtqd2_AqsxzT08tBNb4KldrK55ssib7nUP5OSyaPE_2Q_L-JX2NpPSoOdUWJNqxTJmmBqNwXkwfH=s4800-w1500)">
   <div class="wrap">
+    
     <h1>Ida&#x27;s Kitchen</h1>
     <p class="tag">Cafe in Parkwood</p>
     <p class="rating">4.7 ★ on Google (231 reviews)</p>
@@ -45,7 +52,7 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap">
+<section class="wrap" id="about">
   <h2>About</h2>
   <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Bookings</li><li>Vegetarian options</li></ul>
   <p>Ida&#x27;s Kitchen is a local cafe in Parkwood, rated 4.7 from 231 Google reviews.</p>
@@ -68,17 +75,19 @@ Really Friendly and Welcoming Staff, will Greet…”</p><footer>★★★★★
 We tried the French toast, bánh mì and beef pho, and everything was fresh, full of flavour and beautifully prepared. The beef pho in…”</p><footer>★★★★★ Larissa Martos</footer></blockquote></div>
 </section>
 
-<section class="wrap" hidden>
+<section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
   
 </section>
+
+
 
 <section class="wrap" >
   <h2>Gallery</h2>
   <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcDXC5FYHuOEnP8B6m96xAo99JlktDXIc6j-Rr-W8rxiceo34tVNQ8q6HyCYJ5416_nXuDZ7PEcC5soB7Y8Rya4wQtv9JJj34NU0bPp6m9IrAwilWEH2ls0JJyC_bmrvm-BjSLi=s4800-w1600" alt="Ida&#x27;s Kitchen" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLe3RMplm-Mu4NyyO8_sqiDbHu02rRXlW08hMV1oRMLp5sRDDD52kF3s4cfLZ4_Ire2GGpWAm3X8tUz4ltKpSCl6ubMzF8GZ9yK_o4fIS2c3EvXOB5MvIl1wdaZhEWdlXX5mth3vP3IDCTqq=s4800-w1600" alt="Ida&#x27;s Kitchen" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfaL0aIcwg-n1UMnNOsksRWOo87AFyHD1n-5yrDGkN7Weqf7A9TmNYqfHxiYs-pdCpZNQYSB7oR8nVFLsA2oAhdvsyqcRBAClh0ncRY0-bLbLbf5Y2Tdj8bu-DtPz4NpLlM0ogF9m935dc=s4800-w1600" alt="Ida&#x27;s Kitchen" loading="lazy"></div>
 </section>
 
-<section class="wrap">
+<section class="wrap" id="hours">
   <div class="grid">
     <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>7:30 AM – 2:30 PM</td></tr><tr><th>Tuesday</th><td>7:30 AM – 2:30 PM</td></tr><tr><th>Wednesday</th><td>7:30 AM – 2:30 PM</td></tr><tr><th>Thursday</th><td>7:30 AM – 2:30 PM</td></tr><tr><th>Friday</th><td>7:30 AM – 2:30 PM</td></tr><tr><th>Saturday</th><td>8:30 AM – 2:30 PM</td></tr><tr><th>Sunday</th><td>8:30 AM – 2:30 PM</td></tr></table></div>
     <div class="card"><h2>Find us</h2><p>250 Olsen Ave, Parkwood QLD 4215, Australia</p><p><a href="https://maps.google.com/?cid=16366136123052515577&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0433805972">Call 0433 805 972</a></div>

@@ -32,12 +32,19 @@ iframe{width:100%;height:320px;border:0;border-radius:16px}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
 <body>
+<nav class="top" hidden><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
 <header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcRnD7wgrflnvKPq9XusXMZ7NlhDAd2ISxHxtqyo-6afvhSfjwl1W2SH5AShizkvFnZNrwbihUqF6CKMMA8jmJLUc39nwaGeJLIsfJoRKckrFW3oBgFCJx4cDXmKtnP_-_ZR6huLoa7SE4=s4800-w1600)">
   <div class="wrap">
+    
     <h1>milk &amp; shots</h1>
     <p class="tag">Cafe in Labrador</p>
     <p class="rating">4.5 ★ on Google (257 reviews)</p>
@@ -45,7 +52,7 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap">
+<section class="wrap" id="about">
   <h2>About</h2>
   <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Vegetarian options</li></ul>
   <p>milk &amp; shots is a local cafe in Labrador, rated 4.5 from 257 Google reviews.</p>
@@ -56,17 +63,19 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   <div class="grid"><blockquote><p>“Do yourself a favour and go try the chicken pesto toastie… I will say ‘you’re welcome’ in advance! 🫠😍 or try the caramel slice… holy Moses!! it’s pretty obvious someone at this cafe has some serious kitchen experience because the flavours in the food is out of control…”</p><footer>★★★★★ Danni Suriano</footer></blockquote><blockquote><p>“I’ve been coming here almost every week since the new owner took over, and honestly, the coffee is the best in the area! The homemade sweets and toasties are always fresh, delicious and reasonably priced, with generous portions that leave you feeling full and happy.…”</p><footer>★★★★★ Yuno K</footer></blockquote><blockquote><p>“Popped in for a takeaway brekkie whilst visiting for the weekend and everything was amazing. The coconut rough cold foam I will dream about for years to come 😂 the chunky monkey smoothie was unreal and the pesto toastie and ham and cheese croissant also perfection 🤌🏽…”</p><footer>★★★★★ Lindsay Scott</footer></blockquote></div>
 </section>
 
-<section class="wrap" hidden>
+<section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
   
 </section>
+
+
 
 <section class="wrap" >
   <h2>Gallery</h2>
   <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcPFD-6pi5kqV5Mkfyv0sDQo3cs6y_LYSN2BQ8qaHyaANVlyHbZMzN8T5fJcUWpchwdsks8rjTEeX1QdHJHSiLfYwqsziWDnI-PnUuGQ_2K1C5tIqSFeS-ootK0nY1RSPjjn3ubnF391WQ=s4800-w1600" alt="milk &amp; shots" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdgmAJby4iKrMijUcoabF095L6eIJhLchJbDx14cp2l7PdQEFFYztld9A2SZTcFMwtIcM7ep7ETGAEs0xKlQiD6eBtE3HaADfeocs0zXAZqc443a4hhJEnmuluxFTRssvAsvdaq2Ayjm-um=s4800-w1600" alt="milk &amp; shots" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcDUo_UQX5RvZWYnlDsCTEBuxo90Dmp4ejC8pQL41R2imVTa_ARlBwuis_ij6nNlBGkH5HHfItGct7-xaymnn_YSrRwyOTxPkLu0mSiZJfNxGd5RiBGiHwPfP3M0sfW6djGij3YiqdVABzH=s4800-w1600" alt="milk &amp; shots" loading="lazy"></div>
 </section>
 
-<section class="wrap">
+<section class="wrap" id="hours">
   <div class="grid">
     <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>5:00 AM – 2:00 PM</td></tr><tr><th>Tuesday</th><td>5:00 AM – 2:00 PM</td></tr><tr><th>Wednesday</th><td>5:00 AM – 2:00 PM</td></tr><tr><th>Thursday</th><td>5:00 AM – 2:00 PM</td></tr><tr><th>Friday</th><td>5:00 AM – 2:00 PM</td></tr><tr><th>Saturday</th><td>5:00 AM – 2:00 PM</td></tr><tr><th>Sunday</th><td>5:00 AM – 2:00 PM</td></tr></table></div>
     <div class="card"><h2>Find us</h2><p>Shop 1/16 Frank St, Labrador QLD 4215, Australia</p><p><a href="https://maps.google.com/?cid=9638016582582112177&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0478244318">Call 0478 244 318</a></div>
