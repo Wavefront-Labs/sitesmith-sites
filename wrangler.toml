@@ -1,0 +1,13 @@
+# Cloudflare Worker serving every preview site from this repo's static files: https://<slug>-preview.wavefrontlabs.dev -> sites/<slug>/.
+# Single-level hostnames on purpose: the zone's universal certificate covers *.wavefrontlabs.dev but not *.sites.wavefrontlabs.dev.
+# DNS is one proxied wildcard record (* AAAA 100::); the route below picks up only the -preview hosts.
+# Deployed by sitesmith/publish.py (npx wrangler deploy) after each push. Always on, free at this scale.
+name = "sitesmith-sites"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+workers_dev = false
+routes = [{ pattern = "*-preview.wavefrontlabs.dev/*", zone_name = "wavefrontlabs.dev" }]
+
+[assets]
+directory = "./"
+binding = "ASSETS"
