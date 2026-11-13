@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Fifi’s By The Beach</title>
+<meta name="description" content="Breakfast, brunch and lunch beside beautiful Williamstown Beach">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#1F6E8C;--bg:#F6F3EC;--ink:#1E2A30;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'DM Serif Display', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
+.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
+h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+iframe{width:100%;height:320px;border:0;border-radius:16px}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body class="hero-fullbleed rounded">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#eat-drink-relax">Eat. Drink. Relax.</a><a href="#catering">Catering</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://www.opentable.com.au/r/fifis-by-the-beach-reservations-williamstown?restref=307070&amp;amp;lang=en-AU&amp;amp;ot_source=Restaurant%20website" rel="noopener">Book a table</a></div></nav>
+
+<header class="hero" >
+  <div class="wrap">
+    
+    <div>
+    <img class="logo" src="https://static.wixstatic.com/media/3ee851_eca3c4ca97724447afee85092ecd0f66~mv2.jpg/v1/fill/w_165,h_165,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/fifi&amp;#x27;s%20logo.jpg" alt="Fifi’s By The Beach logo">
+    <h1>Fifi’s By The Beach</h1>
+    <p class="tag">Breakfast, brunch and lunch beside beautiful Williamstown Beach</p>
+    <p class="rating">4.1 ★ on Google (268 reviews)</p>
+    <a class="btn" href="tel:0404157571">Call 0404 157 571</a> <a class="btn ghost" href="mailto:fifisbythebeach@gmail.com">Email us</a> <a class="btn ghost" href="https://www.opentable.com.au/r/fifis-by-the-beach-reservations-williamstown?restref=307070&amp;amp;lang=en-AU&amp;amp;ot_source=Restaurant%20website" rel="noopener">Book a table</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="about">
+  <h2>About</h2>
+  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
+  <p>Founded in 2022, fifi&#x27;s by the beach is a place to enjoy food, coffee and wine in a comfortable, friendly and relaxed atmosphere, set beside beautiful Williamstown Beach.</p><p>Find us on the corner at 81 Esplanade, Williamstown, right across from the water. Come in for a late breakfast, a long brunch or lunch, and take in the view.</p>
+</section>
+
+<section class="wrap" >
+  <h2>What people say</h2>
+  <div class="grid"><blockquote><p>“Came here with hubby for a late breakfast today. Been going to Williamstown for a very long time &amp; have seen this place, but never thought of coming in. This place has probably changed management over the years &amp; so glad we came in today. What a lovely place right…”</p><footer>★★★★ Nelyn Bedonia</footer></blockquote><blockquote><p>“Always the perfectly poached eggs!!! Yum yum.
+Never disappoints.
+Overlooking the beach, nice corner cafe, serves delicious breakfast and good cup of coffee of your choice.
+
+$5 for a hash brown that looks like it’s been bought from Woolies, bit pricey in my opinion and…”</p><footer>★★★★★ Arundhati Kalamkar-Mhalgi</footer></blockquote><blockquote><p>“Awesome neighbourhood cafe with a wide selection of brunch and lunch items. Decaf coffee was excellent as was the Chai Latte. Wonderful sitting outside taking advantage of the wide sidewalk outside. Limited seating inside for any group greater than 2 people.
+The…”</p><footer>★★★★★ Phil Malone</footer></blockquote></div>
+</section>
+
+<section class="wrap" id="menu" >
+  <h2>Menu</h2>
+  <p class="menu-note"><a class="btn" href="https://fifisbythebeach.wixsite.com/fifi-s-by-the-beach/menu">View our menu</a></p>
+</section>
+
+<section class="wrap content" id="eat-drink-relax"><h2>Eat. Drink. Relax.</h2><p>Set in a picturesque beach setting in charming Williamstown, we invite you to relax and enjoy some delicious food, Melbourne roasted coffee or a wine and take in the beautiful view.</p><h3>Breakfast, brunch and lunch</h3><ul><li>Dine in or takeaway</li><li>Outdoor seating on the wide footpath overlooking the beach</li><li>Vegetarian options</li><li>Bookings available online through OpenTable</li></ul></section><section class="wrap content" id="catering"><h2>Catering</h2><p>fifi&#x27;s are currently working on the catering menu. Watch this space.</p><p>Orders will be placed directly with fifi&#x27;s with 72 hours&#x27; notice. Minimum quantities apply.</p></section>
+
+<section class="wrap" >
+  <h2>Gallery</h2>
+  <div class="gallery"><img src="https://static.wixstatic.com/media/3ee851_cad2658b3a5b4a9586ec813cfa7dbee9~mv2.jpg/v1/fill/w_113,h_85,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/3ee851_cad2658b3a5b4a9586ec813cfa7dbee9~mv2.jpg" alt="Fifi’s By The Beach"><img src="https://static.wixstatic.com/media/3ee851_9c14e809fe92464692773d0332ced55f~mv2.jpg/v1/fill/w_358,h_372,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5566_JPG.jpg" alt="Fifi’s By The Beach"><img src="https://static.wixstatic.com/media/3ee851_9ba69536d30346d895a5d2899500f999~mv2.jpg/v1/crop/x_0,y_1033,w_3024,h_1234/fill/w_980,h_400,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_9083.jpg" alt="Fifi’s By The Beach"></div>
+</section>
+
+<section class="wrap" id="hours">
+  <div class="grid">
+    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>7:30 AM – 3:30 PM</td></tr><tr><th>Tuesday</th><td>7:30 AM – 3:30 PM</td></tr><tr><th>Wednesday</th><td>7:30 AM – 3:30 PM</td></tr><tr><th>Thursday</th><td>7:30 AM – 3:30 PM</td></tr><tr><th>Friday</th><td>7:30 AM – 3:30 PM</td></tr><tr><th>Saturday</th><td>7:30 AM – 4:00 PM</td></tr><tr><th>Sunday</th><td>7:30 AM – 4:00 PM</td></tr></table></div>
+    <div class="card"><h2>Find us</h2><p>81 Esplanade, Williamstown VIC 3016, Australia</p><p><a href="https://maps.google.com/?cid=7033701634656164900&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0404157571">Call 0404 157 571</a> <a class="btn ghost" href="mailto:fifisbythebeach@gmail.com">Email us</a> <a class="btn ghost" href="https://www.opentable.com.au/r/fifis-by-the-beach-reservations-williamstown?restref=307070&amp;amp;lang=en-AU&amp;amp;ot_source=Restaurant%20website" rel="noopener">Book a table</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=81%20Esplanade%2C%20Williamstown%20VIC%203016%2C%20Australia&output=embed" title="Map"></iframe>
+</section>
+
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/profile.php?id=100077769820461" rel="noopener">Facebook</a><a href="https://www.instagram.com/fifisbythebeach" rel="noopener">Instagram</a></div>&copy; 2026 Fifi’s By The Beach &middot; Cafe</footer>
+</body>
+</html>

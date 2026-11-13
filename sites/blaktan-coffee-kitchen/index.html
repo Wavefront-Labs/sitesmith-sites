@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Blaktan Coffee Kitchen</title>
+<meta name="description" content="Coffee roasting cafe and modern Asian dining in North Lakes">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#8A4B2A;--bg:#F6F1EA;--ink:#2B211C;--card:#FFFCF7;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Space Grotesk', system-ui, sans-serif;--body:'Inter', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
+.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
+h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+iframe{width:100%;height:320px;border:0;border-radius:16px}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body class="hero-split rounded">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#visit-us">Visit Us</a><a href="#hours">Hours &amp; location</a></div></nav>
+
+<header class="hero" >
+  <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLf2C0fWY7iMwX8g2jRlhWGZ8X4V39jtkWKG1Eegvn9jy0gOxJ7OVWZT_6qM0S2YV7-J6QqXgrThnTD_2V2Gmnn-bYdjeqN35VsPSB5_3cEqFplbhCiBd4RYPDqCiNcg7py_N1E=s4800-w1600" alt="Blaktan Coffee Kitchen">
+    <div>
+    
+    <h1>Blaktan Coffee Kitchen</h1>
+    <p class="tag">Coffee roasting cafe and modern Asian dining in North Lakes</p>
+    <p class="rating">4.7 ★ on Google (1265 reviews)</p>
+    <a class="btn" href="tel:0425444733">Call 0425 444 733</a> <a class="btn ghost" href="mailto:blaktancoffee@gmail.com">Email us</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="about">
+  <h2>About</h2>
+  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
+  <p>Blaktan Coffee Kitchen is a coffee roasting cafe serving modern Asian cuisine, tucked away at 6/4-8 Burke Cres, North Lakes. It&#x27;s a mellow, modern space where Asian fusion food sits alongside our coffee and cocktails.</p><p>Guests tell us they come for the coffee and stay for the atmosphere. Some have lingered more than two hours. Our young, friendly team takes care to serve generous plates that look as good as they taste, like the much-loved Bulgogi Eggs Bene and our mushrooms at breakfast. If you like your coffee a little lighter, just ask and we&#x27;ll happily adjust it.</p>
+</section>
+
+<section class="wrap" >
+  <h2>What people say</h2>
+  <div class="grid"><blockquote><p>“The coffee was a bit too strong for my taste, so I asked them to add some milk to make it lighter, and they were happy to do it 😊
+Breakfast was amazing, especially the mushrooms… absolutely delicious! 👌👌👌
+We ended up spending more than two hours there, such a great…”</p><footer>★★★★★ Ava Shoja</footer></blockquote><blockquote><p>“First time at Blaktan Coffee Kitchen.
+
+Nice vibe here and fast service.
+
+I&#x27;m no Coffee connoisseur, but that&#x27;s hands down, the best I&#x27;ve had.
+
+The Bulgogi Eggs Bene was damn good as well!
+
+Not often you find a genuine 5 star experience these days. Will probably be my…”</p><footer>★★★★★ Josh Penney</footer></blockquote><blockquote><p>“What a welcoming, well-appointed &quot;more-than-a-coffee-shop&quot; restaurant!
+Such a friendly, and young staff, but the food was not just so good-tasting and well-portioned, it was so artistically presented - you eat with your eyes first! The coffee was delicious too.
+I&#x27;d…”</p><footer>★★★★★ Gary Edwards</footer></blockquote></div>
+</section>
+
+<section class="wrap" id="menu" >
+  <h2>Menu</h2>
+  <p class="menu-note"><a class="btn" href="https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%2213d21c63-b5ec-5912-8397-c3a5ddb27a97%22%3A%22440%22%7D&amp;beckyExperiments=.DatePickerPortal%2C.DisableDocumentScrollWhenLightBoxOpen%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNestedLoginSocialBarMenuItems%2C.UseNewLoginBarDropdownMenuAlignment%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.a11yContrast%2C.addIdAsClassName%2C.allowWebpAvifTransforms%2C.builderBoxSizingBorderBox%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.customImageDomain%2C.dom_store%2C.dontApplyDacOverridesOnBoBApps%2C.dynamicPageLinkTarget%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.fixDocumentLinkInPremiumPreview%2C.fixFirefoxLinkBarIntrinsicSizing%2C.imageEncodingAVIF%2C.interactionsUseReactionEffectId%2C.isClassNameToRootEnabled%2C.isClassNameToRootEnabledNext%2C.logVsmFeaturesModuleDiff%2C.responsiveContainerRoleGroup%2C.sectionA11yProps%2C.splitSlotSelectors%2C.svgResolver_2%2C.takeTranslationsFromManifest%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useFragmentHrefForTopBottomAnchor%2C.useImageAvifFormatInNativeProGallery%2C.useResponsiveImgClassicFixed%2C.useSvgLoaderFeature%2C.useSvgLoaderFeatureOnBuilderComps%2C.useWowImageInFastGallery%2C.vsmFeaturesModule%2C.vsm_interactions_v1%2C.vsm_interactions_v2%2C.vsm_shapes%2CbuilderComponentsPageScoping%2CglobalCssStudio2%2CtpaBrandFonts&amp;blocksBuilderManifestGeneratorVersion=1.129.0&amp;contentType=application%2Fjson&amp;deviceType=Desktop&amp;dfCk=6&amp;dfVersion=1.5682.0&amp;disableStaticPagesUrlHierarchy=false&amp;editorName=Unknown&amp;experiments=dm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&amp;externalBaseUrl=https%3A%2F%2Fblaktancoffee.wixsite.com%2Fmysite&amp;fileId=79bd8827.bundle.min&amp;formFactor=desktop&amp;freemiumBanner=true&amp;hasTPAWorkerOnSite=false&amp;hasUserDomainMedia=false&amp;isBuilderComponentModel=false&amp;isHttps=true&amp;isInSeo=false&amp;isMultilingualEnabled=false&amp;isTrackClicksAnalyticsEnabled=false&amp;isUrlMigrated=true&amp;isWixCodeOnPage=false&amp;isWixCodeOnSite=false&amp;language=en&amp;languageResolutionMethod=QueryParam&amp;locale=en-au&amp;metaSiteId=5802a305-45b3-4b3f-af5e-f6b08103ec81&amp;module=thunderbolt-features&amp;originalLanguage=en&amp;pageId=6dd697_d5c7d614272f372bd72615045e210799_77.json&amp;pilerExperiments=specs.piler.useEditorReactComponents&amp;quickActionsMenuEnabled=false&amp;registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15638.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.15638.0%22%7D%5D&amp;remoteWidgetStructureBuilderVersion=1.251.0&amp;siteId=610d494a-76d0-409e-996b-c92f0da7a29b&amp;siteRevision=77&amp;staticHTMLComponentUrl=https%3A%2F%2Fblaktancoffee-wixsite-com.filesusr.com%2F&amp;useSandboxInHTMLComp=true&amp;viewMode=desktop">View our menu</a></p>
+</section>
+
+<section class="wrap content" id="visit-us"><h2>Visit Us</h2><h3>Lunch</h3><p>11am - 2pm (last order 1:45).</p><h3>Dinner</h3><p>Blaktan dinner is closed until further notice.</p><h3>Ways to enjoy Blaktan</h3><ul><li>Dine in</li><li>Takeaway</li><li>Bookings welcome</li><li>Outdoor seating</li><li>Vegetarian options</li></ul></section>
+
+<section class="wrap" >
+  <h2>Gallery</h2>
+  <div class="gallery"><img src="https://static.wixstatic.com/media/6dd697_09fbda28b0544e63b1d397b83e34d619~mv2.png/v1/fill/w_301,h_302,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/PNG%20%EC%9D%B4%EB%AF%B8%EC%A7%80_PNG.png" alt="Blaktan Coffee Kitchen"><img src="https://static.wixstatic.com/media/1e47b2_cd5df08585b64f40a575e620ed3bf997.jpg/v1/fill/w_146,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/1e47b2_cd5df08585b64f40a575e620ed3bf997.jpg" alt="Blaktan Coffee Kitchen"><img src="https://static.wixstatic.com/media/6dd697_2ed9ffb907ce44e398d34871fd313a50~mv2_d_4032_3024_s_4_2.jpg/v1/fill/w_135,h_101,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/6dd697_2ed9ffb907ce44e398d34871fd313a50~mv2_d_4032_3024_s_4_2.jpg" alt="Blaktan Coffee Kitchen"><img src="https://static.wixstatic.com/media/6dd697_9183fdcd9de242eeaac235ed56974f84~mv2_d_4032_3024_s_4_2.jpg/v1/fill/w_147,h_110,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/6dd697_9183fdcd9de242eeaac235ed56974f84~mv2_d_4032_3024_s_4_2.jpg" alt="Blaktan Coffee Kitchen"><img src="https://static.wixstatic.com/media/6dd697_9183fdcd9de242eeaac235ed56974f84~mv2_d_4032_3024_s_4_2.jpg/v1/crop/x_1067,y_1782,w_577,h_467/fill/w_288,h_234,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/6dd697_9183fdcd9de242eeaac235ed56974f84~mv2_d_4032_3024_s_4_2.jpg" alt="Blaktan Coffee Kitchen"><img src="https://static.wixstatic.com/media/6dd697_549eba5e99be4896b446bd220c3582ff~mv2.jpg/v1/crop/x_204,y_79,w_980,h_600,q_85,blur_2,enc_avif,quality_auto/6dd697_549eba5e99be4896b446bd220c3582ff~mv2.jpg" alt="Blaktan Coffee Kitchen"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLchcvTA3srsnjTpL1GB9bsC9FZngjxQpn83KtWZg7N-lbHSHJXTP-XyKx0Ty37nb3-eADe3jpgYtQ9NantyiAYVO1hCU2dDqCj8d6xh5FWfaEII4XmBL_73X_uggDfJh5qNVcVI=s4800-w1600" alt="Blaktan Coffee Kitchen"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdtnCT7Lgs_y5fZkb5RNK6CEpTddTEfYcaZbhH2wXvbr96jzK7gx4AXuY4N4yg49GGqqCTlVh6RRxI3_2KUNf0cysUcTQFLqaiWJkyJ1uvKwSza7jzgfWqMRNkWOJdNBF0LQT1xgr-gS3MA=s4800-w1600" alt="Blaktan Coffee Kitchen"></div>
+</section>
+
+<section class="wrap" id="hours">
+  <div class="grid">
+    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>7:00 AM – 2:00 PM</td></tr><tr><th>Tuesday</th><td>7:00 AM – 2:00 PM</td></tr><tr><th>Wednesday</th><td>7:00 AM – 2:00 PM</td></tr><tr><th>Thursday</th><td>7:00 AM – 2:00 PM</td></tr><tr><th>Friday</th><td>7:00 AM – 2:00 PM</td></tr><tr><th>Saturday</th><td>7:00 AM – 2:00 PM</td></tr><tr><th>Sunday</th><td>7:00 AM – 2:00 PM</td></tr></table></div>
+    <div class="card"><h2>Find us</h2><p>6/4-8 Burke Cres, North Lakes QLD 4509, Australia</p><p><a href="https://maps.google.com/?cid=8349473631929356776&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0425444733">Call 0425 444 733</a> <a class="btn ghost" href="mailto:blaktancoffee@gmail.com">Email us</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=6/4-8%20Burke%20Cres%2C%20North%20Lakes%20QLD%204509%2C%20Australia&output=embed" title="Map"></iframe>
+</section>
+
+<footer class="site"><div class="socials"><a href="http://www.facebook.com/blaktancoffee" rel="noopener">Facebook</a><a href="https://instagram.com/blaktancoffee" rel="noopener">Instagram</a></div>&copy; 2026 Blaktan Coffee Kitchen &middot; Restaurant</footer>
+</body>
+</html>
