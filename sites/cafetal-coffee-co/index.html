@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cafetal Coffee Co.</title>
+<meta name="description" content="Direct-trade Colombian specialty coffee, roasted in-house in Kent Town">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#8a3b1e;--bg:#f6f0e6;--ink:#2a1d15;--card:#fdfaf4;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
+.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
+h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+iframe{width:100%;height:320px;border:0;border-radius:16px}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body class="hero-split sharp">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#our-coffee-beans">Our Coffee Beans</a><a href="#castillo-fermented-our-signatu">Castillo Fermented: Our Signature Coffee</a><a href="#decaf-apia">Decaf Apia</a><a href="#low-caffeine">Low Caffeine</a><a href="#our-origin">Our Origin</a><a href="#visit-us-in-kent-town">Visit Us in Kent Town</a><a href="#hours">Hours &amp; location</a></div></nav>
+
+<header class="hero" >
+  <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcCUaYye3tZg1Db71sFOw31-4fFfAE8Rb3hWtucCYrP7ksBUJn6ZFV9IoVZ7TgGCwMUj4UwEYhYkxGrepeLJ96UNvXoNcWz3YJekUN4KdqfU0Q0DjvnoKjk_fO7NfnD14GmCuBUwYhIQxg=s4800-w1600" alt="Cafetal Coffee Co.">
+    <div>
+    <img class="logo" src="https://cafetalcoffeeco.com/cdn/shop/files/LOGO_Caferal-Black-02-V1_4f35e88b-38b1-44ca-be8e-0d21cdac6ed9_1600x.png?v=1792057661" alt="Cafetal Coffee Co. logo">
+    <h1>Cafetal Coffee Co.</h1>
+    <p class="tag">Direct-trade Colombian specialty coffee, roasted in-house in Kent Town</p>
+    <p class="rating">4.8 ★ on Google (214 reviews)</p>
+    <a class="btn" href="tel:0401754847">Call 0401 754 847</a> <a class="btn ghost" href="mailto:team@cafetalcoffeeco.com">Email us</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="about">
+  <h2>About</h2>
+  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li></ul>
+  <p>Cafetal Coffee Co. brings a taste of Colombia to Kent Town. We serve high-quality Colombian specialty coffee alongside a food menu inspired by South American flavours, and we roast our beans in small batches in-house at our Adelaide roastery.</p><p>For us, coffee and food are ways to share our roots. Since we opened our doors in 2020, our aim has been simple: whether you&#x27;re stopping by for a cup or staying for a meal, we want you to feel at home and leave knowing a little more about where we come from.</p>
+</section>
+
+<section class="wrap" >
+  <h2>What people say</h2>
+  <div class="grid"><blockquote><p>“This place was a pleasant surprise to discover. Though I live nearby I hadnt even noticed it existing. Glad I did finally. The coffee and food was outstanding 🤤
+
+At first, the service came across as standoff-ish. Then a third staff member started and she was super…”</p><footer>★★★★ James Jenke</footer></blockquote><blockquote><p>“11/9
+Went in to grab some coffee beans on a reccomendation
+The owner was really helpfull with selecting the right beans to try
+They also were able to grind them in store for an espresso machine
+
+Also grabbed a cappachino to try the beans
+Castillo was the variety and…”</p><footer>★★★★★ Zak Faulkner</footer></blockquote><blockquote><p>“Great place great coffe and greattttt service!!! 🙌🏼🙏🏼😍.
+
+Honestly I’m not sure what “Ravina” and “climbing trader’s” problem is to give a 4⭐️ rating along with a great and positive review……. I guess it’s just a matter of fat fingers pressing the wrong star 😅
+
+We love…”</p><footer>★★★★★ Kyra Passos</footer></blockquote></div>
+</section>
+
+<section class="wrap" id="menu" >
+  <h2>Menu</h2>
+  <p class="menu-note"><a class="btn" href="https://cafetalcoffeeco.com/pages/menu-cafetal-coffee-shop">View our menu</a></p>
+</section>
+
+<section class="wrap content" id="our-coffee-beans"><h2>Our Coffee Beans</h2><ul><li>Direct trade: we work directly with our farming partners in Colombia, ensuring fair prices and full traceability</li><li>Single-origin: no blending, no masking, just the pure character of one region, one harvest</li><li>In-house small-batch roasted: roasted to order in Adelaide to preserve peak freshness and flavour integrity</li><li>Hand-harvested: selective picking means only the ripest cherries make it into your bag</li></ul><h3>Espresso beans</h3><p>Roasted for milk-based, espresso and moka brewing methods.</p><ul><li>Castillo Fermented Coffee Beans</li><li>Low Caffeine Specialty Coffee Beans</li><li>Decaf Apia Specialty Coffee Beans</li></ul><h3>Omni-roast beans</h3><ul><li>Yellow Colombia Natural Coffee Beans</li><li>Tabi Honey Coffee Beans - ORGANIC</li><li>Colombia Triple Fermented Coffee Beans</li><li>Mountain Blend - Castillo &amp; Gesha Washed Coffee Beans</li><li>Castillo Tangerine Coffee Beans</li><li>Castillo Aromatic Coffee Beans</li></ul><h3>Filter beans</h3><ul><li>Pink Bourbon Natural Coffee Beans</li><li>Yellow Colombia Natural Coffee Beans</li></ul><h3>Green beans</h3><ul><li>Green Beans 1 kg - Castillo Fermented</li></ul></section><section class="wrap content" id="castillo-fermented-our-signatu"><h2>Castillo Fermented: Our Signature Coffee</h2><p>Some coffees define a café. This is ours. The Castillo Fermented has been the beating heart of Cafetal Coffee Co. since we opened our doors in 2020. We&#x27;ve served it every single day to every kind of coffee lover, and it has never let us down.</p><p>It comes directly from Liliana Caballero at Hacienda Casablanca in the Santander highlands of Colombia, grown at 1,550 metres above sea level. It&#x27;s the same farm, the same farmer and the same commitment to quality, year after year. A controlled, two-stage fermentation and washed process builds depth and complexity while keeping the bean&#x27;s natural clarity.</p><p>Expect caramel sweetness, smooth honey and a clean citrus fruit finish. It pulls a beautiful espresso, is exceptional in milk-based drinks and holds its own as a long black. We think it&#x27;ll become your coffee too.</p><ul><li>Variety: Castillo</li><li>Process: 2-phase fermentation &amp; washed</li><li>Roasting: Medium-Dark</li><li>Best for: Espresso, Milk-based coffee &amp; Long Black</li><li>Flavour Profile: Caramel, Honey &amp; Citrus Fruits</li><li>Producer: Liliana Caballero / Farm: Hacienda Casablanca</li><li>Elevation: 1550 meters</li><li>Region: Santander</li><li>Country: Colombia</li><li>Harvest Season: October–January</li></ul></section><section class="wrap content" id="decaf-apia"><h2>Decaf Apia</h2><p>Decaf has never tasted like this. The Decaf Apia proves that removing caffeine doesn&#x27;t have to mean removing character.</p><p>It&#x27;s sourced directly from a group of smallholder farmers in the Apia region of Risaralda, Colombia, grown between 1,650 and 1,900 metres above sea level, and processed in partnership with Descafecol, Colombia&#x27;s pioneering decaffeination specialists. Their Sugar Cane process uses ethyl acetate derived from fermented sugar cane to gently remove caffeine while leaving the bean&#x27;s full flavour intact.</p><p>The result is citrus acidity, smooth caramel sweetness and a distinctive sugar cane finish. It&#x27;s perfect for espresso, milk-based coffees and long blacks, any time of day.</p><ul><li>Variety: Castillo</li><li>Process: Sugar Cane Natural Decaffeination Process</li><li>Roasting: Medium-Dark</li><li>Best for: Espresso, Milk-based coffee &amp; Long Black</li><li>Flavour Profile: Citrus, Caramel &amp; Sugar Cane</li><li>Producer: Group of smallholders from Apia &amp; Descafecol</li><li>Elevation: 1650 to 1900 meters</li><li>Region: Apia - Risaralda</li><li>Country: Colombia</li><li>Harvest Season: October–January</li></ul></section><section class="wrap content" id="low-caffeine"><h2>Low Caffeine</h2><p>All the flavour, half the caffeine. This is for people who love the ritual but want more control over their intake.</p><p>It&#x27;s a 50/50 blend of Caturra Washed and Decaf Cordillera, naturally decaffeinated via the Sugar Cane process. It&#x27;s sourced directly from Jairo Arcila in Colombia and grown between 1,450 and 1,700 metres above sea level. Expect orange citrus, smooth caramel sweetness and a sugar cane finish. It&#x27;s great for espresso, milk-based coffees and long blacks, without the jitters.</p><ul><li>Caffeine Level: 50% less Caffeine</li><li>Blend: 50% Decaf Cordillera + 50% Caturra Washed</li><li>Variety: Caturra &amp; Castillo</li><li>Process: Fermented &amp; Washed / Sugar Cane Natural Decaffeination Process</li><li>Roasting: Medium-Dark</li><li>Best for: Espresso, Milk-based coffee &amp; Long Black</li><li>Flavour Profile: Orange, Caramel &amp; Sugar Cane</li><li>Producer: Jairo Arcila &amp; Descafecol</li><li>Elevation: 1450 to 1700 meters</li><li>Region: Quindio - Tolima</li><li>Country: Colombia</li><li>Harvest Season: October–January</li></ul></section><section class="wrap content" id="our-origin"><h2>Our Origin</h2><p>From Santander, Colombia to Adelaide, Australia. Our signature coffee comes from producer Liliana Caballero at Hacienda Casablanca, and we&#x27;re built on real direct relationships and traceable coffee.</p><h3>Award-winning Colombian specialty coffee</h3><ul><li>First prize at a coffee fair in Socorro, Santander</li><li>First place in the 2016 national Yara Champion Program Cup Contest, with a score of 89.48</li><li>Finalist in the competition in 2017 and 2018</li><li>First place in the 2024 Santander coffee cup competition</li></ul></section><section class="wrap content" id="visit-us-in-kent-town"><h2>Visit Us in Kent Town</h2><p>Find us at 10 College Road, Kent Town, SA 5067. Stop in for a coffee, explore our South American-inspired food and discover the flavours behind our roots. Whether you&#x27;re starting your workday or taking it slow on the weekend, we&#x27;d love to welcome you. Dine in, takeaway and delivery are all available.</p><h3>Opening hours</h3><ul><li>Monday–Friday: 7:00 am–3:00 pm</li><li>Saturday: 8:00 am–2:00 pm</li><li>Sunday: 8:30 am–2:00 pm</li></ul></section>
+
+<section class="wrap" >
+  <h2>Gallery</h2>
+  <div class="gallery"><img src="https://cafetalcoffeeco.com/cdn/shop/files/Cafetal_-_HTRUMBLE_Norwood_D2_25_Web_1_1600x.jpg?v=1787813649" alt="Cafetal Coffee Co."><img src="https://cafetalcoffeeco.com/cdn/shop/files/Untitled_design__13___2_-upscaled_1_1600x.png?v=1785982592" alt="Cafetal Coffee Co."><img src="https://cafetalcoffeeco.com/cdn/shop/files/1039976_cfc4f651-ce9c-4fad-a750-d71946b12bf2_1600x.jpg?v=1785237924" alt="Cafetal Coffee Co."><img src="https://cafetalcoffeeco.com/cdn/shop/files/Tabi_Honey_Organic_1_33fcb900-86b7-4ca4-9270-e66bb603b27c_1600x.png?v=1789551086" alt="Cafetal Coffee Co."><img src="https://cafetalcoffeeco.com/cdn/shop/files/11562_1_787bbc9a-7ecc-4b6a-ab55-d0916e3fa5c8_1600x.jpg?v=1785750226" alt="Cafetal Coffee Co."><img src="https://cafetalcoffeeco.com/cdn/shop/files/Untitled_design__16_-upscaled_1_1600x.png?v=1785990731" alt="Cafetal Coffee Co."><img src="https://cafetalcoffeeco.com/cdn/shop/files/15356_1_1600x.jpg?v=1785745837" alt="Cafetal Coffee Co."><img src="https://cafetalcoffeeco.com/cdn/shop/files/Untitled_design_1_1_1_1_1600x.png?v=1785809560" alt="Cafetal Coffee Co."></div>
+</section>
+
+<section class="wrap" id="hours">
+  <div class="grid">
+    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>7:00 AM – 3:00 PM</td></tr><tr><th>Tuesday</th><td>7:00 AM – 3:00 PM</td></tr><tr><th>Wednesday</th><td>7:00 AM – 3:00 PM</td></tr><tr><th>Thursday</th><td>7:00 AM – 3:00 PM</td></tr><tr><th>Friday</th><td>7:00 AM – 3:00 PM</td></tr><tr><th>Saturday</th><td>8:00 AM – 2:00 PM</td></tr><tr><th>Sunday</th><td>8:30 AM – 2:00 PM</td></tr></table></div>
+    <div class="card"><h2>Find us</h2><p>10 College Rd, Kent Town SA 5067, Australia</p><p><a href="https://maps.google.com/?cid=12490609065015658985&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0401754847">Call 0401 754 847</a> <a class="btn ghost" href="mailto:team@cafetalcoffeeco.com">Email us</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=10%20College%20Rd%2C%20Kent%20Town%20SA%205067%2C%20Australia&output=embed" title="Map"></iframe>
+</section>
+
+<footer class="site"><div class="socials"><a href="https://instagram.com/cafetalcoffeeco" rel="noopener">Instagram</a><a href="https://www.facebook.com/cafetalcoffeeco" rel="noopener">Facebook</a></div>&copy; 2026 Cafetal Coffee Co. &middot; Coffee roastery</footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cafe 1928</title>
+<meta name="description" content="Great coffee and fresh light food in Bundaberg&#x27;s Botanic Gardens">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#2F6B3F;--bg:#F4F7EF;--ink:#1F2A22;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
+.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
+h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+iframe{width:100%;height:320px;border:0;border-radius:16px}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body class="hero-split rounded">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#the-cafe">The Cafe</a><a href="#functions-and-weddings">Functions and Weddings</a><a href="#catering">Catering</a><a href="#hours">Hours &amp; location</a></div></nav>
+
+<header class="hero" >
+  <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdy8xcpWvf8LqUfVOpIO3Qu_pYV93ZxqKZ1LkKvzEpYIGdAf0R0EgKeV9cD3GuYLgqCc9rqIp2G3HHmjrvUxi_-HhopB7GRCsLMBvo07Ygc_4wlXjnUuFqcK8aUj4PzDq6ultiF=s4800-w1600" alt="Cafe 1928">
+    <div>
+    <img class="logo" src="http://www.cafe1928.com.au/wp-content/uploads/2024/10/logo.png" alt="Cafe 1928 logo">
+    <h1>Cafe 1928</h1>
+    <p class="tag">Great coffee and fresh light food in Bundaberg&#x27;s Botanic Gardens</p>
+    <p class="rating">4.1 ★ on Google (663 reviews)</p>
+    <a class="btn" href="tel:0741531928">Call (07) 4153 1928</a> <a class="btn ghost" href="mailto:info@cafe1928.com.au">Email us</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="about">
+  <h2>About</h2>
+  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Bookings</li><li>Outdoor seating</li></ul>
+  <p>Cafe 1928 sits in the Bundaberg Botanic Gardens on the city&#x27;s north side, right alongside the Hinkler Hall of Aviation and the other attractions in Bundaberg&#x27;s favourite tropical outdoor precinct. Our friendly team prides itself on great coffee, fresh light food options and a relaxed, cosmopolitan atmosphere.</p><p>Drop in for one of our famous coffees after a wander through the gardens, or get in touch to book your next event. We offer dine in, takeaway and outdoor seating.</p>
+</section>
+
+<section class="wrap" >
+  <h2>What people say</h2>
+  <div class="grid"><blockquote><p>“The food was ok but it was vefy expensive. $2.80 per chicken nugget. I bought my grandkids 5 each which cost me an arm and a leg. The staff were friendly but they really need much healthier food, some salads and more variety would be good. The atmosphere was lovely and…”</p><footer>★★★★ Debra Pickering</footer></blockquote><blockquote><p>“Situated within the Bundaberg Botanical Gardens, this is a great cafe if you’re feeling hungry or thirsty. We tried the Greek lamb pocket that was full of flavour, nachos and the crumbed calamari which was so tender. The prices are reasonable and there is plenty of…”</p><footer>★★★★ Casandra TP</footer></blockquote><blockquote><p>“We were impressed! We arrived after sightseeing through the Botanic Gardens and were welcomed despite it being 15 minutes before closing. The meals were generous and I couldn&#x27;t fault my whiting and salad. We thought the prices were reasonable but were more impressed…”</p><footer>★★★★ Kirsty Luke</footer></blockquote></div>
+</section>
+
+<section class="wrap" id="menu" >
+  <h2>Menu</h2>
+  <p class="menu-note"><a class="btn" href="https://www.cafe1928.com.au/cafe/">View our menu</a></p>
+</section>
+
+<section class="wrap content" id="the-cafe"><h2>The Cafe</h2><p>A cosmopolitan atmosphere where Bundaberg locals unwind. Inside you&#x27;ll find our food and drinks menu, with a wide range of choices to suit everyone. Bookings are welcome.</p><h3>Opening hours</h3><ul><li>Monday to Saturday: 9am to 3pm</li><li>Sunday: 9am to 4pm</li><li>Kitchen closes at 2:30pm</li><li>Public holidays: 10am to 3pm</li></ul></section><section class="wrap content" id="functions-and-weddings"><h2>Functions and Weddings</h2><p>Cafe 1928 is a BYO venue that operates until 11.45pm, so you can host a wide range of events and functions in the style you prefer. Whether it&#x27;s a wedding with scenic garden backdrops or a special place to unwind with friends and family, we can cater for your needs.</p><h3>Weddings, engagements, birthdays and cocktail parties</h3><p>Choose a package of 5, 7 or 9 finger food items (minimum booking numbers apply). For weddings, finger food is served for approximately 45 minutes before the wedding party arrives. The selection of finger food will vary.</p><ul><li>Party pie</li><li>Mini dim sims</li><li>Asian spring rolls</li><li>Barra twists</li><li>Meat balls</li><li>Vegetable samosa</li><li>Garlic chicken balls</li><li>Sushi (variety)</li><li>Calamari/squid rings with seafood dipping sauce</li><li>Battered whiting goujons served with chips</li><li>Cherry tomato and bocconcini tartlets</li><li>Prawn twister</li><li>Mini quiche: Lorraine, spinach and fetta, and pumpkin and chicken</li><li>Sesame beef skewers</li><li>Bruschetta: tomato, onion and basil</li><li>Mini steak sandwiches</li><li>Mini hamburgers</li><li>Chicken satay kebabs</li><li>Honey mustard chicken drumettes</li><li>Beer battered scallops</li><li>Mini gourmet pizzas</li><li>Smoked salmon with lilliput capers, served on top of mascarpone</li></ul><h3>Dinner</h3><p>Choose 2 dinner options:</p><ul><li>Chicken breast served with a Dijon mustard and white wine sauce</li><li>Stuffed chicken breasts wrapped with bacon (cream cheese and chive fillings)</li><li>Baked barramundi served with a lemon sauce</li><li>Rib fillet steak served with mushroom sauce (220g approx)</li><li>Roast pork or roast beef</li></ul><p>Served with bread rolls, a selection of seasonal vegetables, roast potato, roast pumpkin, and self-service percolated coffee and tea. Minimum of 60 people, excluding public holidays.</p></section><section class="wrap content" id="catering"><h2>Catering</h2><p>Our range of catering options is incredibly broad. We cater breakfasts, desserts, buffets, weddings and more. For all-occasion catering in Bundaberg with a difference, choose Cafe 1928. All items are presented beautifully on a platter for serving.</p><h3>Deli and cheese platters</h3><ul><li>Kabana, salami, marinated mushrooms, sundried tomatoes, Kalamata olives, marinated artichoke hearts, spicy capsicum dip, marinated feta cheese, Gorgonzola blue vein, Tasmania double brie, feta cheese filled peppers</li><li>Tasmania double brie, vintage cheddar, Gorgonzola blue vein, spicy capsicum dip, Swiss Mondella</li><li>Ham off the bone, sopressa salami, roast turkey, kabana, roast beef, chicken breast, sundried tomatoes, spicy capsicum dip</li></ul><h3>Finger food platters</h3><p>Platters of 60 pieces and 20 pieces are available. Our 60-piece platter is a good mixture of Asian varieties: 15 beef dim sims, 15 vegetarian samosas, 15 vegetarian spring rolls and 15 chicken tandoori bites.</p><h3>Fruit platter</h3><p>Kiwi fruit, cantaloupe, strawberries, watermelon, pineapple and grapes. Subject to seasonal availability.</p><h3>Gourmet sandwiches</h3><p>40 sandwich triangles. Varieties change from time to time and include:</p><ul><li>Chicken breast fillet with basil pesto and slices of fresh roma tomato</li><li>Tasty cheese, ham off the bone and sweet mustard pickle</li><li>Fresh egg, lettuce and mayonnaise</li><li>Avocado and sliced turkey</li></ul><h3>Gourmet wraps</h3><p>The perfect office lunch. 20 individual half wraps, including:</p><ul><li>Sliced succulent turkey breast with cranberry and baby spinach</li><li>Smoked salmon with Spanish onion, lilliput capers and cream cheese</li><li>Egg with lettuce and mayonnaise</li><li>Pastrami with horseradish mayonnaise and caramelised onion</li><li>Roast chicken with tomato and mayonnaise</li></ul><h3>Scones with jam and fresh cream</h3><p>A platter of freshly made scones with fresh whipped cream and strawberry jam. 20 scones, halved (40 halves).</p><h3>Cold quiche</h3><p>On those hot days, cold quiche is a fantastic choice. Light and creamy, in spinach, tomato and onion, egg and bacon, and asparagus.</p><h3>Group refreshments</h3><ul><li>Light morning or afternoon tea: for each group member, a hot cup of freshly roasted, gently brewed percolated coffee, or a hot cup of tea and cold water, plus scones with strawberry jam and fresh cream</li><li>For each group member: a hot cup of percolated coffee, or tea and cold water, plus a fresh gourmet sandwich and a piece of slice with a dollop of cream</li></ul><h3>Tea and coffee service</h3><ul><li>1 x hot water urn, coffee urn, full cream and low fat milk, Twinings tea bags, stirring sticks and sugar sachets</li><li>Rental of 2 x 20 litre hot water urns</li></ul></section>
+
+<section class="wrap" >
+  <h2>Gallery</h2>
+  <div class="gallery"><img src="https://www.cafe1928.com.au/wp-content/uploads/2024/10/cafe1.jpg" alt="Cafe 1928"><img src="https://www.cafe1928.com.au/wp-content/uploads/2024/10/catering.jpg" alt="Cafe 1928"><img src="https://www.cafe1928.com.au/wp-content/uploads/2024/10/wedding.jpg" alt="Cafe 1928"><img src="https://www.cafe1928.com.au/wp-content/uploads/2024/10/AdobeStock_674181862-scaled.jpeg" alt="Cafe 1928"><img src="https://www.cafe1928.com.au/wp-content/uploads/2024/10/183096435_3839273016121883_8966017873472445566_n-1024x485.jpg" alt="Cafe 1928"><img src="https://www.cafe1928.com.au/wp-content/uploads/2024/10/IMAG0010-1024x579-1.jpg" alt="Cafe 1928"><img src="https://www.cafe1928.com.au/wp-content/uploads/2024/10/function-1stbanner-1024x206.jpg" alt="Cafe 1928"><img src="https://www.cafe1928.com.au/wp-content/uploads/2024/10/function-2ndbanner-1024x208.jpg" alt="Cafe 1928"></div>
+</section>
+
+<section class="wrap" id="hours">
+  <div class="grid">
+    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>9:00 AM – 3:00 PM</td></tr><tr><th>Tuesday</th><td>9:00 AM – 3:00 PM</td></tr><tr><th>Wednesday</th><td>9:00 AM – 3:00 PM</td></tr><tr><th>Thursday</th><td>9:00 AM – 3:00 PM</td></tr><tr><th>Friday</th><td>9:00 AM – 3:00 PM</td></tr><tr><th>Saturday</th><td>9:00 AM – 3:00 PM</td></tr><tr><th>Sunday</th><td>9:00 AM – 3:00 PM</td></tr></table></div>
+    <div class="card"><h2>Find us</h2><p>6 Mount Perry Rd, Bundaberg Central QLD 4670, Australia</p><p><a href="https://maps.google.com/?cid=12087720696000371298&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0741531928">Call (07) 4153 1928</a> <a class="btn ghost" href="mailto:info@cafe1928.com.au">Email us</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=6%20Mount%20Perry%20Rd%2C%20Bundaberg%20Central%20QLD%204670%2C%20Australia&output=embed" title="Map"></iframe>
+</section>
+
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/profile.php?id=100063647346466" rel="noopener">Facebook</a></div>&copy; 2026 Cafe 1928 &middot; Cafe</footer>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Blossom and bloom cafe Ballarat</title>
+<meta name="description" content="Brunch, coffee and dessert in the heart of Bakery Hill">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#B03A5B;--bg:#FBF4F2;--ink:#2E2328;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'DM Serif Display', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
+.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
+h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+iframe{width:100%;height:320px;border:0;border-radius:16px}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body class="hero-split rounded">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#meet-katie">Meet Katie</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://www.opentable.com.au/restref/client/?restref=307619&amp;lang=en-AU&amp;ot_source=Restaurant%20website" rel="noopener">Book a table</a></div></nav>
+
+<header class="hero" >
+  <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdxbhr0pEYfAkVzfsrPOoN7-Mru5qjX40QWph0c2rOmH1a3UyJ4FkbXzedzc1p7Gi105MdeFSgAjVFIZU0SLGxau85Gpa-UacN5koOBE7cfxyR6anrRcBWYRMJPMXjLwA6-P58gnAZb1TLy=s4800-w1600" alt="Blossom and bloom cafe Ballarat">
+    <div>
+    <img class="logo" src="https://images.squarespace-cdn.com/content/v1/68db0a869ac2b7164fd0232c/29989975-b50f-4c4f-baee-07aaf506525c/Cattleya-Thai_Logo_2024-white-01.png" alt="Blossom and bloom cafe Ballarat logo">
+    <h1>Blossom and bloom cafe Ballarat</h1>
+    <p class="tag">Brunch, coffee and dessert in the heart of Bakery Hill</p>
+    <p class="rating">4.8 ★ on Google (80 reviews)</p>
+    <a class="btn" href="tel:0353400333">Call (03) 5340 0333</a> <a class="btn ghost" href="mailto:blossombloom.ballarat@gmail.com">Email us</a> <a class="btn ghost" href="https://www.opentable.com.au/restref/client/?restref=307619&amp;lang=en-AU&amp;ot_source=Restaurant%20website" rel="noopener">Book a table</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="about">
+  <h2>About</h2>
+  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Bookings</li></ul>
+  <p>Blossom &amp; Bloom is a cafe at 202 Humffray St S in Bakery Hill, Ballarat, serving brunch, coffee and dessert. Guests talk about fresh, flavour-packed food that&#x27;s beautifully presented, rich and smooth coffee, and friendly staff in a lovely, welcoming space.</p><p>Come in to dine, grab something to take away, or book a table ahead online through OpenTable.</p>
+</section>
+
+<section class="wrap" >
+  <h2>What people say</h2>
+  <div class="grid"><blockquote><p>“Blooms &amp; Bloom Cafe – Highly Recommended! ⭐️⭐️⭐️⭐️⭐️
+
+Had such a lovely experience at Blooms &amp; Bloom Cafe. The food was absolutely yummy, fresh, and full of flavour. The mushroom toastie was definitely the highlight -  delicious, filling, and packed with great…”</p><footer>★★★★★ Rajinder K</footer></blockquote><blockquote><p>“What an amazing addition to Ballarat!! The coffee was easily one of the best I’ve had—rich, smooth, and perfectly made. The food was just as impressive, delicious, and beautifully presented. Friendly service and a lovely atmosphere made the experience even better.…”</p><footer>★★★★★ Sammi Koyu</footer></blockquote><blockquote><p>“Absolutely loved this place! Everything was beautifully presented and tasted just as amazing as it looked. The atmosphere was lovely, and the staff were friendly and welcoming. Highly recommend this spot if you&#x27;re looking for delicious brunch or dessert. I&#x27;ll…”</p><footer>★★★★★ melbourne geneva picat</footer></blockquote></div>
+</section>
+
+<section class="wrap" id="menu" >
+  <h2>Menu</h2>
+  <p class="menu-note"><a class="btn" href="https://blossomandbloomballarat.com.au/menu">View our menu</a></p>
+</section>
+
+<section class="wrap content" id="meet-katie"><h2>Meet Katie</h2><p>Known to many as &#x27;Aunty Katie&#x27;, she&#x27;s the heart behind Blossom &amp; Bloom and several beloved Ballarat businesses.</p><p>Passionate about food, community and bringing people together, Katie has spent years creating welcoming spaces where everyone feels at home.</p></section>
+
+<section class="wrap" >
+  <h2>Gallery</h2>
+  <div class="gallery"><img src="https://images.squarespace-cdn.com/content/v1/68db0a869ac2b7164fd0232c/f9532a31-aef7-4166-814f-fe237f4323c1/A7C01390.jpg" alt="Blossom and bloom cafe Ballarat"><img src="https://images.squarespace-cdn.com/content/v1/68db0a869ac2b7164fd0232c/0616e619-1510-400a-962b-da761ae76247/A7C01713.jpg" alt="Blossom and bloom cafe Ballarat"><img src="https://images.squarespace-cdn.com/content/v1/68db0a869ac2b7164fd0232c/78f879aa-49ea-414e-88cb-c0429dc38963/A7C00009.jpg" alt="Blossom and bloom cafe Ballarat"><img src="https://images.squarespace-cdn.com/content/v1/68db0a869ac2b7164fd0232c/d76b49d6-c2e2-4acd-8ecd-1acd6846bf0e/Background_01.png" alt="Blossom and bloom cafe Ballarat"><img src="https://images.squarespace-cdn.com/content/v1/68db0a869ac2b7164fd0232c/4fdf68dd-f88e-46c6-bf85-3b3635dde7de/A7C00515.jpg" alt="Blossom and bloom cafe Ballarat"><img src="https://images.squarespace-cdn.com/content/v1/68db0a869ac2b7164fd0232c/1b1cd5dd-8c8a-4ad7-8823-e770c1289ad9/A7C00084.jpg" alt="Blossom and bloom cafe Ballarat"><img src="https://images.squarespace-cdn.com/content/v1/68db0a869ac2b7164fd0232c/a3234f35-123e-4e43-9dc6-90a0885e36e1/A7C00463.jpg" alt="Blossom and bloom cafe Ballarat"><img src="https://images.squarespace-cdn.com/content/v1/68db0a869ac2b7164fd0232c/be1b3a2c-e479-4f94-853f-54fe936f823c/A7C01081.jpg" alt="Blossom and bloom cafe Ballarat"></div>
+</section>
+
+<section class="wrap" id="hours">
+  <div class="grid">
+    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>7:00 AM – 3:00 PM</td></tr><tr><th>Tuesday</th><td>Closed</td></tr><tr><th>Wednesday</th><td>7:00 AM – 3:00 PM</td></tr><tr><th>Thursday</th><td>7:00 AM – 3:00 PM</td></tr><tr><th>Friday</th><td>7:00 AM – 3:00 PM</td></tr><tr><th>Saturday</th><td>7:30 AM – 3:00 PM</td></tr><tr><th>Sunday</th><td>7:30 AM – 3:00 PM</td></tr></table></div>
+    <div class="card"><h2>Find us</h2><p>202 Humffray St S, Bakery Hill VIC 3350, Australia</p><p><a href="https://maps.google.com/?cid=8442033270315414652&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0353400333">Call (03) 5340 0333</a> <a class="btn ghost" href="mailto:blossombloom.ballarat@gmail.com">Email us</a> <a class="btn ghost" href="https://www.opentable.com.au/restref/client/?restref=307619&amp;lang=en-AU&amp;ot_source=Restaurant%20website" rel="noopener">Book a table</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=202%20Humffray%20St%20S%2C%20Bakery%20Hill%20VIC%203350%2C%20Australia&output=embed" title="Map"></iframe>
+</section>
+
+<footer class="site"><div class="socials"><a href="http://www.facebook.com/2008/fbml" rel="noopener">Facebook</a><a href="https://www.facebook.com/blossomandbloom.ballarat" rel="noopener">Facebook</a><a href="https://www.instagram.com/blossomandbloom.ballarat" rel="noopener">Instagram</a></div>&copy; 2026 Blossom and bloom cafe Ballarat &middot; Cafe</footer>
+</body>
+</html>

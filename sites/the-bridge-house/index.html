@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Bridge House</title>
+<meta name="description" content="A cosy restaurant and wine bar in North Fremantle">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#7A3B2E;--bg:#F6F1EA;--ink:#2B231F;--card:#FFFCF7;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
+.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
+h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+iframe{width:100%;height:320px;border:0;border-radius:16px}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body class="hero-split sharp">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#functions-and-private-dining">Functions and Private Dining</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://bridgehousefreo.com.au/booking.html" rel="noopener">Book a table</a></div></nav>
+
+<header class="hero" >
+  <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcZXznkldK85NXIHClSe61NHb1uHJZr2Y-Orh5YQl8O_DFbtDj0_3jnqf7x2eH0iWHJqjKaSjKh1HGWIrHL0zHp980-ffqo8T7v9w--6x9_gzzcnbkmcfw47oCm3rbGbbEHIwPr=s4800-w1600" alt="The Bridge House">
+    <div>
+    <img class="logo" src="https://bridgehousefreo.com.au/img/logo/logoSimple.png" alt="The Bridge House logo">
+    <h1>The Bridge House</h1>
+    <p class="tag">A cosy restaurant and wine bar in North Fremantle</p>
+    <p class="rating">4.5 ★ on Google (216 reviews)</p>
+    <a class="btn" href="tel:0862340992">Call (08) 6234 0992</a> <a class="btn ghost" href="mailto:info@bridgehousefreo.com.au">Email us</a> <a class="btn ghost" href="https://bridgehousefreo.com.au/booking.html" rel="noopener">Book a table</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="about">
+  <h2>About</h2>
+  <ul class="tags"><li>Dine in</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
+  <p>The Bridge House is a restaurant and wine bar at 1 Harvest Rd, North Fremantle. Guests talk about the cosy, low-key feel, the beautiful fit-out and friendly, relaxed service. On a cold, wet day the fire is roaring.</p><p>Come in for brunch, a long lunch or a dinner date once it&#x27;s dark outside. We have outdoor seating and vegetarian options, and you can book a table online at bridgehousefreo.com.au/booking.html.</p>
+</section>
+
+<section class="wrap" >
+  <h2>What people say</h2>
+  <div class="grid"><blockquote><p>“I came across this restaurant online, and the photos looked incredible, so I decided to give it a try tonight.
+
+When we arrived, we were asked whether we had a booking. I explained that I had tried calling several times but couldn&#x27;t get through. The response I received…”</p><footer>★★★★ Mohamed Ashraf</footer></blockquote><blockquote><p>“I came to The Bridge House on Wednesday with my partner and we had such a great experience.
+
+We’d been curious to try it for a while and it definitely didn’t disappoint. The vibe is cozy and low-key, with a really beautiful fit-out that makes you feel comfortable…”</p><footer>★★★★★ Aurore Aguettaz</footer></blockquote><blockquote><p>“First time here and just for brunch but what a cute treat. Fire was roaring whilst it was freezing and raining outside. The place was so cozy. Bit smoky but didn’t care.
+Service was really attentive and friendly and relaxed and can imagine a dinner date here when it’s…”</p><footer>★★★★★ Adameats</footer></blockquote></div>
+</section>
+
+<section class="wrap" id="menu" >
+  <h2>Menu</h2>
+  <p class="menu-note"><a class="btn" href="https://bridgehousefreo.com.au/menu/dinner.pdf">View our menu</a></p>
+</section>
+
+<section class="wrap content" id="functions-and-private-dining"><h2>Functions and Private Dining</h2><p>We have a space for every kind of get-together, from a quiet business meeting to a birthday or an intimate wedding reception.</p><p>Our sun-dappled main space is ideal for long lunches and is beautifully lit in the evening.</p><h3>Private Dining Room</h3><p>An intimate space for celebrating special occasions. Also suitable for private meetings.</p><h3>Back Dining</h3><p>This light and airy room is perfect for casual family dining, and it&#x27;s a cool reprieve during Perth&#x27;s hot summer.</p><h3>Courtyard</h3><p>A cosy spot for group dining. It&#x27;s undercover and heated, so it suits winter. It&#x27;s perfect for small gatherings such as intimate wedding receptions and birthday celebrations.</p></section>
+
+<section class="wrap" >
+  <h2>Gallery</h2>
+  <div class="gallery"><img src="https://bridgehousefreo.com.au/img/menu/starters/1.jpg" alt="The Bridge House"><img src="https://bridgehousefreo.com.au/img/menu/starters/2.jpg" alt="The Bridge House"><img src="https://bridgehousefreo.com.au/img/menu/starters/3.jpg" alt="The Bridge House"><img src="https://bridgehousefreo.com.au/img/menu/starters/4.jpg" alt="The Bridge House"><img src="https://bridgehousefreo.com.au/img/menu/mains/1.jpg" alt="The Bridge House"><img src="https://bridgehousefreo.com.au/img/menu/mains/2.jpg" alt="The Bridge House"><img src="https://bridgehousefreo.com.au/img/menu/mains/3.jpg" alt="The Bridge House"><img src="https://bridgehousefreo.com.au/img/menu/mains/4.jpg" alt="The Bridge House"></div>
+</section>
+
+<section class="wrap" id="hours">
+  <div class="grid">
+    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>Closed</td></tr><tr><th>Tuesday</th><td>Closed</td></tr><tr><th>Wednesday</th><td>5:00 – 10:00 PM</td></tr><tr><th>Thursday</th><td>5:00 – 10:00 PM</td></tr><tr><th>Friday</th><td>5:00 – 10:00 PM</td></tr><tr><th>Saturday</th><td>7:30 AM – 2:30 PM, 5:00 – 10:00 PM</td></tr><tr><th>Sunday</th><td>7:30 AM – 2:30 PM, 5:00 – 9:30 PM</td></tr></table></div>
+    <div class="card"><h2>Find us</h2><p>1 Harvest Rd, North Fremantle WA 6159, Australia</p><p><a href="https://maps.google.com/?cid=515998907191207224&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0862340992">Call (08) 6234 0992</a> <a class="btn ghost" href="mailto:info@bridgehousefreo.com.au">Email us</a> <a class="btn ghost" href="https://bridgehousefreo.com.au/booking.html" rel="noopener">Book a table</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=1%20Harvest%20Rd%2C%20North%20Fremantle%20WA%206159%2C%20Australia&output=embed" title="Map"></iframe>
+</section>
+
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/bridgehousefreo" rel="noopener">Facebook</a><a href="https://www.instagram.com/bridgehousefreo" rel="noopener">Instagram</a></div>&copy; 2026 The Bridge House &middot; Restaurant</footer>
+</body>
+</html>

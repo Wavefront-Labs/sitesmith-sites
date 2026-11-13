@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>OSTRO Eatery</title>
+<meta name="description" content="Bold coffee and fresh, wholesome brunch on the Rockingham Foreshore.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#1F6F78;--bg:#F6F3EC;--ink:#1E2A2E;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'DM Serif Display', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
+.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
+h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+iframe{width:100%;height:320px;border:0;border-radius:16px}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body class="hero-fullbleed rounded">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#food-drink">Food &amp; Drink</a><a href="#events-functions">Events &amp; Functions</a><a href="#hours">Hours &amp; location</a></div></nav>
+
+<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLflVvdZnRQs3ibV0XKMTz1sAf7gKZu94e_Wffy0EJoPc8n_8jtxofsN19WoZ7DakseuEfwLtWXduPYimXz_YHG_f3DwsNVzWpc27myGvvslDEVW9FT3kzqhX4ezNPfchza0ri8lPw=s4800-w1600)">
+  <div class="wrap">
+    
+    <div>
+    <img class="logo" src="http://www.ostroeatery.com.au/assets/images/Logo.png" alt="OSTRO Eatery logo">
+    <h1>OSTRO Eatery</h1>
+    <p class="tag">Bold coffee and fresh, wholesome brunch on the Rockingham Foreshore.</p>
+    <p class="rating">4.6 ★ on Google (1179 reviews)</p>
+    <a class="btn" href="tel:0895272471">Call (08) 9527 2471</a> <a class="btn ghost" href="mailto:eat@ostroeatery.com.au">Email us</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="about">
+  <h2>About</h2>
+  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
+  <p>At Ostro Eatery we believe in the power of good coffee and warm hospitality. Our journey began with a simple vision: to create a welcoming space where friends, families and strangers alike could come together to enjoy delicious drinks, homemade treats and meaningful connections.</p><p>With a prime oceanview spot on the Rockingham Foreshore, Ostro brings vibrant energy and heartfelt hospitality to every visit. Whether you&#x27;re after a leisurely brunch or just soaking up the seaside vibes, you&#x27;ll find a warm, bright and friendly atmosphere here.</p>
+</section>
+
+<section class="wrap" >
+  <h2>What people say</h2>
+  <div class="grid"><blockquote><p>“I had a fantastic experience at Ostro Eatery! From the moment we arrived, the atmosphere felt welcoming and relaxing, making it a lovely place to enjoy a meal. The food was delicious, beautifully presented, and full of flavour. You can really appreciate the care and…”</p><footer>★★★★★ Nabin Jamkatel</footer></blockquote><blockquote><p>“Amazing food with generous portion, service was great and staff were very friendly.
+
+The steak sandwich was probably one of the best I had in a long time. Was so good that I went &quot;oh my..&quot; on my first bite.
+
+The 2 big pancakes had the perfect jiggle and fluffiness with…”</p><footer>★★★★★ Teddy Segoro</footer></blockquote><blockquote><p>“Top 3 brunch cafe in Rockingham that’s why we visit, definitely worth it! Everything tastes healthy and freshly made, especially home made hash brown and beef brisket was tasty, veggie mama is cute &amp; very satisfying. Service was very friendly too, definitely will come back”</p><footer>★★★★★ Zoe Zou</footer></blockquote></div>
+</section>
+
+<section class="wrap" id="menu" >
+  <h2>Menu</h2>
+  <p class="menu-note"><a class="btn" href="http://www.ostroeatery.com.au/#service">View our menu</a></p>
+</section>
+
+<section class="wrap content" id="food-drink"><h2>Food &amp; Drink</h2><p>There&#x27;s an energy and passion about Ostro, and we pride ourselves on creating a welcoming experience for everyone who walks through the door. We serve fresh, wholesome dishes alongside:</p><ul><li>The perfect brew</li><li>Superfood smoothies</li><li>Freshly squeezed juices</li><li>Classic cocktails</li></ul><p>Vegetarian options are available. Dine in, sit outside, grab takeaway or order delivery. Bookings are welcome. For our latest specials, follow us on social media.</p></section><section class="wrap content" id="events-functions"><h2>Events &amp; Functions</h2><h3>Let Ostro host your next event</h3><p>Whether you&#x27;re planning a birthday bash, a corporate gathering or an intimate celebration, our café becomes the perfect venue for unforgettable moments.</p><p>Our functions menu is ready when you are. Get in touch for bookings or enquiries.</p></section>
+
+<section class="wrap" >
+  <h2>Gallery</h2>
+  <div class="gallery"><img src="http://www.ostroeatery.com.au/assets/images/facebook.png" alt="OSTRO Eatery"><img src="http://www.ostroeatery.com.au/assets/images/Instagram.png" alt="OSTRO Eatery"><img src="http://www.ostroeatery.com.au/assets/images/Google.png" alt="OSTRO Eatery"><img src="http://www.ostroeatery.com.au/assets/images/Header Design.png" alt="OSTRO Eatery"><img src="http://www.ostroeatery.com.au/assets/images/since_rotate.png" alt="OSTRO Eatery"><img src="http://www.ostroeatery.com.au/assets/images/Title -texture.png" alt="OSTRO Eatery"><img src="http://www.ostroeatery.com.au/assets/images/about_food_img_1.jpg" alt="OSTRO Eatery"><img src="http://www.ostroeatery.com.au/assets/images/about_food_img_2.jpg" alt="OSTRO Eatery"></div>
+</section>
+
+<section class="wrap" id="hours">
+  <div class="grid">
+    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>6:30 AM – 3:00 PM</td></tr><tr><th>Tuesday</th><td>6:30 AM – 3:00 PM</td></tr><tr><th>Wednesday</th><td>6:30 AM – 3:00 PM</td></tr><tr><th>Thursday</th><td>6:30 AM – 3:00 PM</td></tr><tr><th>Friday</th><td>6:30 AM – 3:00 PM</td></tr><tr><th>Saturday</th><td>6:30 AM – 3:00 PM</td></tr><tr><th>Sunday</th><td>6:30 AM – 3:00 PM</td></tr></table></div>
+    <div class="card"><h2>Find us</h2><p>11A Rockingham Beach Rd, Rockingham WA 6168, Australia</p><p><a href="https://maps.google.com/?cid=12773410041852627079&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0895272471">Call (08) 9527 2471</a> <a class="btn ghost" href="mailto:eat@ostroeatery.com.au">Email us</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=11A%20Rockingham%20Beach%20Rd%2C%20Rockingham%20WA%206168%2C%20Australia&output=embed" title="Map"></iframe>
+</section>
+
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/ostroeatery" rel="noopener">Facebook</a><a href="https://www.instagram.com/ostroeatery" rel="noopener">Instagram</a></div>&copy; 2026 OSTRO Eatery &middot; Brunch Restaurant</footer>
+</body>
+</html>
