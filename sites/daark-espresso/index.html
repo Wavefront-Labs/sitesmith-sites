@@ -85,8 +85,19 @@ The coffee was excellent, the food was beautifully prepared, and the service was
 
 <section class="wrap" id="menu" >
   <h2>Menu</h2>
-  <p class="menu-note"><a class="btn" href="http://www.daarkespresso.com.au/#menudaark-section">View our menu</a></p>
+  <div id="menu-body"><p class="menu-note"><a class="btn" href="http://www.daarkespresso.com.au/#menudaark-section">View our menu</a></p></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="book-a-table"><h2>Book a table</h2><p>We&#x27;re a full table service venue, so we kindly ask that you wait at the bottom of the stairs to be seated. Our team will get you settled as soon as possible.</p><p>To book a table for 4 or more, call or text us on 0450 988 899 during our opening times (5.30am to 2.30pm).</p><ul><li>We accept reservations for groups of 4 to 10 people.</li><li>No same-day bookings.</li><li>We don&#x27;t take bookings on public holidays or the Gold Coast Marathon weekend.</li><li>We hold the table for 15 minutes past your reservation time. After that, it may be given to another customer.</li><li>Tables are reserved for 1.5 hours. If you&#x27;d like to stay longer, please let us know when you book.</li></ul><p>We look forward to serving you!</p></section>
 

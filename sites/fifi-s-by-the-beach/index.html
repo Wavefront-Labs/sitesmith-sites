@@ -88,8 +88,19 @@ The…”</p><footer>★★★★★ Phil Malone</footer></blockquote></div>
 
 <section class="wrap" id="menu" >
   <h2>Menu</h2>
-  <p class="menu-note"><a class="btn" href="https://fifisbythebeach.wixsite.com/fifi-s-by-the-beach/menu">View our menu</a></p>
+  <div id="menu-body"><p class="menu-note"><a class="btn" href="https://fifisbythebeach.wixsite.com/fifi-s-by-the-beach/menu">View our menu</a></p></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="eat-drink-relax"><h2>Eat. Drink. Relax.</h2><p>Set in a picturesque beach setting in charming Williamstown, we invite you to relax and enjoy some delicious food, Melbourne roasted coffee or a wine and take in the beautiful view.</p><h3>Breakfast, brunch and lunch</h3><ul><li>Dine in or takeaway</li><li>Outdoor seating on the wide footpath overlooking the beach</li><li>Vegetarian options</li><li>Bookings available online through OpenTable</li></ul></section><section class="wrap content" id="catering"><h2>Catering</h2><p>fifi&#x27;s are currently working on the catering menu. Watch this space.</p><p>Orders will be placed directly with fifi&#x27;s with 72 hours&#x27; notice. Minimum quantities apply.</p></section>
 

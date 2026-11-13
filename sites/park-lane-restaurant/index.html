@@ -85,8 +85,19 @@ Athough the menu was small…”</p><footer>★★★★★ Justine Stevens</foo
 
 <section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
-  
+  <div id="menu-body"></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="dinner-at-park-lane"><h2>Dinner at Park Lane</h2><p>Join us for dinner from 6pm to 8pm, Monday to Thursday. You can dine in or take away, and we have vegetarian options.</p><p>Bookings are welcome. Call us on (07) 4151 2341.</p><p>You&#x27;ll find us at 247 Bourbong St, Bundaberg, in the EconoLodge Park Lane. We&#x27;re just across the road from Alexandra Park and the Burnett River, in the Bundaberg CBD.</p><p>We also cater to the Chalet Motor Inn, Bundaberg City Motor Inn and Acacia Motor Inn.</p></section><section class="wrap content" id="save-5-on-your-bill"><h2>Save 5% on Your Bill</h2><p>Book by phone on (07) 4151 2341 and mention the promo code WINTER to instantly save 5% on your restaurant bill.</p></section><section class="wrap content" id="functions-and-motel-guests"><h2>Functions and Motel Guests</h2><p>Planning a get-together? Our function room is available with full catering.</p><p>Staying with us at EconoLodge Park Lane? Breakfast and dinner can be served to your unit, and the restaurant is just a few steps from your room.</p></section>
 

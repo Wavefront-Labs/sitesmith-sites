@@ -86,8 +86,19 @@ We only waited a short time for milkshakes and our amazing meals- the kids could
 
 <section class="wrap" id="menu" >
   <h2>Menu</h2>
-  <p class="menu-note"><a class="btn" href="https://www.manlydeck.com.au/lunch-menu/">View our menu</a></p>
+  <div id="menu-body"><p class="menu-note"><a class="btn" href="https://www.manlydeck.com.au/lunch-menu/">View our menu</a></p></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="about-us"><h2>About Us</h2><p>Manly Deck is Manly Harbour&#x27;s funky, modern and relaxing bar. There&#x27;s a cruisey atmosphere, quality food and friendly staff, and the best part is the prime location. We offer a variety of food and drinks throughout the week, with tasty meals at discounted prices.</p><h3>Choose Local</h3><p>We&#x27;re proud to support our local farming community and choose local. We make sure every ingredient that goes into our dishes is fresh. Eating local means supporting farmers and producers and investing food dollars close to home.</p><h3>Live Music</h3><p>There are very talented musicians in and around Manly, and you&#x27;ll hear them at the Deck every Tuesday to Sunday.</p><h3>Trading Hours</h3><p>We&#x27;re open 7 days a week for lunch and dinner. Our self-serve buffet is on hold until further notice.</p><h3>Manly Village</h3><p>Manly was once a fishing village and is now a beautiful boat harbour. There&#x27;s sailing, bird-watching, cycling and swimming, plus a wide range of food and shopping options, so there&#x27;s plenty to do before or after a meal with us.</p></section><section class="wrap content" id="functions"><h2>Functions</h2><p>Planning a function? Look no further than the Deck. It can be booked exclusively for a birthday, an anniversary, an office party or any other occasion you want to celebrate. We host gatherings of up to 150 people, so if you&#x27;re already looking for a spot for your Christmas party, let us know.</p><p>There are two Deck booking slots every day: lunch and dinner. You&#x27;ll need a minimum of 30 people for bookings Monday to Thursday, and a minimum of 40 people for Friday, Saturday or Sunday.</p><h3>Good to know</h3><ul><li>Your booking fee includes use of the running tab and service from our bar and wait staff</li><li>Choose from hot and cold platters, a 2-course or 3-course meal, or a buffet</li><li>You can run a bar tab at your function</li><li>You&#x27;re welcome to bring cake and decorations. A cleaning fee may apply at management&#x27;s discretion if decorations and rubbish are left behind</li><li>Your booking is secured once the fee is paid</li></ul><p>Give us a call on 3396 3824 to chat about your function.</p></section>
 

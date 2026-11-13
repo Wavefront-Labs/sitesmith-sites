@@ -87,8 +87,19 @@ Here is…”</p><footer>★★★★★ Satwik Aldas</footer></blockquote><bloc
 
 <section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
-  
+  <div id="menu-body"></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="eat-drink"><h2>Eat &amp; Drink</h2><p>Open for breakfast and lunch seven days a week, variety is the key ingredient of our internationally inspired menu. From hearty breakfasts to casual bites and à la carte restaurant fare, our well-crafted menu offers something for everyone.</p><p>Our fresh, delicious food is matched with some of Australia&#x27;s best boutique wines, as well as a variety of beers and ciders.</p><h3>A few favourites from our kitchen</h3><ul><li>Breakfast Bruschette</li><li>Big Breakfast</li><li>Saganaki</li><li>Open Lamb Souvlakia</li><li>Hand-cut Calamari</li><li>Cake and Coffee</li></ul><p>Scan the QR code in store to view our online menu.</p><h3>Hours</h3><ul><li>7.00am to 4:00pm Monday &amp; Friday</li><li>8:00am to 4:00pm Saturday &amp; Sunday</li></ul></section><section class="wrap content" id="functions-events"><h2>Functions &amp; Events</h2><p>The Public&#x27;s Corner is a well-known meeting place in the heart of Dandenong, with both indoor and outdoor seating areas available.</p><p>Whether it&#x27;s a social gathering with friends, a group lunch or a work function, The Public&#x27;s Corner is an ideal venue for any occasion. After a quick lunch for a large group? Get in touch and we&#x27;ll look after you.</p></section>
 

@@ -83,8 +83,19 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
 
 <section class="wrap" id="menu" >
   <h2>Menu</h2>
-  <p class="menu-note"><a class="btn" href="http://www.dougsseafoodcafe.com.au/menu.html">View our menu</a></p>
+  <div id="menu-body"><p class="menu-note"><a class="btn" href="http://www.dougsseafoodcafe.com.au/menu.html">View our menu</a></p></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="our-menu"><h2>Our Menu</h2><p>There&#x27;s something for everyone at Doug&#x27;s, from a hearty breakfast to fish and chips by the beach. Our menus cover:</p><ul><li>Burgers, salads, packs and kids menu</li><li>Fish, chips &#x27;n bits and house specialties</li><li>Vegetarian options</li></ul><h3>Phone Orders</h3><p>Call (07) 3269 4713 to place your order. You can dine in, take away or get delivery.</p><h3>Weekend Hours</h3><p>Saturday to Sunday, 7.30am to 8pm. We close at 7.30pm during the winter months.</p></section><section class="wrap content" id="gift-vouchers"><h2>Gift Vouchers</h2><p>Gift vouchers are available at Doug&#x27;s Seafood Cafe. They make an easy present for anyone who loves seafood by the beach.</p></section>
 

@@ -86,8 +86,19 @@ Order from the counter and meals were brought to our table. Shame they weren’t
 
 <section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
-  
+  <div id="menu-body"></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="the-bistro"><h2>The Bistro</h2><p>Be surprised! Our menu offers a wide selection, from the grill to salads or a seafood option, finishing off with a tasty sweet dessert. Our aim is appetising and delicious value-for-money meals in a relaxing atmosphere. Come, experience and enjoy.</p><h3>Lunch and dinner hours</h3><ul><li>Lunch: Wednesday to Sunday, 12:00pm to 2:00pm</li><li>Dinner: Wednesday to Sunday, from 6:00pm</li><li>Phone 02 6059 1079</li></ul><h3>Quick lunches</h3><p>Ask about our $10 summer Express lunch options. Short on time? Email through a lunch pre-order form and your meal will be ready to enjoy.</p></section><section class="wrap content" id="the-spike-bar"><h2>The Spike Bar</h2><p>Whether it&#x27;s social, business, a game of pool or darts, a flutter at the TAB or just a catch up with friends, the Spike Bar welcomes everyone. Enjoy a drink overlooking the picturesque 9th green. You don&#x27;t need to be a member of the golf club to enjoy our facility.</p><p>Holding over 200 guests, the Spike Bar is also a great venue for more casual functions, parties and special occasions.</p><h3>Open daily</h3><ul><li>Monday: 12.00am to 4.00pm</li><li>Tuesday: 12.30pm to 3.00pm</li><li>Wednesday to Sunday: 11am to late</li></ul></section><section class="wrap content" id="functions-at-the-clubhouse"><h2>Functions at the Clubhouse</h2><p>Formal or casual, corporate or private, large or small, we have options for any special event. Our two newly renovated function rooms cater for groups of 30 to 200, perfect for weddings, birthdays, family events, corporate golf days and conferences.</p><p>Our experienced kitchen has developed event menus suited to most occasions, with sit-down menus or fancy finger food. Have a special request? Our team will happily work with you to put together a package to suit.</p><ul><li>Platters</li><li>Standard alternate serve menu</li><li>Premium alternate serve menu</li><li>Gourmet canapes</li></ul><p>For booking enquiries, email functions@clubhousebarandbistro.com or phone 02 6059 1079.</p></section>
 

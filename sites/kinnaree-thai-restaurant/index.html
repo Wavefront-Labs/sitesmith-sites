@@ -84,8 +84,19 @@ Family enjoyed their meals but it felt like there was something missing flavour 
 
 <section class="wrap" id="menu" >
   <h2>Menu</h2>
-  <p class="menu-note"><a class="btn" href="https://www.kinnareethaibribie.com.au/menu.php">View our menu</a></p>
+  <div id="menu-body"><p class="menu-note"><a class="btn" href="https://www.kinnareethaibribie.com.au/menu.php">View our menu</a></p></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="annual-holiday-closure"><h2>Annual Holiday Closure</h2><p>To all our wonderful customers: we will be closed for annual holidays from the 22nd of March until the 27th of April 2026 (five weeks).</p><p>All trading will commence as usual, apart from Tuesday the 28th of April.</p><p>We apologise for any inconvenience caused. Thank you for your support and understanding.</p></section>
 

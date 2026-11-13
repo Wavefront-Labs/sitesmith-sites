@@ -83,8 +83,19 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
 
 <section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
-  
+  <div id="menu-body"></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="coffee"><h2>Coffee</h2><p>With knowledge comes understanding. With passion comes love in your cup.</p><p>We proudly serve a custom roasted 100% Arabica House Blend, crafted exclusively for us with tasting notes of milk chocolate, dulce de leche and creamy hazelnut.</p><p>We rotate carefully selected single origins from Colombia, Ethiopia, Guji &amp; Papua New Guinea. Alongside them we pour weekly guest single origins, washed filter coffees and decaf from ST. ALi.</p><h3>How we brew</h3><ul><li>Espresso</li><li>Single Origin Espresso</li><li>V60 Pour Over</li><li>Batch Brew</li><li>Cold Brew</li><li>Cold Drip</li></ul><p>Everything is brewed on the iconic Synesso Cyncra. Retail 1kg bean bags are available in-store.</p></section><section class="wrap content" id="food"><h2>Food</h2><p>One Penny grub is unique and wholesome, letting locally sourced produce speak for itself.</p><p>Our menu is seasonal, with classics that never change and consideration for diverse diets, including vegetarian options.</p></section><section class="wrap content" id="ambience"><h2>Ambience</h2><p>Sympathetically lit, laid back and comfortable, with a homely warmth during any season. Settle in inside or grab a spot in our outdoor seating.</p><p>Bookings are welcome. Reserve a table online at bookings.wowapps.com/make-booking/onepennyblack.</p></section>
 

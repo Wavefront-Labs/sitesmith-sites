@@ -11,3 +11,9 @@ routes = [{ pattern = "*-preview.wavefrontlabs.dev/*", zone_name = "wavefrontlab
 [assets]
 directory = "./sites"   # only the site folders (plus sites/404.html) are uploaded; repo files stay out
 binding = "ASSETS"
+run_worker_first = true   # the Worker owns /edit and /api/* on every site; everything else falls through to the static files
+
+# owner-editable data: menu:<slug> (JSON the site renders live), token:<slug>:<token> (magic-link sessions, 60 days)
+[[kv_namespaces]]
+binding = "SITEDATA"
+id = "de9756f44ec94868ae55b94c0348f14d"

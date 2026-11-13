@@ -84,8 +84,19 @@ I ordered on Doordash the halal BBH. Not my first time, should have been the 4th
 
 <section class="wrap" id="menu" >
   <h2>Menu</h2>
-  <p class="menu-note"><a class="btn" href="https://saltandpeppernorwood.wixsite.com/saltandpeppernorwood#menu">View our menu</a></p>
+  <div id="menu-body"><p class="menu-note"><a class="btn" href="https://saltandpeppernorwood.wixsite.com/saltandpeppernorwood#menu">View our menu</a></p></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="something-for-everyone"><h2>Something for Everyone</h2><p>We do our best to cater for our diverse range of customers. Our menu offers the following options:</p><ul><li>Vegetarian</li><li>Vegan</li><li>Halal</li><li>Gluten-free</li><li>Lactose-free</li></ul><p>We believe authentic flavour can be drawn from our fresh produce without the unnecessary stuff. Everything we offer is low in MSG, and we have some MSG-free options too, if that&#x27;s what floats ya boat.</p></section><section class="wrap content" id="bookings-and-takeaway"><h2>Bookings and Takeaway</h2><p>Bookings and takeaway orders are taken over the phone.</p><p>Please make a booking if you have a group of 4 or more. We don&#x27;t want to turn you away once our cosy space starts filling up!</p></section><section class="wrap content" id="catering"><h2>Catering</h2><p>Did you know we offer catering? Our entire menu is fine for catering.</p><p>Just give us the details at least 2 days beforehand and we&#x27;ll make it happen. Call us or email saltandpeppernorwood@gmail.com.</p></section><section class="wrap content" id="some-nice-things-people-have-s"><h2>Some Nice Things People Have Said</h2><p>&quot;I&#x27;ve been eating here at least once a week for the past year now, the pho rocks! The owners are really friendly and passionate about what they do. They keep the place clean, but most importantly the food is really tasty and fresh.&quot;</p><p>&quot;Excellent restaurant in the heart of Norwood. Hidden just behind Argo, Salt &amp; Pepper offer honest healthy Vietnamese at un-inflated prices. Everything is great, but the salt &amp; pepper squid was unbelievable.&quot;</p><p>&quot;Amazing store long overdue at Norwood selling quality and tasty Vietnamese food. The pho there is amazing - fresh, flavoursome and made with lots of love.&quot;</p><p>&quot;This place is a hidden gem. Best pho I have tried in Australia. 100% recommended.&quot;</p><p>Thank you!</p></section>
 

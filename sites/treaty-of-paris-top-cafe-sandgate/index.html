@@ -85,8 +85,19 @@ We just showed up on a Saturday morning and got seated immediately. After orderi
 
 <section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
-  
+  <div id="menu-body"></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="made-fresh-every-day"><h2>Made Fresh Every Day</h2><p>From our 72-hour fermented sourdough to our handmade pastries and desserts, each creation is a celebration of balance: the elegance of France, the freshness of Australia and the warmth of Sandgate.</p><p>Find us at 104 Wakefield St, Sandgate, just up from the water, with a covered outdoor area for coffee in the sea breeze. Dine in, take away, or book ahead online.</p></section><section class="wrap content" id="opening-hours"><h2>Opening Hours</h2><ul><li>Tuesday to Sunday, 6:00 AM to 1:00 PM</li><li>Kitchen open 7:00 AM to 1:00 PM</li><li>Phone 0732 692 821</li><li>Email sunny@topsandgate.com.au</li></ul></section>
 

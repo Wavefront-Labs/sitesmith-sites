@@ -84,8 +84,19 @@ Thank you for the variety of food and ease of car…”</p><footer>★★★★ 
 
 <section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
-  
+  <div id="menu-body"></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="eat-in-take-away-or-delivered"><h2>Eat in, take away or delivered</h2><p>Drop in for lunch or dinner, sit down with table service, or grab it to go. Delivery is available, including no-contact delivery.</p><ul><li>Takeaway</li><li>Delivery and no-contact delivery</li><li>Dine in with table service</li><li>Quick bites, lunch and dinner</li><li>Catering for groups</li><li>Wheelchair access throughout</li></ul><h3>Local favourites</h3><p>Our regulars keep coming back for the BBQ chickens, chicken and chips, the continental chicken pack, the works burger, steak sandwiches, the Caesar salad and our pork roll with gravy or apple sauce.</p><h3>Ways to pay</h3><ul><li>EFTPOS</li><li>Mastercard</li><li>Visa</li><li>Google Pay</li><li>Apple Pay</li></ul></section>
 

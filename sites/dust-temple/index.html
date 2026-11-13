@@ -87,8 +87,19 @@ We have loved hosting our workshops here, and the team has always been incredibl
 
 <section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
-  
+  <div id="menu-body"></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="day-and-night-at-dust"><h2>Day and Night at Dust</h2><h3>By day</h3><ul><li>Locally roasted specialty coffee</li><li>Curated tea, cold drinks and refreshments</li><li>A perfect workspace or casual meetup spot</li><li>Dine in, takeaway or outdoor seating, with vegetarian options</li></ul><h3>After dark</h3><ul><li>Live music events with house DJs</li><li>Poetry nights and intimate performances</li><li>Fully licensed bar with craft beers, wines and cocktails</li></ul><p>Open Tuesday to Sunday, 7am to 1:30pm. Events extend late.</p></section><section class="wrap content" id="host-your-event"><h2>Host Your Event</h2><p>Nestled in Currumbin Waters, our venue blends art, music, food and good vibes. Host your next gathering, whether it&#x27;s a corporate function, birthday or creative workshop, for 20 to 200 guests in our versatile renovated space.</p><ul><li>Music events and DJ nights</li><li>Art exhibitions and launches</li><li>Food and bar experiences</li><li>Workshops and performances</li><li>Private functions and team events</li></ul><p>Find us at 54 Currumbin Creek Rd, Currumbin Waters QLD 4223. Let&#x27;s create something magical together.</p></section>
 

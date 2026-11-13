@@ -86,8 +86,19 @@ The highlights of the experience were definitely the fluffy pizza crust, beautif
 
 <section class="wrap" id="menu" >
   <h2>Menu</h2>
-  <p class="menu-note"><a class="btn" href="https://www.baritaliagoldcoast.com.au/menus/BarItalia-Surfers-Paradise-Breakfast-Menu.pdf">View our menu</a></p>
+  <div id="menu-body"><p class="menu-note"><a class="btn" href="https://www.baritaliagoldcoast.com.au/menus/BarItalia-Surfers-Paradise-Breakfast-Menu.pdf">View our menu</a></p></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="eat-with-us"><h2>Eat With Us</h2><p>We open from 6:30am for coffee, and the kitchen opens at 7am for breakfast, lunch, dinner and takeaway. We offer gluten free options and a vegetarian menu.</p><p>Our modern Italian menu has our take on the classics as well as some unique dishes, made for sharing with family and friends and celebrating life in style. We use products imported from Italy alongside locally sourced Queensland produce to make the Italian dishes we all love to eat.</p><h3>Opening hours</h3><ul><li>Most days: coffee from 6:30am, kitchen opens at 7am, lunch until 1:30pm, evenings from 5pm until late</li><li>Tuesday: 6:30am to 1:30pm</li></ul><p>Bookings are available online through OpenTable.</p></section><section class="wrap content" id="breakfast-coffee"><h2>Breakfast &amp; Coffee</h2><p>Coffee starts at 6:30am, 7 days a week. Grab one to go, or sit in and enjoy the morning sun. We&#x27;re serving Allpress Espresso.</p><p>Breakfast runs from 7am to 11:30am, with all the family favourites plus some of our own creations, and plenty of gluten free and vegetarian options.</p><ul><li>All our breads are sourdough, made locally by Pixel Bakehouse</li><li>Free range eggs</li><li>Byron Bay bacon</li></ul></section><section class="wrap content" id="functions-catering"><h2>Functions &amp; Catering</h2><p>Baritalia is the perfect venue for group bookings, corporate functions and celebrations of all kinds.</p><p>We also cater for events at your home or workplace. For groups of 10 or more, sharing grazing boards are what we do best.</p><p>Talk to us about how we can make your next event special.</p></section>
 

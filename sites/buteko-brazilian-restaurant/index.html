@@ -84,8 +84,19 @@ Would I return? Yes, definitely for the steak — but next time I’d be…”</
 
 <section class="wrap" id="menu" hidden>
   <h2>Menu</h2>
-  
+  <div id="menu-body"></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="what-s-on"><h2>What&#x27;s On</h2><p>Australia&#x27;s first Buteko by the beach, offering a full and unique Brazilian experience at Scarborough Beach. Sharing is caring, so make the best moments with your best people.</p><h3>Fridays: Brazilian Live Music</h3><p>Join us for Brazilian live music on Fridays. Live music is on every weekend in summer, and it&#x27;s always free.</p><h3>Fridays, Saturdays and Sundays: $65 Bottomless Fun Weekend</h3><p>Gather your crew and head to Scarborough Beach for our $65 Bottomless Fun Weekend.</p><h3>Every day (closed Tuesdays): Brazilian BBQ Board</h3><p>Something special to share with your crew. Got a big appetite? Bring your friends and family and dig into our Brazilian BBQ Board.</p><h3>Seafood Board and Giant Fishbowl</h3><p>Have you tried our Seafood Board for 2 paired with a 1.8L Giant Fishbowl? Pick your favourite:</p><ul><li>Green: Brazilian Mojito</li><li>Blue: The Drunken Barber</li><li>Red: Strawberry Storm</li><li>Yellow: Scarbs Passion</li></ul></section><section class="wrap content" id="our-food-and-drinks"><h2>Our Food and Drinks</h2><p>A taste of what you&#x27;ll find at Buteko:</p><ul><li>$16.90 Weekday Brazilian Set Meal (PF)</li><li>Brazilian BBQ Board for 2+</li><li>Brazilian Picanha Steak</li><li>Brazilian Salgados</li><li>Brazilian Chips (Cassava)</li><li>Smoked Sausage &amp; Chips</li><li>Salt &amp; Pepper Calamari</li><li>Tempura Prawns</li><li>Chicken Parmi</li><li>Lunch Bites</li><li>Handcrafted Sauces</li><li>Dessert: Sweet Pinnacles</li><li>Guarana (Brazilian soft drink)</li><li>Our delicious mocktails</li></ul></section>
 

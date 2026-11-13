@@ -86,8 +86,19 @@ Q: How was the…”</p><footer>★★★★★ Ines Fernandes</footer></blockqu
 
 <section class="wrap" id="menu" >
   <h2>Menu</h2>
-  <p class="menu-note"><a class="btn" href="http://www.theroost53.com/menu">View our menu</a></p>
+  <div id="menu-body"><p class="menu-note"><a class="btn" href="http://www.theroost53.com/menu">View our menu</a></p></div>
 </section>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
 
 <section class="wrap content" id="hours-and-ordering"><h2>Hours and Ordering</h2><ul><li>Monday to Friday: 5am until 1:30pm</li><li>Saturday: 6am until 10:30am</li></ul><p>Dine in or take away. For speedy pick up, call us on (07) 5591 7438 to place your order, or get it delivered via Uber Eats.</p><p>We&#x27;re licensed and serve a selection of beer, cider and wines. Our daily specials are posted on Instagram and Facebook.</p><p>You&#x27;ll find us at 53 Johnston Street, Southport QLD 4215.</p></section><section class="wrap content" id="saturday-mornings"><h2>Saturday Mornings</h2><p>Saturdays are back, 6am until 10:30am. Here&#x27;s what&#x27;s on:</p><ul><li>Scrambled eggs, bacon, cheese, salsa and hot sauce</li><li>Scrambled eggs, spinach, pumpkin, cheese, salsa and hot sauce</li><li>2 eggs your way with house toast</li><li>Grilled scotch fillet, tomato relish, spinach, fried egg, hash brown, pesto with a side of aioli</li><li>2 eggs your way, bacon, sausage, hash brown, baked beans, tomato and house bread</li><li>Ham and cheese toasted sandwich</li></ul></section><section class="wrap content" id="catering-and-private-parties"><h2>Catering and Private Parties</h2><p>Need your party or event catered? We&#x27;ve been in the biz for a long time. Formerly known as Canadian Kitchen Catering, our outside catering now runs under The Roost. If you&#x27;re interested in delicious, gourmet food at reasonable prices, we&#x27;d love to hear from you.</p><p>The Roost is now available for private parties.</p><p>Call Linda on 0419 657 558 or email hello@theroost53.com.</p></section>
 
