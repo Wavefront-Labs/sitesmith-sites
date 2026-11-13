@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>DRY LEAF CAFE</title>
+<meta name="description" content="Organic coffee and Nepalese-inspired cafe food on Spit Road, Mosman.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#8a3b1f;--bg:#f7f1e6;--ink:#2b2118;--card:#fffaf2;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
+.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
+h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+iframe{width:100%;height:320px;border:0;border-radius:16px}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body class="hero-split rounded">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#about-us">About Us</a><a href="#all-day-menu">All-Day Menu</a><a href="#what-people-say">What People Say</a><a href="#hours">Hours &amp; location</a></div></nav>
+
+<header class="hero" >
+  <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcC9ujGQ8lyrgwxp6vQihn0ojdbFEsMcoTCjtgLGDdA7_otAM4DjUqOMuGPiUzQ2_z49DIrbSZmNEf-H86ARNvU24wX7PkMPxVe-l00JrUrqVrXJgb1B0dZbalsD-KfljN9S7yyoX4YZ1dL=s4800-w1600" alt="DRY LEAF CAFE">
+    <div>
+    <img class="logo" src="https://static.wixstatic.com/media/0122da_4347cd3643e94a6bb6cc77c84a9b53a8~mv2.jpg/v1/fill/w_101,h_101,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo%20prabhu.jpg" alt="DRY LEAF CAFE logo">
+    <h1>DRY LEAF CAFE</h1>
+    <p class="tag">Organic coffee and Nepalese-inspired cafe food on Spit Road, Mosman.</p>
+    <p class="rating">4.7 ★ on Google (281 reviews)</p>
+    <a class="btn" href="tel:0286685022">Call (02) 8668 5022</a> <a class="btn ghost" href="mailto:thedryleafcafe@gmail.com">Email us</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="about">
+  <h2>About</h2>
+  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Vegetarian options</li></ul>
+  <p>Since 2017, The Dry Leaf Cafe has been serving Mosman with a passion for hospitality and a love of beautiful, quality coffee. Our menu is simple, healthy and delicious, inspired by a fusion of authentic Asian (Nepalese) and modern Australian flavours.</p><p>You&#x27;ll find us at 26 Spit Road, Mosman, right next to the B1 bus stop heading northbound. Locals love our warm, cosy, peaceful vibe, and our team takes pride in food that looks good and tastes amazing.</p>
+</section>
+
+<section class="wrap" >
+  <h2>What people say</h2>
+  <div class="grid"><blockquote><p>“On a 4 day holiday, we visited here 3 times! Shows how warm, welcoming and delicious it was.
+
+The chefs chai was the best I&#x27;ve ever had in Sydney (I think they are on to something with oat milk as standard for this chai). And came in a big two cup pot.
+
+The curry yum…”</p><footer>★★★★★ Rohan Smith</footer></blockquote><blockquote><p>“Had a great experience at Dry Leaf Cafe! Excellent service, welcoming atmosphere, and great quality. Everything was on point, and the staff were friendly and helpful. Definitely recommend checking this place out. Will be back again!”</p><footer>★★★★★ cem naz</footer></blockquote><blockquote><p>“Staff was super friendly! The cafe is really cute, tried their nepalese food, momo with chili and it is packed with flavour. Don’t be scared of the spices, they work really well and you can always ask them to tone it down.”</p><footer>★★★★★ Antonia Junita</footer></blockquote></div>
+</section>
+
+<section class="wrap" id="menu" >
+  <h2>Menu</h2>
+  <div class="menu"><div><h3>Breakfast</h3><div class="item"><span>Buckwheat Pancake (recommended)<small>Served with coconut yoghurt, berries and seasonal fruits with honey</small></span><span class="price"></span></div><div class="item"><span>Mountain Paleo Breakfast (chef&#x27;s recommended)<small>Cauliflower fritters, kale, roasted mushroom, bacon and poached eggs. Vegan option also available</small></span><span class="price"></span></div><div class="item"><span>Toast<small>Butter, jam or Vegemite on your choice of white, brown, multigrain or rye. Gluten-free, raisin toast or sourdough extra $2</small></span><span class="price"></span></div></div><div><h3>Extras</h3><div class="item"><span>Eggs of your choice (two eggs)</span><span class="price">$5</span></div><div class="item"><span>Bacon, sausage, halloumi or avocado</span><span class="price">$5</span></div><div class="item"><span>Roast tomatoes or mushroom</span><span class="price">$4.50</span></div><div class="item"><span>Smoked salmon</span><span class="price">$7.50</span></div></div></div>
+</section>
+
+<section class="wrap content" id="about-us"><h2>About Us</h2><p>Our cafe has something for everyone, including gluten-free and vegan cakes, pies and sandwiches, along with hot food, cold brews, cold drinks, freshly squeezed juices, smoothies and more.</p><h3>Proudly serving Sacred Ground Coffee</h3><p>We proudly serve Sacred Ground, a 100% certified organic and fair-trade coffee. We take our coffee very seriously and use the highest grade beans to get the best brews and the best aromatic coffee flavour. Sacred Ground&#x27;s coffee and roasting facility is certified organic by Australian Certified Organic (ACO).</p><p>Organic and fair-trade coffee has been at the heart of our cafe from the beginning. We believe it&#x27;s a better choice for the planet, for communities and for all of us coffee lovers.</p><h3>Our food</h3><p>We serve breakfast and lunch on an all-day menu, with gluten-free, vegetarian, dairy-free and vegan options. We believe fresh, unprocessed, quality food makes for an exciting, delicious and heartwarming menu, and we make as many of our ingredients in the cafe as we can for that home-made taste.</p><p>Some of our favourite dishes include our gluten-free, vegan buckwheat pancake, the Mountain Paleo, traditional mountain curries, dumplings, cumin beef burger and seafood chowder.</p></section><section class="wrap content" id="all-day-menu"><h2>All-Day Menu</h2><p>Our whole menu is available all day. A few of our breakfast plates:</p><ul><li>Two slices of sourdough toast with avocado, feta, sumac, baby rocket, poached eggs and balsamic reduction</li><li>Poached eggs on an English muffin with homemade hollandaise, with your choice of sliced ham, bacon or smoked salmon</li><li>Chorizo, roasted capsicum, mushroom, kale, poached eggs and sourdough toast</li><li>Bacon, scrambled eggs, hash brown, spinach, tomato and aioli, with toast or croissant</li><li>Two short-cut bacon and two fried eggs with your choice of sauce</li><li>Halloumi, hash brown, roast tomato, avocado, mushroom, eggs of your choice and sourdough toast</li><li>Bacon, sausages, mushroom, roast tomato, hash brown, eggs of your choice and sourdough toast</li><li>Almond milk, fruits, granola, honey and cinnamon</li><li>Bacon, two fried eggs, hash brown, avocado, spinach and tomato with aioli and tomato relish</li><li>Chorizo, onion, feta, mushroom, capsicum and spinach, served with toast</li><li>Mushroom, capsicum, cheese and onion, served with toast</li></ul></section><section class="wrap content" id="what-people-say"><h2>What People Say</h2><p>&quot;I get my morning coffee here every day, along with their bacon and egg roll and other breakfast choices. Love the cappuccino, the quality and taste is consistent every time. The staff and barista are all friendly people. I recommend this place if you are in Mosman and in search of a cafe.&quot; - John Rubio</p><p>&quot;Great food, wasn&#x27;t expecting it to be so good. Also not vegetarian if the name has you wondering.&quot; - Simon Jacobson</p><p>&quot;Highly recommend this friendly local cafe to everyone in Mosman. Their momo in soup (Nepalese dumpling) is my winter favourite. The spice of the soup is so warming and satisfying.&quot; - Tks Nicole</p><p>&quot;The chef&#x27;s chai was the best I&#x27;ve ever had in Sydney. And came in a big two cup pot.&quot; - Google review</p></section>
+
+<section class="wrap" >
+  <h2>Gallery</h2>
+  <div class="gallery"><img src="https://static.wixstatic.com/media/54a43334149c411a9d728f5f796d0228.jpg/v1/fill/w_77,h_51,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/54a43334149c411a9d728f5f796d0228.jpg" alt="DRY LEAF CAFE"><img src="https://static.wixstatic.com/media/0122da_6056b04e030045318ae673df80a0a7d3~mv2.jpg/v1/fill/w_69,h_66,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/0122da_6056b04e030045318ae673df80a0a7d3~mv2.jpg" alt="DRY LEAF CAFE"><img src="https://static.wixstatic.com/media/0122da_6567c7bfc40944d683484380a941f647~mv2.jpg/v1/fill/w_69,h_66,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/0122da_6567c7bfc40944d683484380a941f647~mv2.jpg" alt="DRY LEAF CAFE"><img src="https://static.parastorage.com/services/restaurant-menus-showcase-ooi/bdef6d579d3d9fd065b351c9e92993be119e5cfffa4a75d17b176d77/media/menus_side_image.7077f229.jpeg" alt="DRY LEAF CAFE"><img src="https://static.wixstatic.com/media/0122da_924e787ef15f4573a3d0deff084123a1~mv2.jpg/v1/fill/w_115,h_144,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_auto/0122da_924e787ef15f4573a3d0deff084123a1~mv2.jpg" alt="DRY LEAF CAFE"><img src="https://static.wixstatic.com/media/0122da_7580bdf9a5dc42a5a20e4ba7d87d5fff~mv2.jpg/v1/fill/w_95,h_95,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_auto/0122da_7580bdf9a5dc42a5a20e4ba7d87d5fff~mv2.jpg" alt="DRY LEAF CAFE"><img src="https://static.wixstatic.com/media/0122da_38b76fb1f34847fd9e516fb847d05e56~mv2.jpg/v1/fill/w_132,h_129,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_auto/0122da_38b76fb1f34847fd9e516fb847d05e56~mv2.jpg" alt="DRY LEAF CAFE"><img src="https://static.wixstatic.com/media/0122da_4095a6eef5e34c328ec79d41c786593d~mv2.jpg/v1/fill/w_134,h_134,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_auto/0122da_4095a6eef5e34c328ec79d41c786593d~mv2.jpg" alt="DRY LEAF CAFE"></div>
+</section>
+
+<section class="wrap" id="hours">
+  <div class="grid">
+    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>6:30 AM – 4:00 PM</td></tr><tr><th>Tuesday</th><td>6:30 AM – 4:00 PM</td></tr><tr><th>Wednesday</th><td>6:30 AM – 4:00 PM</td></tr><tr><th>Thursday</th><td>6:30 AM – 4:00 PM</td></tr><tr><th>Friday</th><td>6:30 AM – 4:00 PM</td></tr><tr><th>Saturday</th><td>7:00 AM – 4:00 PM</td></tr><tr><th>Sunday</th><td>8:00 AM – 4:00 PM</td></tr></table></div>
+    <div class="card"><h2>Find us</h2><p>26 Spit Rd, Mosman NSW 2088, Australia</p><p><a href="https://maps.google.com/?cid=6699145868333225720&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0286685022">Call (02) 8668 5022</a> <a class="btn ghost" href="mailto:thedryleafcafe@gmail.com">Email us</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=26%20Spit%20Rd%2C%20Mosman%20NSW%202088%2C%20Australia&output=embed" title="Map"></iframe>
+</section>
+
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/thedryleafcafe/?ref=bookmarks" rel="noopener">Facebook</a><a href="https://www.instagram.com/thedryleafcafe" rel="noopener">Instagram</a></div>&copy; 2026 DRY LEAF CAFE &middot; Cafe</footer>
+</body>
+</html>
