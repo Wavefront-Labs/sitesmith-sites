@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Emily Yeoh Restaurant</title>
+<meta name="description" content="Modern Asian fusion casual dining in Paddington, Brisbane">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#A3262A;--bg:#FBF5EE;--ink:#2A1A17;--card:#FFFDFA;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
+.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
+h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+iframe{width:100%;height:320px;border:0;border-radius:16px}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body class="hero-split rounded">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#lunch-and-bookings">Lunch and Bookings</a><a href="#our-famous-mud-crabs">Our Famous Mud Crabs</a><a href="#what-s-on">What&#x27;s On</a><a href="#gift-cards-and-house-made-sauc">Gift Cards and House-Made Sauces</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://www.opentable.com.au/booking/restref/availability?lang=en-AU&amp;amp;correlationId=a38390ad-9148-4779-8ae4-d24963f6a925&amp;amp;restRef=135734&amp;amp;otSource=Restaurant%20website" rel="noopener">Book a table</a></div></nav>
+
+<header class="hero" >
+  <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdzZ6mvSuPoIaanYS4EJrJhQw3xFwZSkxuXtl9MNqSqGYq7w7yg2C_gof5PfqHcevqvp3bbgUA9p6fE-HfPF5mYsfigOAvq1JlR7ymHNsogM3c7titJrQNFY8MD-dju96EmFnbb=s4800-w1600" alt="Emily Yeoh Restaurant">
+    <div>
+    <img class="logo" src="https://static.wixstatic.com/media/4822b4_aaa8eb0adf9f44bebd804484592c26e7~mv2.png/v1/fill/w_181,h_103,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/emilyyeoh-logo.png" alt="Emily Yeoh Restaurant logo">
+    <h1>Emily Yeoh Restaurant</h1>
+    <p class="tag">Modern Asian fusion casual dining in Paddington, Brisbane</p>
+    <p class="rating">4.4 ★ on Google (649 reviews)</p>
+    <a class="btn" href="tel:0733683868">Call (07) 3368 3868</a> <a class="btn ghost" href="mailto:reservations@emilyyeoh.com.au">Email us</a> <a class="btn ghost" href="https://www.opentable.com.au/booking/restref/availability?lang=en-AU&amp;amp;correlationId=a38390ad-9148-4779-8ae4-d24963f6a925&amp;amp;restRef=135734&amp;amp;otSource=Restaurant%20website" rel="noopener">Book a table</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="about">
+  <h2>About</h2>
+  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
+  <p>At Emily Yeoh, we promise to treat you with respect and kindness, serve delicious food and exceptional wine, and welcome you as a friend and family. Emily offers her Asian-fusion-inspired dishes in a casual and relaxed dining atmosphere in the beautiful suburb of Paddington, Brisbane.</p><p>Specialties include Roast Duck, Char-Xiu Pork, and street food from Malaysia, Singapore, Thailand, South Korea, Japan and Hong Kong.</p>
+</section>
+
+<section class="wrap" >
+  <h2>What people say</h2>
+  <div class="grid"><blockquote><p>“I had my 60th birthday dinner at Emily Yeoh Restaurant last night with my family and had a wonderful evening.
+
+The atmosphere and service were very welcoming and the food was insanely delicious.
+
+We had the duck spring rolls and aburi salmon on calamari toast for…”</p><footer>★★★★★ Michael Freeman</footer></blockquote><blockquote><p>“I think hands down they had the best Hainan chicken rice so far I’ve tried around Australia. The duck curry was perfectly cooked, and the nyonya curry vegetables were absolutely amazing.
+Would recommend you to try her food.
+
+Emily was friendly and knowledgeable with…”</p><footer>★★★★★ Jason Koo</footer></blockquote><blockquote><p>“I&#x27;ve been coming here for years but have been meaning to try Ems singapore chilli crab.....I can&#x27;t believe it&#x27;s taken me this long to try it! It was amazing. Full of flavour. I&#x27;ve now tried everything on this menu and can&#x27;t fault anything. Amazing service and great…”</p><footer>★★★★★ Naren S</footer></blockquote></div>
+</section>
+
+<section class="wrap" id="menu" >
+  <h2>Menu</h2>
+  <p class="menu-note"><a class="btn" href="https://www.emilyyeoh.com.au/menus">View our menu</a></p>
+</section>
+
+<section class="wrap content" id="lunch-and-bookings"><h2>Lunch and Bookings</h2><p>Emily Yeoh now offers Thursday to Sunday lunchtime takeaway. Order your lunch via Uber Eats or call us directly for pick-up.</p><p>Please note that weekday lunchtime service is takeaway only, with no dine-in. Dine-in lunch is still available on Saturdays and Sundays as usual.</p><ul><li>Hours: 11 AM to 2:30 PM and 5 PM to 8:45 PM</li><li>For bookings over 6 people, please call or email</li><li>Big bookings require a minimum of 24 hours&#x27; notice</li></ul></section><section class="wrap content" id="our-famous-mud-crabs"><h2>Our Famous Mud Crabs</h2><p>New menus are now in place, and we&#x27;ve kept the crowd favourites you know and love. Our famous Singaporean Chilli and Black Pepper Mud Crabs are here to stay, and they&#x27;re more popular than ever. We also have two new flavours: Ginger Shallot and Creamy Garlic Butter.</p><p>Crabs are now available shelled or de-shelled for your convenience. These signature dishes are known to sell out fast, so we highly recommend pre-ordering to avoid missing out.</p><h3>Reserve your crab</h3><p>To enjoy our de-shelled Mud Crabs, please pre-order by:</p><ul><li>Emailing us at reservations@emilyyeoh.com.au</li><li>Including your request in the notes section of your booking</li></ul><p>Please note that 24 to 48 hours&#x27; notice is required. Same-day requests cannot always be accommodated. Thank you for your understanding.</p></section><section class="wrap content" id="what-s-on"><h2>What&#x27;s On</h2><h3>Yeoh&#x27;s Sambal Christmas Banquet</h3><p>Our banquet is specially priced at just $88. We&#x27;ve made it as affordable as possible for you to enjoy with friends, colleagues and family this Christmas. With rising costs, we wanted to do something a little special and give back with a festive banquet at a price we hope everyone can enjoy.</p><p>Choose your main course:</p><ul><li>Sambal Stingray</li><li>Sambal Prawns</li></ul><p>Finish on a sweet note with your choice of dessert:</p><ul><li>Sticky Mango Rice</li><li>Black Forest Christmas Swiss Roll</li></ul><p>To make sure you get to experience the banquet, please reserve it in your booking notes at least 24 hours in advance. We cannot always guarantee availability of the banquet, crab or other specials for walk-ins.</p><h3>Add a crab</h3><p>You can upgrade your Christmas Banquet by adding one of our crabs. Due to seasonal availability and limited quantities this year, crab is strictly a pre-order item and must be requested when making your booking. We cannot guarantee availability for last-minute requests or walk-ins.</p><h3>New wines on their way</h3><p>We&#x27;re updating our wine list with some imports from South Africa and Italy, while keeping our own range and our collaboration range with Valentine Wines. Seasonal specials are also on the horizon.</p></section><section class="wrap content" id="gift-cards-and-house-made-sauc"><h2>Gift Cards and House-Made Sauces</h2><p>Grab a gift card for that impossible-to-buy-for special someone, or pick up one of our house-made sauces and become a MasterChef yourself. Sauces are made fresh in-house, so please give us a call and pick up at the restaurant.</p><ul><li>EY Spicy Sambal Sauce: perfect for nasi lemak, noodles, laksa, and even on your poached egg, avo and toast. Ask Emily for her secret hangover breakfast recipe with sambal sauce.</li><li>EY Peking Duck Sauce: designed specially for Peking duck, and also good with roast pork or even roast lamb.</li><li>A classic EY sambal sauce with a twist: caramelised pineapple and kaffir lime leaves with a hint of cinnamon and clove. It&#x27;s perfect for roast pork or even steak. Try it in a Bloody Mary. Emily calls it a Bloody Emily.</li><li>EY Laksa Paste: Emily&#x27;s signature laksa paste, which comes with her secret recipe. Made with mostly fresh ingredients from her own garden, it&#x27;s a multi-purpose kitchen favourite. Try laksa fried rice, a laksa omelette or your own curry laksa at home.</li></ul></section>
+
+<section class="wrap" >
+  <h2>Gallery</h2>
+  <div class="gallery"><img src="https://static.wixstatic.com/media/3c21b3_40d7e3e684f74f6c800247bcdeaad649~mv2.png/v1/fill/w_536,h_536,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/emily-hero.png" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_f2e3867b897c4b03ac940c5985ba60bc~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/3c21b3_f2e3867b897c4b03ac940c5985ba60bc~mv2.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_d080c279c8e34efd9a1372330d40f381~mv2.jpg/v1/fill/w_467,h_680,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Restaurant%20opening%20hours%20poster%20EY%20Oct%2026.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/4822b4_ac3fc54622c3417dad4c34c816811d92~mv2.jpg/v1/fill/w_96,h_121,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/4822b4_ac3fc54622c3417dad4c34c816811d92~mv2.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_b1de20eb16634a7e92e32ac0f37fd93b~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/3c21b3_b1de20eb16634a7e92e32ac0f37fd93b~mv2.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_b3d1412ea08c4416b09686c4e05d5d68~mv2.jpg/v1/fit/w_480,h_721,q_90,enc_avif,quality_auto/3c21b3_b3d1412ea08c4416b09686c4e05d5d68~mv2.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_0070d22d4ade49c0bf284840341f5e16~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/3c21b3_0070d22d4ade49c0bf284840341f5e16~mv2.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_5f32e16f96cf4a3cbb21124046e4918e~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/3c21b3_5f32e16f96cf4a3cbb21124046e4918e~mv2.jpg" alt="Emily Yeoh Restaurant"></div>
+</section>
+
+<section class="wrap" id="hours">
+  <div class="grid">
+    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>5:00 – 9:00 PM</td></tr><tr><th>Tuesday</th><td>Closed</td></tr><tr><th>Wednesday</th><td>Closed</td></tr><tr><th>Thursday</th><td>5:00 – 9:00 PM</td></tr><tr><th>Friday</th><td>5:00 – 9:00 PM</td></tr><tr><th>Saturday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Sunday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr></table></div>
+    <div class="card"><h2>Find us</h2><p>50/283 Given Ter, Paddington QLD 4064, Australia</p><p><a href="https://maps.google.com/?cid=6263127325476222635&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0733683868">Call (07) 3368 3868</a> <a class="btn ghost" href="mailto:reservations@emilyyeoh.com.au">Email us</a> <a class="btn ghost" href="https://www.opentable.com.au/booking/restref/availability?lang=en-AU&amp;amp;correlationId=a38390ad-9148-4779-8ae4-d24963f6a925&amp;amp;restRef=135734&amp;amp;otSource=Restaurant%20website" rel="noopener">Book a table</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=50/283%20Given%20Ter%2C%20Paddington%20QLD%204064%2C%20Australia&output=embed" title="Map"></iframe>
+</section>
+
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/@emilyyeohrestaurant" rel="noopener">Facebook</a><a href="https://www.instagram.com/emilyyeohrestaurant/?hl=en" rel="noopener">Instagram</a></div>&copy; 2026 Emily Yeoh Restaurant &middot; Asian Fusion Restaurant</footer>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Waterfront Restaurant</title>
+<meta name="description" content="Breakfast and lunch right on the beach at Urangan, Hervey Bay">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#0B6E7A;--bg:#F4F8F7;--ink:#16302F;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
+.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
+h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
+iframe{width:100%;height:320px;border:0;border-radius:16px}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body class="hero-fullbleed rounded">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#dining-at-the-waterfront">Dining at the Waterfront</a><a href="#weddings">Weddings</a><a href="#award-winning-wedding-venue">Award-Winning Wedding Venue</a><a href="#a-local-family-business">A Local Family Business</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://bookings.wowapps.com/make-booking/thewaterfrontrestaur?src=web" rel="noopener">Book a table</a></div></nav>
+
+<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcG-XV9oWb18EjMd2F0RoXv2FHOShHRNbD4Dvb9nJBkfmSNvfMuxGFFrI51flMLLRApIYt7PeonEqSO_2FyRekHbMf_hHZnVdP_X8MN4wfWvIHaC2MTqgeyNUhIejG2QnOVD3FH=s4800-w960)">
+  <div class="wrap">
+    
+    <div>
+    
+    <h1>Waterfront Restaurant</h1>
+    <p class="tag">Breakfast and lunch right on the beach at Urangan, Hervey Bay</p>
+    <p class="rating">4.4 ★ on Google (418 reviews)</p>
+    <a class="btn" href="tel:0741946733">Call (07) 4194 6733</a> <a class="btn ghost" href="mailto:waterfrontherveybay@gmail.com">Email us</a> <a class="btn ghost" href="https://bookings.wowapps.com/make-booking/thewaterfrontrestaur?src=web" rel="noopener">Book a table</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="about">
+  <h2>About</h2>
+  <ul class="tags"><li>Dine in</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
+  <p>The Waterfront Restaurant sits on the beach in Dayman Park, Urangan, with the most enviable view in Hervey Bay. We&#x27;re open for breakfast and lunch Wednesday to Sunday, 8am to 3pm, serving fresh seafood, steaks and generous plates looking out over the water.</p><p>We&#x27;re a family owned and operated business, built in 2004. We buy fresh local produce and seafood whenever we can, and we bake all of our desserts and cakes on the premises.</p>
+</section>
+
+<section class="wrap" >
+  <h2>What people say</h2>
+  <div class="grid"><blockquote><p>“🍹🍽 Highly reccomend this dining experience. We ate the grilled Barra, sampled their tasting plate and shared a dessert. Servings sizes were generous, fresh and were nicely garnished. A really large drinks range with both wines and beers Aussie made.
+
+The views over the…”</p><footer>★★★★★ Leisa Emblen</footer></blockquote><blockquote><p>“We went to this lovely restaurant for a spontaneous lunch with two adults and a baby. We ordered the reef world seafood plate and the seafood linguine as recommended by the waitress. The chefs did an excellent job with the dishes. Best battered barramundi I have ever…”</p><footer>★★★★★ Yasemin Tadj</footer></blockquote><blockquote><p>“Amazing experience 🌟
+
+✅ Amazing food
+✅ Exceptional customer service
+✅ Beautiful atmosphere
+
+The steak burger was so delicious and so tender.
+
+My mum has a very specific diet she needs to stick to. The wait staff and chef were very accommodating for her needs making her…”</p><footer>★★★★★ Bella Rosella</footer></blockquote></div>
+</section>
+
+<section class="wrap" id="menu" >
+  <h2>Menu</h2>
+  <div class="menu"><div><h3>……………………………………………………………….</h3><div class="item"><span>Garlic Bread</span><span class="price">$9.00</span></div><div class="item"><span>Add Cheese</span><span class="price">$11.00</span></div><div class="item"><span>Waterfront Bruschetta</span><span class="price">$15.90</span></div><div class="item"><span>Entree  Mains</span><span class="price">$24.90</span></div><div class="item"><span>Bucket of Prawns (A)</span><span class="price">$24.50</span></div><div class="item"><span>Crumbed Calamari (I) Entree  Mains</span><span class="price">$15.90</span></div><div class="item"><span>Pacific Oysters Natural (A) Single  ½ Doz  Doz</span><span class="price">$5</span></div><div class="item"><span>Kilpatrick/Mornay (A) Single  ½ Doz  Doz</span><span class="price">$5.50</span></div><div class="item"><span>Bowl of Chips<small> – Served with Aioli</small></span><span class="price">$7.50</span></div><div class="item"><span>Australian Scallops (A) Garlic Butter/Mornay Single  1/2 Doz</span><span class="price">$5.50</span></div><div class="item"><span>BLT</span><span class="price">$23.90</span></div><div class="item"><span>CHICKEN WRAP</span><span class="price">$23.90</span></div><div class="item"><span>HART (Haloumi, Avocado, Rocket, Tomato)</span><span class="price">$23.90</span></div><div class="item"><span>THAI BEEF SALAD</span><span class="price">$26.90</span></div><div class="item"><span>CHICKEN AVOCADO &amp; MACADAMIA NUT SALAD</span><span class="price">$26.90</span></div><div class="item"><span>CHILLI MANGO CALAMARI SALAD (I)</span><span class="price">$26.90</span></div><div class="item"><span>CORN &amp; ZUCCHINI FRITTERS</span><span class="price">$26.90</span></div><div class="item"><span>STEAK BURGER</span><span class="price">$25.90</span></div><div class="item"><span>BARRAMUNDI FILLET (A)</span><span class="price">$33.90</span></div><div class="item"><span>LOCAL WHITING FILLETS (A)</span><span class="price">$30.90</span></div><div class="item"><span>BARRA BOWL (A)</span><span class="price">$34.90</span></div><div class="item"><span>WATERFRONT SEAFOOD FETTUCINE (M)</span><span class="price">$35.90</span></div><div class="item"><span>PRAWN LINGUINI (A)</span><span class="price">$35.90</span></div><div class="item"><span>COCONUT BATTERED HERVEY BAY PRAWNS (A)</span><span class="price">$33.90</span></div><div class="item"><span>SESAME &amp; RICE CRUSTED SALMON FILLET (I)</span><span class="price">$33.90</span></div><div class="item"><span>TASTE OF THE WATERFRONT (M)</span><span class="price">$34.90</span></div><div class="item"><span>RUMP STEAK</span><span class="price">$35.90</span></div><div class="item"><span>SAUCES (GF)</span><span class="price">$3.90</span></div></div><div><h3>Mushroom, Creamy Garlic, Gravy</h3><div class="item"><span>SEAFOOD TOPPER (GF) (M)</span><span class="price">$11.90</span></div><div class="item"><span>PORTERHOUSE STEAK</span><span class="price">$40.90</span></div><div class="item"><span>REEFWORLD SEAFOOD PLATE</span><span class="price">$51.90</span></div><div class="item"><span>FRESH SEAFOOD PLATE (A)</span><span class="price">$46.90</span></div><div class="item"><span>SEAFOOD PLATTER FOR TWO (M)</span><span class="price">$160.00</span></div></div></div>
+</section>
+
+<section class="wrap content" id="dining-at-the-waterfront"><h2>Dining at the Waterfront</h2><p>Open for breakfast and lunch Wednesday to Sunday, 8am to 3pm.</p><ul><li>Breakfast: 8am to 10.30am</li><li>Lunch: 11.30am to 2.30pm</li><li>Morning or afternoon tea: all day until 3pm</li></ul><p>Ask your waitress about today&#x27;s desserts and cakes, all baked on the premises, and about our gluten free and vegetarian options.</p><p>Heading to the beach or the park? The Waterfront now has a takeaway menu too.</p><p>We&#x27;re a licensed restaurant. The menu may change depending on the availability of fresh produce. Book online or call the restaurant on (07) 4194 6733.</p></section><section class="wrap content" id="weddings"><h2>Weddings</h2><p>Looking for a beautiful waterfront location? You won&#x27;t get closer than this. At high tide the restaurant sits in the ocean, and at low tide it sits on the beach, with uninterrupted views of the calm waters of Hervey Bay and World Heritage-listed Fraser Island.</p><p>Waterfront weddings are affordable for all and start from $1200.00 for our all-exclusive Simply Elope Package. We&#x27;re just 300 km north of Brisbane, with daily direct flights from Sydney, which makes us a popular choice for destination weddings.</p><p>Our in-house wedding planner, Natalie Stone, was 2014 Queensland&#x27;s Number One Wedding Planner and has been named the nation&#x27;s best in-house wedding planner by the Australian Bridal Industry Awards. She has a decade of experience and hundreds of weddings behind her. Natalie has created the ultimate dream wedding package with some of the region&#x27;s finest suppliers. She can also help you tailor your own package to suit your style, taste and budget.</p><p>Talk to Natalie on 0402550558 or email waterfrontherveybay@gmail.com.</p></section><section class="wrap content" id="award-winning-wedding-venue"><h2>Award-Winning Wedding Venue</h2><p>The Waterfront Restaurant is a member of the Australian Bridal Industry Awards (ABIA). The awards are voted on by couples who were married at the restaurant.</p><ul><li>1st in Queensland: 2010, 2011, 2013, 2014, 2015, 2016, 2018, 2021</li><li>1st in Australia: 2016</li><li>Bridal Awards Hall of Fame: 2017, the highest accolade in the bridal industry</li></ul><p>A huge thank you to our past brides and grooms for voting for us. Our aim is to help our couples plan their special day and make it one of the most memorable days of their lives.</p></section><section class="wrap content" id="a-local-family-business"><h2>A Local Family Business</h2><p>The Wolff family bought the local tourist attraction Reefworld Aquarium in 1989. After years of running a small cafe, they branched out and built the Waterfront Restaurant in 2004.</p><p>With no real experience in owning a restaurant, the family threw themselves in head first and worked hard to earn one of the highest reputations in the Australian bridal industry. The business takes pride in supporting the local community through employment and work experience, and by buying fresh local produce and seafood when possible.</p><p>Jan and Ross Wolff are now retired, but you&#x27;ll still see them working or dining at the restaurant. Their children Greg and Natalie, and daughter-in-law Natasha, still work in the family business. Come and join us for the breathtaking views and delicious food.</p></section>
+
+<section class="wrap" >
+  <h2>Gallery</h2>
+  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdkw69ISgE-hJBrk1bhNbJVlnpFj5POcNgt8EOIbL_SyFW8gPAfdfqoz_V9m3ZKS7Lp2GeUCKB9Py5mWCC3OuC89BW-4l91w2OjIMcPkPba03GX5ohbYYhBxnvKesU4k6x3UarX=s4800-w960" alt="Waterfront Restaurant"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcbbm1fPyV1638sbOyuLntnvtxp3ggQtx_qAh-N7w9Wg5tPvPW3J0Cx1bWBUrwlGfL_pkhMeFfDo4nodeeWh9E4PYe8SdabmiI6ytc2wwae4MHG_8ifeP-7u933HabafmVUKLjaVw=s4800-w960" alt="Waterfront Restaurant"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcSH_BajPiYOy-pjQn2saei3nnq7pCRkFhqA9_k0f3ubaL3xYLcxYJ8JJYQx0XoI_mvIUNFFLzSCJBaK7UdrplRs09vRpWJYn7voADRyVvwn5jLBU7LyxzbV7cuEo2NJAaIPKwO2GuO0w4=s4800-w1600" alt="Waterfront Restaurant"></div>
+</section>
+
+<section class="wrap" id="hours">
+  <div class="grid">
+    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>Closed</td></tr><tr><th>Tuesday</th><td>Closed</td></tr><tr><th>Wednesday</th><td>8:00 AM – 3:00 PM</td></tr><tr><th>Thursday</th><td>8:00 AM – 3:00 PM</td></tr><tr><th>Friday</th><td>8:00 AM – 3:00 PM</td></tr><tr><th>Saturday</th><td>8:00 AM – 3:00 PM</td></tr><tr><th>Sunday</th><td>8:00 AM – 3:00 PM</td></tr></table></div>
+    <div class="card"><h2>Find us</h2><p>On the Beach Cnr Pulgul St &amp;, Kent St, Urangan QLD 4655, Australia</p><p><a href="https://maps.google.com/?cid=13209109752582380987&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0741946733">Call (07) 4194 6733</a> <a class="btn ghost" href="mailto:waterfrontherveybay@gmail.com">Email us</a> <a class="btn ghost" href="https://bookings.wowapps.com/make-booking/thewaterfrontrestaur?src=web" rel="noopener">Book a table</a></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=On%20the%20Beach%20Cnr%20Pulgul%20St%20%26%2C%20Kent%20St%2C%20Urangan%20QLD%204655%2C%20Australia&output=embed" title="Map"></iframe>
+</section>
+
+<footer class="site"><div class="socials"><a href="http://www.facebook.com/pages/Waterfront-Restaurant/500654280602" rel="noopener">Facebook</a><a href="https://www.facebook.com/pages/Waterfront-Restaurant/500654280602?fref=ts" rel="noopener">Facebook</a></div>&copy; 2026 Waterfront Restaurant &middot; Australian Restaurant</footer>
+</body>
+</html>
