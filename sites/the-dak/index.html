@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>The Dak</title>
 <meta name="description" content="Korean fried chicken and bulgogi burgers on Nind St, Southport">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#b4532a;--bg:#fbf6f0;--ink:#1f1a16;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#C8102E;--bg:#FFF8EE;--ink:#1F1A17;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split pill">
 <nav class="top" hidden><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLeD8AqQOkSUc13yNw8JZvUXuD84QCSQdOChzuMjQUMtlx_5v8gvyx9wA-N0ivDX4e8ovKXaZrXwOBvCm1-xagydc9TCtjO4rYt-u36PT_OU8Tv3TD-009SwzKZUeOU8xcRo8JdymhhhVnJd=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLeD8AqQOkSUc13yNw8JZvUXuD84QCSQdOChzuMjQUMtlx_5v8gvyx9wA-N0ivDX4e8ovKXaZrXwOBvCm1-xagydc9TCtjO4rYt-u36PT_OU8Tv3TD-009SwzKZUeOU8xcRo8JdymhhhVnJd=s4800-w1600" alt="The Dak">
+    <div>
     
     <h1>The Dak</h1>
     <p class="tag">Korean fried chicken and bulgogi burgers on Nind St, Southport</p>
     <p class="rating">4.6 ★ on Google (277 reviews)</p>
     <a class="btn" href="tel:0468857692">Call 0468 857 692</a>
+    </div>
   </div>
 </header>
 
@@ -80,7 +97,7 @@ The chicken was soy…”</p><footer>★★★★★ 정재은</footer></blockqu
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfR1Hr7inz1z6Fi4jZBgXfAgtH_6S2aAgU1A0lZbtvKDPaRX6owANdq5VU5BGdd1dAbIlcTPNBtpLTL7eOFej1tr5Xcu5WcBIryL3N90tI3fWlacsBVDqaXO5xvWiOavrWU6BmM=s4800-w1588" alt="The Dak" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLd3esqFY3VR5SjlvwjzbHOQr-JpHWKKaVOYDibPNWaxFmhhQ2yoFB8A9UwQ9BChp005tTPJV2A6lW2XJ7Mfb77krcKweqAe_E9OmTiMP8SAOcK8EzHV-lodBkpzmiFJH3JxANt-URx__BjR=s4800-w1600" alt="The Dak" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeuQhnkRv-8KxLIAseS102yG_RP8SEIzsGQ7Kt9NI-1i1FwqnxcsiH8kAJpBzRU569Rt6X9v0Al8Zxy1rI5bTXp6usa6gu0uLhQs7O07VQ0zfoa9gCjnnqu0g0gKuGq4IC4cH9u=s4800-w1536" alt="The Dak" loading="lazy"></div>
+  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfR1Hr7inz1z6Fi4jZBgXfAgtH_6S2aAgU1A0lZbtvKDPaRX6owANdq5VU5BGdd1dAbIlcTPNBtpLTL7eOFej1tr5Xcu5WcBIryL3N90tI3fWlacsBVDqaXO5xvWiOavrWU6BmM=s4800-w1588" alt="The Dak"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLd3esqFY3VR5SjlvwjzbHOQr-JpHWKKaVOYDibPNWaxFmhhQ2yoFB8A9UwQ9BChp005tTPJV2A6lW2XJ7Mfb77krcKweqAe_E9OmTiMP8SAOcK8EzHV-lodBkpzmiFJH3JxANt-URx__BjR=s4800-w1600" alt="The Dak"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeuQhnkRv-8KxLIAseS102yG_RP8SEIzsGQ7Kt9NI-1i1FwqnxcsiH8kAJpBzRU569Rt6X9v0Al8Zxy1rI5bTXp6usa6gu0uLhQs7O07VQ0zfoa9gCjnnqu0g0gKuGq4IC4cH9u=s4800-w1536" alt="The Dak"></div>
 </section>
 
 <section class="wrap" id="hours">

@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>The Cube Hotel</title>
 <meta name="description" content="Stonegrill steaks, cooked your way at your table">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#1f6f5f;--bg:#f2f8f5;--ink:#14201c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#9A2B1F;--bg:#F6F1EA;--ink:#221C18;--card:#FFFCF7;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split sharp">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#stonegrill-dining">Stonegrill Dining</a><a href="#menus">Menus</a><a href="#functions">Functions</a><a href="#gaming-room">Gaming Room</a><a href="#gift-cards">Gift Cards</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcsnGs51oMCBKUiSl8q89l5dqlwY2tDIFc-ScpmLRsvMyndLmqh-1t1Hdha_CwwXAqjXYCZPXEcXbmKsKxPMmMtCJUCg5HM4iSUtve_Ou7er6h2HIsdwr3ZpnoqsbhNi_DzcbCK=s4800-w816)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcsnGs51oMCBKUiSl8q89l5dqlwY2tDIFc-ScpmLRsvMyndLmqh-1t1Hdha_CwwXAqjXYCZPXEcXbmKsKxPMmMtCJUCg5HM4iSUtve_Ou7er6h2HIsdwr3ZpnoqsbhNi_DzcbCK=s4800-w816" alt="The Cube Hotel">
+    <div>
     <img class="logo" src="http://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1454891629581-HUPLPXHVFWXYCZVX1HDF/cube-hotel-logo-reverse.png?format=1500w" alt="The Cube Hotel logo">
     <h1>The Cube Hotel</h1>
     <p class="tag">Stonegrill steaks, cooked your way at your table</p>
     <p class="rating">4.4 ★ on Google (1591 reviews)</p>
     <a class="btn" href="tel:0746324747">Call (07) 4632 4747</a> <a class="btn ghost" href="mailto:brett@cubehotel.com.au">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -74,7 +91,7 @@ Very friendly and welcoming…”</p><footer>★★★★★ Dave J</footer></bl
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1454891479531-P52HR1TT2HOYNXCZ1VKD/CubeFeb16-65.jpg" alt="The Cube Hotel" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1630472347067-XRNN97L43CVG56R7RS47/IMG_9631.jpg" alt="The Cube Hotel" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1630472890748-XPRD3ACTBBOUJ8FWN48N/IMG_0341.jpg" alt="The Cube Hotel" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1468805042791-SFZ5KCVHIIU9M36SPO7H/CubeFeb16-37.jpg" alt="The Cube Hotel" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/480ae854-3dc2-4022-9def-1c16c1739a77/food040426back.jpg" alt="The Cube Hotel" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/38f0a353-b192-434c-a5ef-6e76ae271c41/food040426new.jpg" alt="The Cube Hotel" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1631690033277-9IQ9LQBJDYZD2DVMYN8X/IMG_0341.jpg" alt="The Cube Hotel" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1631690128779-LL547LDZ5IQT6CPV4V9B/IMG_0341.jpg" alt="The Cube Hotel" loading="lazy"></div>
+  <div class="gallery"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1454891479531-P52HR1TT2HOYNXCZ1VKD/CubeFeb16-65.jpg" alt="The Cube Hotel"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1630472347067-XRNN97L43CVG56R7RS47/IMG_9631.jpg" alt="The Cube Hotel"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1630472890748-XPRD3ACTBBOUJ8FWN48N/IMG_0341.jpg" alt="The Cube Hotel"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1468805042791-SFZ5KCVHIIU9M36SPO7H/CubeFeb16-37.jpg" alt="The Cube Hotel"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/480ae854-3dc2-4022-9def-1c16c1739a77/food040426back.jpg" alt="The Cube Hotel"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/38f0a353-b192-434c-a5ef-6e76ae271c41/food040426new.jpg" alt="The Cube Hotel"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1631690033277-9IQ9LQBJDYZD2DVMYN8X/IMG_0341.jpg" alt="The Cube Hotel"><img src="https://images.squarespace-cdn.com/content/v1/56b7d45ef8baf3f19077ea4a/1631690128779-LL547LDZ5IQT6CPV4V9B/IMG_0341.jpg" alt="The Cube Hotel"></div>
 </section>
 
 <section class="wrap" id="hours">

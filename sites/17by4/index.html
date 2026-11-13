@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>17by4</title>
 <meta name="description" content="High tea every day. Homemade pasta. Stone-baked Neapolitan pizzas.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#b4532a;--bg:#fbf6f0;--ink:#1f1a16;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#8a3b4a;--bg:#f8f2ec;--ink:#2b1e1c;--card:#fffaf6;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split rounded">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#all-day-at-17by4">All Day at 17by4</a><a href="#high-tea">High Tea</a><a href="#functions">Functions</a><a href="#corporate-events">Corporate Events</a><a href="#catering">Catering</a><a href="#good-to-know">Good to Know</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://www.opentable.com.au/r/17by4-reservations-geelong?restref=213134&amp;amp;lang=en-AU&amp;amp;ot_source=Restaurant%20website" rel="noopener">Book a table</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLfIAOWvVSa91dwvtyLGLqGbsj8osVDvbHZ-T5uazhr5o8vKOks7AW5JCbKyox7eAz2YfLDz86kPSl7uMwuLeeSr8VuiprzVKaI6k0FIqgL3aBYnsKkdP0KgIxUIHdlJ3Zs_ujWX-Q=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLfIAOWvVSa91dwvtyLGLqGbsj8osVDvbHZ-T5uazhr5o8vKOks7AW5JCbKyox7eAz2YfLDz86kPSl7uMwuLeeSr8VuiprzVKaI6k0FIqgL3aBYnsKkdP0KgIxUIHdlJ3Zs_ujWX-Q=s4800-w1600" alt="17by4">
+    <div>
     
     <h1>17by4</h1>
     <p class="tag">High tea every day. Homemade pasta. Stone-baked Neapolitan pizzas.</p>
     <p class="rating">4.6 ★ on Google (174 reviews)</p>
     <a class="btn" href="tel:0352241588">Call (03) 5224 1588</a> <a class="btn ghost" href="mailto:info.17by4@gmail.com">Email us</a> <a class="btn ghost" href="https://www.opentable.com.au/r/17by4-reservations-geelong?restref=213134&amp;amp;lang=en-AU&amp;amp;ot_source=Restaurant%20website" rel="noopener">Book a table</a>
+    </div>
   </div>
 </header>
 
@@ -75,7 +92,7 @@ Thanks to staff for the organization High tea…”</p><footer>★★★★ Sena
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="17by4" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLd2K3cKoMrYmEkWaay0Bnn4yBIlmivB6HdESbpYuhI9KHABbL9AF6E8crEKNi63SXkrRt04FbLLeigUm8hM9kRGWzkdFAl9awYdfiCmCCyRaGWxP_WTyuljdaFYMoMIbYoufjrb9A=s4800-w1600" alt="17by4" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfU1GuhGdPr8I15zLIWBOS0fYTFzQZNhOklc-wNjQ_1GdjtGRj1NQLNNiYP81556dmzWxIcjXq5KGfBMau-l_OMbyUPkfqn9UYDKVrJyTrZqOF4T0zMraFs7CF4ZNI9jVljHPTd7g=s4800-w1600" alt="17by4" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfbyY9JxyKspxQ_Bgm9BmvCw7Nnu0aeO66tn-unwvBO9hk4piVMS0DfWAE8niqtStLEepahVeT_Nym0scwxi2rOCFUMpkEqLZ4-o7qN-r3_tIooKCAddaKyrQsTK6I9rsmMpfB4i0jqYV-c=s4800-w1600" alt="17by4" loading="lazy"></div>
+  <div class="gallery"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="17by4"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLd2K3cKoMrYmEkWaay0Bnn4yBIlmivB6HdESbpYuhI9KHABbL9AF6E8crEKNi63SXkrRt04FbLLeigUm8hM9kRGWzkdFAl9awYdfiCmCCyRaGWxP_WTyuljdaFYMoMIbYoufjrb9A=s4800-w1600" alt="17by4"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfU1GuhGdPr8I15zLIWBOS0fYTFzQZNhOklc-wNjQ_1GdjtGRj1NQLNNiYP81556dmzWxIcjXq5KGfBMau-l_OMbyUPkfqn9UYDKVrJyTrZqOF4T0zMraFs7CF4ZNI9jVljHPTd7g=s4800-w1600" alt="17by4"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfbyY9JxyKspxQ_Bgm9BmvCw7Nnu0aeO66tn-unwvBO9hk4piVMS0DfWAE8niqtStLEepahVeT_Nym0scwxi2rOCFUMpkEqLZ4-o7qN-r3_tIooKCAddaKyrQsTK6I9rsmMpfB4i0jqYV-c=s4800-w1600" alt="17by4"></div>
 </section>
 
 <section class="wrap" id="hours">

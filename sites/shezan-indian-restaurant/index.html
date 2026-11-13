@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Shezan Indian Restaurant</title>
 <meta name="description" content="Good food. Great company. A little more spice.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#2c5f8a;--bg:#f1f6fb;--ink:#121b24;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#A3361F;--bg:#FBF4EA;--ink:#2B1A12;--card:#FFFBF5;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split rounded">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#explore-the-menu">Explore the menu</a><a href="#bring-shezan-to-your-celebrati">Bring SHEZAN to your celebration</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLeZ3xu9mWYgBgsrUuxciNf01kF__-uOhNbiwn-qBkcR5NMiNGIDe9f713Qh9VLeNQEzqFuvhFJdsbJ1avBVIpvSmd7PDafnQIqDTbAnRrrTFTtVkLT_Zm-7tkA-mOJkdIh80mtkgmmmOaU8=s4800-w680)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLeZ3xu9mWYgBgsrUuxciNf01kF__-uOhNbiwn-qBkcR5NMiNGIDe9f713Qh9VLeNQEzqFuvhFJdsbJ1avBVIpvSmd7PDafnQIqDTbAnRrrTFTtVkLT_Zm-7tkA-mOJkdIh80mtkgmmmOaU8=s4800-w680" alt="Shezan Indian Restaurant">
+    <div>
     
     <h1>Shezan Indian Restaurant</h1>
     <p class="tag">Good food. Great company. A little more spice.</p>
     <p class="rating">4.7 ★ on Google (204 reviews)</p>
     <a class="btn" href="tel:0734166140">Call (07) 3416 6140</a> <a class="btn ghost" href="mailto:shezanlogan@gmail.com">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -81,7 +98,7 @@ As a chilli head it&#x27;s no surprise that I liked fire chicken the…”</p><f
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdQBljs-bG50JeXBuzwLECqa3V34LeS47rzyqRKZgIZyBWLw9pAOHLh1w38Q7Q2-lUkj8dUgrvtv-Q3YOIRQQmYMlMOqhYO-V--rsSrk5Ws4qQ_fS4AE2CatbmBXCGzv8HHm4unLwT_Q6cS=s4800-w1600" alt="Shezan Indian Restaurant" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcLnGSTzqBGMbaTjz3ClWosxgAshMRTPGle5dgJKSiaP0OlAiOD7icrZPpJwKdAXUCnSqHPXW-7i5yG06T4QMTegmsAWuAsVqub7wPXnrGAEkY__3Xug-V_o9cGtDqg4IJz2fMVGVRk1LZw=s4800-w1600" alt="Shezan Indian Restaurant" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLftg_ZPu9ZxmG_cV5vxqEJxxw9d1Ncpu2YmfnDq_NVvAX1yAwYeULNCt4JwgWVP4d2jOd_a7wgs-mFmDBJIiQK8a9-fKoeJbrrFg_hnmHByqJOF8A9fuef5wr-4ZIER8AhFDOG_ZQ2lNYKL=s4800-w1600" alt="Shezan Indian Restaurant" loading="lazy"></div>
+  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdQBljs-bG50JeXBuzwLECqa3V34LeS47rzyqRKZgIZyBWLw9pAOHLh1w38Q7Q2-lUkj8dUgrvtv-Q3YOIRQQmYMlMOqhYO-V--rsSrk5Ws4qQ_fS4AE2CatbmBXCGzv8HHm4unLwT_Q6cS=s4800-w1600" alt="Shezan Indian Restaurant"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcLnGSTzqBGMbaTjz3ClWosxgAshMRTPGle5dgJKSiaP0OlAiOD7icrZPpJwKdAXUCnSqHPXW-7i5yG06T4QMTegmsAWuAsVqub7wPXnrGAEkY__3Xug-V_o9cGtDqg4IJz2fMVGVRk1LZw=s4800-w1600" alt="Shezan Indian Restaurant"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLftg_ZPu9ZxmG_cV5vxqEJxxw9d1Ncpu2YmfnDq_NVvAX1yAwYeULNCt4JwgWVP4d2jOd_a7wgs-mFmDBJIiQK8a9-fKoeJbrrFg_hnmHByqJOF8A9fuef5wr-4ZIER8AhFDOG_ZQ2lNYKL=s4800-w1600" alt="Shezan Indian Restaurant"></div>
 </section>
 
 <section class="wrap" id="hours">

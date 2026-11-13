@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Wrapture</title>
 <meta name="description" content="The original West End street food, since 2009.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#b4532a;--bg:#fbf6f0;--ink:#1f1a16;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#B5306E;--bg:#FBF5EA;--ink:#2B1E2A;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split pill">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#visit-wrapture">Visit Wrapture</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdhGclM-sWkE0wkhWaWH3YJxIF7jAit_eY0WszSxLsYrKqCXlT6f62pqjn5iP0JtZ5tTjwJMIx_xapN5hHQLC12GudqtLFOJag9QPxhhbEPa4h0JYPn76080y_1TZce4RFsV7iMUA=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdhGclM-sWkE0wkhWaWH3YJxIF7jAit_eY0WszSxLsYrKqCXlT6f62pqjn5iP0JtZ5tTjwJMIx_xapN5hHQLC12GudqtLFOJag9QPxhhbEPa4h0JYPn76080y_1TZce4RFsV7iMUA=s4800-w1600" alt="Wrapture">
+    <div>
     
     <h1>Wrapture</h1>
     <p class="tag">The original West End street food, since 2009.</p>
     <p class="rating">4.7 ★ on Google (671 reviews)</p>
     <a class="btn" href="tel:0738444444">Call (07) 3844 4444</a> <a class="btn ghost" href="mailto:cafewrapture@gmail.com">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -74,7 +91,7 @@ Coco also has amazing customer service skills, immediately…”</p><footer>★�
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554242805259-01DGYP2W46Y0LF2VH2K0/Wrapture_Hero.jpg" alt="Wrapture" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554897733374-JLJJC8FWEAGVZ4DW2JU2/image-asset.jpeg" alt="Wrapture" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554288977307-1Y42YN8BD5T4DSBDF0F3/Wrapture_Bowls.jpg" alt="Wrapture" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554291138879-23EWXLXXNCHSYHM2M5K5/IMG_0695.jpeg" alt="Wrapture" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554289021016-238JYAVAPCSZVBABFKVG/Wrapture_SweetsSelection.jpg" alt="Wrapture" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554289767135-OMU4QQS6N5I59UFTMTI6/IMG_0791.JPG" alt="Wrapture" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554289884618-PECOBEIND59OKHTEYV38/IMG_0720.JPG" alt="Wrapture" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554290101523-P2MIQ5ZB9L2ZE0TIG5XR/IMG_0729.JPG" alt="Wrapture" loading="lazy"></div>
+  <div class="gallery"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554242805259-01DGYP2W46Y0LF2VH2K0/Wrapture_Hero.jpg" alt="Wrapture"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554897733374-JLJJC8FWEAGVZ4DW2JU2/image-asset.jpeg" alt="Wrapture"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554288977307-1Y42YN8BD5T4DSBDF0F3/Wrapture_Bowls.jpg" alt="Wrapture"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554291138879-23EWXLXXNCHSYHM2M5K5/IMG_0695.jpeg" alt="Wrapture"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554289021016-238JYAVAPCSZVBABFKVG/Wrapture_SweetsSelection.jpg" alt="Wrapture"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554289767135-OMU4QQS6N5I59UFTMTI6/IMG_0791.JPG" alt="Wrapture"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554289884618-PECOBEIND59OKHTEYV38/IMG_0720.JPG" alt="Wrapture"><img src="https://images.squarespace-cdn.com/content/v1/5775cc91e3df28df00143b29/1554290101523-P2MIQ5ZB9L2ZE0TIG5XR/IMG_0729.JPG" alt="Wrapture"></div>
 </section>
 
 <section class="wrap" id="hours">

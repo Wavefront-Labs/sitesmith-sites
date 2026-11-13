@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Butter Bodega</title>
 <meta name="description" content="Coffee, sandwiches and friendly faces on Marine Parade, Labrador.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#7a3b69;--bg:#faf4f8;--ink:#1e151c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#B5381F;--bg:#FBF5E6;--ink:#2A2118;--card:#FFFDF6;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split rounded">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLd68FHVm9I8DtygHtFtatw1wDEAa0KBso_Yg5mOIGH-uCVfOSP-6hGg2gT96eNiPXQYkMX_Nqqv3WhIXycBQVfOvVaVEbOZTKVHEG47miQDno6F8h-3t6SK4Nm-r5PeNOu2janQT0VsygBA=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLd68FHVm9I8DtygHtFtatw1wDEAa0KBso_Yg5mOIGH-uCVfOSP-6hGg2gT96eNiPXQYkMX_Nqqv3WhIXycBQVfOvVaVEbOZTKVHEG47miQDno6F8h-3t6SK4Nm-r5PeNOu2janQT0VsygBA=s4800-w1600" alt="Butter Bodega">
+    <div>
     
     <h1>Butter Bodega</h1>
     <p class="tag">Coffee, sandwiches and friendly faces on Marine Parade, Labrador.</p>
     <p class="rating">4.7 ★ on Google (207 reviews)</p>
      <a class="btn ghost" href="mailto:hi@butterbodega.com">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -76,7 +93,7 @@ All the girls were so sweet and welcoming. The kind of…”</p><footer>★★�
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLddpao57NjIVUV1QeLlrnN4tZFj_CrdegbDzBCP-IwGsShfQA9ogwiOdoHAyBFpAV-fY9SEOhvmZ1P1CHK1mtoiUWLgD6HKOLlDsKi-G6ueYV1YBpmFMgmJXiSK-wHX7Wr7kz8=s4800-w1600" alt="Butter Bodega" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeChIpSnypvn_JQIeYVth-c7YZa_-qEQVoISPP8A7odSnQlK-xdCFWtYvwPW7ZStmogu3tm3zZABoJj20B1Q6MJEF2mIBtgrZ5hYLcBAAhG8YCzidTBhbOEV_789VdJq5iQxipYcQ=s4800-w1600" alt="Butter Bodega" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdq0A0Ydco7612JdK8py7R2VNMLxZMAIT1RFZa3TXSJuY3uVS43A-JQHncMcGghaq7M0plsfTLGDcJfH2UHFX0qV1ukxjDQf1ACJYMdCZqEXAr3wh2_t62cP4rlytg4GefmWUT1WzgZDnqV=s4800-w1600" alt="Butter Bodega" loading="lazy"></div>
+  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLddpao57NjIVUV1QeLlrnN4tZFj_CrdegbDzBCP-IwGsShfQA9ogwiOdoHAyBFpAV-fY9SEOhvmZ1P1CHK1mtoiUWLgD6HKOLlDsKi-G6ueYV1YBpmFMgmJXiSK-wHX7Wr7kz8=s4800-w1600" alt="Butter Bodega"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeChIpSnypvn_JQIeYVth-c7YZa_-qEQVoISPP8A7odSnQlK-xdCFWtYvwPW7ZStmogu3tm3zZABoJj20B1Q6MJEF2mIBtgrZ5hYLcBAAhG8YCzidTBhbOEV_789VdJq5iQxipYcQ=s4800-w1600" alt="Butter Bodega"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdq0A0Ydco7612JdK8py7R2VNMLxZMAIT1RFZa3TXSJuY3uVS43A-JQHncMcGghaq7M0plsfTLGDcJfH2UHFX0qV1ukxjDQf1ACJYMdCZqEXAr3wh2_t62cP4rlytg4GefmWUT1WzgZDnqV=s4800-w1600" alt="Butter Bodega"></div>
 </section>
 
 <section class="wrap" id="hours">

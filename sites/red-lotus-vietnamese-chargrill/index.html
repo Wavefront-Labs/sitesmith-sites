@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Red Lotus Vietnamese Chargrill</title>
 <meta name="description" content="Southern Vietnamese cooking, charcoal grill and vegan favourites in Annerley.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#7a3b69;--bg:#faf4f8;--ink:#1e151c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#B3202A;--bg:#FBF4EC;--ink:#2A1A14;--card:#FFFDF9;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split rounded">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#the-food">The Food</a><a href="#bookings-and-dining-in">Bookings and Dining In</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdcr4OFTBikJSV_8R1neNvnyPSPHkg_Xc3h5IL8EmEhw-AVDacXvXXQriCrdHx_XrFAGCFag8ulHxA9QyfnaEamswEsCJ4oGHLn7a_HSBEZKifnNYm3VWeG-k-aLk198UEuRy2j=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdcr4OFTBikJSV_8R1neNvnyPSPHkg_Xc3h5IL8EmEhw-AVDacXvXXQriCrdHx_XrFAGCFag8ulHxA9QyfnaEamswEsCJ4oGHLn7a_HSBEZKifnNYm3VWeG-k-aLk198UEuRy2j=s4800-w1600" alt="Red Lotus Vietnamese Chargrill">
+    <div>
     <img class="logo" src="http://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1468806014801-KGM49T7WB281IP03K0SZ/Red-Lotus-VC-Logo_Inverse.png?format=1500w" alt="Red Lotus Vietnamese Chargrill logo">
     <h1>Red Lotus Vietnamese Chargrill</h1>
     <p class="tag">Southern Vietnamese cooking, charcoal grill and vegan favourites in Annerley.</p>
     <p class="rating">4.4 ★ on Google (397 reviews)</p>
     <a class="btn" href="tel:0423888612">Call 0423 888 612</a> <a class="btn ghost" href="mailto:info@red-lotus.com.au">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -78,7 +95,7 @@ Pros:
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1471574099307-ZMUUFR042C5GNSZ3LRRG/IMG_4081.jpg" alt="Red Lotus Vietnamese Chargrill" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1471574188521-7HQXZDT5XU1HSRFLE19B/IMG_4431.jpg" alt="Red Lotus Vietnamese Chargrill" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1471931046283-B6IMGDIMT0YYGRH0068S/P1110352.jpg" alt="Red Lotus Vietnamese Chargrill" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1471931106459-M60PQ0K9H6IPSGN5W7H5/image-asset.jpeg" alt="Red Lotus Vietnamese Chargrill" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1472521235752-VHSJGMQJ01KE5LMPA0WF/image-asset.jpeg" alt="Red Lotus Vietnamese Chargrill" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1472521364628-J05BRYOFZLO7NPO15JT9/image-asset.jpeg" alt="Red Lotus Vietnamese Chargrill" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1472521457750-S604PAU6OCZZV50OPIZK/image-asset.jpeg" alt="Red Lotus Vietnamese Chargrill" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1475630557401-TIO15NG8M8O8J6J7UZT1/_8008528.jpg" alt="Red Lotus Vietnamese Chargrill" loading="lazy"></div>
+  <div class="gallery"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1471574099307-ZMUUFR042C5GNSZ3LRRG/IMG_4081.jpg" alt="Red Lotus Vietnamese Chargrill"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1471574188521-7HQXZDT5XU1HSRFLE19B/IMG_4431.jpg" alt="Red Lotus Vietnamese Chargrill"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1471931046283-B6IMGDIMT0YYGRH0068S/P1110352.jpg" alt="Red Lotus Vietnamese Chargrill"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1471931106459-M60PQ0K9H6IPSGN5W7H5/image-asset.jpeg" alt="Red Lotus Vietnamese Chargrill"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1472521235752-VHSJGMQJ01KE5LMPA0WF/image-asset.jpeg" alt="Red Lotus Vietnamese Chargrill"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1472521364628-J05BRYOFZLO7NPO15JT9/image-asset.jpeg" alt="Red Lotus Vietnamese Chargrill"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1472521457750-S604PAU6OCZZV50OPIZK/image-asset.jpeg" alt="Red Lotus Vietnamese Chargrill"><img src="https://images.squarespace-cdn.com/content/v1/578c2208b8a79bbf14e1de08/1475630557401-TIO15NG8M8O8J6J7UZT1/_8008528.jpg" alt="Red Lotus Vietnamese Chargrill"></div>
 </section>
 
 <section class="wrap" id="hours">

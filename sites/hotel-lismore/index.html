@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Hotel Lismore</title>
 <meta name="description" content="Lismore&#x27;s local pub, formerly Mary G&#x27;s: good food, music and sport.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#2c5f8a;--bg:#f1f6fb;--ink:#121b24;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#7A2E2A;--bg:#F6F0E6;--ink:#2B211B;--card:#FFFBF4;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Cormorant Garamond', Georgia, serif;--body:'Lora', Georgia, serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split sharp">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#food-and-drink">Food and Drink</a><a href="#what-s-on">What&#x27;s On</a><a href="#functions-and-events">Functions and Events</a><a href="#hotel-lismore-rewards">Hotel Lismore Rewards</a><a href="#cellarbrations-lismore">Cellarbrations Lismore</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://bookings.nowbookit.com/?accountid=08939b92-e7d3-4ab8-bc56-5040150443c4&amp;#038;venueid=5404&amp;#038;theme=light&amp;#038;colors=hex,234743" rel="noopener">Book a table</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLc8SdfNMxqYkBy30oKfq3P-iS80aU9kpFCRD_GK5-OCX-20-sdckudt9U9izW2ADgarXXck4rI_I6QAe9xprC_76grkRwmWZMlzH_s42euDaXmkKbz4c3FdJV58kZePRsI6gUozPJ5JHIlc=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLc8SdfNMxqYkBy30oKfq3P-iS80aU9kpFCRD_GK5-OCX-20-sdckudt9U9izW2ADgarXXck4rI_I6QAe9xprC_76grkRwmWZMlzH_s42euDaXmkKbz4c3FdJV58kZePRsI6gUozPJ5JHIlc=s4800-w1600" alt="Hotel Lismore">
+    <div>
     <img class="logo" src="https://www.hotellismore.com.au/wp-content/uploads/2025/07/HOTELLISMORE_LOGO_FINAL_WHITE-scaled.png" alt="Hotel Lismore logo">
     <h1>Hotel Lismore</h1>
     <p class="tag">Lismore&#x27;s local pub, formerly Mary G&#x27;s: good food, music and sport.</p>
     <p class="rating">4 ★ on Google (933 reviews)</p>
     <a class="btn" href="tel:0266222924">Call (02) 6622 2924</a> <a class="btn ghost" href="mailto:Info@hotellismore.com.au">Email us</a> <a class="btn ghost" href="https://bookings.nowbookit.com/?accountid=08939b92-e7d3-4ab8-bc56-5040150443c4&amp;#038;venueid=5404&amp;#038;theme=light&amp;#038;colors=hex,234743" rel="noopener">Book a table</a>
+    </div>
   </div>
 </header>
 
@@ -72,7 +89,7 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTIyIiBoZWlnaHQ9IjE0MDIiIHZpZXdCb3g9IjAgMCAxMTIyIDE0MDIiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+" alt="Hotel Lismore" loading="lazy"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgNTAwIDUwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsLW9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=" alt="Hotel Lismore" loading="lazy"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OTYiIGhlaWdodD0iNDk2IiB2aWV3Qm94PSIwIDAgNDk2IDQ5NiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsLW9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=" alt="Hotel Lismore" loading="lazy"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTIxIiBoZWlnaHQ9IjE1MjEiIHZpZXdCb3g9IjAgMCAxNTIxIDE1MjEiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+" alt="Hotel Lismore" loading="lazy"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjU2MCIgdmlld0JveD0iMCAwIDEwMDAgNTYwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==" alt="Hotel Lismore" loading="lazy"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTgzIiBoZWlnaHQ9IjEzMjMiIHZpZXdCb3g9IjAgMCAxOTgzIDEzMjMiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+" alt="Hotel Lismore" loading="lazy"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODAwIiBoZWlnaHQ9IjEyNzIiIHZpZXdCb3g9IjAgMCAxODAwIDEyNzIiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+" alt="Hotel Lismore" loading="lazy"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MTYiIGhlaWdodD0iNjQ3IiB2aWV3Qm94PSIwIDAgOTE2IDY0NyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsLW9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=" alt="Hotel Lismore" loading="lazy"></div>
+  <div class="gallery"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTIyIiBoZWlnaHQ9IjE0MDIiIHZpZXdCb3g9IjAgMCAxMTIyIDE0MDIiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+" alt="Hotel Lismore"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgNTAwIDUwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsLW9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=" alt="Hotel Lismore"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OTYiIGhlaWdodD0iNDk2IiB2aWV3Qm94PSIwIDAgNDk2IDQ5NiI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsLW9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=" alt="Hotel Lismore"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTIxIiBoZWlnaHQ9IjE1MjEiIHZpZXdCb3g9IjAgMCAxNTIxIDE1MjEiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+" alt="Hotel Lismore"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjU2MCIgdmlld0JveD0iMCAwIDEwMDAgNTYwIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBzdHlsZT0iZmlsbDojY2ZkNGRiO2ZpbGwtb3BhY2l0eTogMC4xOyIvPjwvc3ZnPg==" alt="Hotel Lismore"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTgzIiBoZWlnaHQ9IjEzMjMiIHZpZXdCb3g9IjAgMCAxOTgzIDEzMjMiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+" alt="Hotel Lismore"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODAwIiBoZWlnaHQ9IjEyNzIiIHZpZXdCb3g9IjAgMCAxODAwIDEyNzIiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHN0eWxlPSJmaWxsOiNjZmQ0ZGI7ZmlsbC1vcGFjaXR5OiAwLjE7Ii8+PC9zdmc+" alt="Hotel Lismore"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MTYiIGhlaWdodD0iNjQ3IiB2aWV3Qm94PSIwIDAgOTE2IDY0NyI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgc3R5bGU9ImZpbGw6I2NmZDRkYjtmaWxsLW9wYWNpdHk6IDAuMTsiLz48L3N2Zz4=" alt="Hotel Lismore"></div>
 </section>
 
 <section class="wrap" id="hours">

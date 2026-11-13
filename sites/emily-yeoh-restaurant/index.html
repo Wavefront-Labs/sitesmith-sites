@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Emily Yeoh Restaurant</title>
 <meta name="description" content="Modern Asian fusion casual dining in Paddington, Brisbane">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#2c5f8a;--bg:#f1f6fb;--ink:#121b24;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#A3262A;--bg:#FBF5EE;--ink:#2A1A17;--card:#FFFDFA;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split rounded">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#lunch-and-bookings">Lunch and Bookings</a><a href="#our-famous-mud-crabs">Our Famous Mud Crabs</a><a href="#what-s-on">What&#x27;s On</a><a href="#gift-cards-and-house-made-sauc">Gift Cards and House-Made Sauces</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://www.opentable.com.au/booking/restref/availability?lang=en-AU&amp;amp;correlationId=a38390ad-9148-4779-8ae4-d24963f6a925&amp;amp;restRef=135734&amp;amp;otSource=Restaurant%20website" rel="noopener">Book a table</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdzZ6mvSuPoIaanYS4EJrJhQw3xFwZSkxuXtl9MNqSqGYq7w7yg2C_gof5PfqHcevqvp3bbgUA9p6fE-HfPF5mYsfigOAvq1JlR7ymHNsogM3c7titJrQNFY8MD-dju96EmFnbb=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdzZ6mvSuPoIaanYS4EJrJhQw3xFwZSkxuXtl9MNqSqGYq7w7yg2C_gof5PfqHcevqvp3bbgUA9p6fE-HfPF5mYsfigOAvq1JlR7ymHNsogM3c7titJrQNFY8MD-dju96EmFnbb=s4800-w1600" alt="Emily Yeoh Restaurant">
+    <div>
     <img class="logo" src="https://static.wixstatic.com/media/4822b4_aaa8eb0adf9f44bebd804484592c26e7~mv2.png/v1/fill/w_181,h_103,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/emilyyeoh-logo.png" alt="Emily Yeoh Restaurant logo">
     <h1>Emily Yeoh Restaurant</h1>
     <p class="tag">Modern Asian fusion casual dining in Paddington, Brisbane</p>
     <p class="rating">4.4 ★ on Google (649 reviews)</p>
     <a class="btn" href="tel:0733683868">Call (07) 3368 3868</a> <a class="btn ghost" href="mailto:reservations@emilyyeoh.com.au">Email us</a> <a class="btn ghost" href="https://www.opentable.com.au/booking/restref/availability?lang=en-AU&amp;amp;correlationId=a38390ad-9148-4779-8ae4-d24963f6a925&amp;amp;restRef=135734&amp;amp;otSource=Restaurant%20website" rel="noopener">Book a table</a>
+    </div>
   </div>
 </header>
 
@@ -79,7 +96,7 @@ Emily was friendly and knowledgeable with…”</p><footer>★★★★★ Jason
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://static.wixstatic.com/media/3c21b3_40d7e3e684f74f6c800247bcdeaad649~mv2.png/v1/fill/w_536,h_536,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/emily-hero.png" alt="Emily Yeoh Restaurant" loading="lazy"><img src="https://static.wixstatic.com/media/3c21b3_f2e3867b897c4b03ac940c5985ba60bc~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/3c21b3_f2e3867b897c4b03ac940c5985ba60bc~mv2.jpg" alt="Emily Yeoh Restaurant" loading="lazy"><img src="https://static.wixstatic.com/media/3c21b3_d080c279c8e34efd9a1372330d40f381~mv2.jpg/v1/fill/w_467,h_680,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Restaurant%20opening%20hours%20poster%20EY%20Oct%2026.jpg" alt="Emily Yeoh Restaurant" loading="lazy"><img src="https://static.wixstatic.com/media/4822b4_ac3fc54622c3417dad4c34c816811d92~mv2.jpg/v1/fill/w_96,h_121,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/4822b4_ac3fc54622c3417dad4c34c816811d92~mv2.jpg" alt="Emily Yeoh Restaurant" loading="lazy"><img src="https://static.wixstatic.com/media/3c21b3_b1de20eb16634a7e92e32ac0f37fd93b~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/3c21b3_b1de20eb16634a7e92e32ac0f37fd93b~mv2.jpg" alt="Emily Yeoh Restaurant" loading="lazy"><img src="https://static.wixstatic.com/media/3c21b3_b3d1412ea08c4416b09686c4e05d5d68~mv2.jpg/v1/fit/w_480,h_721,q_90,enc_avif,quality_auto/3c21b3_b3d1412ea08c4416b09686c4e05d5d68~mv2.jpg" alt="Emily Yeoh Restaurant" loading="lazy"><img src="https://static.wixstatic.com/media/3c21b3_0070d22d4ade49c0bf284840341f5e16~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/3c21b3_0070d22d4ade49c0bf284840341f5e16~mv2.jpg" alt="Emily Yeoh Restaurant" loading="lazy"><img src="https://static.wixstatic.com/media/3c21b3_5f32e16f96cf4a3cbb21124046e4918e~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/3c21b3_5f32e16f96cf4a3cbb21124046e4918e~mv2.jpg" alt="Emily Yeoh Restaurant" loading="lazy"></div>
+  <div class="gallery"><img src="https://static.wixstatic.com/media/3c21b3_40d7e3e684f74f6c800247bcdeaad649~mv2.png/v1/fill/w_536,h_536,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/emily-hero.png" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_f2e3867b897c4b03ac940c5985ba60bc~mv2.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/3c21b3_f2e3867b897c4b03ac940c5985ba60bc~mv2.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_d080c279c8e34efd9a1372330d40f381~mv2.jpg/v1/fill/w_467,h_680,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Restaurant%20opening%20hours%20poster%20EY%20Oct%2026.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/4822b4_ac3fc54622c3417dad4c34c816811d92~mv2.jpg/v1/fill/w_96,h_121,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/4822b4_ac3fc54622c3417dad4c34c816811d92~mv2.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_b1de20eb16634a7e92e32ac0f37fd93b~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/3c21b3_b1de20eb16634a7e92e32ac0f37fd93b~mv2.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_b3d1412ea08c4416b09686c4e05d5d68~mv2.jpg/v1/fit/w_480,h_721,q_90,enc_avif,quality_auto/3c21b3_b3d1412ea08c4416b09686c4e05d5d68~mv2.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_0070d22d4ade49c0bf284840341f5e16~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/3c21b3_0070d22d4ade49c0bf284840341f5e16~mv2.jpg" alt="Emily Yeoh Restaurant"><img src="https://static.wixstatic.com/media/3c21b3_5f32e16f96cf4a3cbb21124046e4918e~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/3c21b3_5f32e16f96cf4a3cbb21124046e4918e~mv2.jpg" alt="Emily Yeoh Restaurant"></div>
 </section>
 
 <section class="wrap" id="hours">

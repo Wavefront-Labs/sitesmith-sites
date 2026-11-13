@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>The Pantry Manly</title>
 <meta name="description" content="From sunrise coffee to sunset dining, right on Manly Beach.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#1f6f5f;--bg:#f2f8f5;--ink:#14201c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#1F5F73;--bg:#F7F4EE;--ink:#1E2A2F;--card:#FFFDF9;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-fullbleed sharp">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#the-pantry-kiosk">The Pantry Kiosk</a><a href="#our-menus">Our Menus</a><a href="#reservations">Reservations</a><a href="#functions-and-events">Functions and Events</a><a href="#gift-cards">Gift Cards</a><a href="#mother-s-day">Mother&#x27;s Day</a><a href="#our-history">Our History</a><a href="#hours">Hours &amp; location</a></div></nav>
+
 <header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdrxPXBHBy7Nz0WvTuf2aLHyqneopsaSt1kB_w30TJhOUVwIFVvH4XwgHMuyHWPh-F-pEOjT2vfAqtAjKEQBRoggIjFnkqmjcD_EMGzh4XqLzN3VFjHmZJXCQaN7hWdUBvG3rUrzA=s4800-w1600)">
   <div class="wrap">
+    
+    <div>
     
     <h1>The Pantry Manly</h1>
     <p class="tag">From sunrise coffee to sunset dining, right on Manly Beach.</p>
     <p class="rating">4.5 ★ on Google (3334 reviews)</p>
     <a class="btn" href="tel:0250179109">Call (02) 5017 9109</a> <a class="btn ghost" href="mailto:info@thepantrymanly.com">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -80,7 +97,7 @@ The service was 10/10!! Staff was friendly, attentive, and welcoming. The drinks
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/c3341a54-2d70-4f01-8866-9ab4e0ab7a1f/Breakfast+Menu" alt="The Pantry Manly" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1717746229544-IYJCR9XS8ED9OZO67UYW/TPM_May24_79.jpg" alt="The Pantry Manly" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1716359721261-INSXVAMWX26TN4PXYWOX/TPM_May24_33.jpg" alt="The Pantry Manly" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/34b403f7-c47d-4a57-b654-e11446d6d909/TPM_May24_27.jpg" alt="The Pantry Manly" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1479250888664-X0F276LD0TA4FL5ZRI3I/Toilets+1938.jpg" alt="The Pantry Manly" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1479250882841-V8MEUENQVTCUU8M0VY85/Steyne+Reserve+and+toilet+block+c1940s.jpg" alt="The Pantry Manly" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1479250876966-9409EI7I4NRXE83LBWLX/Miniature+railway%2C+Steyne+Reserve+c1906.jpg" alt="The Pantry Manly" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1479250878174-UXBATTQ5SY794QR2QMXB/North+Steyne+Reserve+and+Mutoscope%2C+c1905.jpg" alt="The Pantry Manly" loading="lazy"></div>
+  <div class="gallery"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/c3341a54-2d70-4f01-8866-9ab4e0ab7a1f/Breakfast+Menu" alt="The Pantry Manly"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1717746229544-IYJCR9XS8ED9OZO67UYW/TPM_May24_79.jpg" alt="The Pantry Manly"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1716359721261-INSXVAMWX26TN4PXYWOX/TPM_May24_33.jpg" alt="The Pantry Manly"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/34b403f7-c47d-4a57-b654-e11446d6d909/TPM_May24_27.jpg" alt="The Pantry Manly"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1479250888664-X0F276LD0TA4FL5ZRI3I/Toilets+1938.jpg" alt="The Pantry Manly"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1479250882841-V8MEUENQVTCUU8M0VY85/Steyne+Reserve+and+toilet+block+c1940s.jpg" alt="The Pantry Manly"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1479250876966-9409EI7I4NRXE83LBWLX/Miniature+railway%2C+Steyne+Reserve+c1906.jpg" alt="The Pantry Manly"><img src="https://images.squarespace-cdn.com/content/v1/58191d08c534a52382d80af6/1479250878174-UXBATTQ5SY794QR2QMXB/North+Steyne+Reserve+and+Mutoscope%2C+c1905.jpg" alt="The Pantry Manly"></div>
 </section>
 
 <section class="wrap" id="hours">

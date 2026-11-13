@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Estabar</title>
 <meta name="description" content="Salty air, ocean views and seriously good coffee on Newcastle Beach">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#2c5f8a;--bg:#f1f6fb;--ink:#121b24;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#1F6E80;--bg:#F5F8F6;--ink:#1D2A30;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'DM Serif Display', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-fullbleed rounded">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#our-community">Our Community</a><a href="#stories">Stories</a><a href="#hours">Hours &amp; location</a></div></nav>
+
 <header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLezyot-ZTjGgwy2NbEOjn6VVeN-al6svQKQGXI1eWsoRNDrFTF2Cyx8yMmDXWV3V-s-fUJAmtM1n7VbPnPUq-HWMl6UbQPzeprGvCJhzkEFC8qEiNXqI1mUVFqC7b2_4etPKurLUQ=s4800-w1600)">
   <div class="wrap">
+    
+    <div>
     
     <h1>Estabar</h1>
     <p class="tag">Salty air, ocean views and seriously good coffee on Newcastle Beach</p>
     <p class="rating">4.5 ★ on Google (863 reviews)</p>
     <a class="btn" href="tel:0447300896">Call 0447 300 896</a> <a class="btn ghost" href="mailto:hello@estabar.com">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -74,7 +91,7 @@ And the salmon bruschetta? Honestly, it has no business being that good. Beautif
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1606870997132-LCMVCFTVM0OZB19WQ768/DSC_8695.jpg" alt="Estabar" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1517444446532-QTXDP3OA2DNVQBFYMLUZ/image-asset.png" alt="Estabar" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1606871233676-0QRY66WGHV49G8P59SKD/DSC_8342.jpg" alt="Estabar" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1581555894443-I2U3T265R0CN481OS0JI/DSC_4631.jpg" alt="Estabar" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1571284896718-KD914PXX0CXP9FOAS2A7/DSC_5857.jpg" alt="Estabar" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1571287650879-GP5MKF7QT8ONNJKTTM4D/DSC_5781.jpg" alt="Estabar" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1571287556048-BVQTTCY7BPP8TRFGLLFP/DSC_5787.jpg" alt="Estabar" loading="lazy"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1571287482533-2GMWLUYI60N4FVVBHC9W/DSC_5600.jpg" alt="Estabar" loading="lazy"></div>
+  <div class="gallery"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1606870997132-LCMVCFTVM0OZB19WQ768/DSC_8695.jpg" alt="Estabar"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1517444446532-QTXDP3OA2DNVQBFYMLUZ/image-asset.png" alt="Estabar"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1606871233676-0QRY66WGHV49G8P59SKD/DSC_8342.jpg" alt="Estabar"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1581555894443-I2U3T265R0CN481OS0JI/DSC_4631.jpg" alt="Estabar"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1571284896718-KD914PXX0CXP9FOAS2A7/DSC_5857.jpg" alt="Estabar"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1571287650879-GP5MKF7QT8ONNJKTTM4D/DSC_5781.jpg" alt="Estabar"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1571287556048-BVQTTCY7BPP8TRFGLLFP/DSC_5787.jpg" alt="Estabar"><img src="https://images.squarespace-cdn.com/content/v1/579d417f37c581f9480062d0/1571287482533-2GMWLUYI60N4FVVBHC9W/DSC_5600.jpg" alt="Estabar"></div>
 </section>
 
 <section class="wrap" id="hours">

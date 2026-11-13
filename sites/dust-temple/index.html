@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Dust Temple</title>
 <meta name="description" content="Whatever star you fell from, Currumbin&#x27;s creative haven awaits.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#b4532a;--bg:#fbf6f0;--ink:#1f1a16;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#8A4B2E;--bg:#F6F0E8;--ink:#2A211C;--card:#FCF9F4;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split sharp">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#day-and-night-at-dust">Day and Night at Dust</a><a href="#host-your-event">Host Your Event</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcAX4j8gAp511b6qJ1ULWBepLtL_sTqog3IUS6icqyhPbiHeER_IVG6P_PEAVJb_wsUhCrPk3x7mUJoOgR6WDXIXRT08Ul_5eVOy75obcfGg9147l6kyp1maJOcPqgm8qM8f7GT=s4800-w1024)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcAX4j8gAp511b6qJ1ULWBepLtL_sTqog3IUS6icqyhPbiHeER_IVG6P_PEAVJb_wsUhCrPk3x7mUJoOgR6WDXIXRT08Ul_5eVOy75obcfGg9147l6kyp1maJOcPqgm8qM8f7GT=s4800-w1024" alt="Dust Temple">
+    <div>
     <img class="logo" src="http://dusttemple.com.au/wp-content/uploads/2021/08/mobile-logo-2-4-1.png" alt="Dust Temple logo">
     <h1>Dust Temple</h1>
     <p class="tag">Whatever star you fell from, Currumbin&#x27;s creative haven awaits.</p>
     <p class="rating">4.5 ★ on Google (779 reviews)</p>
      <a class="btn ghost" href="mailto:events@dusttemple.com.au">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -76,7 +93,7 @@ We have loved hosting our workshops here, and the team has always been incredibl
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="http://dusttemple.com.au/wp-content/themes/dust-temple/dist/images/home-outside.jpg" alt="Dust Temple" loading="lazy"><img src="http://dusttemple.com.au/wp-content/themes/dust-temple/dist/images/page-home/home-outside-mobile.png" alt="Dust Temple" loading="lazy"><img src="http://dusttemple.com.au/wp-content/themes/dust-temple/dist/images/home-inside.jpg" alt="Dust Temple" loading="lazy"><img src="http://dusttemple.com.au/wp-content/themes/dust-temple/dist/images/page-home/home-inside-mobile.png" alt="Dust Temple" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdTiNNsKxVjl0q3ovBbrkE-OwkYCQCNecBpkctiBJn1O72p0sA0RopUG2SeCjDb6rnWFsDlKOkl4xRE5-5cnHp4ZjKjLzLH6n-3BmJWx6csdRooPRlK9fMEvY7HzbyY2S95b-o1=s4800-w1600" alt="Dust Temple" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfcRjiZeMD4R0YEnnmTbicmjDOQWbjA7bf0q6XBegOGUolW33mmB4lZsoKFwgPMAx-OZ0FJXgBwia2INP0L-OIi6ZNIf5XlLQBL2h6YdHlyxrNJ9Vj9FwMGdbw-lHZtyDXPlJKj=s4800-w1600" alt="Dust Temple" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcQ1QCETfuEew33nGMnFUBRXfHyXZIiZ_sHJHL02dC6m4Xj5l7agICavEzVdl-xYgecc6IyFj7pNSKSIJosGsFYTSIlJN7Cnq-9Qj_PseijdwuMS9yTMlSUi4MYIsnfp7NoCXM2s_dOfxnX=s4800-w1600" alt="Dust Temple" loading="lazy"></div>
+  <div class="gallery"><img src="http://dusttemple.com.au/wp-content/themes/dust-temple/dist/images/home-outside.jpg" alt="Dust Temple"><img src="http://dusttemple.com.au/wp-content/themes/dust-temple/dist/images/page-home/home-outside-mobile.png" alt="Dust Temple"><img src="http://dusttemple.com.au/wp-content/themes/dust-temple/dist/images/home-inside.jpg" alt="Dust Temple"><img src="http://dusttemple.com.au/wp-content/themes/dust-temple/dist/images/page-home/home-inside-mobile.png" alt="Dust Temple"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdTiNNsKxVjl0q3ovBbrkE-OwkYCQCNecBpkctiBJn1O72p0sA0RopUG2SeCjDb6rnWFsDlKOkl4xRE5-5cnHp4ZjKjLzLH6n-3BmJWx6csdRooPRlK9fMEvY7HzbyY2S95b-o1=s4800-w1600" alt="Dust Temple"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfcRjiZeMD4R0YEnnmTbicmjDOQWbjA7bf0q6XBegOGUolW33mmB4lZsoKFwgPMAx-OZ0FJXgBwia2INP0L-OIi6ZNIf5XlLQBL2h6YdHlyxrNJ9Vj9FwMGdbw-lHZtyDXPlJKj=s4800-w1600" alt="Dust Temple"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcQ1QCETfuEew33nGMnFUBRXfHyXZIiZ_sHJHL02dC6m4Xj5l7agICavEzVdl-xYgecc6IyFj7pNSKSIJosGsFYTSIlJN7Cnq-9Qj_PseijdwuMS9yTMlSUi4MYIsnfp7NoCXM2s_dOfxnX=s4800-w1600" alt="Dust Temple"></div>
 </section>
 
 <section class="wrap" id="hours">

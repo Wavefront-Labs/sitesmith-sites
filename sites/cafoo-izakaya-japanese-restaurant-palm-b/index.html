@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Cafoo Izakaya / Japanese restaurant Palm Beach</title>
 <meta name="description" content="Japanese tapas-style izakaya in the heart of Palm Beach">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#1f6f5f;--bg:#f2f8f5;--ink:#14201c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#B23A2E;--bg:#F6F1E9;--ink:#1E1B18;--card:#FFFCF7;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split sharp">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#lunch">Lunch</a><a href="#functions-and-venue-hire">Functions and Venue Hire</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcfCTjpdrPjSmUOzbift3tNJSals5VHiAIaN4ZgEGTRdE-M25r-MNVlE5HrsgKvYpkp3SoiDI96aSLy8wpl0m22amU17002azLxDOwECLswODSft1Zrz4IYhASNcjIXOzbk=s4800-w874)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcfCTjpdrPjSmUOzbift3tNJSals5VHiAIaN4ZgEGTRdE-M25r-MNVlE5HrsgKvYpkp3SoiDI96aSLy8wpl0m22amU17002azLxDOwECLswODSft1Zrz4IYhASNcjIXOzbk=s4800-w874" alt="Cafoo Izakaya / Japanese restaurant Palm Beach">
+    <div>
     
     <h1>Cafoo Izakaya / Japanese restaurant Palm Beach</h1>
     <p class="tag">Japanese tapas-style izakaya in the heart of Palm Beach</p>
     <p class="rating">4.7 ★ on Google (280 reviews)</p>
     <a class="btn" href="tel:0755256759">Call (07) 5525 6759</a> <a class="btn ghost" href="mailto:cafoopalmbeach@gmail.com">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -76,7 +93,7 @@ The curry fried chicken rice had a nice…”</p><footer>★★★★★ Edward 
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://static.wixstatic.com/media/ad04c5_4b2a40a3fe9748e9b7ae2e01b65cf876~mv2.jpg/v1/fill/w_106,h_91,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/ad04c5_4b2a40a3fe9748e9b7ae2e01b65cf876~mv2.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach" loading="lazy"><img src="https://static.wixstatic.com/media/ec0368b8984d48c291c87aa64a297f1e.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/ec0368b8984d48c291c87aa64a297f1e.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach" loading="lazy"><img src="https://static.wixstatic.com/media/1bccc75235f84883930e4a4338b610b5.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/1bccc75235f84883930e4a4338b610b5.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach" loading="lazy"><img src="https://static.wixstatic.com/media/ad04c5_134c16fe0b80448abd5a1d24b2b8f365~mv2.jpg/v1/fill/w_147,h_110,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/ad04c5_134c16fe0b80448abd5a1d24b2b8f365~mv2.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach" loading="lazy"><img src="https://static.wixstatic.com/media/a2607f1d76c2455cbf256dcf2bf9718e.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/a2607f1d76c2455cbf256dcf2bf9718e.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach" loading="lazy"><img src="https://static.wixstatic.com/media/d0b877a4bb6e411f9734ee4bd2a50b27.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/d0b877a4bb6e411f9734ee4bd2a50b27.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach" loading="lazy"><img src="https://static.wixstatic.com/media/3d2c5cbc84434f259090d547cf47e820.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/3d2c5cbc84434f259090d547cf47e820.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach" loading="lazy"><img src="https://static.wixstatic.com/media/8046330e4f744b8fbfe5120cc88f9b3e.jpg/v1/fill/w_147,h_105,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/8046330e4f744b8fbfe5120cc88f9b3e.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach" loading="lazy"></div>
+  <div class="gallery"><img src="https://static.wixstatic.com/media/ad04c5_4b2a40a3fe9748e9b7ae2e01b65cf876~mv2.jpg/v1/fill/w_106,h_91,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/ad04c5_4b2a40a3fe9748e9b7ae2e01b65cf876~mv2.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach"><img src="https://static.wixstatic.com/media/ec0368b8984d48c291c87aa64a297f1e.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/ec0368b8984d48c291c87aa64a297f1e.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach"><img src="https://static.wixstatic.com/media/1bccc75235f84883930e4a4338b610b5.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/1bccc75235f84883930e4a4338b610b5.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach"><img src="https://static.wixstatic.com/media/ad04c5_134c16fe0b80448abd5a1d24b2b8f365~mv2.jpg/v1/fill/w_147,h_110,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/ad04c5_134c16fe0b80448abd5a1d24b2b8f365~mv2.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach"><img src="https://static.wixstatic.com/media/a2607f1d76c2455cbf256dcf2bf9718e.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/a2607f1d76c2455cbf256dcf2bf9718e.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach"><img src="https://static.wixstatic.com/media/d0b877a4bb6e411f9734ee4bd2a50b27.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/d0b877a4bb6e411f9734ee4bd2a50b27.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach"><img src="https://static.wixstatic.com/media/3d2c5cbc84434f259090d547cf47e820.jpg/v1/fill/w_147,h_98,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/3d2c5cbc84434f259090d547cf47e820.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach"><img src="https://static.wixstatic.com/media/8046330e4f744b8fbfe5120cc88f9b3e.jpg/v1/fill/w_147,h_105,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/8046330e4f744b8fbfe5120cc88f9b3e.jpg" alt="Cafoo Izakaya / Japanese restaurant Palm Beach"></div>
 </section>
 
 <section class="wrap" id="hours">

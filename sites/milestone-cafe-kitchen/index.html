@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Milestone Cafe &amp; Kitchen</title>
 <meta name="description" content="A small, friendly cafe in the heart of Southport">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#7a3b69;--bg:#faf4f8;--ink:#1e151c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#2F6B5E;--bg:#F6F3EC;--ink:#22262A;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'DM Serif Display', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split rounded">
 <nav class="top" hidden><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLexn_7G91uLwuePBE5IPG2XsroutYRI66bUcnPyLSc1T6QWOCLVHivNsh6VjpPA5Ikbrb2Iv388mh---IJmygGi-M3BMvrSv90Cq2GOcGisBlS3jBPyXntcaBagw307ySXnX5l-e6Nf7hg=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLexn_7G91uLwuePBE5IPG2XsroutYRI66bUcnPyLSc1T6QWOCLVHivNsh6VjpPA5Ikbrb2Iv388mh---IJmygGi-M3BMvrSv90Cq2GOcGisBlS3jBPyXntcaBagw307ySXnX5l-e6Nf7hg=s4800-w1600" alt="Milestone Cafe &amp; Kitchen">
+    <div>
     
     <h1>Milestone Cafe &amp; Kitchen</h1>
     <p class="tag">A small, friendly cafe in the heart of Southport</p>
     <p class="rating">4.7 ★ on Google (226 reviews)</p>
     <a class="btn" href="tel:0452420666">Call 0452 420 666</a>
+    </div>
   </div>
 </header>
 
@@ -77,7 +94,7 @@ Other than that, I had a really good experience…”</p><footer>★★★★★
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeG-0BJpzj04c9TYk0KOBN12FMri9a-itwWPi-T20AoWBxgFqbI2bRUptrmcMnHJIIEbYF8ToTwfpalmt8nWpX6dRNtmOGShjmF6uc_7bvETNpbwJFCzhAJJqA_tQZBZG3mda0QroXSWUw=s4800-w1600" alt="Milestone Cafe &amp; Kitchen" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLernDOAwwIpBD8Azzchbe5EHXbxC5QlnmzKBQsPRAaq_m-KRTZp15wg5qLteNuYtkJG0DlhqIR0peTWUBjJkMU-rUHIEo90DU6tkoc_qqof_jW4PegTt_DRZgo_gONRDal0WMI0-x1sevo=s4800-w1600" alt="Milestone Cafe &amp; Kitchen" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfzyeJ-QYDOQWnfBCfIzIO7ysxVsJwVJlN1cCGP6avYMemlowuMiOO-w5GmRLbAwcO3LpfStMEOP76QTNPqhCi9FVoKPAknZYLg_F2OinOqm2cI2TJ14UcW_K6aK0AqD_FdTgKyCrZH0O_v=s4800-w1600" alt="Milestone Cafe &amp; Kitchen" loading="lazy"></div>
+  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeG-0BJpzj04c9TYk0KOBN12FMri9a-itwWPi-T20AoWBxgFqbI2bRUptrmcMnHJIIEbYF8ToTwfpalmt8nWpX6dRNtmOGShjmF6uc_7bvETNpbwJFCzhAJJqA_tQZBZG3mda0QroXSWUw=s4800-w1600" alt="Milestone Cafe &amp; Kitchen"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLernDOAwwIpBD8Azzchbe5EHXbxC5QlnmzKBQsPRAaq_m-KRTZp15wg5qLteNuYtkJG0DlhqIR0peTWUBjJkMU-rUHIEo90DU6tkoc_qqof_jW4PegTt_DRZgo_gONRDal0WMI0-x1sevo=s4800-w1600" alt="Milestone Cafe &amp; Kitchen"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfzyeJ-QYDOQWnfBCfIzIO7ysxVsJwVJlN1cCGP6avYMemlowuMiOO-w5GmRLbAwcO3LpfStMEOP76QTNPqhCi9FVoKPAknZYLg_F2OinOqm2cI2TJ14UcW_K6aK0AqD_FdTgKyCrZH0O_v=s4800-w1600" alt="Milestone Cafe &amp; Kitchen"></div>
 </section>
 
 <section class="wrap" id="hours">

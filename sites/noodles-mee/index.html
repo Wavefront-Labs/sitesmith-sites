@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Noodles Mee</title>
 <meta name="description" content="Laksa and noodles on Scarborough Street, Southport">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#7a3b69;--bg:#faf4f8;--ink:#1e151c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#B5361C;--bg:#FBF4E8;--ink:#2A1A12;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split rounded">
 <nav class="top" hidden><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLfkzvi-nDPc4Z8s-dwWvxB6dOHa6r525ifhNNm-AX4ixJjWMEHDAZdlS3yTo8Qc61DK9rA-YvA2JpuMa8WAxHAyi_x5uyVVKhTZ0ImWoaRqpjafhj89boKvMYJi4ZqRskK1WqOs=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLfkzvi-nDPc4Z8s-dwWvxB6dOHa6r525ifhNNm-AX4ixJjWMEHDAZdlS3yTo8Qc61DK9rA-YvA2JpuMa8WAxHAyi_x5uyVVKhTZ0ImWoaRqpjafhj89boKvMYJi4ZqRskK1WqOs=s4800-w1600" alt="Noodles Mee">
+    <div>
     
     <h1>Noodles Mee</h1>
     <p class="tag">Laksa and noodles on Scarborough Street, Southport</p>
     <p class="rating">4.8 ★ on Google (171 reviews)</p>
     <a class="btn" href="tel:0490460594">Call 0490 460 594</a>
+    </div>
   </div>
 </header>
 
@@ -77,7 +94,7 @@ I had the chicken laksa, while my partner ordered the seafood and chicken combin
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfmhbGrfUgkrIkxPijXRD0hCaQnc2iR8dkHya-TkLpZejm0tZ2y2i1WX3Kxf8f5yOjADMyI-Wr5B0cPWao5ppb-XruqsW7T7mM-98mXW9d4sCQ87ll6WSjZNcifsxOja2c8sN1Q4Q=s4800-w550" alt="Noodles Mee" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcBP2ui486Cy9iZMMweyKp4a7vPaA5_F1ILmu7anXzIuV2C1Pl0DkMws2zOF18tsXY1-wBE03M6jOIPeAtyb6Jo9uRosk61ygktqJ0R9QVSlSLpqLm10pqu7G8MEoz0M69GWzaQP5-JlzwK=s4800-w1600" alt="Noodles Mee" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcn1KEg6qMAdGAqzvHTWfJwuNTBhUSPhlDlov0yZ91euyRpqgvSLISt-ljpSVKbkgpOvVqsQSQtZ94vzZvLOo4zNJTaSgdMsdX50AtsWxgLjtqWcryjv95aS1-pv6mCMygtgGzZ0KDT9l6M=s4800-w1600" alt="Noodles Mee" loading="lazy"></div>
+  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfmhbGrfUgkrIkxPijXRD0hCaQnc2iR8dkHya-TkLpZejm0tZ2y2i1WX3Kxf8f5yOjADMyI-Wr5B0cPWao5ppb-XruqsW7T7mM-98mXW9d4sCQ87ll6WSjZNcifsxOja2c8sN1Q4Q=s4800-w550" alt="Noodles Mee"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcBP2ui486Cy9iZMMweyKp4a7vPaA5_F1ILmu7anXzIuV2C1Pl0DkMws2zOF18tsXY1-wBE03M6jOIPeAtyb6Jo9uRosk61ygktqJ0R9QVSlSLpqLm10pqu7G8MEoz0M69GWzaQP5-JlzwK=s4800-w1600" alt="Noodles Mee"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcn1KEg6qMAdGAqzvHTWfJwuNTBhUSPhlDlov0yZ91euyRpqgvSLISt-ljpSVKbkgpOvVqsQSQtZ94vzZvLOo4zNJTaSgdMsdX50AtsWxgLjtqWcryjv95aS1-pv6mCMygtgGzZ0KDT9l6M=s4800-w1600" alt="Noodles Mee"></div>
 </section>
 
 <section class="wrap" id="hours">

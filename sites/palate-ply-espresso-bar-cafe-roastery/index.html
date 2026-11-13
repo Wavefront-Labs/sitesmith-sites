@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery</title>
 <meta name="description" content="Fresh roasted coffee and wholesome food, tucked away in Coffs.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#2c5f8a;--bg:#f1f6fb;--ink:#121b24;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#7A4A2A;--bg:#F5F0E8;--ink:#2B2420;--card:#FCFAF6;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split sharp">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#the-cafe">The Cafe</a><a href="#office-meeting-event-catering">Office, Meeting &amp; Event Catering</a><a href="#meetings-co-working">Meetings &amp; Co-working</a><a href="#big-5-coffee-roasters">Big 5 Coffee Roasters</a><a href="#buy-coffee-online">Buy Coffee Online</a><a href="#wholesale-coffee">Wholesale Coffee</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLffNn4EAmg9ay48hgZV06tN8HvFZl8btNM0Ivvt-lhPNPbAvw-aCsQ9FoHDmgdFpquzyJl97rrEmIYJxzxAejy46MlVW-vP1Ln_Pes2uLtH8foGHTmJy0ReQMQV59zn_BA55h62=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLffNn4EAmg9ay48hgZV06tN8HvFZl8btNM0Ivvt-lhPNPbAvw-aCsQ9FoHDmgdFpquzyJl97rrEmIYJxzxAejy46MlVW-vP1Ln_Pes2uLtH8foGHTmJy0ReQMQV59zn_BA55h62=s4800-w1600" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery">
+    <div>
     <img class="logo" src="https://palateandply.com.au/wp-content/uploads/2021/04/Palate-Ply-big5-new-logo-small-300x88.png" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery logo">
     <h1>Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery</h1>
     <p class="tag">Fresh roasted coffee and wholesome food, tucked away in Coffs.</p>
     <p class="rating">4.6 ★ on Google (620 reviews)</p>
     <a class="btn" href="tel:0434700910">Call 0434 700 910</a> <a class="btn ghost" href="mailto:palateandplycoffee@gmail.com">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -78,7 +95,7 @@ Do yourself a favour and experience the…”</p><footer>★★★★★ Karen W
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://palateandply.com.au/wp-content/uploads/bb-plugin/cache/palate-and-ply-35-683x1024-square-f5330dc31d972d8e2a25ab7957cd44c2-608b6dce179dc.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery" loading="lazy"><img src="https://palateandply.com.au/wp-content/uploads/2023/10/palate-and-ply-32-1024x683.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery" loading="lazy"><img src="https://palateandply.com.au/wp-content/uploads/2023/10/palate-and-ply-04-1024x683.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery" loading="lazy"><img src="https://palateandply.com.au/wp-content/uploads/2020/04/jgh-76-of-1052-1024x682.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery" loading="lazy"><img src="https://palateandply.com.au/wp-content/uploads/2023/10/palate-and-ply-30-1024x683.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery" loading="lazy"><img src="https://palateandply.com.au/wp-content/uploads/2026/09/Screenshot-2026-09-18-094523.png" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery" loading="lazy"><img src="https://palateandply.com.au/wp-content/uploads/2026/09/Screenshot-2026-09-18-092154.png" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery" loading="lazy"><img src="https://palateandply.com.au/wp-content/uploads/2020/11/20200817_151054-1280x960-1.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery" loading="lazy"></div>
+  <div class="gallery"><img src="https://palateandply.com.au/wp-content/uploads/bb-plugin/cache/palate-and-ply-35-683x1024-square-f5330dc31d972d8e2a25ab7957cd44c2-608b6dce179dc.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery"><img src="https://palateandply.com.au/wp-content/uploads/2023/10/palate-and-ply-32-1024x683.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery"><img src="https://palateandply.com.au/wp-content/uploads/2023/10/palate-and-ply-04-1024x683.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery"><img src="https://palateandply.com.au/wp-content/uploads/2020/04/jgh-76-of-1052-1024x682.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery"><img src="https://palateandply.com.au/wp-content/uploads/2023/10/palate-and-ply-30-1024x683.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery"><img src="https://palateandply.com.au/wp-content/uploads/2026/09/Screenshot-2026-09-18-094523.png" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery"><img src="https://palateandply.com.au/wp-content/uploads/2026/09/Screenshot-2026-09-18-092154.png" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery"><img src="https://palateandply.com.au/wp-content/uploads/2020/11/20200817_151054-1280x960-1.jpg" alt="Palate &amp; Ply Espresso Bar, Cafe &amp; Roastery"></div>
 </section>
 
 <section class="wrap" id="hours">

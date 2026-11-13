@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Berrikos Dandenong</title>
 <meta name="description" content="Dandenong&#x27;s all-day, all-night diner. We never close.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#7a3b69;--bg:#faf4f8;--ink:#1e151c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#8E2A4F;--bg:#FBF4F2;--ink:#2A1A1F;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split pill">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#made-to-order-every-order">Made to order. Every order.</a><a href="#we-started-with-one-warm-brown">We started with one warm brownie</a><a href="#book-a-table">Book a table</a><a href="#catering">Catering</a><a href="#our-other-restaurants">Our other restaurants</a><a href="#franchise-with-berriko-s">Franchise with Berriko&#x27;s</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdMoeuBWhZ4flkuXCMi9hcgA_OZXMG55OdBiEnYLDeuW-0WEvIM5Y3KbgcDfbdxm8eyey4AeFOsAuIK0NNFahbUy_Z-P74EEHxdxpJt5g6Km0e0A4D62Qwjfhr3-Db-6K2yD24p-A=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdMoeuBWhZ4flkuXCMi9hcgA_OZXMG55OdBiEnYLDeuW-0WEvIM5Y3KbgcDfbdxm8eyey4AeFOsAuIK0NNFahbUy_Z-P74EEHxdxpJt5g6Km0e0A4D62Qwjfhr3-Db-6K2yD24p-A=s4800-w1600" alt="Berrikos Dandenong">
+    <div>
     <img class="logo" src="https://www.berrikos.com.au/_next/image?url=%2Fbrand%2Fberrikos-logo.png&amp;amp;w=828&amp;amp;q=75" alt="Berrikos Dandenong logo">
     <h1>Berrikos Dandenong</h1>
     <p class="tag">Dandenong&#x27;s all-day, all-night diner. We never close.</p>
     <p class="rating">4.1 ★ on Google (431 reviews)</p>
     <a class="btn" href="tel:0397722510">Call (03) 9772 2510</a> <a class="btn ghost" href="mailto:info@berrikos.com.au">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -78,7 +95,7 @@ The food was awsome,at our table we had a hamburger, chicken burger, a toastie a
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://www.berrikos.com.au/_next/image?url=%2Fimages%2Flocations%2Fdandenong.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong" loading="lazy"><img src="https://www.berrikos.com.au/_next/image?url=%2Fimages%2Fdine-in%2Fbar.webp&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong" loading="lazy"><img src="https://www.berrikos.com.au/_next/image?url=%2Fimages%2Flocations%2Formond.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong" loading="lazy"><img src="https://www.berrikos.com.au/_next/image?url=%2Fimages%2Flocations%2Fcarrum-teaser.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong" loading="lazy"><img src="https://www.berrikos.com.au/_next/image?url=%2Fimages%2Flocations%2Fdocklands-teaser.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong" loading="lazy"><img src="https://www.berrikos.com.au/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1464349095431-e9a21285b5f3%3Fauto%3Dformat%26fit%3Dcrop%26w%3D1400%26q%3D85&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong" loading="lazy"><img src="https://www.berrikos.com.au/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1552566626-52f8b828add9%3Fauto%3Dformat%26fit%3Dcrop%26w%3D2400%26q%3D85&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong" loading="lazy"><img src="https://www.berrikos.com.au/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1464349095431-e9a21285b5f3%3Fauto%3Dformat%26fit%3Dcrop%26w%3D2200%26q%3D80&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong" loading="lazy"></div>
+  <div class="gallery"><img src="https://www.berrikos.com.au/_next/image?url=%2Fimages%2Flocations%2Fdandenong.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong"><img src="https://www.berrikos.com.au/_next/image?url=%2Fimages%2Fdine-in%2Fbar.webp&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong"><img src="https://www.berrikos.com.au/_next/image?url=%2Fimages%2Flocations%2Formond.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong"><img src="https://www.berrikos.com.au/_next/image?url=%2Fimages%2Flocations%2Fcarrum-teaser.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong"><img src="https://www.berrikos.com.au/_next/image?url=%2Fimages%2Flocations%2Fdocklands-teaser.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong"><img src="https://www.berrikos.com.au/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1464349095431-e9a21285b5f3%3Fauto%3Dformat%26fit%3Dcrop%26w%3D1400%26q%3D85&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong"><img src="https://www.berrikos.com.au/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1552566626-52f8b828add9%3Fauto%3Dformat%26fit%3Dcrop%26w%3D2400%26q%3D85&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong"><img src="https://www.berrikos.com.au/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1464349095431-e9a21285b5f3%3Fauto%3Dformat%26fit%3Dcrop%26w%3D2200%26q%3D80&amp;amp;w=3840&amp;amp;q=75" alt="Berrikos Dandenong"></div>
 </section>
 
 <section class="wrap" id="hours">

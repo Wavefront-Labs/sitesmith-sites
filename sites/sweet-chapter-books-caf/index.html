@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Sweet Chapter Books &amp; Café</title>
 <meta name="description" content="Romance books, good coffee and a cosy corner in Indooroopilly">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#b4532a;--bg:#fbf6f0;--ink:#1f1a16;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#A3324F;--bg:#FBF3F1;--ink:#2E1F24;--card:#FFFAF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split rounded">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#the-caf">The Café</a><a href="#romance-library">Romance Library</a><a href="#monthly-feature">Monthly Feature</a><a href="#events">Events</a><a href="#opening-hours">Opening Hours</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdaQfUBzoo-TAYYqXEY0sNpnz0HytwhaWyd_JQUjeZ8b1FDz_2mOhZqDWnKvkKb7q-7iBJYW2emxGXtO0X1r9bk27vCWrHfrdR-kmPP2FRCNhXP68fJp6j3DIBtk5ZC_Du80ZkLr4PJxZOi=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdaQfUBzoo-TAYYqXEY0sNpnz0HytwhaWyd_JQUjeZ8b1FDz_2mOhZqDWnKvkKb7q-7iBJYW2emxGXtO0X1r9bk27vCWrHfrdR-kmPP2FRCNhXP68fJp6j3DIBtk5ZC_Du80ZkLr4PJxZOi=s4800-w1600" alt="Sweet Chapter Books &amp; Café">
+    <div>
     
     <h1>Sweet Chapter Books &amp; Café</h1>
     <p class="tag">Romance books, good coffee and a cosy corner in Indooroopilly</p>
     <p class="rating">4.9 ★ on Google (32 reviews)</p>
     <a class="btn" href="tel:0488219685">Call 0488 219 685</a> <a class="btn ghost" href="mailto:admin@sweetchapterbooks.com.au">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -77,7 +94,7 @@ Edit to add: I also forgot to say they have a super cute blind date with a…”
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/elementor/thumbs/d52f4cac-4a31-4829-a7f4-c9e8f4239b0c-rs7uy8sj4q2eynxurh0jzo5vzeil2tt7nvcsn8e4rk.jpg" alt="Sweet Chapter Books &amp; Café" loading="lazy"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/08/Straw-Matcha-819x1024.png" alt="Sweet Chapter Books &amp; Café" loading="lazy"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/08/Book-819x1024.jpg" alt="Sweet Chapter Books &amp; Café" loading="lazy"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/08/IMG_3964-1.jpg" alt="Sweet Chapter Books &amp; Café" loading="lazy"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/08/IMG_3429-scaled.jpg" alt="Sweet Chapter Books &amp; Café" loading="lazy"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/07/coffee-512x512-2.png" alt="Sweet Chapter Books &amp; Café" loading="lazy"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/07/croissant-512x512-1.png" alt="Sweet Chapter Books &amp; Café" loading="lazy"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/07/heart-512x512-1.png" alt="Sweet Chapter Books &amp; Café" loading="lazy"></div>
+  <div class="gallery"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/elementor/thumbs/d52f4cac-4a31-4829-a7f4-c9e8f4239b0c-rs7uy8sj4q2eynxurh0jzo5vzeil2tt7nvcsn8e4rk.jpg" alt="Sweet Chapter Books &amp; Café"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/08/Straw-Matcha-819x1024.png" alt="Sweet Chapter Books &amp; Café"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/08/Book-819x1024.jpg" alt="Sweet Chapter Books &amp; Café"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/08/IMG_3964-1.jpg" alt="Sweet Chapter Books &amp; Café"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/08/IMG_3429-scaled.jpg" alt="Sweet Chapter Books &amp; Café"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/07/coffee-512x512-2.png" alt="Sweet Chapter Books &amp; Café"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/07/croissant-512x512-1.png" alt="Sweet Chapter Books &amp; Café"><img src="https://sweetchapterbooks.com.au/wp-content/uploads/2026/07/heart-512x512-1.png" alt="Sweet Chapter Books &amp; Café"></div>
 </section>
 
 <section class="wrap" id="hours">

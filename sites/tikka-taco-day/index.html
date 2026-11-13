@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Tikka Taco Day</title>
 <meta name="description" content="Chicken tikka meets tacos and quesadillas in North Parramatta">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#2c5f8a;--bg:#f1f6fb;--ink:#121b24;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#B5361B;--bg:#FFF6EA;--ink:#2A1A12;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split pill">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLccC6qQCz2lU1TmKvYmQ7oYe01qiVwsqegfX1sv3_k3MmEutDDpvR0ok9B-owWZn4rQEhbno6Jg3pQFD9LHBptz4mgt9CCYdekBkJR_wAP-DKYjrBN-ZDgcowC8z4nD461Y5TeX3g=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLccC6qQCz2lU1TmKvYmQ7oYe01qiVwsqegfX1sv3_k3MmEutDDpvR0ok9B-owWZn4rQEhbno6Jg3pQFD9LHBptz4mgt9CCYdekBkJR_wAP-DKYjrBN-ZDgcowC8z4nD461Y5TeX3g=s4800-w1600" alt="Tikka Taco Day">
+    <div>
     
     <h1>Tikka Taco Day</h1>
     <p class="tag">Chicken tikka meets tacos and quesadillas in North Parramatta</p>
     <p class="rating">4.5 ★ on Google (271 reviews)</p>
     <a class="btn" href="tel:0278201155">Call (02) 7820 1155</a> <a class="btn ghost" href="mailto:sales@cygenpos.com">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -76,7 +93,7 @@ What really impresses…”</p><footer>★★★★★ SREE SANKAR</footer></blo
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLf7cWUkPCdplfPNGhY2SrVWJuy-8jjZ0MCurG8tfEyegAVwYkmk3p7ihtZEZt1TZGLgj2V0_VI-d_yTcFb5PIUFvjIEwo-iI-ztOGTyhXA8foPHW_nhZxe5VmM9hKgWAtAj9ViW=s4800-w1600" alt="Tikka Taco Day" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfqQB2DfsCB1-E4M02uFbm_jXYzjkRPJ43QlZhWhDwqVUZNwxAfr2ELh7DGe4V7mIcjK8g2RZ0RDR19h6gItC3BXYzBDHr9pGs9dJRUNDwmbhH9OkbouMFdcHPqvn1g2lvvBZZ4o6EhdAkd=s4800-w1600" alt="Tikka Taco Day" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdzPmrSE8z2z6kEUv4Y9S_ZTfxVtdUm1azd2KyDzdCiN1sk7xI_FM9tr_gk_O5v-vGncyroBH0vzw8DZdHgj8T4z0nAhkYfgiHK67H-qXTPge4YigDbb8s7DusOMHLtjG4biRbVowMM2ys=s4800-w1600" alt="Tikka Taco Day" loading="lazy"></div>
+  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLf7cWUkPCdplfPNGhY2SrVWJuy-8jjZ0MCurG8tfEyegAVwYkmk3p7ihtZEZt1TZGLgj2V0_VI-d_yTcFb5PIUFvjIEwo-iI-ztOGTyhXA8foPHW_nhZxe5VmM9hKgWAtAj9ViW=s4800-w1600" alt="Tikka Taco Day"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfqQB2DfsCB1-E4M02uFbm_jXYzjkRPJ43QlZhWhDwqVUZNwxAfr2ELh7DGe4V7mIcjK8g2RZ0RDR19h6gItC3BXYzBDHr9pGs9dJRUNDwmbhH9OkbouMFdcHPqvn1g2lvvBZZ4o6EhdAkd=s4800-w1600" alt="Tikka Taco Day"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdzPmrSE8z2z6kEUv4Y9S_ZTfxVtdUm1azd2KyDzdCiN1sk7xI_FM9tr_gk_O5v-vGncyroBH0vzw8DZdHgj8T4z0nAhkYfgiHK67H-qXTPge4YigDbb8s7DusOMHLtjG4biRbVowMM2ys=s4800-w1600" alt="Tikka Taco Day"></div>
 </section>
 
 <section class="wrap" id="hours">

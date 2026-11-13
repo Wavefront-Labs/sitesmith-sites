@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Cafe Minnie</title>
 <meta name="description" content="A peaceful, friendly little cafe on Minnie Street, Southport.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#8a6d1f;--bg:#fbf8ee;--ink:#1f1a0e;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#A8423A;--bg:#F7F3EC;--ink:#2B2724;--card:#FFFDF9;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'DM Serif Display', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split rounded">
 <nav class="top" hidden><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcX5xNIUyTmKqTCCf8-uLPe-S6edXJEQSB_qlLhBzhpPcRdzJUAto2eGLKgU1cdpUhGVXD0atAxDdlppexdYq9zwu7iyM8AQVTMdo-7iyullVseVlaQOhwDQJKNog_8wXjj61f6rw=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcX5xNIUyTmKqTCCf8-uLPe-S6edXJEQSB_qlLhBzhpPcRdzJUAto2eGLKgU1cdpUhGVXD0atAxDdlppexdYq9zwu7iyM8AQVTMdo-7iyullVseVlaQOhwDQJKNog_8wXjj61f6rw=s4800-w1600" alt="Cafe Minnie">
+    <div>
     
     <h1>Cafe Minnie</h1>
     <p class="tag">A peaceful, friendly little cafe on Minnie Street, Southport.</p>
     <p class="rating">5 ★ on Google (69 reviews)</p>
     <a class="btn" href="tel:0429889765">Call 0429 889 765</a>
+    </div>
   </div>
 </header>
 
@@ -73,7 +90,7 @@ Great little Japanese spot! The food was fresh, tasty and the portions were real
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdQPC0QwYipYXeoQtBC7jNfXDeeuJX0uVo3t2pPZa1JFUW46Boft-eNjHU3A5v0XkGurE952WqPvR78tyUz2pH59xCM8YXFJ6Z8FGMZB6EZoio3wXXzKMNYPAdjQpRjxUR0jHGLm2-BObkk=s4800-w1600" alt="Cafe Minnie" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeUJSFKnza5f6bF0MeXElr7jRkkGXDFuMrtCgCANcFKmZNEmb7kZoiGCV4mdnfgGqr5kkgymRHukHgdv37qVCK6wZdm2257AWz0AR3KT5mqtHZEZNsB9VGuK9M6irZSmXPhP7JPFg=s4800-w1600" alt="Cafe Minnie" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfbIWiKLjLhN6sjtVx28FZwBjljjJU1j1pQrvY_BCJ1UTIry0fUadWuKZvZrm_keu55sgaI1Nojc8ggL-8hD_AKQyiiE5-CFYrXsP8ZJjQ5-ebaDI_Po9b7rt32mFreuRIGzgl_wjpCcbc=s4800-w1600" alt="Cafe Minnie" loading="lazy"></div>
+  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdQPC0QwYipYXeoQtBC7jNfXDeeuJX0uVo3t2pPZa1JFUW46Boft-eNjHU3A5v0XkGurE952WqPvR78tyUz2pH59xCM8YXFJ6Z8FGMZB6EZoio3wXXzKMNYPAdjQpRjxUR0jHGLm2-BObkk=s4800-w1600" alt="Cafe Minnie"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeUJSFKnza5f6bF0MeXElr7jRkkGXDFuMrtCgCANcFKmZNEmb7kZoiGCV4mdnfgGqr5kkgymRHukHgdv37qVCK6wZdm2257AWz0AR3KT5mqtHZEZNsB9VGuK9M6irZSmXPhP7JPFg=s4800-w1600" alt="Cafe Minnie"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfbIWiKLjLhN6sjtVx28FZwBjljjJU1j1pQrvY_BCJ1UTIry0fUadWuKZvZrm_keu55sgaI1Nojc8ggL-8hD_AKQyiiE5-CFYrXsP8ZJjQ5-ebaDI_Po9b7rt32mFreuRIGzgl_wjpCcbc=s4800-w1600" alt="Cafe Minnie"></div>
 </section>
 
 <section class="wrap" id="hours">

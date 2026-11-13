@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Sum Sum</title>
 <meta name="description" content="Vietnamese flavours with a modern touch in South Brisbane">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#7a3b69;--bg:#faf4f8;--ink:#1e151c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#1F5E4A;--bg:#F6F2EA;--ink:#1E1B18;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split sharp">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#what-s-on">What&#x27;s On</a><a href="#functions">Functions</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://bookings.nowbookit.com/?accountid=ce983107-7d7e-4abf-9035-aad5a45ce826&amp;#038;venueid=14645&amp;#038;theme=light&amp;#038;colors=hex,573505&amp;#038;banner=hidden&amp;#038;bg=transparent" rel="noopener">Book a table</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcVZ5zFJgn1oi5IZiXpQuYkYJOzKcgqm0BH1qRWIixIG3ArEylIOrT8rjLbEH8u2TaxxsZg9qjV6dO9v2FtxcXxG0hcf__Xk9IIoD5MCvu2l3zdYEGcRUeH59Ck31jAp3W6AAJj6wiXdJ0v=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcVZ5zFJgn1oi5IZiXpQuYkYJOzKcgqm0BH1qRWIixIG3ArEylIOrT8rjLbEH8u2TaxxsZg9qjV6dO9v2FtxcXxG0hcf__Xk9IIoD5MCvu2l3zdYEGcRUeH59Ck31jAp3W6AAJj6wiXdJ0v=s4800-w1600" alt="Sum Sum">
+    <div>
     <img class="logo" src="https://sumsumdining.com.au/wp-content/uploads/2026/07/Header-Logo.png" alt="Sum Sum logo">
     <h1>Sum Sum</h1>
     <p class="tag">Vietnamese flavours with a modern touch in South Brisbane</p>
     <p class="rating">4.5 ★ on Google (48 reviews)</p>
     <a class="btn" href="tel:0459466882">Call 0459 466 882</a> <a class="btn ghost" href="mailto:info@sumsumdining.com.au">Email us</a> <a class="btn ghost" href="https://bookings.nowbookit.com/?accountid=ce983107-7d7e-4abf-9035-aad5a45ce826&amp;#038;venueid=14645&amp;#038;theme=light&amp;#038;colors=hex,573505&amp;#038;banner=hidden&amp;#038;bg=transparent" rel="noopener">Book a table</a>
+    </div>
   </div>
 </header>
 
@@ -80,7 +97,7 @@ Great atmosphere, attentive service, and a really nice balance between sophistic
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://sumsumdining.com.au/wp-content/uploads/2026/07/Untitled-design-12.24.36-PM-scaled.png" alt="Sum Sum" loading="lazy"><img src="https://sumsumdining.com.au/wp-content/uploads/2026/07/KIS08015-scaled.jpg" alt="Sum Sum" loading="lazy"><img src="https://sumsumdining.com.au/wp-content/uploads/2026/07/KIS07938-scaled.jpg" alt="Sum Sum" loading="lazy"><img src="https://sumsumdining.com.au/wp-content/uploads/2026/07/KIS08046-1-scaled.jpg" alt="Sum Sum" loading="lazy"><img src="https://sumsumdining.com.au/wp-content/uploads/2026/07/KIS08008-scaled.jpg" alt="Sum Sum" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLc6XmIM7BhdXVDsXjPCYcaLUZgBh60dIcUaWrvIucaj-Uc2f_tTz4YijZU08QqchkyXVLWE0uA-sa4_J0Wigw5ncZKGwIvOpXhrvkZH9A_EGfFdaJIf_zo6OVmME_HlNFmB1YHqBN2sYgg=s4800-w1600" alt="Sum Sum" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcJ4QliJSUsc1zRkcYkhIojxEsYvFT5Fa2e0X-zAttaUFimmpnwi4Dt-UKbMIwHalu9JG7jTUK0L8u62zPUombZSR-8eUrmwvHtgTZZuqYtHl3fpWKKvhlcgT8YiP4MFZJF8_dqvUn09Oug=s4800-w1600" alt="Sum Sum" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdwPKmx84LPialFYycPZ7aIO9ktt1ngj1nrEEgBXyhdkq7glPB8zI7-59sc1FWgDzZhBhux-_XBuOkhgGSuGDG3DeODQk19cW1KSQdiaf_atVc844WRSTXl7bEZRHnFiQvKFjAtNzSJAR2w=s4800-w1600" alt="Sum Sum" loading="lazy"></div>
+  <div class="gallery"><img src="https://sumsumdining.com.au/wp-content/uploads/2026/07/Untitled-design-12.24.36-PM-scaled.png" alt="Sum Sum"><img src="https://sumsumdining.com.au/wp-content/uploads/2026/07/KIS08015-scaled.jpg" alt="Sum Sum"><img src="https://sumsumdining.com.au/wp-content/uploads/2026/07/KIS07938-scaled.jpg" alt="Sum Sum"><img src="https://sumsumdining.com.au/wp-content/uploads/2026/07/KIS08046-1-scaled.jpg" alt="Sum Sum"><img src="https://sumsumdining.com.au/wp-content/uploads/2026/07/KIS08008-scaled.jpg" alt="Sum Sum"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLc6XmIM7BhdXVDsXjPCYcaLUZgBh60dIcUaWrvIucaj-Uc2f_tTz4YijZU08QqchkyXVLWE0uA-sa4_J0Wigw5ncZKGwIvOpXhrvkZH9A_EGfFdaJIf_zo6OVmME_HlNFmB1YHqBN2sYgg=s4800-w1600" alt="Sum Sum"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcJ4QliJSUsc1zRkcYkhIojxEsYvFT5Fa2e0X-zAttaUFimmpnwi4Dt-UKbMIwHalu9JG7jTUK0L8u62zPUombZSR-8eUrmwvHtgTZZuqYtHl3fpWKKvhlcgT8YiP4MFZJF8_dqvUn09Oug=s4800-w1600" alt="Sum Sum"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdwPKmx84LPialFYycPZ7aIO9ktt1ngj1nrEEgBXyhdkq7glPB8zI7-59sc1FWgDzZhBhux-_XBuOkhgGSuGDG3DeODQk19cW1KSQdiaf_atVc844WRSTXl7bEZRHnFiQvKFjAtNzSJAR2w=s4800-w1600" alt="Sum Sum"></div>
 </section>
 
 <section class="wrap" id="hours">

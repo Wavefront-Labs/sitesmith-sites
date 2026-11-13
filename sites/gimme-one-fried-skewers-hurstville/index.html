@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Gimme One Fried Skewers Hurstville 来一串儿</title>
 <meta name="description" content="Build-your-own Chinese street food skewers in Hurstville">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#8a6d1f;--bg:#fbf8ee;--ink:#1f1a0e;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#C8102E;--bg:#FFF6E8;--ink:#2A1410;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split pill">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#how-it-works">How It Works</a><a href="#our-other-locations">Our Other Locations</a><a href="#franchise-opportunities">Franchise Opportunities</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLc5EdlRyJ8hEIKFb-8JRNNohT4vWd3K5m1aKm8qFPbsrkXOPqO_tTrUV-A6IMnkAz8zZkoGsPrspmdA40Qne7H8-giq7iPpA-aWLf03ZRh2z4a3es6inIvte_lp3_on2H6CRmM=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLc5EdlRyJ8hEIKFb-8JRNNohT4vWd3K5m1aKm8qFPbsrkXOPqO_tTrUV-A6IMnkAz8zZkoGsPrspmdA40Qne7H8-giq7iPpA-aWLf03ZRh2z4a3es6inIvte_lp3_on2H6CRmM=s4800-w1600" alt="Gimme One Fried Skewers Hurstville 来一串儿">
+    <div>
     
     <h1>Gimme One Fried Skewers Hurstville 来一串儿</h1>
     <p class="tag">Build-your-own Chinese street food skewers in Hurstville</p>
     <p class="rating">4.7 ★ on Google (192 reviews)</p>
     <a class="btn" href="tel:0466222192">Call 0466 222 192</a> <a class="btn ghost" href="mailto:contact@lm-group.com.au">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -74,7 +91,7 @@ Initially skeptical as the one in the city near Town Hall station had meat the s
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://static.wixstatic.com/media/203ced_b091d77810d641bf8a7c1c78d2d0f473~mv2.jpg/v1/fill/w_98,h_112,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/203ced_b091d77810d641bf8a7c1c78d2d0f473~mv2.jpg" alt="Gimme One Fried Skewers Hurstville 来一串儿" loading="lazy"><img src="https://static.wixstatic.com/media/203ced_5420d6241a724ae98f0002a784741c55~mv2.jpg/v1/fill/w_84,h_84,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/203ced_5420d6241a724ae98f0002a784741c55~mv2.jpg" alt="Gimme One Fried Skewers Hurstville 来一串儿" loading="lazy"><img src="https://static.wixstatic.com/media/203ced_4b0c64655342433daee63c715ab26439~mv2.jpg/v1/fill/w_113,h_97,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/203ced_4b0c64655342433daee63c715ab26439~mv2.jpg" alt="Gimme One Fried Skewers Hurstville 来一串儿" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLebrnXOm5rZEGTLBDZQQBmn05JPE2ownrnFP_7NVzpKSuG6uVon71s_SH5XGGCFtbmX2uXdPvFgoPuQ6shIJKpEWR1QTIHByIj202dGi9gWQR93GyfcaKndrP16wlK4EUd_MrMA=s4800-w1290" alt="Gimme One Fried Skewers Hurstville 来一串儿" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcTm03YepCrCmYyA5c8Lbd2rtYNvJ4jVpOf2udt3iZVvDMWwMYVN8keU5ecYch5LyafWwbjQ0UcMW6A9_omWhrLZyudxXh3oC5ws3zRmc5-sg7wvDWO0ojRdCfXNKmZiTaU-F77=s4800-w1360" alt="Gimme One Fried Skewers Hurstville 来一串儿" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeIMbgRLWhtT8HSpaWSKORiFmO2cNhNJVIkTUr4uPmsamx8138o1sYE5Xij2mOt6rOccj-PRRLZ29v5zvpefmYj-Q3WbEElh4MObwDhaj77oKv-afYtnpePFQIfDuiN08v_b-tB=s4800-w1600" alt="Gimme One Fried Skewers Hurstville 来一串儿" loading="lazy"></div>
+  <div class="gallery"><img src="https://static.wixstatic.com/media/203ced_b091d77810d641bf8a7c1c78d2d0f473~mv2.jpg/v1/fill/w_98,h_112,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/203ced_b091d77810d641bf8a7c1c78d2d0f473~mv2.jpg" alt="Gimme One Fried Skewers Hurstville 来一串儿"><img src="https://static.wixstatic.com/media/203ced_5420d6241a724ae98f0002a784741c55~mv2.jpg/v1/fill/w_84,h_84,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/203ced_5420d6241a724ae98f0002a784741c55~mv2.jpg" alt="Gimme One Fried Skewers Hurstville 来一串儿"><img src="https://static.wixstatic.com/media/203ced_4b0c64655342433daee63c715ab26439~mv2.jpg/v1/fill/w_113,h_97,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/203ced_4b0c64655342433daee63c715ab26439~mv2.jpg" alt="Gimme One Fried Skewers Hurstville 来一串儿"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLebrnXOm5rZEGTLBDZQQBmn05JPE2ownrnFP_7NVzpKSuG6uVon71s_SH5XGGCFtbmX2uXdPvFgoPuQ6shIJKpEWR1QTIHByIj202dGi9gWQR93GyfcaKndrP16wlK4EUd_MrMA=s4800-w1290" alt="Gimme One Fried Skewers Hurstville 来一串儿"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcTm03YepCrCmYyA5c8Lbd2rtYNvJ4jVpOf2udt3iZVvDMWwMYVN8keU5ecYch5LyafWwbjQ0UcMW6A9_omWhrLZyudxXh3oC5ws3zRmc5-sg7wvDWO0ojRdCfXNKmZiTaU-F77=s4800-w1360" alt="Gimme One Fried Skewers Hurstville 来一串儿"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeIMbgRLWhtT8HSpaWSKORiFmO2cNhNJVIkTUr4uPmsamx8138o1sYE5Xij2mOt6rOccj-PRRLZ29v5zvpefmYj-Q3WbEElh4MObwDhaj77oKv-afYtnpePFQIfDuiN08v_b-tB=s4800-w1600" alt="Gimme One Fried Skewers Hurstville 来一串儿"></div>
 </section>
 
 <section class="wrap" id="hours">

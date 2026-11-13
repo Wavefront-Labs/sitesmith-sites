@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Marco’s Tacos (Indooroopilly)</title>
 <meta name="description" content="Now serving Indooroopilly: tacos, fajitas, margs and gelato.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#b4532a;--bg:#fbf6f0;--ink:#1f1a16;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#B8321F;--bg:#FBF4EA;--ink:#2A1A14;--card:#FFFDF9;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split rounded">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcDkxCVU5nQwCQdXxeY5D7puOxwaIiz8ewKcLxjdchyz0CdfcGIuAoLRnvfiWnRoDJ5XVwYf2My1WrgAz1xuq4EJGZLS-z67lHCDPTreo04Ea_Cra5gC4LgM6zreuziOOi8ahWDrGBGPPs=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcDkxCVU5nQwCQdXxeY5D7puOxwaIiz8ewKcLxjdchyz0CdfcGIuAoLRnvfiWnRoDJ5XVwYf2My1WrgAz1xuq4EJGZLS-z67lHCDPTreo04Ea_Cra5gC4LgM6zreuziOOi8ahWDrGBGPPs=s4800-w1600" alt="Marco’s Tacos (Indooroopilly)">
+    <div>
     
     <h1>Marco’s Tacos (Indooroopilly)</h1>
     <p class="tag">Now serving Indooroopilly: tacos, fajitas, margs and gelato.</p>
     <p class="rating">4.4 ★ on Google (62 reviews)</p>
     <a class="btn" href="tel:0735448337">Call (07) 3544 8337</a> <a class="btn ghost" href="mailto:hola@marcostacos.com.au">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -76,7 +93,7 @@ Not a big drinker…”</p><footer>★★★★★ Allyssa Kho</footer></blockqu
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://www.marcostacos.com.au/gelato.jpg" alt="Marco’s Tacos (Indooroopilly)" loading="lazy"><img src="https://www.marcostacos.com.au/tacos.jpg" alt="Marco’s Tacos (Indooroopilly)" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdgQNV2AIxDNVPOgiITE6fW_RrCerLnuomHip7QNNXgmSdNKnoogy1KP31DVVJ5HVDy5cUZR2rZpsPurzPqh03HnbFRIFcNMaMmWxCn9kEjDAhg9j9hchf8mlJl0p9TD3-ionQyx03oQlmZ=s4800-w1448" alt="Marco’s Tacos (Indooroopilly)" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLf2LWEeZnQvTkYMKq8nFsGJwRlfqmi8V1oQAtLstKeEilvyJda_P0axdbMQ5qzFMveng7AS-fOJZr9msI44YBET9P0taY6fuDyuD00K3LNSwXRu53iMyrp3-pEe1BfckdJts6l_hAtpXbkV=s4800-w1191" alt="Marco’s Tacos (Indooroopilly)" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfIqKZvdJDugP3uTS5ygtPKQNJuhjmq30mbBP755i4MBbzh6odZohUMuALxlE44-I09GEnhSOi6x5LvAVgFA8-yPpL_zcn40DAD6Gbu1kf1MNs2hCWre5rIyYL_YdeSagXJgkc-FZVW_p6G=s4800-w1600" alt="Marco’s Tacos (Indooroopilly)" loading="lazy"></div>
+  <div class="gallery"><img src="https://www.marcostacos.com.au/gelato.jpg" alt="Marco’s Tacos (Indooroopilly)"><img src="https://www.marcostacos.com.au/tacos.jpg" alt="Marco’s Tacos (Indooroopilly)"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdgQNV2AIxDNVPOgiITE6fW_RrCerLnuomHip7QNNXgmSdNKnoogy1KP31DVVJ5HVDy5cUZR2rZpsPurzPqh03HnbFRIFcNMaMmWxCn9kEjDAhg9j9hchf8mlJl0p9TD3-ionQyx03oQlmZ=s4800-w1448" alt="Marco’s Tacos (Indooroopilly)"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLf2LWEeZnQvTkYMKq8nFsGJwRlfqmi8V1oQAtLstKeEilvyJda_P0axdbMQ5qzFMveng7AS-fOJZr9msI44YBET9P0taY6fuDyuD00K3LNSwXRu53iMyrp3-pEe1BfckdJts6l_hAtpXbkV=s4800-w1191" alt="Marco’s Tacos (Indooroopilly)"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfIqKZvdJDugP3uTS5ygtPKQNJuhjmq30mbBP755i4MBbzh6odZohUMuALxlE44-I09GEnhSOi6x5LvAVgFA8-yPpL_zcn40DAD6Gbu1kf1MNs2hCWre5rIyYL_YdeSagXJgkc-FZVW_p6G=s4800-w1600" alt="Marco’s Tacos (Indooroopilly)"></div>
 </section>
 
 <section class="wrap" id="hours">

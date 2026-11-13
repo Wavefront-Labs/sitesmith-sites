@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>The Anchorage Café</title>
 <meta name="description" content="A relaxed waterside café overlooking the marina at Steiglitz">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#b4532a;--bg:#fbf6f0;--ink:#1f1a16;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#1F5A7A;--bg:#F3F7F8;--ink:#16252E;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'DM Serif Display', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-fullbleed rounded">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#book-a-berth">Book a Berth</a><a href="#akuna-bay-marina">Akuna Bay Marina</a><a href="#batemans-bay-marina">Batemans Bay Marina</a><a href="#cabarita-point-marina">Cabarita Point Marina</a><a href="#nelson-bay-marina">Nelson Bay Marina</a><a href="#port-macquarie-marina">Port Macquarie Marina</a><a href="#rushcutters-bay-marina">Rushcutters Bay Marina</a><a href="#soldiers-point-marina">Soldiers Point Marina</a><a href="#the-anchorage-marina">The Anchorage Marina</a><a href="#the-spit-marina">The Spit Marina</a><a href="#east-coast-marina-manly-harbou">East Coast Marina, Manly Harbour</a><a href="#hours">Hours &amp; location</a></div></nav>
+
 <header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLfO_NLx4Jun6CS3DhDzydGr0EFeDGpEjhGEUGtFY4Nqy8SidN3PtoyU7AQ-mYUQ87oLMSblXtg53haymS-lUakebIkak_fz42pPTc1nxOCyP7h0ciMa8X6pytksCCUXrXqVYeiFRg5hi5Ld=s4800-w1600)">
   <div class="wrap">
+    
+    <div>
     <img class="logo" src="https://www.dalbora.com.au/wp-content/uploads/dalbora-marinas-logo-2.svg" alt="The Anchorage Café logo">
     <h1>The Anchorage Café</h1>
     <p class="tag">A relaxed waterside café overlooking the marina at Steiglitz</p>
     <p class="rating">4.5 ★ on Google (363 reviews)</p>
     <a class="btn" href="tel:0756704307">Call (07) 5670 4307</a> <a class="btn ghost" href="mailto:enquiry@dalbora.com.au">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -80,7 +97,7 @@ Such a great experience at Anchorage Cafe! I had the calamari salad, burger and 
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://www.dalbora.com.au/wp-content/uploads/dAlbora-Website-MARINA-HEADER-Experience-the-Lifestyle-1024x236.png" alt="The Anchorage Café" loading="lazy"><img src="https://www.dalbora.com.au/wp-content/uploads/dalbora-boatyard.jpg" alt="The Anchorage Café" loading="lazy"><img src="https://www.dalbora.com.au/wp-content/uploads/d_albora_yacht_brokers.jpg" alt="The Anchorage Café" loading="lazy"><img src="https://www.dalbora.com.au/wp-content/uploads/d_storage_by_d_albora.jpg" alt="The Anchorage Café" loading="lazy"><img src="https://www.dalbora.com.au/wp-content/uploads/GoBoat-Sunset-1.jpg" alt="The Anchorage Café" loading="lazy"><img src="https://www.dalbora.com.au/wp-content/uploads/GoBoat-Sunset.jpg" alt="The Anchorage Café" loading="lazy"><img src="https://www.dalbora.com.au/wp-content/uploads/GoBoat-Sunset-1-1.jpg" alt="The Anchorage Café" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLev-053Y9SE03OYSbfXCLfLIli2PSRxnxSDpZGyqtlmMZPcjoFX-s8rXC5KqdvRuE8nS5-5CO5jQew0tliwMRwRYFv2D2XwcvOuWEb_Keb76Ypq5Oh6uETBkDnmPznUIinNzl1O=s4800-w1600" alt="The Anchorage Café" loading="lazy"></div>
+  <div class="gallery"><img src="https://www.dalbora.com.au/wp-content/uploads/dAlbora-Website-MARINA-HEADER-Experience-the-Lifestyle-1024x236.png" alt="The Anchorage Café"><img src="https://www.dalbora.com.au/wp-content/uploads/dalbora-boatyard.jpg" alt="The Anchorage Café"><img src="https://www.dalbora.com.au/wp-content/uploads/d_albora_yacht_brokers.jpg" alt="The Anchorage Café"><img src="https://www.dalbora.com.au/wp-content/uploads/d_storage_by_d_albora.jpg" alt="The Anchorage Café"><img src="https://www.dalbora.com.au/wp-content/uploads/GoBoat-Sunset-1.jpg" alt="The Anchorage Café"><img src="https://www.dalbora.com.au/wp-content/uploads/GoBoat-Sunset.jpg" alt="The Anchorage Café"><img src="https://www.dalbora.com.au/wp-content/uploads/GoBoat-Sunset-1-1.jpg" alt="The Anchorage Café"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLev-053Y9SE03OYSbfXCLfLIli2PSRxnxSDpZGyqtlmMZPcjoFX-s8rXC5KqdvRuE8nS5-5CO5jQew0tliwMRwRYFv2D2XwcvOuWEb_Keb76Ypq5Oh6uETBkDnmPznUIinNzl1O=s4800-w1600" alt="The Anchorage Café"></div>
 </section>
 
 <section class="wrap" id="hours">

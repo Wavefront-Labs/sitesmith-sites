@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Little Miss Ts</title>
 <meta name="description" content="Great coffee and a warm welcome on Turpin Road, Labrador">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#8a6d1f;--bg:#fbf8ee;--ink:#1f1a0e;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#A4476A;--bg:#FBF3F1;--ink:#3A2A2E;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split pill">
 <nav class="top" hidden><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLfr3hFlNMR4XU2lq1SIAS5Y2FGD7bnfgqD9ssPtuLJtg036ZcsoZzzEy-V_oOicMCzpP2BcmLjuTIdbq8IvbGHvf01_veTezqOpWmo76Edj8o42Kc1GJO1nb9JSEXB9KOE8y7c=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLfr3hFlNMR4XU2lq1SIAS5Y2FGD7bnfgqD9ssPtuLJtg036ZcsoZzzEy-V_oOicMCzpP2BcmLjuTIdbq8IvbGHvf01_veTezqOpWmo76Edj8o42Kc1GJO1nb9JSEXB9KOE8y7c=s4800-w1600" alt="Little Miss Ts">
+    <div>
     
     <h1>Little Miss Ts</h1>
     <p class="tag">Great coffee and a warm welcome on Turpin Road, Labrador</p>
     <p class="rating">4.7 ★ on Google (195 reviews)</p>
     <a class="btn" href="tel:0401184121">Call 0401 184 121</a>
+    </div>
   </div>
 </header>
 
@@ -74,7 +91,7 @@ Every single time I come in, they&#x27;re so genuinely kind and welcoming. No ma
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfH6X1HASEPd37roAD8Axs942S1n-MLn1PafA2NB14qrQ1Fgp8V7BERp-_fffD7ulYtFR0IlAEnuP__S4gXZnH-DFtBrALbhTxjog9platPkVs_o1FOZxT6l_pDeQkdqal3gCVw=s4800-w1600" alt="Little Miss Ts" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfdblRULzzZsJLSWvyP8340yXRoiOUbVihxojEY5DPoOlP0TKQhkkCKYzotPdIqxd0BVHTO-r4a0kRYdxDpBQ0pxcd3-9uiVTs6JqMA-i72K-gyw6JUGUHYsG3S3O2H_xv9XI5aoQ=s4800-w1600" alt="Little Miss Ts" loading="lazy"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcmVcqcyCaYFRNCYwURx6T6CmSldJTPBeHl2fvriRrVE9h0d25w4-z6UDzHfL_O3fHHOpU4UPbtFFAb5zbhvx4PLVhf8adAP1HJigbdq5R20-O8PweGmWhdx2gvD0bp2FdSj-Dy=s4800-w1600" alt="Little Miss Ts" loading="lazy"></div>
+  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfH6X1HASEPd37roAD8Axs942S1n-MLn1PafA2NB14qrQ1Fgp8V7BERp-_fffD7ulYtFR0IlAEnuP__S4gXZnH-DFtBrALbhTxjog9platPkVs_o1FOZxT6l_pDeQkdqal3gCVw=s4800-w1600" alt="Little Miss Ts"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfdblRULzzZsJLSWvyP8340yXRoiOUbVihxojEY5DPoOlP0TKQhkkCKYzotPdIqxd0BVHTO-r4a0kRYdxDpBQ0pxcd3-9uiVTs6JqMA-i72K-gyw6JUGUHYsG3S3O2H_xv9XI5aoQ=s4800-w1600" alt="Little Miss Ts"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcmVcqcyCaYFRNCYwURx6T6CmSldJTPBeHl2fvriRrVE9h0d25w4-z6UDzHfL_O3fHHOpU4UPbtFFAb5zbhvx4PLVhf8adAP1HJigbdq5R20-O8PweGmWhdx2gvD0bp2FdSj-Dy=s4800-w1600" alt="Little Miss Ts"></div>
 </section>
 
 <section class="wrap" id="hours">

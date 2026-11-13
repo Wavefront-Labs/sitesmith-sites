@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Redcliffe Treehouse</title>
 <meta name="description" content="Sip, stay, read and play on the Redcliffe waterfront">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#7a3b69;--bg:#faf4f8;--ink:#1e151c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#2F6B4A;--bg:#F6F3EA;--ink:#2A2620;--card:#FFFDF7;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split rounded">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#visit-our-caf">Visit Our Café</a><a href="#fancy-a-high-tea">Fancy a High Tea?</a><a href="#events">Events</a><a href="#function-venue-hire">Function &amp; Venue Hire</a><a href="#books-gifts-boutique">Books, Gifts &amp; Boutique</a><a href="#the-family-behind-the-treehous">The Family Behind the Treehouse</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://www.trybooking.com/au/event/rebecoming-a-womens-day-to-rest-release-refill-and-rise-1647128" rel="noopener">Book a table</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcUnvGbZRNF4knuL4jWsxpUuJnqc2rKWevvTMSvES3JRwhX9M0gZAoRaUojgMCUOBLRzn7MzMePZ3Gp3iltu3NeqtylidUvEFENbeaUawA6eiW-3iy_8PZ73tfFTAO3XkT6d1trTczzHrNG=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcUnvGbZRNF4knuL4jWsxpUuJnqc2rKWevvTMSvES3JRwhX9M0gZAoRaUojgMCUOBLRzn7MzMePZ3Gp3iltu3NeqtylidUvEFENbeaUawA6eiW-3iy_8PZ73tfFTAO3XkT6d1trTczzHrNG=s4800-w1600" alt="Redcliffe Treehouse">
+    <div>
     
     <h1>Redcliffe Treehouse</h1>
     <p class="tag">Sip, stay, read and play on the Redcliffe waterfront</p>
     <p class="rating">4.4 ★ on Google (58 reviews)</p>
     <a class="btn" href="tel:0720040323">Call (07) 2004 0323</a> <a class="btn ghost" href="mailto:cei@redcliffetreehouse.com.au">Email us</a> <a class="btn ghost" href="https://www.trybooking.com/au/event/rebecoming-a-womens-day-to-rest-release-refill-and-rise-1647128" rel="noopener">Book a table</a>
+    </div>
   </div>
 </header>
 
@@ -74,7 +91,7 @@ Certainly a hidden gem.”</p><footer>★★★★★ ozmosko</footer></blockquo
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/high-tea.jpg?v=1782463564&amp;amp;width=3840" alt="Redcliffe Treehouse" loading="lazy"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/area-4.jpg?v=1782463886&amp;amp;width=3840" alt="Redcliffe Treehouse" loading="lazy"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/Rebecoming-edited-square.png?v=1790046179&amp;amp;width=3840" alt="Redcliffe Treehouse" loading="lazy"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/coffee.jpg?v=1782468884&amp;amp;width=3840" alt="Redcliffe Treehouse" loading="lazy"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/books.jpg?v=1782468976&amp;amp;width=3840" alt="Redcliffe Treehouse" loading="lazy"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/homewares2.jpg?v=1782469298&amp;amp;width=3840" alt="Redcliffe Treehouse" loading="lazy"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/boutique.jpg?v=1782469431&amp;amp;width=3840" alt="Redcliffe Treehouse" loading="lazy"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/workout-space.jpg?v=1782476878&amp;amp;width=3840" alt="Redcliffe Treehouse" loading="lazy"></div>
+  <div class="gallery"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/high-tea.jpg?v=1782463564&amp;amp;width=3840" alt="Redcliffe Treehouse"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/area-4.jpg?v=1782463886&amp;amp;width=3840" alt="Redcliffe Treehouse"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/Rebecoming-edited-square.png?v=1790046179&amp;amp;width=3840" alt="Redcliffe Treehouse"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/coffee.jpg?v=1782468884&amp;amp;width=3840" alt="Redcliffe Treehouse"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/books.jpg?v=1782468976&amp;amp;width=3840" alt="Redcliffe Treehouse"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/homewares2.jpg?v=1782469298&amp;amp;width=3840" alt="Redcliffe Treehouse"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/boutique.jpg?v=1782469431&amp;amp;width=3840" alt="Redcliffe Treehouse"><img src="https://redcliffetreehouse.com.au/cdn/shop/files/workout-space.jpg?v=1782476878&amp;amp;width=3840" alt="Redcliffe Treehouse"></div>
 </section>
 
 <section class="wrap" id="hours">

@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Las Palmas</title>
 <meta name="description" content="Casual Mexican dining by the water on Manly&#x27;s West Esplanade">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#2c5f8a;--bg:#f1f6fb;--ink:#121b24;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#0F6E5C;--bg:#FBF6EC;--ink:#2A1F1A;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-fullbleed rounded">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#waterfront-dining">Waterfront Dining</a><a href="#brunch-and-long-lunches">Brunch and Long Lunches</a><a href="#celebrations-and-gatherings">Celebrations and Gatherings</a><a href="#gift-cards">Gift Cards</a><a href="#about-the-boathouse-group">About The Boathouse Group</a><a href="#hours">Hours &amp; location</a></div></nav>
+
 <header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcg9jRzTKzfR2jHGOYQQtauZKQZ9YlzlM2PK2eYGevDI7slIVCisoAhi_1jNRpwx7Ew5UiBLQA37MPfcCll9MGNh7wODWKQ-s74TcENQX7Jh0aPojqASoFQH687hmaQucemjlH7Q-73Mxg=s4800-w1600)">
   <div class="wrap">
+    
+    <div>
     <img class="logo" src="https://www.theboathousegroup.com.au/_next/image?url=%2Flogos%2Flogo-light.svg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas logo">
     <h1>Las Palmas</h1>
     <p class="tag">Casual Mexican dining by the water on Manly&#x27;s West Esplanade</p>
     <p class="rating">4.5 ★ on Google (69 reviews)</p>
     <a class="btn" href="tel:0299742041">Call (02) 9974 2041</a> <a class="btn ghost" href="mailto:laspalmasmanly@theboathousegroup.com.au">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -72,7 +89,7 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1934%2F591e03c8-c58d-4296-a213-7ab4f4b5abcc.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas" loading="lazy"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F2593%2FScreenshot-2026-03-24-at-3-32-02%25E2%2580%25AFpm.png&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas" loading="lazy"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1918%2F18-IMG_1658.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas" loading="lazy"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1977%2FIMG_1570-2.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas" loading="lazy"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1924%2F80dd8090-472c-4296-b37d-dff1a6a4a5e4.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas" loading="lazy"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1921%2F1c58e339-a440-4bf2-afa9-82d0750241b5.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas" loading="lazy"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1920%2F17-IMG_5584.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas" loading="lazy"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1923%2F2-IMG_5610.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas" loading="lazy"></div>
+  <div class="gallery"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1934%2F591e03c8-c58d-4296-a213-7ab4f4b5abcc.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F2593%2FScreenshot-2026-03-24-at-3-32-02%25E2%2580%25AFpm.png&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1918%2F18-IMG_1658.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1977%2FIMG_1570-2.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1924%2F80dd8090-472c-4296-b37d-dff1a6a4a5e4.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1921%2F1c58e339-a440-4bf2-afa9-82d0750241b5.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1920%2F17-IMG_5584.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas"><img src="https://www.theboathousegroup.com.au/_next/image?url=https%3A%2F%2Fd244ntdegtqm0w.cloudfront.net%2F1923%2F2-IMG_5610.jpg&amp;amp;w=3840&amp;amp;q=75" alt="Las Palmas"></div>
 </section>
 
 <section class="wrap" id="hours">

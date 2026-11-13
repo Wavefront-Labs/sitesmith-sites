@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>MistaBoo Sushi &amp; Chicken Drive-thru</title>
 <meta name="description" content="Fresh sushi and crispy chicken, right at the drive-thru.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#7a3b69;--bg:#faf4f8;--ink:#1e151c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#C8102E;--bg:#FFF8F0;--ink:#2A1A14;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split pill">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#our-story">Our Story</a><a href="#what-our-customers-love">What Our Customers Love</a><a href="#part-of-a-growing-family">Part of a Growing Family</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLc6pgbGxhkt1SBVV9e7pdNv9DhuGOomHAIfjsr94OQgkDqVPJrvPmCb7uCHjKvjxK_RBKisHz6AoHRDFnkPIcGHPg-sdF3AQsVi2D8lDuA-WU4VzLs4u9cwqPJWTl71NXQueIhUNogogNrG=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLc6pgbGxhkt1SBVV9e7pdNv9DhuGOomHAIfjsr94OQgkDqVPJrvPmCb7uCHjKvjxK_RBKisHz6AoHRDFnkPIcGHPg-sdF3AQsVi2D8lDuA-WU4VzLs4u9cwqPJWTl71NXQueIhUNogogNrG=s4800-w1600" alt="MistaBoo Sushi &amp; Chicken Drive-thru">
+    <div>
     <img class="logo" src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Flogo-2025-white.png&amp;amp;w=640&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru logo">
     <h1>MistaBoo Sushi &amp; Chicken Drive-thru</h1>
     <p class="tag">Fresh sushi and crispy chicken, right at the drive-thru.</p>
     <p class="rating">4.2 ★ on Google (169 reviews)</p>
     <a class="btn" href="tel:0430368879">Call 0430 368 879</a> <a class="btn ghost" href="mailto:mbfr_kp@mistaboo.com">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -76,7 +93,7 @@ I got a katsu curry and mini bento. Katsu had a good sized schnitzel and plenty 
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Fwhy-madefresh-cut.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru" loading="lazy"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Fwhy-magic.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru" loading="lazy"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Fwhy-9locations.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru" loading="lazy"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Fwhy-family.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru" loading="lazy"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Fwhy-honouring.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru" loading="lazy"><img src="https://mistaboo.com/_next/image?url=https%3A%2F%2Fmzajybwbfipmebbsxjyq.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fmedia%2Fmistaboo%2Fuploads%2F1792987300225-media.jpeg&amp;amp;w=3840&amp;amp;q=75" alt="MistaBoo Sushi &amp; Chicken Drive-thru" loading="lazy"><img src="https://mistaboo.com/_next/image?url=https%3A%2F%2Fmzajybwbfipmebbsxjyq.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fmedia%2Fmistaboo%2Fuploads%2F1789711543921-shared-image-8-.jpeg&amp;amp;w=3840&amp;amp;q=75" alt="MistaBoo Sushi &amp; Chicken Drive-thru" loading="lazy"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Floc-cbd.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru" loading="lazy"></div>
+  <div class="gallery"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Fwhy-madefresh-cut.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Fwhy-magic.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Fwhy-9locations.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Fwhy-family.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Fwhy-honouring.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru"><img src="https://mistaboo.com/_next/image?url=https%3A%2F%2Fmzajybwbfipmebbsxjyq.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fmedia%2Fmistaboo%2Fuploads%2F1792987300225-media.jpeg&amp;amp;w=3840&amp;amp;q=75" alt="MistaBoo Sushi &amp; Chicken Drive-thru"><img src="https://mistaboo.com/_next/image?url=https%3A%2F%2Fmzajybwbfipmebbsxjyq.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fmedia%2Fmistaboo%2Fuploads%2F1789711543921-shared-image-8-.jpeg&amp;amp;w=3840&amp;amp;q=75" alt="MistaBoo Sushi &amp; Chicken Drive-thru"><img src="https://mistaboo.com/_next/image?url=%2Fimages%2F2025update%2Floc-cbd.jpg&amp;amp;w=3840&amp;amp;q=75&amp;amp;dpl=dpl_eyMtXWEYqbTR9QyU2Qfq8fXheoWD" alt="MistaBoo Sushi &amp; Chicken Drive-thru"></div>
 </section>
 
 <section class="wrap" id="hours">

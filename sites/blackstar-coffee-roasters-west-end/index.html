@@ -6,8 +6,21 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Blackstar Coffee Roasters - West End</title>
 <meta name="description" content="Specialty coffee, roasted in Brisbane and poured in West End">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#7a3b69;--bg:#faf4f8;--ink:#1e151c;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08)}
+:root{--accent:#8A3B12;--bg:#F4F0E8;--ink:#1E1A17;--card:#FBF9F4;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
+.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
+/* hero variants */
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--ink:#f3eee7;--card:#201d18;--muted:#a39b91;--line:rgba(255,255,255,.1)}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--accent)}img{max-width:100%;display:block}
@@ -40,15 +53,19 @@ nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-si
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
-<body>
+<body class="hero-split sharp">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#our-story">Our Story</a><a href="#our-ethos">Our Ethos</a><a href="#coffee-for-trees">Coffee For Trees</a><a href="#shop-coffee">Shop Coffee</a><a href="#subscribe-for-a-10-discount">Subscribe for a 10% Discount</a><a href="#peny-club">PENY Club</a><a href="#wholesale">Wholesale</a><a href="#hours">Hours &amp; location</a></div></nav>
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdxpVTknGhT_jFu4W7EMkkyT2XzW93d_QkjFGbBcPvXFFi4awOFYkjPhK8uQ1Ni4QDBqtcvDjcpdVeivza1OcwCW3wDNywjpCfqEKSAj_KRXGQ-2e_k2ejyDU7GzH0PxWqiK0if=s4800-w1600)">
+
+<header class="hero" >
   <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdxpVTknGhT_jFu4W7EMkkyT2XzW93d_QkjFGbBcPvXFFi4awOFYkjPhK8uQ1Ni4QDBqtcvDjcpdVeivza1OcwCW3wDNywjpCfqEKSAj_KRXGQ-2e_k2ejyDU7GzH0PxWqiK0if=s4800-w1600" alt="Blackstar Coffee Roasters - West End">
+    <div>
     <img class="logo" src="https://blackstarcoffee.com.au/cdn/shop/files/BLACKSTAR-LOGO-2026-x01_180x.png?v=1772864929" alt="Blackstar Coffee Roasters - West End logo">
     <h1>Blackstar Coffee Roasters - West End</h1>
     <p class="tag">Specialty coffee, roasted in Brisbane and poured in West End</p>
     <p class="rating">4.5 ★ on Google (828 reviews)</p>
     <a class="btn" href="tel:0732172323">Call (07) 3217 2323</a> <a class="btn ghost" href="mailto:20roastery@blackstarcoffee.com.au">Email us</a>
+    </div>
   </div>
 </header>
 
@@ -78,7 +95,7 @@ The green goddess…”</p><footer>★★★★★ Ashton DuPree</footer></block
 
 <section class="wrap" >
   <h2>Gallery</h2>
-  <div class="gallery"><img src="https://ucarecdn.com/935ff6ce-b477-454b-a470-b4b3fb2e0b30/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End" loading="lazy"><img src="https://ucarecdn.com/a37a469b-fc15-4577-970e-943e9d992611/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End" loading="lazy"><img src="https://ucarecdn.com/3d3f6aac-6d5b-4dec-9fb1-1df7ddc8ff52/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End" loading="lazy"><img src="https://ucarecdn.com/cc7cc2c0-e391-4311-be8e-48dc84ddd112/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End" loading="lazy"><img src="https://ucarecdn.com/e3f7e938-4f07-4edd-93d5-671481ca9b52/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End" loading="lazy"><img src="https://ucarecdn.com/2ac9097d-dcde-4164-87b0-9906fc4ec2ab/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End" loading="lazy"><img src="https://blackstarcoffee.com.au/cdn/shop/articles/IMG_0729_1024x1024.jpg?v=1622763719" alt="Blackstar Coffee Roasters - West End" loading="lazy"><img src="https://blackstarcoffee.com.au/cdn/shop/articles/CFTcoverblog_1024x1024.png?v=1613967051" alt="Blackstar Coffee Roasters - West End" loading="lazy"></div>
+  <div class="gallery"><img src="https://ucarecdn.com/935ff6ce-b477-454b-a470-b4b3fb2e0b30/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End"><img src="https://ucarecdn.com/a37a469b-fc15-4577-970e-943e9d992611/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End"><img src="https://ucarecdn.com/3d3f6aac-6d5b-4dec-9fb1-1df7ddc8ff52/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End"><img src="https://ucarecdn.com/cc7cc2c0-e391-4311-be8e-48dc84ddd112/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End"><img src="https://ucarecdn.com/e3f7e938-4f07-4edd-93d5-671481ca9b52/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End"><img src="https://ucarecdn.com/2ac9097d-dcde-4164-87b0-9906fc4ec2ab/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Blackstar Coffee Roasters - West End"><img src="https://blackstarcoffee.com.au/cdn/shop/articles/IMG_0729_1024x1024.jpg?v=1622763719" alt="Blackstar Coffee Roasters - West End"><img src="https://blackstarcoffee.com.au/cdn/shop/articles/CFTcoverblog_1024x1024.png?v=1613967051" alt="Blackstar Coffee Roasters - West End"></div>
 </section>
 
 <section class="wrap" id="hours">
