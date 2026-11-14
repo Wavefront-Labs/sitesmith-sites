@@ -8,13 +8,26 @@
 <title>Larouche Restaurant &amp; Bakehouse</title>
 <meta name="description" content="Lebanese restaurant and bakehouse on Rose St, Liverpool">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#2F6B3A;--bg:#FAF5EC;--ink:#2A2119;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+:root{--accent:#1F6B4A;--bg:#FAF6EE;--ink:#2A2118;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
 body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
-h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
-.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
-/* hero variants */
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--body)}
+h1,h2,h3,nav.top a{font-family:var(--disp)}a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}
+/* hero */
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:var(--rb);font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:var(--rs)}
 body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
 body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
 body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
@@ -22,44 +35,32 @@ body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object
 body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
 body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
 body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}img{max-width:100%;display:block}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
-header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
-header.hero .wrap{position:relative;padding:48px 16px}
-h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
-.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
-.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
-.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
-.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
-section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
-h2{font-size:1.6rem;margin:0 0 20px}
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}h2{font-size:1.6rem;margin:0 0 20px}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
-blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
-.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
-ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
-iframe{width:100%;height:320px;border:0;border-radius:16px}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.feature blockquote{background:transparent;border:0;border-left:4px solid var(--accent);border-radius:0;padding:8px 0 8px 24px}.feature blockquote p{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.35}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--rs);width:100%}
+.gallery.lead img:first-child{grid-column:1/-1;aspect-ratio:21/9}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:var(--rb);padding:4px 12px;font-size:.9rem}
+body.sharp ul.tags li{background:transparent;border:0;border-bottom:2px solid var(--accent);border-radius:0;padding:2px 0;font-weight:600}
+body.pill ul.tags li{background:var(--accent);color:#fff;border:0}
+iframe{width:100%;height:320px;border:0;border-radius:var(--r)}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
-nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
-nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}
-@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
-.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
-.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
-.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
-footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:var(--rs);margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 </style>
 </head>
-<body class="hero-split rounded">
-<nav class="top" hidden><div class="wrap"><a href="#about">About</a><a href="#ways-to-enjoy-larouche">Ways to enjoy Larouche</a><a href="#hours">Hours &amp; location</a></div></nav>
+<body class="hero-fullbleed rounded layout-story-first">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#ways-to-enjoy-larouche">Ways to enjoy Larouche</a><a href="#gallery">Gallery</a><a href="#hours">Hours &amp; location</a></div></nav>
 
-<header class="hero" >
+<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcfl22dLWueoSx5mc3-n8q3fFvlsmJpFGJoc5CmChoRiLnJX9LFSERdg9aO-kTan6FpIZJKEDg9G9FCnV4MCqINgO5_QKZ4Je2AARH5otpkPav7mxWtKiigkBYR9q3xFHbuoy5D=s4800-w1600)">
   <div class="wrap">
-    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLc5oxQKfLTrpLtBIKGw1XItHG9v1BUdH9i4d-eVGuln9e4RQd7yT9PltooYOrFcr_bw82eAZ5gd8b0L4FqI5Gvw66UnNdK2utFNPF9opFw9ykgO6UBMAR1VF1SSVi7hVeCRHEFo6XbRVtnf=s4800-w1600" alt="Larouche Restaurant &amp; Bakehouse">
+    
     <div>
     
     <h1>Larouche Restaurant &amp; Bakehouse</h1>
@@ -70,55 +71,24 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap" id="about">
-  <h2>About</h2>
-  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
-  <p>Larouche Restaurant &amp; Bakehouse is a Lebanese restaurant and bakehouse at 2/50 Rose St, Liverpool. Guests rate it 4.8 from 387 Google reviews.</p><p>Diners describe a clean, comfortable room as soon as they walk in, and one visitor from overseas made the trip to Liverpool just for a great breakfast, calling the food amazing and authentic.</p>
-</section>
-
-<section class="wrap" >
-  <h2>What people say</h2>
-  <div class="grid"><blockquote><p>“★★★★☆ Good potential, but a few things need improvement
+<section class="wrap" id="about"><h2>About</h2><ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Outdoor seating</li><li>Vegetarian options</li></ul><p>Larouche Restaurant &amp; Bakehouse is a Lebanese restaurant and bakehouse at 2/50 Rose St, Liverpool. Guests rate it 4.8 from 387 Google reviews.</p><p>Diners describe a clean, comfortable room as soon as they walk in, and one visitor from overseas made the trip to Liverpool just for a great breakfast, calling the food amazing and authentic.</p></section><section class="wrap content" id="ways-to-enjoy-larouche"><h2>Ways to enjoy Larouche</h2><p>Sit down with us, grab something to go, or have it brought to you. There&#x27;s outdoor seating when the weather&#x27;s good, and vegetarian options on offer.</p><ul><li>Dine in</li><li>Outdoor seating</li><li>Takeaway</li><li>Delivery</li><li>Vegetarian options</li></ul></section><section class="wrap" id="reviews"><h2>From our customers</h2><div class="grid"><blockquote><p>“★★★★☆ Good potential, but a few things need improvement
 
 I recently visited La Roche Restaurant &amp; Bakehouse and wanted to share my experience as constructive feedback rather than criticism.
 
-First, the positives. The moment I entered, the restaurant felt clean…”</p><footer>★★★★ Food Mahir &amp; Gardening Ideas</footer></blockquote><blockquote><p>“As a foodie and an emergency responder I do need to travel a fair bit and I do love sampling food from around the globe, not to mention, one of my favourite cuisines and comfort food is from the middle east. Be it the lamb sheesh from charcoal, the shwarma shavings…”</p><footer>★★★★★ Faizul Khan</footer></blockquote><blockquote><p>“Short visit to Australia but I make a great move to stop by Liverpool to have a great breakfast . Food is so great and I would said it&#x27;s authentic as I believe I was in a Arab community as I had seen quite lots of Arab hang out in the area (just my opinion). Food are…”</p><footer>★★★★ Catherine Zeitouni</footer></blockquote></div>
-</section>
+First, the positives. The moment I entered, the restaurant felt clean…”</p><footer>★★★★ Food Mahir &amp; Gardening Ideas</footer></blockquote><blockquote><p>“As a foodie and an emergency responder I do need to travel a fair bit and I do love sampling food from around the globe, not to mention, one of my favourite cuisines and comfort food is from the middle east. Be it the lamb sheesh from charcoal, the shwarma shavings…”</p><footer>★★★★★ Faizul Khan</footer></blockquote><blockquote><p>“Short visit to Australia but I make a great move to stop by Liverpool to have a great breakfast . Food is so great and I would said it&#x27;s authentic as I believe I was in a Arab community as I had seen quite lots of Arab hang out in the area (just my opinion). Food are…”</p><footer>★★★★ Catherine Zeitouni</footer></blockquote></div></section><section class="wrap" id="menu" hidden><h2>Menu</h2><div id="menu-body"></div></section><section class="wrap" id="gallery"><h2>Gallery</h2><div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdF00UMEd1ZZn1oKKAmOx4DBXkJn7K4dtP2JNdyazh6YGsABCxmifTWzD42ywvj7KV4xu9L_wEow8P_yLd5tfeRQfuLVpKg2-Xo4678qQNFcSwCESZryw5vhSbLFiMh4hWO4zqY=s4800-w1600" alt="Larouche Restaurant &amp; Bakehouse"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeRADZp4myAS6eYctXSwI6_HRYdw2vfna8WCzEidrboyk9dZIKWUMbpomcP4HRv-n1RuiHp6_-7yjRii8RqB7KHFleqKoU-hT-jn5jHZZgJWbrvtNi3HbF1KKSGG_X8dbd2SumHj0AdqWvj=s4800-w1600" alt="Larouche Restaurant &amp; Bakehouse"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLc5oxQKfLTrpLtBIKGw1XItHG9v1BUdH9i4d-eVGuln9e4RQd7yT9PltooYOrFcr_bw82eAZ5gd8b0L4FqI5Gvw66UnNdK2utFNPF9opFw9ykgO6UBMAR1VF1SSVi7hVeCRHEFo6XbRVtnf=s4800-w1600" alt="Larouche Restaurant &amp; Bakehouse"></div></section><section class="wrap" id="hours"><div class="grid"><div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Tuesday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Wednesday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Thursday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Friday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Saturday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Sunday</th><td>5:00 AM – 3:00 PM</td></tr></table></div><div class="card"><h2>Find us</h2><p>2/50 Rose St, Liverpool NSW 2170, Australia</p><p><a href="https://maps.google.com/?cid=5873330093830407430&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0400555995">Call 0400 555 995</a> <a class="btn ghost" href="mailto:info@test.com">Email us</a></div></div></section><section class="wrap"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=2/50%20Rose%20St%2C%20Liverpool%20NSW%202170%2C%20Australia&output=embed" title="Map"></iframe></section>
 
-<section class="wrap" id="menu" hidden>
-  <h2>Menu</h2>
-  <div id="menu-body"></div>
-</section>
+<footer class="site">&copy; 2026 Larouche Restaurant &amp; Bakehouse &middot; Lebanese Restaurant</footer>
 <script>
 // Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
 fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
   if (!m || !m.length) return;
   const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+  const body = document.getElementById('menu-body'); if (!body) return;
+  body.innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
     '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
-  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  document.getElementById('menu').removeAttribute('hidden');
   if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
 }).catch(() => {});
 </script>
-
-<section class="wrap content" id="ways-to-enjoy-larouche"><h2>Ways to enjoy Larouche</h2><p>Sit down with us, grab something to go, or have it brought to you. There&#x27;s outdoor seating when the weather&#x27;s good, and vegetarian options on offer.</p><ul><li>Dine in</li><li>Outdoor seating</li><li>Takeaway</li><li>Delivery</li><li>Vegetarian options</li></ul></section>
-
-<section class="wrap" >
-  <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdF00UMEd1ZZn1oKKAmOx4DBXkJn7K4dtP2JNdyazh6YGsABCxmifTWzD42ywvj7KV4xu9L_wEow8P_yLd5tfeRQfuLVpKg2-Xo4678qQNFcSwCESZryw5vhSbLFiMh4hWO4zqY=s4800-w1600" alt="Larouche Restaurant &amp; Bakehouse"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcfl22dLWueoSx5mc3-n8q3fFvlsmJpFGJoc5CmChoRiLnJX9LFSERdg9aO-kTan6FpIZJKEDg9G9FCnV4MCqINgO5_QKZ4Je2AARH5otpkPav7mxWtKiigkBYR9q3xFHbuoy5D=s4800-w1600" alt="Larouche Restaurant &amp; Bakehouse"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeRADZp4myAS6eYctXSwI6_HRYdw2vfna8WCzEidrboyk9dZIKWUMbpomcP4HRv-n1RuiHp6_-7yjRii8RqB7KHFleqKoU-hT-jn5jHZZgJWbrvtNi3HbF1KKSGG_X8dbd2SumHj0AdqWvj=s4800-w1600" alt="Larouche Restaurant &amp; Bakehouse"></div>
-</section>
-
-<section class="wrap" id="hours">
-  <div class="grid">
-    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Tuesday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Wednesday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Thursday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Friday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Saturday</th><td>5:00 AM – 8:00 PM</td></tr><tr><th>Sunday</th><td>5:00 AM – 3:00 PM</td></tr></table></div>
-    <div class="card"><h2>Find us</h2><p>2/50 Rose St, Liverpool NSW 2170, Australia</p><p><a href="https://maps.google.com/?cid=5873330093830407430&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0400555995">Call 0400 555 995</a> <a class="btn ghost" href="mailto:info@test.com">Email us</a></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=2/50%20Rose%20St%2C%20Liverpool%20NSW%202170%2C%20Australia&output=embed" title="Map"></iframe>
-</section>
-
-<footer class="site">&copy; 2026 Larouche Restaurant &amp; Bakehouse &middot; Lebanese Restaurant</footer>
 </body>
 </html>

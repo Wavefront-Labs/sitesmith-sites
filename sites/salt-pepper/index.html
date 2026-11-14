@@ -8,13 +8,26 @@
 <title>Salt &amp; Pepper</title>
 <meta name="description" content="Food made pho the soul, in the heart of Norwood.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#2F6B3A;--bg:#F6F4EC;--ink:#1F2420;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+:root{--accent:#2F6B3A;--bg:#F6F4EC;--ink:#1F2420;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'DM Serif Display', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
 body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
-h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
-.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
-/* hero variants */
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--body)}
+h1,h2,h3,nav.top a{font-family:var(--disp)}a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}
+/* hero */
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:var(--rb);font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:var(--rs)}
 body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
 body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
 body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
@@ -22,44 +35,32 @@ body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object
 body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
 body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
 body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}img{max-width:100%;display:block}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
-header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
-header.hero .wrap{position:relative;padding:48px 16px}
-h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
-.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
-.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
-.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
-.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
-section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
-h2{font-size:1.6rem;margin:0 0 20px}
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}h2{font-size:1.6rem;margin:0 0 20px}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
-blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
-.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
-ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
-iframe{width:100%;height:320px;border:0;border-radius:16px}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.feature blockquote{background:transparent;border:0;border-left:4px solid var(--accent);border-radius:0;padding:8px 0 8px 24px}.feature blockquote p{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.35}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--rs);width:100%}
+.gallery.lead img:first-child{grid-column:1/-1;aspect-ratio:21/9}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:var(--rb);padding:4px 12px;font-size:.9rem}
+body.sharp ul.tags li{background:transparent;border:0;border-bottom:2px solid var(--accent);border-radius:0;padding:2px 0;font-weight:600}
+body.pill ul.tags li{background:var(--accent);color:#fff;border:0}
+iframe{width:100%;height:320px;border:0;border-radius:var(--r)}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
-nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
-nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}
-@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
-.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
-.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
-.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
-footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:var(--rs);margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 </style>
 </head>
-<body class="hero-split rounded">
-<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#something-for-everyone">Something for Everyone</a><a href="#bookings-and-takeaway">Bookings and Takeaway</a><a href="#catering">Catering</a><a href="#some-nice-things-people-have-s">Some Nice Things People Have Said</a><a href="#hours">Hours &amp; location</a></div></nav>
+<body class="hero-fullbleed rounded layout-classic">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#something-for-everyone">Something for Everyone</a><a href="#bookings-and-takeaway">Bookings and Takeaway</a><a href="#catering">Catering</a><a href="#some-nice-things-people-have-s">Some Nice Things People Have Said</a><a href="#gallery">Gallery</a><a href="#hours">Hours &amp; location</a></div></nav>
 
-<header class="hero" >
+<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdswTodMDynPm_fUEvEclNjjSe2H2YdubZ1-_pYstw77QiEIFfFm0rFTdkTDRTRVx9_3jpX966f6CMf6r-hrUuRmq8FZj3I8Z1z56SSq64Vd_Sr01snz4b42uffVFPXSMO7kIBbqGqR34fA=s4800-w1600)">
   <div class="wrap">
-    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLeX0dBCRkSUgiDVi-NBoH2rm8Tw3CU_Dp-xcI1NR_XGrOhQ74FdkgvFYeRE912BMmeNeIZWXEOm4rcOWdEEKf-41jbZihDEFFtxHCbWEwUBMfqwAv_VG2eA8jZ6jHWA7UWx5AHRUzeVM8qS=s4800-w1600" alt="Salt &amp; Pepper">
+    
     <div>
     
     <h1>Salt &amp; Pepper</h1>
@@ -70,52 +71,20 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap" id="about">
-  <h2>About</h2>
-  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Bookings</li><li>Vegetarian options</li></ul>
-  <p>Salt &amp; Pepper Vietnamese Kitchen was established in 2018 by the previous owners of a successful Vietnamese restaurant in Adelaide. We set out to bring the same wholesome experience to the heart of the Norwood Parade, at 2/1 Margaret St.</p><p>Come in and be immersed in authenticity and delight as we serve you food made pho the soul. Dine in, grab takeaway or have it delivered.</p>
-</section>
+<section class="wrap" id="about"><h2>About</h2><ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Bookings</li><li>Vegetarian options</li></ul><p>Salt &amp; Pepper Vietnamese Kitchen was established in 2018 by the previous owners of a successful Vietnamese restaurant in Adelaide. We set out to bring the same wholesome experience to the heart of the Norwood Parade, at 2/1 Margaret St.</p><p>Come in and be immersed in authenticity and delight as we serve you food made pho the soul. Dine in, grab takeaway or have it delivered.</p></section><section class="wrap feature" id="reviews"><h2>From our customers</h2><blockquote><p>“This place is a hidden gem. Best pho I have tried in Australia . 100% recommended”</p><footer>★★★★★ Sam R</footer></blockquote></section><section class="wrap" id="menu"><h2>Menu</h2><div id="menu-body"><p class="menu-note"><a class="btn" href="https://saltandpeppernorwood.wixsite.com/saltandpeppernorwood#menu">View our menu</a></p></div></section><section class="wrap content" id="something-for-everyone"><h2>Something for Everyone</h2><p>We do our best to cater for our diverse range of customers. Our menu offers the following options:</p><ul><li>Vegetarian</li><li>Vegan</li><li>Halal</li><li>Gluten-free</li><li>Lactose-free</li></ul><p>We believe authentic flavour can be drawn from our fresh produce without the unnecessary stuff. Everything we offer is low in MSG, and we have some MSG-free options too, if that&#x27;s what floats ya boat.</p></section><section class="wrap content" id="bookings-and-takeaway"><h2>Bookings and Takeaway</h2><p>Bookings and takeaway orders are taken over the phone.</p><p>Please make a booking if you have a group of 4 or more. We don&#x27;t want to turn you away once our cosy space starts filling up!</p></section><section class="wrap content" id="catering"><h2>Catering</h2><p>Did you know we offer catering? Our entire menu is fine for catering.</p><p>Just give us the details at least 2 days beforehand and we&#x27;ll make it happen. Call us or email saltandpeppernorwood@gmail.com.</p></section><section class="wrap content" id="some-nice-things-people-have-s"><h2>Some Nice Things People Have Said</h2><p>&quot;I&#x27;ve been eating here at least once a week for the past year now, the pho rocks! The owners are really friendly and passionate about what they do. They keep the place clean, but most importantly the food is really tasty and fresh.&quot;</p><p>&quot;Excellent restaurant in the heart of Norwood. Hidden just behind Argo, Salt &amp; Pepper offer honest healthy Vietnamese at un-inflated prices. Everything is great, but the salt &amp; pepper squid was unbelievable.&quot;</p><p>&quot;Amazing store long overdue at Norwood selling quality and tasty Vietnamese food. The pho there is amazing - fresh, flavoursome and made with lots of love.&quot;</p><p>&quot;This place is a hidden gem. Best pho I have tried in Australia. 100% recommended.&quot;</p><p>Thank you!</p></section><section class="wrap" id="gallery"><h2>Gallery</h2><div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcW-1-z4UBZT_X3N0Yk5--yUMt9HB0bmy6D9cVgdBhR7pA4CpQUmJJ4O1w3TzQLJDrE0VGCkMv-7Q4I2_NKlZrZpGFx3VUqRurOLnGA0p6b8vVhalV-kn8UpxWVuYJGgkXt8TXB=s4800-w1500" alt="Salt &amp; Pepper"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdteRaudxG2rxpLmRSPrq_hUE5luzG5hmCv6Y_7XIWaCZk691tnojcqArEG9HsgOKKXsh7SVDFbrxS2XsjufNLGq8cg7n6atql3QrRoGQs-80SJ7hS637M3_zOF3ixLMlLFCDNq1Cjzpgcr=s4800-w1600" alt="Salt &amp; Pepper"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeX0dBCRkSUgiDVi-NBoH2rm8Tw3CU_Dp-xcI1NR_XGrOhQ74FdkgvFYeRE912BMmeNeIZWXEOm4rcOWdEEKf-41jbZihDEFFtxHCbWEwUBMfqwAv_VG2eA8jZ6jHWA7UWx5AHRUzeVM8qS=s4800-w1600" alt="Salt &amp; Pepper"></div></section><section class="wrap" id="hours"><div class="grid"><div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Tuesday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Wednesday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Thursday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Friday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Saturday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Sunday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr></table></div><div class="card"><h2>Find us</h2><p>2/1 Margaret St, Norwood SA 5067, Australia</p><p><a href="https://maps.google.com/?cid=10082383687096333740&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0404077530">Call 0404 077 530</a> <a class="btn ghost" href="mailto:saltandpeppernorwood@gmail.com">Email us</a></div></div></section><section class="wrap"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=2/1%20Margaret%20St%2C%20Norwood%20SA%205067%2C%20Australia&output=embed" title="Map"></iframe></section>
 
-<section class="wrap" >
-  <h2>What people say</h2>
-  <div class="grid"><blockquote><p>“I will leave a review here and hopefully the store can read it.
-I ordered on Doordash the halal BBH. Not my first time, should have been the 4th time already. Very nice with reasonable price thanks to Doordash voucher. But today the bag was poorly packed: the soup…”</p><footer>★★★★ Minh Tue</footer></blockquote><blockquote><p>“Salt &amp; Pepper is one of my favourite restaurants. I regularly order the Vietnamese pho soup, and it is always fresh, flavourful and comforting. The broth is delicious, the ingredients are generous, and the service is consistently friendly. Highly recommended!”</p><footer>★★★★ Farshad</footer></blockquote><blockquote><p>“This place is a hidden gem. Best pho I have tried in Australia . 100% recommended”</p><footer>★★★★★ Sam R</footer></blockquote></div>
-</section>
-
-<section class="wrap" id="menu" >
-  <h2>Menu</h2>
-  <div id="menu-body"><p class="menu-note"><a class="btn" href="https://saltandpeppernorwood.wixsite.com/saltandpeppernorwood#menu">View our menu</a></p></div>
-</section>
+<footer class="site"><div class="socials"><a href="http://www.facebook.com/saltandpeppernorwood" rel="noopener">Facebook</a><a href="https://instagram.com/saltandpeppernorwood" rel="noopener">Instagram</a></div>&copy; 2026 Salt &amp; Pepper &middot; Vietnamese Restaurant</footer>
 <script>
 // Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
 fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
   if (!m || !m.length) return;
   const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+  const body = document.getElementById('menu-body'); if (!body) return;
+  body.innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
     '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
-  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  document.getElementById('menu').removeAttribute('hidden');
   if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
 }).catch(() => {});
 </script>
-
-<section class="wrap content" id="something-for-everyone"><h2>Something for Everyone</h2><p>We do our best to cater for our diverse range of customers. Our menu offers the following options:</p><ul><li>Vegetarian</li><li>Vegan</li><li>Halal</li><li>Gluten-free</li><li>Lactose-free</li></ul><p>We believe authentic flavour can be drawn from our fresh produce without the unnecessary stuff. Everything we offer is low in MSG, and we have some MSG-free options too, if that&#x27;s what floats ya boat.</p></section><section class="wrap content" id="bookings-and-takeaway"><h2>Bookings and Takeaway</h2><p>Bookings and takeaway orders are taken over the phone.</p><p>Please make a booking if you have a group of 4 or more. We don&#x27;t want to turn you away once our cosy space starts filling up!</p></section><section class="wrap content" id="catering"><h2>Catering</h2><p>Did you know we offer catering? Our entire menu is fine for catering.</p><p>Just give us the details at least 2 days beforehand and we&#x27;ll make it happen. Call us or email saltandpeppernorwood@gmail.com.</p></section><section class="wrap content" id="some-nice-things-people-have-s"><h2>Some Nice Things People Have Said</h2><p>&quot;I&#x27;ve been eating here at least once a week for the past year now, the pho rocks! The owners are really friendly and passionate about what they do. They keep the place clean, but most importantly the food is really tasty and fresh.&quot;</p><p>&quot;Excellent restaurant in the heart of Norwood. Hidden just behind Argo, Salt &amp; Pepper offer honest healthy Vietnamese at un-inflated prices. Everything is great, but the salt &amp; pepper squid was unbelievable.&quot;</p><p>&quot;Amazing store long overdue at Norwood selling quality and tasty Vietnamese food. The pho there is amazing - fresh, flavoursome and made with lots of love.&quot;</p><p>&quot;This place is a hidden gem. Best pho I have tried in Australia. 100% recommended.&quot;</p><p>Thank you!</p></section>
-
-<section class="wrap" >
-  <h2>Gallery</h2>
-  <div class="gallery"><img src="https://static.wixstatic.com/media/b76b95_434a7c3559214416b1ff9c534d31f361~mv2_d_4592_3448_s_4_2.jpg/v1/fill/w_94,h_70,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/b76b95_434a7c3559214416b1ff9c534d31f361~mv2_d_4592_3448_s_4_2.jpg" alt="Salt &amp; Pepper"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcW-1-z4UBZT_X3N0Yk5--yUMt9HB0bmy6D9cVgdBhR7pA4CpQUmJJ4O1w3TzQLJDrE0VGCkMv-7Q4I2_NKlZrZpGFx3VUqRurOLnGA0p6b8vVhalV-kn8UpxWVuYJGgkXt8TXB=s4800-w1500" alt="Salt &amp; Pepper"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdteRaudxG2rxpLmRSPrq_hUE5luzG5hmCv6Y_7XIWaCZk691tnojcqArEG9HsgOKKXsh7SVDFbrxS2XsjufNLGq8cg7n6atql3QrRoGQs-80SJ7hS637M3_zOF3ixLMlLFCDNq1Cjzpgcr=s4800-w1600" alt="Salt &amp; Pepper"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdswTodMDynPm_fUEvEclNjjSe2H2YdubZ1-_pYstw77QiEIFfFm0rFTdkTDRTRVx9_3jpX966f6CMf6r-hrUuRmq8FZj3I8Z1z56SSq64Vd_Sr01snz4b42uffVFPXSMO7kIBbqGqR34fA=s4800-w1600" alt="Salt &amp; Pepper"></div>
-</section>
-
-<section class="wrap" id="hours">
-  <div class="grid">
-    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Tuesday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Wednesday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Thursday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Friday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Saturday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr><tr><th>Sunday</th><td>11:00 AM – 3:00 PM, 5:00 – 9:00 PM</td></tr></table></div>
-    <div class="card"><h2>Find us</h2><p>2/1 Margaret St, Norwood SA 5067, Australia</p><p><a href="https://maps.google.com/?cid=10082383687096333740&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0404077530">Call 0404 077 530</a> <a class="btn ghost" href="mailto:saltandpeppernorwood@gmail.com">Email us</a></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=2/1%20Margaret%20St%2C%20Norwood%20SA%205067%2C%20Australia&output=embed" title="Map"></iframe>
-</section>
-
-<footer class="site"><div class="socials"><a href="http://www.facebook.com/saltandpeppernorwood" rel="noopener">Facebook</a><a href="https://instagram.com/saltandpeppernorwood" rel="noopener">Instagram</a></div>&copy; 2026 Salt &amp; Pepper &middot; Vietnamese Restaurant</footer>
 </body>
 </html>

@@ -10,11 +10,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#9C2A1E;--bg:#F7F4EC;--ink:#22251F;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+:root{--accent:#2F6B3A;--bg:#F6F4EC;--ink:#1F2420;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
 body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
-h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
-.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
-/* hero variants */
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--body)}
+h1,h2,h3,nav.top a{font-family:var(--disp)}a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}
+/* hero */
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:var(--rb);font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:var(--rs)}
 body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
 body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
 body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
@@ -22,46 +35,34 @@ body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object
 body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
 body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
 body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}img{max-width:100%;display:block}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
-header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
-header.hero .wrap{position:relative;padding:48px 16px}
-h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
-.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
-.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
-.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
-.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
-section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
-h2{font-size:1.6rem;margin:0 0 20px}
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}h2{font-size:1.6rem;margin:0 0 20px}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
-blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
-.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
-ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
-iframe{width:100%;height:320px;border:0;border-radius:16px}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.feature blockquote{background:transparent;border:0;border-left:4px solid var(--accent);border-radius:0;padding:8px 0 8px 24px}.feature blockquote p{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.35}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--rs);width:100%}
+.gallery.lead img:first-child{grid-column:1/-1;aspect-ratio:21/9}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:var(--rb);padding:4px 12px;font-size:.9rem}
+body.sharp ul.tags li{background:transparent;border:0;border-bottom:2px solid var(--accent);border-radius:0;padding:2px 0;font-weight:600}
+body.pill ul.tags li{background:var(--accent);color:#fff;border:0}
+iframe{width:100%;height:320px;border:0;border-radius:var(--r)}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
-nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
-nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}
-@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
-.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
-.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
-.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
-footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:var(--rs);margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 </style>
 </head>
-<body class="hero-band sharp">
-<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#hours">Hours &amp; location</a></div></nav>
-<div class="band" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLfD7VaO4OS_nZ93hJ14G-_KLTJ-Pw1WoSSqmoC6WcPN64tRt_cdKjwrupgpIEvo5X16OY1fNgMx0f2pA4KBXQhTvDk1cFgdQXNYVPXu0O8LXes7QEb5JMFqEH9NbWIHWCqVHiUXLcd_2a_w=s4800-w1600)"></div>
-<header class="hero" >
+<body class="hero-fullbleed rounded layout-menu-first">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#hours">Hours &amp; location</a></div></nav>
+
+<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLfOUF4kJ6KyoI1CqLvnk2RawEe0zM35t3Z7_75M3otASvBQRUicQumV_CDFAooUjmu-FJ6riM2g3ZFB_VVmHRLTY9tj8MjkWnpLiqBFtd2JcGbmI_CTTEZli1aUsQh0h6qCE78=s4800-w1600)">
   <div class="wrap">
     
     <div>
-    <img class="logo" src="https://revu.website/170972/assets/images/Pho-Huong-LOGO.png.pagespeed.ce.tFa167uC6Y.png" alt="Phở Hương (Authentic Phở Hà Nội) logo">
+    <img class="logo" src="https://revu.website/170972/assets/images/Pho-Huong-LOGO.png" alt="Phở Hương (Authentic Phở Hà Nội) logo">
     <h1>Phở Hương (Authentic Phở Hà Nội)</h1>
     <p class="tag">Authentic Hanoi-style phở in the heart of Bankstown</p>
     <p class="rating">4.7 ★ on Google (235 reviews)</p>
@@ -70,53 +71,22 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap" id="about">
-  <h2>About</h2>
-  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Bookings</li></ul>
-  <p>Phở Hương is a Hanoi-style phở shop on Chapel Road in Bankstown, serving beef and chicken phở in clear, flavourful broths. Bowls come generously topped with tender sliced beef or chicken, plenty of green shallots, crisp bean sprouts and fresh herbs.</p><p>Drop in to dine in, grab takeaway, order delivery or make a booking. Our customers rate us 4.7 from 235 Google reviews, and we appreciate everyone who takes the time to share their experience.</p>
-</section>
+<section class="wrap" id="menu" hidden><h2>Menu</h2><div id="menu-body"></div></section><section class="wrap" id="about"><h2>About</h2><ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Bookings</li></ul><p>Phở Hương is a Hanoi-style phở shop on Chapel Road in Bankstown, serving beef and chicken phở in clear, flavourful broths. Bowls come generously topped with tender sliced beef or chicken, plenty of green shallots, crisp bean sprouts and fresh herbs.</p><p>Drop in to dine in, grab takeaway, order delivery or make a booking. Our customers rate us 4.7 from 235 Google reviews, and we appreciate everyone who takes the time to share their experience.</p></section><section class="wrap" id="reviews"><h2>What people say</h2><div class="grid"><blockquote><p>“Very authentic Pho restaurant serving beef and chicken pho.
 
-<section class="wrap" >
-  <h2>What people say</h2>
-  <div class="grid"><blockquote><p>“Very authentic Pho restaurant serving beef and chicken pho.
+The clear broths were very rich and flavourful. I especially enjoyed the beef broth for its rich taste, although the chicken broth was decent too. There were plenty of beef slices and chicken slices…”</p><footer>★★★★ Jim</footer></blockquote><blockquote><p>“Lean soup ! This is a Hanoi style Pho noodle shop. The soup was quite mild and refreshing with lots of green shallots and crispy bean sprouts &amp; herbs. However it tasted little light and bland. Probably very good for children &amp; people who can’t take strong spices. We…”</p><footer>★★★★ Sung Young</footer></blockquote><blockquote><p>“We came here for a late lunch and tried the three signature noodle soups on the menu. The beef pho had a light coloured broth but a surprisingly strong beef flavour. The toppings were all tender. The chicken pho had a beautiful broth as well with good chicken flavour.…”</p><footer>★★★★ Brian L</footer></blockquote></div></section><section class="wrap" id="gallery"><h2>Gallery</h2><div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLetK9Mr-IznSrUTkAHAj9VC_oUOvlB5jysijJHrnbWuSWCMKF8yH2ON5Pd2OIYbSlyAvcjaiX9yztOcG2tNstvY2goCkWrZNFMLq4IiS9RjvDzPk0lc-grnUOsdpbwY_kY3Hp85kYmc2sJ5=s4800-w1020" alt="Phở Hương (Authentic Phở Hà Nội)"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdcZyWD26g20cANRs10GN8W5dsbq_ixJ3FAIRsov1uPH8Zywt6cTiWR2CZtU9d1bS2YQb9POrGc7tJCrO510RfCTAEvCLDpV_8jaQ7bhYbE7yg8eYoFx7mA5j9umnrjrzLanZqafXhkG08=s4800-w1600" alt="Phở Hương (Authentic Phở Hà Nội)"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfD7VaO4OS_nZ93hJ14G-_KLTJ-Pw1WoSSqmoC6WcPN64tRt_cdKjwrupgpIEvo5X16OY1fNgMx0f2pA4KBXQhTvDk1cFgdQXNYVPXu0O8LXes7QEb5JMFqEH9NbWIHWCqVHiUXLcd_2a_w=s4800-w1600" alt="Phở Hương (Authentic Phở Hà Nội)"></div></section><section class="wrap" id="hours"><div class="grid"><div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Tuesday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Wednesday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Thursday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Friday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Saturday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Sunday</th><td>9:00 AM – 8:30 PM</td></tr></table></div><div class="card"><h2>Find us</h2><p>15/256 Chapel Rd, Brandon Ave, Bankstown NSW 2200, Australia</p><p><a href="https://maps.google.com/?cid=18121657888081203385&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0405533388">Call 0405 533 388</a> <a class="btn ghost" href="mailto:pduyhieu91@gmail.com">Email us</a></div></div></section><section class="wrap"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=15/256%20Chapel%20Rd%2C%20Brandon%20Ave%2C%20Bankstown%20NSW%202200%2C%20Australia&output=embed" title="Map"></iframe></section>
 
-The clear broths were very rich and flavourful. I especially enjoyed the beef broth for its rich taste, although the chicken broth was decent too. There were plenty of beef slices and chicken slices…”</p><footer>★★★★ Jim</footer></blockquote><blockquote><p>“Lean soup ! This is a Hanoi style Pho noodle shop. The soup was quite mild and refreshing with lots of green shallots and crispy bean sprouts &amp; herbs. However it tasted little light and bland. Probably very good for children &amp; people who can’t take strong spices. We…”</p><footer>★★★★ Sung Young</footer></blockquote><blockquote><p>“We came here for a late lunch and tried the three signature noodle soups on the menu. The beef pho had a light coloured broth but a surprisingly strong beef flavour. The toppings were all tender. The chicken pho had a beautiful broth as well with good chicken flavour.…”</p><footer>★★★★ Brian L</footer></blockquote></div>
-</section>
-
-<section class="wrap" id="menu" hidden>
-  <h2>Menu</h2>
-  <div id="menu-body"></div>
-</section>
+<footer class="site">&copy; 2026 Phở Hương (Authentic Phở Hà Nội) &middot; Vietnamese Restaurant</footer>
 <script>
 // Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
 fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
   if (!m || !m.length) return;
   const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+  const body = document.getElementById('menu-body'); if (!body) return;
+  body.innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
     '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
-  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  document.getElementById('menu').removeAttribute('hidden');
   if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
 }).catch(() => {});
 </script>
-
-
-
-<section class="wrap" >
-  <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfOUF4kJ6KyoI1CqLvnk2RawEe0zM35t3Z7_75M3otASvBQRUicQumV_CDFAooUjmu-FJ6riM2g3ZFB_VVmHRLTY9tj8MjkWnpLiqBFtd2JcGbmI_CTTEZli1aUsQh0h6qCE78=s4800-w1600" alt="Phở Hương (Authentic Phở Hà Nội)"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdcZyWD26g20cANRs10GN8W5dsbq_ixJ3FAIRsov1uPH8Zywt6cTiWR2CZtU9d1bS2YQb9POrGc7tJCrO510RfCTAEvCLDpV_8jaQ7bhYbE7yg8eYoFx7mA5j9umnrjrzLanZqafXhkG08=s4800-w1600" alt="Phở Hương (Authentic Phở Hà Nội)"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLetK9Mr-IznSrUTkAHAj9VC_oUOvlB5jysijJHrnbWuSWCMKF8yH2ON5Pd2OIYbSlyAvcjaiX9yztOcG2tNstvY2goCkWrZNFMLq4IiS9RjvDzPk0lc-grnUOsdpbwY_kY3Hp85kYmc2sJ5=s4800-w1020" alt="Phở Hương (Authentic Phở Hà Nội)"></div>
-</section>
-
-<section class="wrap" id="hours">
-  <div class="grid">
-    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Tuesday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Wednesday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Thursday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Friday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Saturday</th><td>9:00 AM – 8:30 PM</td></tr><tr><th>Sunday</th><td>9:00 AM – 8:30 PM</td></tr></table></div>
-    <div class="card"><h2>Find us</h2><p>15/256 Chapel Rd, Brandon Ave, Bankstown NSW 2200, Australia</p><p><a href="https://maps.google.com/?cid=18121657888081203385&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0405533388">Call 0405 533 388</a> <a class="btn ghost" href="mailto:pduyhieu91@gmail.com">Email us</a></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=15/256%20Chapel%20Rd%2C%20Brandon%20Ave%2C%20Bankstown%20NSW%202200%2C%20Australia&output=embed" title="Map"></iframe>
-</section>
-
-<footer class="site">&copy; 2026 Phở Hương (Authentic Phở Hà Nội) &middot; Vietnamese Restaurant</footer>
 </body>
 </html>

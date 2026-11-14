@@ -10,11 +10,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#B8291E;--bg:#FBF5EC;--ink:#221A16;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+:root{--accent:#C8102E;--bg:#FBF6EE;--ink:#1E1A17;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
 body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
-h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
-.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
-/* hero variants */
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--body)}
+h1,h2,h3,nav.top a{font-family:var(--disp)}a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}
+/* hero */
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:var(--rb);font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:var(--rs)}
 body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
 body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
 body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
@@ -22,42 +35,30 @@ body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object
 body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
 body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
 body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}img{max-width:100%;display:block}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
-header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
-header.hero .wrap{position:relative;padding:48px 16px}
-h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
-.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
-.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
-.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
-.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
-section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
-h2{font-size:1.6rem;margin:0 0 20px}
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}h2{font-size:1.6rem;margin:0 0 20px}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
-blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
-.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
-ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
-iframe{width:100%;height:320px;border:0;border-radius:16px}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.feature blockquote{background:transparent;border:0;border-left:4px solid var(--accent);border-radius:0;padding:8px 0 8px 24px}.feature blockquote p{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.35}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--rs);width:100%}
+.gallery.lead img:first-child{grid-column:1/-1;aspect-ratio:21/9}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:var(--rb);padding:4px 12px;font-size:.9rem}
+body.sharp ul.tags li{background:transparent;border:0;border-bottom:2px solid var(--accent);border-radius:0;padding:2px 0;font-weight:600}
+body.pill ul.tags li{background:var(--accent);color:#fff;border:0}
+iframe{width:100%;height:320px;border:0;border-radius:var(--r)}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
-nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
-nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}
-@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
-.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
-.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
-.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
-footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:var(--rs);margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 </style>
 </head>
-<body class="hero-fullbleed sharp">
-<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#visit-us-in-belconnen">Visit us in Belconnen</a><a href="#our-kippax-store">Our Kippax store</a><a href="#food-truck-and-coffee-cart-hir">Food truck and coffee cart hire</a><a href="#hours">Hours &amp; location</a></div></nav>
+<body class="hero-fullbleed rounded layout-menu-first">
+<nav class="top" ><div class="wrap"><a href="#menu">Menu</a><a href="#about">About</a><a href="#visit-us-in-belconnen">Visit us in Belconnen</a><a href="#our-kippax-store">Our Kippax store</a><a href="#food-truck-and-coffee-cart-hir">Food truck and coffee cart hire</a><a href="#gallery">Gallery</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://orderbelconnen.bzburger.com.au/" rel="noopener">Order online</a></div></nav>
 
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLcRhCreeIYZMlpcEO4MXRfRf7-occVLA7pngvuTRvh7eGm8Z0wV42eo_Odo8-SsWrgf-TyJa7t_w5oYDWacPvvOAyi05ru4aQmGjsRkksL1JKW_ssr6c7I00hrgMl9Joerce4HgVw=s4800-w1600)">
+<header class="hero" style="background-image:url(https://bzburger.com.au/wp-content/uploads/2022/02/bencalvert-bzburgers-131-3.jpg)">
   <div class="wrap">
     
     <div>
@@ -65,60 +66,29 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
     <h1>BZ Burger Belconnen</h1>
     <p class="tag">Handmade burgers, fried chicken and shakes in Belconnen</p>
     <p class="rating">4.5 ★ on Google (301 reviews)</p>
-    <a class="btn" href="tel:0417783292">Call 0417 783 292</a> <a class="btn ghost" href="mailto:pauleldridge444@gmail.com">Email us</a>
+    <a class="btn" href="tel:0417783292">Call 0417 783 292</a> <a class="btn ghost" href="mailto:pauleldridge444@gmail.com">Email us</a> <a class="btn ghost" href="https://orderbelconnen.bzburger.com.au/" rel="noopener">Order online</a>
     </div>
   </div>
 </header>
 
-<section class="wrap" id="about">
-  <h2>About</h2>
-  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
-  <p>Our story began in Kippax in 2017, and BZ Burger quickly became a local favourite for its mouth-watering burgers. We still make our beef patties, sauces, pickles, fried chicken, shakes and desserts by hand.</p><p>We&#x27;re all about fun, tasty food, and we keep adding new twists to our burgers to keep things interesting. Our menu takes its energy from Canberra&#x27;s streets and keeps evolving with the latest food trends. Come in and see why we&#x27;re one of Canberra&#x27;s favourites.</p>
-</section>
-
-<section class="wrap" >
-  <h2>What people say</h2>
-  <div class="grid"><blockquote><p>“The burgers at BZBurger taste great. They’re fairly compact and a little on the small side, but I didn’t mind because the quality was there. I had the brisket burger, and it was clearly put together with care and tasted excellent.
+<section class="wrap" id="menu"><h2>Menu</h2><div id="menu-body"><div class="menu"><div><h3>Specialty Burgers (only available at Grazier Lane Belconnen)</h3><div class="item"><span>Brisket Burger<small>SPG rubbed brisket, bacon, southern style slaw, caramelised onion with house-made Cola sauce and liquid cheese.</small></span><span class="price"></span></div><div class="item"><span>K-Pop (Chicken or Halloumi)<small>House slaw, fried chicken or fried halloumi coated in our house-made Korean BBQ sauce, sesame seeds, Kewpie mayo and fried noodles.</small></span><span class="price"></span></div><div class="item"><span>Cluck Norris<small>Marinated chicken breast, bacon, lettuce, tomato, avocado with sweet chili mayo.</small></span><span class="price"></span></div><div class="item"><span>BZ Whoppa<small>Beef patty, USA cheese, onion, pickles, tomato, lettuce, aioli and ketchup.</small></span><span class="price"></span></div></div><div><h3>Chicken Burgers</h3><div class="item"><span>Chicky<small>Southern-style fried chicken, bacon, USA cheese, oak lettuce, house aioli, House BBQ sauce.</small></span><span class="price"></span></div><div class="item"><span>Bourbon Maple Chicky<small>Bourbon-maple glazed fried chicken, bacon, cheese, lettuce and Frank&#x27;s hot mayo.</small></span><span class="price"></span></div><div class="item"><span>Chicken Mack<small>Southern fried chicken, USA cheese, pickles, sour onions, lettuce and Mack sauce.</small></span><span class="price"></span></div></div><div><h3>Cheese Burgers</h3><div class="item"><span>Dbl Bacon Cheeseburger<small>Beef patty, bacon, USA cheese, House BBQ sauce and house aioli.</small></span><span class="price"></span></div><div class="item"><span>VG Cheese<small>VEEF patty, vegan cheese, pickles, sour onion, mustard and ketchup on a vegan bun.</small></span><span class="price"></span></div><div class="item"><span>Brisket Cheeseburger<small>Brisket, liquid cheese, pickles, sour onion, American mustard and House BBQ sauce.</small></span><span class="price"></span></div></div><div><h3>Mack Burgers</h3><div class="item"><span>BZ Mack</span><span class="price"></span></div><div class="item"><span>VG Mack<small>VEEF patty, vegan BZ Mack sauce, vegan cheese, pickles, onion and lettuce on a vegan bun.</small></span><span class="price"></span></div><div class="item"><span>Brisket Mack<small>Brisket, liquid cheese, lettuce, pickles, sour onion and special sauce.</small></span><span class="price"></span></div></div></div></div></section><section class="wrap" id="about"><h2>About</h2><ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Outdoor seating</li><li>Vegetarian options</li></ul><p>Our story began in Kippax in 2017, and BZ Burger quickly became a local favourite for its mouth-watering burgers. We still make our beef patties, sauces, pickles, fried chicken, shakes and desserts by hand.</p><p>We&#x27;re all about fun, tasty food, and we keep adding new twists to our burgers to keep things interesting. Our menu takes its energy from Canberra&#x27;s streets and keeps evolving with the latest food trends. Come in and see why we&#x27;re one of Canberra&#x27;s favourites.</p></section><section class="wrap content" id="visit-us-in-belconnen"><h2>Visit us in Belconnen</h2><p>Find us at C04/6 Grazier Lane, Belconnen. Dine in, grab takeaway, sit outside or get it delivered. Call 0417 783 292, order online or download our new app.</p><ul><li>Monday - Thursday: 9.30am - 8.30pm</li><li>Friday: 9.30 - 9pm</li><li>Saturday - Sunday: 12pm - 9pm</li></ul></section><section class="wrap content" id="our-kippax-store"><h2>Our Kippax store</h2><p>Our original store is at Kippax Place, Holt. Call 0409 200 206.</p><ul><li>Monday: 6am - 2.15pm</li><li>Tuesday - Thursday: 6am - 2.15pm, 5pm - 8.30pm</li><li>Friday - Saturday: 6am - 8.30pm</li><li>Sunday: 7am - 2.15pm, 5 - 8.30pm</li></ul></section><section class="wrap content" id="food-truck-and-coffee-cart-hir"><h2>Food truck and coffee cart hire</h2><p>Looking for something extra special? Our food truck is available for events and private catering. With our mobile kitchen, we can bring the BZB experience to you, wherever you are.</p><p>The BZB coffee cart is also available for hire. Our baristas were trained by Kings and Queens of Caffeine, and we only serve Pablo and Rusty coffee. Our menu offers a range of specialty brew methods with roast styles to match, so we&#x27;re more than just your average coffee van.</p><p>For food truck or coffee cart hire, email us.</p></section><section class="wrap" id="reviews"><h2>From our customers</h2><div class="grid"><blockquote><p>“The burgers at BZBurger taste great. They’re fairly compact and a little on the small side, but I didn’t mind because the quality was there. I had the brisket burger, and it was clearly put together with care and tasted excellent.
 
 Unfortunately, the service experience…”</p><footer>★★★★ Warren Wong</footer></blockquote><blockquote><p>“Best burger I’ve had in a long time!
 
-Stopped by BZ Burger Belconnen and wow, what a treat! I had the K-pop chicken burger, and it was honestly the best burger I’ve had in a long time—crispy, juicy, and packed with flavor. The chicken was perfectly cooked, and the…”</p><footer>★★★★★ Travis Legge</footer></blockquote><blockquote><p>“Simple burgers done well. It&#x27;s that simple and it&#x27;s really that good. The chips was super crisp but a bit on the salty side. Overall great experience and a place to my favourites.”</p><footer>★★★★★ Ronen Siboni</footer></blockquote></div>
-</section>
+Stopped by BZ Burger Belconnen and wow, what a treat! I had the K-pop chicken burger, and it was honestly the best burger I’ve had in a long time—crispy, juicy, and packed with flavor. The chicken was perfectly cooked, and the…”</p><footer>★★★★★ Travis Legge</footer></blockquote><blockquote><p>“Simple burgers done well. It&#x27;s that simple and it&#x27;s really that good. The chips was super crisp but a bit on the salty side. Overall great experience and a place to my favourites.”</p><footer>★★★★★ Ronen Siboni</footer></blockquote></div></section><section class="wrap" id="gallery"><h2>Gallery</h2><div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfm3hrbW4QTJooBMs4-C12OLBRrqQdz6yPgkoHFQGUPCQy-9otCsmFzlbR9kevWB0ieywNhuEnomyJGgGntXkUoI26527ijleRcyw4Kt74dZzHjEUSsCjfFxpGVs3hrhIUF5g=s4800-w1600" alt="BZ Burger Belconnen"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfJ6aQMv29SAyPZdi2k0Yr6dkExREavlGrrdVmqlinPqhBaTn88r9ZBClWuJ2fcEzdfGgl65Y33M6NEbwWGxdvp_Q-391c1ytPI-_aGesSf8aVZujncZajUKN8nnxt1ydAkZmrJ=s4800-w1600" alt="BZ Burger Belconnen"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcRhCreeIYZMlpcEO4MXRfRf7-occVLA7pngvuTRvh7eGm8Z0wV42eo_Odo8-SsWrgf-TyJa7t_w5oYDWacPvvOAyi05ru4aQmGjsRkksL1JKW_ssr6c7I00hrgMl9Joerce4HgVw=s4800-w1600" alt="BZ Burger Belconnen"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcceCLuPtwbqgDJI2Jq6lmsVsrEmHxtOvGoE_7LoY-erYx4q8Q8egVOkYA6iJuSe3rQRYZIKjk99_v8ncpYf5F5aZPd3vy6d3MSBks19tK29wP4v1KxLvRReqoaBlcIFIDNa8ltPeuBcQGB=s4800-w1600" alt="BZ Burger Belconnen"></div></section><section class="wrap" id="hours"><div class="grid"><div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>9:30 AM – 8:30 PM</td></tr><tr><th>Tuesday</th><td>9:30 AM – 8:30 PM</td></tr><tr><th>Wednesday</th><td>9:30 AM – 8:30 PM</td></tr><tr><th>Thursday</th><td>9:30 AM – 8:30 PM</td></tr><tr><th>Friday</th><td>9:30 AM – 8:30 PM</td></tr><tr><th>Saturday</th><td>12:00 – 8:30 PM</td></tr><tr><th>Sunday</th><td>12:00 – 8:30 PM</td></tr></table></div><div class="card"><h2>Find us</h2><p>Unit C04/6 Grazier La, Belconnen ACT 2617, Australia</p><p><a href="https://maps.google.com/?cid=17496258489041736491&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0417783292">Call 0417 783 292</a> <a class="btn ghost" href="mailto:pauleldridge444@gmail.com">Email us</a> <a class="btn ghost" href="https://orderbelconnen.bzburger.com.au/" rel="noopener">Order online</a></div></div></section><section class="wrap"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Unit%20C04/6%20Grazier%20La%2C%20Belconnen%20ACT%202617%2C%20Australia&output=embed" title="Map"></iframe></section>
 
-<section class="wrap" id="menu" >
-  <h2>Menu</h2>
-  <div id="menu-body"><div class="menu"><div><h3>Specialty Burgers (only available at Grazier Lane Belconnen)</h3><div class="item"><span>Brisket Burger<small>SPG rubbed brisket, bacon, southern style slaw, caramelised onion with house-made Cola sauce and liquid cheese.</small></span><span class="price"></span></div><div class="item"><span>K-Pop (Chicken or Halloumi)<small>House slaw, fried chicken or fried halloumi coated in our house-made Korean BBQ sauce, sesame seeds, Kewpie mayo and fried noodles.</small></span><span class="price"></span></div><div class="item"><span>Cluck Norris<small>Marinated chicken breast, bacon, lettuce, tomato, avocado with sweet chili mayo.</small></span><span class="price"></span></div><div class="item"><span>BZ Whoppa<small>Beef patty, USA cheese, onion, pickles, tomato, lettuce, aioli and ketchup.</small></span><span class="price"></span></div></div><div><h3>Chicken Burgers</h3><div class="item"><span>Chicky<small>Southern-style fried chicken, bacon, USA cheese, oak lettuce, house aioli, House BBQ sauce.</small></span><span class="price"></span></div><div class="item"><span>Bourbon Maple Chicky<small>Bourbon-maple glazed fried chicken, bacon, cheese, lettuce and Frank&#x27;s hot mayo.</small></span><span class="price"></span></div><div class="item"><span>Chicken Mack<small>Southern fried chicken, USA cheese, pickles, sour onions, lettuce and Mack sauce.</small></span><span class="price"></span></div></div><div><h3>Cheese Burgers</h3><div class="item"><span>Dbl Bacon Cheeseburger<small>Beef patty, bacon, USA cheese, House BBQ sauce and house aioli.</small></span><span class="price"></span></div><div class="item"><span>VG Cheese<small>VEEF patty, vegan cheese, pickles, sour onion, mustard and ketchup on a vegan bun.</small></span><span class="price"></span></div><div class="item"><span>Brisket Cheeseburger<small>Brisket, liquid cheese, pickles, sour onion, American mustard and House BBQ sauce.</small></span><span class="price"></span></div></div><div><h3>Mack Burgers</h3><div class="item"><span>BZ Mack</span><span class="price"></span></div><div class="item"><span>VG Mack<small>VEEF patty, vegan BZ Mack sauce, vegan cheese, pickles, onion and lettuce on a vegan bun.</small></span><span class="price"></span></div><div class="item"><span>Brisket Mack<small>Brisket, liquid cheese, lettuce, pickles, sour onion and special sauce.</small></span><span class="price"></span></div></div></div></div>
-</section>
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/BZBBurgers" rel="noopener">Facebook</a><a href="https://www.instagram.com/bzb_specialityburgers_coffee" rel="noopener">Instagram</a></div>&copy; 2026 BZ Burger Belconnen &middot; Hamburger Restaurant</footer>
 <script>
 // Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
 fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
   if (!m || !m.length) return;
   const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+  const body = document.getElementById('menu-body'); if (!body) return;
+  body.innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
     '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
-  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  document.getElementById('menu').removeAttribute('hidden');
   if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
 }).catch(() => {});
 </script>
-
-<section class="wrap content" id="visit-us-in-belconnen"><h2>Visit us in Belconnen</h2><p>Find us at C04/6 Grazier Lane, Belconnen. Dine in, grab takeaway, sit outside or get it delivered. Call 0417 783 292, order online or download our new app.</p><ul><li>Monday - Thursday: 9.30am - 8.30pm</li><li>Friday: 9.30 - 9pm</li><li>Saturday - Sunday: 12pm - 9pm</li></ul></section><section class="wrap content" id="our-kippax-store"><h2>Our Kippax store</h2><p>Our original store is at Kippax Place, Holt. Call 0409 200 206.</p><ul><li>Monday: 6am - 2.15pm</li><li>Tuesday - Thursday: 6am - 2.15pm, 5pm - 8.30pm</li><li>Friday - Saturday: 6am - 8.30pm</li><li>Sunday: 7am - 2.15pm, 5 - 8.30pm</li></ul></section><section class="wrap content" id="food-truck-and-coffee-cart-hir"><h2>Food truck and coffee cart hire</h2><p>Looking for something extra special? Our food truck is available for events and private catering. With our mobile kitchen, we can bring the BZB experience to you, wherever you are.</p><p>The BZB coffee cart is also available for hire. Our baristas were trained by Kings and Queens of Caffeine, and we only serve Pablo and Rusty coffee. Our menu offers a range of specialty brew methods with roast styles to match, so we&#x27;re more than just your average coffee van.</p><p>For food truck or coffee cart hire, email us.</p></section>
-
-<section class="wrap" >
-  <h2>Gallery</h2>
-  <div class="gallery"><img src="https://bzburger.com.au/wp-content/uploads/2022/02/bencalvert-bzburgers-131-3.jpg" alt="BZ Burger Belconnen"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfm3hrbW4QTJooBMs4-C12OLBRrqQdz6yPgkoHFQGUPCQy-9otCsmFzlbR9kevWB0ieywNhuEnomyJGgGntXkUoI26527ijleRcyw4Kt74dZzHjEUSsCjfFxpGVs3hrhIUF5g=s4800-w1600" alt="BZ Burger Belconnen"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfJ6aQMv29SAyPZdi2k0Yr6dkExREavlGrrdVmqlinPqhBaTn88r9ZBClWuJ2fcEzdfGgl65Y33M6NEbwWGxdvp_Q-391c1ytPI-_aGesSf8aVZujncZajUKN8nnxt1ydAkZmrJ=s4800-w1600" alt="BZ Burger Belconnen"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcceCLuPtwbqgDJI2Jq6lmsVsrEmHxtOvGoE_7LoY-erYx4q8Q8egVOkYA6iJuSe3rQRYZIKjk99_v8ncpYf5F5aZPd3vy6d3MSBks19tK29wP4v1KxLvRReqoaBlcIFIDNa8ltPeuBcQGB=s4800-w1600" alt="BZ Burger Belconnen"></div>
-</section>
-
-<section class="wrap" id="hours">
-  <div class="grid">
-    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>9:30 AM – 8:30 PM</td></tr><tr><th>Tuesday</th><td>9:30 AM – 8:30 PM</td></tr><tr><th>Wednesday</th><td>9:30 AM – 8:30 PM</td></tr><tr><th>Thursday</th><td>9:30 AM – 8:30 PM</td></tr><tr><th>Friday</th><td>9:30 AM – 8:30 PM</td></tr><tr><th>Saturday</th><td>12:00 – 8:30 PM</td></tr><tr><th>Sunday</th><td>12:00 – 8:30 PM</td></tr></table></div>
-    <div class="card"><h2>Find us</h2><p>Unit C04/6 Grazier La, Belconnen ACT 2617, Australia</p><p><a href="https://maps.google.com/?cid=17496258489041736491&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0417783292">Call 0417 783 292</a> <a class="btn ghost" href="mailto:pauleldridge444@gmail.com">Email us</a></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Unit%20C04/6%20Grazier%20La%2C%20Belconnen%20ACT%202617%2C%20Australia&output=embed" title="Map"></iframe>
-</section>
-
-<footer class="site"><div class="socials"><a href="https://www.facebook.com/BZBBurgers" rel="noopener">Facebook</a><a href="https://www.instagram.com/bzb_specialityburgers_coffee" rel="noopener">Instagram</a></div>&copy; 2026 BZ Burger Belconnen &middot; Hamburger Restaurant</footer>
 </body>
 </html>

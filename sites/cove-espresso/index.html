@@ -10,11 +10,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#1F6F78;--bg:#F4F1EA;--ink:#2A2522;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+:root{--accent:#1F6F78;--bg:#F4F8F7;--ink:#1C2A2D;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
 body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
-h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
-.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
-/* hero variants */
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--body)}
+h1,h2,h3,nav.top a{font-family:var(--disp)}a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}
+/* hero */
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:var(--rb);font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:var(--rs)}
 body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
 body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
 body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
@@ -22,44 +35,32 @@ body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object
 body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
 body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
 body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}img{max-width:100%;display:block}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
-header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
-header.hero .wrap{position:relative;padding:48px 16px}
-h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
-.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
-.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
-.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
-.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
-section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
-h2{font-size:1.6rem;margin:0 0 20px}
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}h2{font-size:1.6rem;margin:0 0 20px}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
-blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
-.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
-ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
-iframe{width:100%;height:320px;border:0;border-radius:16px}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.feature blockquote{background:transparent;border:0;border-left:4px solid var(--accent);border-radius:0;padding:8px 0 8px 24px}.feature blockquote p{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.35}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--rs);width:100%}
+.gallery.lead img:first-child{grid-column:1/-1;aspect-ratio:21/9}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:var(--rb);padding:4px 12px;font-size:.9rem}
+body.sharp ul.tags li{background:transparent;border:0;border-bottom:2px solid var(--accent);border-radius:0;padding:2px 0;font-weight:600}
+body.pill ul.tags li{background:var(--accent);color:#fff;border:0}
+iframe{width:100%;height:320px;border:0;border-radius:var(--r)}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
-nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
-nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}
-@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
-.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
-.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
-.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
-footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:var(--rs);margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 </style>
 </head>
-<body class="hero-split pill">
-<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#good-to-know">Good to know</a><a href="#hours">Hours &amp; location</a></div></nav>
+<body class="hero-fullbleed pill layout-story-first">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#good-to-know">Good to know</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#hours">Hours &amp; location</a></div></nav>
 
-<header class="hero" >
+<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLf2FzKVsywBrgo0XiFUQo6Ld6xrukhrauAF0fFpZorvVQ9DuF388Ce7wquMGghdJxnoN20GoR3jPeveEm-1k4AftuOqUlc9U9an0EASzsRI4ZKxtvP7GpS-rXU9fbaNez82Zx8bLg=s4800-w868)">
   <div class="wrap">
-    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLcHsQUpx0917-SI-3oE5xkp62mqDRg26WY3xqdwoNuVWZkGPnmpU0lMAKkhxLhLD21W66v-5q44dxL5PmXOwKfDrScEmjW2T31uei2P9YfPAdEflLpt1focUevJmXpxa6ANRzR9=s4800-w1286" alt="Cove Espresso">
+    
     <div>
     
     <h1>Cove Espresso</h1>
@@ -70,51 +71,20 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap" id="about">
-  <h2>About</h2>
-  <ul class="tags"><li>Dine in</li><li>Takeaway</li></ul>
-  <p>Cove Espresso is your newest coffee hotspot in Caloundra&#x27;s Daniel Street industrial area, at 25 Enterprise St, Caloundra West. Sip on delicious coffee, savour tasty sandwiches and indulge in sweet treats, all from our cosy coffee van.</p><p>Join us for a quick caffeine fix or a leisurely break from the day. Dine in or grab it to take away. It&#x27;s well worth the detour on your drive to work.</p>
-</section>
+<section class="wrap" id="about"><h2>About</h2><ul class="tags"><li>Dine in</li><li>Takeaway</li></ul><p>Cove Espresso is your newest coffee hotspot in Caloundra&#x27;s Daniel Street industrial area, at 25 Enterprise St, Caloundra West. Sip on delicious coffee, savour tasty sandwiches and indulge in sweet treats, all from our cosy coffee van.</p><p>Join us for a quick caffeine fix or a leisurely break from the day. Dine in or grab it to take away. It&#x27;s well worth the detour on your drive to work.</p></section><section class="wrap content" id="good-to-know"><h2>Good to know</h2><h3>Are your sandwiches made fresh daily?</h3><p>Yes, all our sandwiches are made fresh each morning using locally sourced ingredients.</p><h3>Can I customise my coffee order?</h3><p>Of course! Let our baristas know your preferences, and we&#x27;ll make your coffee just the way you like it.</p><h3>Ways to pay</h3><ul><li>Cash</li><li>EFT</li><li>EFTPOS</li><li>Mastercard</li><li>Visa</li></ul></section><section class="wrap" id="reviews"><h2>Reviews</h2><div class="grid"><blockquote><p>“Came up to visit family and found this nice little cafe. Decided to get a cappuccino and a biscoff slice well it was yummy. I purchased a turkey and salad sandwich to take home with me for lunch it to was delicious. The coffee van looks fantastic and the service here…”</p><footer>★★★★★ Greg Hodson</footer></blockquote><blockquote><p>“Such a cute little place with the best customer service. Warm, welcoming and just an overall awesome vibe. Coffee and hot chocs were excellent! These ladies really made our day. Even shouted my little one a babycinno. Be sure to drop in!”</p><footer>★★★★★ Jennie Yang</footer></blockquote><blockquote><p>“Outstanding discovery this morning in an out of the way industrial location. Friendly staff, excellent coffee, very good ham &amp; cheese toastie. Well worth as diversion on you drive to work.”</p><footer>★★★★★ Grant Garraway</footer></blockquote></div></section><section class="wrap" id="menu"><h2>Menu</h2><div id="menu-body"><div class="menu"><div><h3>Coffee and drinks</h3><div class="item"><span>Espresso</span><span class="price"></span></div><div class="item"><span>Cappuccinos</span><span class="price"></span></div><div class="item"><span>Lattes</span><span class="price"></span></div><div class="item"><span>Ice Coffees</span><span class="price"></span></div><div class="item"><span>Teas</span><span class="price"></span></div></div><div><h3>Food</h3><div class="item"><span>Big Breaky Wraps</span><span class="price"></span></div><div class="item"><span>Bacon Cheese Egg Wraps</span><span class="price"></span></div><div class="item"><span>Crispy Chicken Wraps</span><span class="price"></span></div><div class="item"><span>Sandwiches<small>Made fresh each morning</small></span><span class="price"></span></div><div class="item"><span>Toasties</span><span class="price"></span></div><div class="item"><span>Ham, Cheese and Tomato</span><span class="price"></span></div><div class="item"><span>Chicken Schnitzels</span><span class="price"></span></div><div class="item"><span>Steaks</span><span class="price"></span></div><div class="item"><span>Pies</span><span class="price"></span></div><div class="item"><span>Sausage Rolls</span><span class="price"></span></div></div><div><h3>Sweet treats</h3><div class="item"><span>Chocolate &amp; Oat Slice</span><span class="price"></span></div><div class="item"><span>Croissants</span><span class="price"></span></div><div class="item"><span>Pastries</span><span class="price"></span></div><div class="item"><span>Desserts</span><span class="price"></span></div></div></div></div></section><section class="wrap" id="gallery"><h2>Gallery</h2><div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfa5rOpQLdOubkEVtOR8FhYZeVGaLlDOsQRKmXbCgkHJWyMf2UOP-W56Gdysf5KyO3KBbnWPjnop0ueTSJhny4y-wTv_P2OgMjkjFf_e9cm5rghmkFoSBTKUgyf4e3zm78-xwT6=s4800-w801" alt="Cove Espresso"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcHsQUpx0917-SI-3oE5xkp62mqDRg26WY3xqdwoNuVWZkGPnmpU0lMAKkhxLhLD21W66v-5q44dxL5PmXOwKfDrScEmjW2T31uei2P9YfPAdEflLpt1focUevJmXpxa6ANRzR9=s4800-w1286" alt="Cove Espresso"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdJZSomqkLzinxx2TpfKhFlEbEF3PA0cDmYpTpnDGkAfXWeZO--iAA8AXjOF9Lwiv0rChMLnYacgbYhBr4Dno_UgDyzTSJb1U8i4zSORt2YTNm3Q0PrPXSfr3oHoW1YKNHjhF7ykAy3Vk08=s4800-w1600" alt="Cove Espresso"></div></section><section class="wrap" id="hours"><div class="grid"><div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>5:30 AM – 1:30 PM</td></tr><tr><th>Tuesday</th><td>5:30 AM – 1:30 PM</td></tr><tr><th>Wednesday</th><td>5:30 AM – 1:30 PM</td></tr><tr><th>Thursday</th><td>5:30 AM – 1:30 PM</td></tr><tr><th>Friday</th><td>5:30 AM – 1:30 PM</td></tr><tr><th>Saturday</th><td>Closed</td></tr><tr><th>Sunday</th><td>Closed</td></tr></table></div><div class="card"><h2>Find us</h2><p>25 Enterprise St, Caloundra West QLD 4551, Australia</p><p><a href="https://maps.google.com/?cid=2652723831888249633&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0448132583">Call 0448 132 583</a> <a class="btn ghost" href="mailto:hello@coveespresso.com.au">Email us</a></div></div></section><section class="wrap"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=25%20Enterprise%20St%2C%20Caloundra%20West%20QLD%204551%2C%20Australia&output=embed" title="Map"></iframe></section>
 
-<section class="wrap" >
-  <h2>What people say</h2>
-  <div class="grid"><blockquote><p>“Came up to visit family and found this nice little cafe. Decided to get a cappuccino and a biscoff slice well it was yummy. I purchased a turkey and salad sandwich to take home with me for lunch it to was delicious. The coffee van looks fantastic and the service here…”</p><footer>★★★★★ Greg Hodson</footer></blockquote><blockquote><p>“Such a cute little place with the best customer service. Warm, welcoming and just an overall awesome vibe. Coffee and hot chocs were excellent! These ladies really made our day. Even shouted my little one a babycinno. Be sure to drop in!”</p><footer>★★★★★ Jennie Yang</footer></blockquote><blockquote><p>“Outstanding discovery this morning in an out of the way industrial location. Friendly staff, excellent coffee, very good ham &amp; cheese toastie. Well worth as diversion on you drive to work.”</p><footer>★★★★★ Grant Garraway</footer></blockquote></div>
-</section>
-
-<section class="wrap" id="menu" >
-  <h2>Menu</h2>
-  <div id="menu-body"><div class="menu"><div><h3>Coffee and drinks</h3><div class="item"><span>Espresso</span><span class="price"></span></div><div class="item"><span>Cappuccinos</span><span class="price"></span></div><div class="item"><span>Lattes</span><span class="price"></span></div><div class="item"><span>Ice Coffees</span><span class="price"></span></div><div class="item"><span>Teas</span><span class="price"></span></div></div><div><h3>Food</h3><div class="item"><span>Big Breaky Wraps</span><span class="price"></span></div><div class="item"><span>Bacon Cheese Egg Wraps</span><span class="price"></span></div><div class="item"><span>Crispy Chicken Wraps</span><span class="price"></span></div><div class="item"><span>Sandwiches<small>Made fresh each morning</small></span><span class="price"></span></div><div class="item"><span>Toasties</span><span class="price"></span></div><div class="item"><span>Ham, Cheese and Tomato</span><span class="price"></span></div><div class="item"><span>Chicken Schnitzels</span><span class="price"></span></div><div class="item"><span>Steaks</span><span class="price"></span></div><div class="item"><span>Pies</span><span class="price"></span></div><div class="item"><span>Sausage Rolls</span><span class="price"></span></div></div><div><h3>Sweet treats</h3><div class="item"><span>Chocolate &amp; Oat Slice</span><span class="price"></span></div><div class="item"><span>Croissants</span><span class="price"></span></div><div class="item"><span>Pastries</span><span class="price"></span></div><div class="item"><span>Desserts</span><span class="price"></span></div></div></div></div>
-</section>
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/LocalsearchAU/?utm_source=localsearch_online&amp;amp;utm_medium=footer&amp;amp;utm_campaign=facebook" rel="noopener">Facebook</a><a href="https://www.instagram.com/cove.espresso" rel="noopener">Instagram</a></div>&copy; 2026 Cove Espresso &middot; Cafe</footer>
 <script>
 // Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
 fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
   if (!m || !m.length) return;
   const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+  const body = document.getElementById('menu-body'); if (!body) return;
+  body.innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
     '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
-  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  document.getElementById('menu').removeAttribute('hidden');
   if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
 }).catch(() => {});
 </script>
-
-<section class="wrap content" id="good-to-know"><h2>Good to know</h2><h3>Are your sandwiches made fresh daily?</h3><p>Yes, all our sandwiches are made fresh each morning using locally sourced ingredients.</p><h3>Can I customise my coffee order?</h3><p>Of course! Let our baristas know your preferences, and we&#x27;ll make your coffee just the way you like it.</p><h3>Ways to pay</h3><ul><li>Cash</li><li>EFT</li><li>EFTPOS</li><li>Mastercard</li><li>Visa</li></ul></section>
-
-<section class="wrap" >
-  <h2>Gallery</h2>
-  <div class="gallery"><img src="https://images.localsearch.com.au/fit_inside,quality_60,withoutEnlargement_true,height_240,width_240/https://s3.ap-southeast-2.amazonaws.com/ls-asset-service/clhy55ne3000a08mbbul8hsvt/clursky77002008lafwgbcvth" alt="Cove Espresso"><img src="https://www.localsearch.com.au/public/assets/images/galleryPlaceholder.png" alt="Cove Espresso"><img src="https://www.localsearch.com.au/public/assets/images/localsearch/localsearch.png" alt="Cove Espresso"><img src="file:///var/task/dist/server/topMarketsMap.f7a8e899.png" alt="Cove Espresso"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfa5rOpQLdOubkEVtOR8FhYZeVGaLlDOsQRKmXbCgkHJWyMf2UOP-W56Gdysf5KyO3KBbnWPjnop0ueTSJhny4y-wTv_P2OgMjkjFf_e9cm5rghmkFoSBTKUgyf4e3zm78-xwT6=s4800-w801" alt="Cove Espresso"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLf2FzKVsywBrgo0XiFUQo6Ld6xrukhrauAF0fFpZorvVQ9DuF388Ce7wquMGghdJxnoN20GoR3jPeveEm-1k4AftuOqUlc9U9an0EASzsRI4ZKxtvP7GpS-rXU9fbaNez82Zx8bLg=s4800-w868" alt="Cove Espresso"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdJZSomqkLzinxx2TpfKhFlEbEF3PA0cDmYpTpnDGkAfXWeZO--iAA8AXjOF9Lwiv0rChMLnYacgbYhBr4Dno_UgDyzTSJb1U8i4zSORt2YTNm3Q0PrPXSfr3oHoW1YKNHjhF7ykAy3Vk08=s4800-w1600" alt="Cove Espresso"></div>
-</section>
-
-<section class="wrap" id="hours">
-  <div class="grid">
-    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>5:30 AM – 1:30 PM</td></tr><tr><th>Tuesday</th><td>5:30 AM – 1:30 PM</td></tr><tr><th>Wednesday</th><td>5:30 AM – 1:30 PM</td></tr><tr><th>Thursday</th><td>5:30 AM – 1:30 PM</td></tr><tr><th>Friday</th><td>5:30 AM – 1:30 PM</td></tr><tr><th>Saturday</th><td>Closed</td></tr><tr><th>Sunday</th><td>Closed</td></tr></table></div>
-    <div class="card"><h2>Find us</h2><p>25 Enterprise St, Caloundra West QLD 4551, Australia</p><p><a href="https://maps.google.com/?cid=2652723831888249633&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0448132583">Call 0448 132 583</a> <a class="btn ghost" href="mailto:hello@coveespresso.com.au">Email us</a></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=25%20Enterprise%20St%2C%20Caloundra%20West%20QLD%204551%2C%20Australia&output=embed" title="Map"></iframe>
-</section>
-
-<footer class="site"><div class="socials"><a href="https://www.facebook.com/LocalsearchAU/?utm_source=localsearch_online&amp;amp;utm_medium=footer&amp;amp;utm_campaign=facebook" rel="noopener">Facebook</a><a href="https://www.instagram.com/cove.espresso" rel="noopener">Instagram</a></div>&copy; 2026 Cove Espresso &middot; Cafe</footer>
 </body>
 </html>

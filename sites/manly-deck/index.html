@@ -10,11 +10,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#0E6A7A;--bg:#F3F8F8;--ink:#16303A;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+:root{--accent:#0E6A7A;--bg:#F3F8F8;--ink:#16282E;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Nunito', system-ui, sans-serif;--body:'Nunito', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
 body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
-h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
-.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
-/* hero variants */
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--body)}
+h1,h2,h3,nav.top a{font-family:var(--disp)}a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}
+/* hero */
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:var(--rb);font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:var(--rs)}
 body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
 body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
 body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
@@ -22,42 +35,30 @@ body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object
 body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
 body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
 body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}img{max-width:100%;display:block}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
-header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
-header.hero .wrap{position:relative;padding:48px 16px}
-h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
-.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
-.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
-.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
-.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
-section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
-h2{font-size:1.6rem;margin:0 0 20px}
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}h2{font-size:1.6rem;margin:0 0 20px}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
-blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
-.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
-ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
-iframe{width:100%;height:320px;border:0;border-radius:16px}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.feature blockquote{background:transparent;border:0;border-left:4px solid var(--accent);border-radius:0;padding:8px 0 8px 24px}.feature blockquote p{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.35}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--rs);width:100%}
+.gallery.lead img:first-child{grid-column:1/-1;aspect-ratio:21/9}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:var(--rb);padding:4px 12px;font-size:.9rem}
+body.sharp ul.tags li{background:transparent;border:0;border-bottom:2px solid var(--accent);border-radius:0;padding:2px 0;font-weight:600}
+body.pill ul.tags li{background:var(--accent);color:#fff;border:0}
+iframe{width:100%;height:320px;border:0;border-radius:var(--r)}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
-nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
-nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}
-@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
-.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
-.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
-.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
-footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:var(--rs);margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 </style>
 </head>
-<body class="hero-fullbleed rounded">
-<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#menu">Menu</a><a href="#about-us">About Us</a><a href="#functions">Functions</a><a href="#hours">Hours &amp; location</a></div></nav>
+<body class="hero-fullbleed rounded layout-gallery-first">
+<nav class="top" ><div class="wrap"><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#menu">Menu</a><a href="#about-us">About Us</a><a href="#functions">Functions</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://order.manlydeck.com.au/index.php/product/manly-deck-seafood-festival/" rel="noopener">Order online</a></div></nav>
 
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLd4OHerUjpIsjQSk0HWy6MhHRbHp3lpVBBJDst7k5zYh8g9YjmKl-OurBo9lVATqpZu83BSPr3yWsOMTzDK2n6ipVw5IuqansBQaOF_nhQwFW7mR7ys3y-wJbt_UpCjuM1nBdiW9w=s4800-w1200)">
+<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLc0pCaBmP_VIDyf3qazm6jZ3NlEHoUm3llvfnXmQ_WLDtfiYeuxAshuTZ5pAlec2Thd3bhqtB587AOh6xc2DQFaESd1QHcBXaU_yLARQdPnSiAhAtmHfXxKsJJ7mAxYyRBckQeRAyUrusc=s4800-w1600)">
   <div class="wrap">
     
     <div>
@@ -65,59 +66,28 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
     <h1>Manly Deck</h1>
     <p class="tag">Harbour views, cruisey vibes and good food in Manly Village</p>
     <p class="rating">4.4 ★ on Google (981 reviews)</p>
-    <a class="btn" href="tel:0733963824">Call (07) 3396 3824</a> <a class="btn ghost" href="mailto:info@manlydeck.com.au">Email us</a>
+    <a class="btn" href="tel:0733963824">Call (07) 3396 3824</a> <a class="btn ghost" href="mailto:info@manlydeck.com.au">Email us</a> <a class="btn ghost" href="https://order.manlydeck.com.au/index.php/product/manly-deck-seafood-festival/" rel="noopener">Order online</a>
     </div>
   </div>
 </header>
 
-<section class="wrap" id="about">
-  <h2>About</h2>
-  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Bookings</li><li>Outdoor seating</li></ul>
-  <p>Manly Deck Bar &amp; Restaurant sits in the heart of Manly Village, with a deck overlooking the beautiful Manly Harbour. It&#x27;s the ideal place to put your feet up and relax, with views of the marina, the ocean and Moreton Island.</p><p>Pull up a seat on the terrace, grab a game of pool and enjoy a great selection of tap beers, wines and spirits alongside eclectic comfort food. Ambience, views and quality food at affordable prices: what more could you want in a local?</p>
-</section>
-
-<section class="wrap" >
-  <h2>What people say</h2>
-  <div class="grid"><blockquote><p>“My best mate and I took our 3 kids to Manly Deck on Wednesday 8th April.
+<section class="wrap" id="gallery"><h2>Gallery</h2><div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLc_bRo3jL87IiHX9EvOT-k4BfBxUiQ9gVwgQ27bSbr6f4zQqzZVgA0aVGZcXZQprNj4EAOUcO9p4aLYpAsLQJK5S-b_lmABdCzrYa2euMhQPOyxJhEJXtcLKZ6iwJcc5YIxIXu7OzyUyINe=s4800-w1600" alt="Manly Deck"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLd4OHerUjpIsjQSk0HWy6MhHRbHp3lpVBBJDst7k5zYh8g9YjmKl-OurBo9lVATqpZu83BSPr3yWsOMTzDK2n6ipVw5IuqansBQaOF_nhQwFW7mR7ys3y-wJbt_UpCjuM1nBdiW9w=s4800-w1200" alt="Manly Deck"></div></section><section class="wrap" id="about"><h2>About</h2><ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Bookings</li><li>Outdoor seating</li></ul><p>Manly Deck Bar &amp; Restaurant sits in the heart of Manly Village, with a deck overlooking the beautiful Manly Harbour. It&#x27;s the ideal place to put your feet up and relax, with views of the marina, the ocean and Moreton Island.</p><p>Pull up a seat on the terrace, grab a game of pool and enjoy a great selection of tap beers, wines and spirits alongside eclectic comfort food. Ambience, views and quality food at affordable prices: what more could you want in a local?</p></section><section class="wrap" id="reviews"><h2>From our customers</h2><div class="grid"><blockquote><p>“My best mate and I took our 3 kids to Manly Deck on Wednesday 8th April.
 The place was packed, lucky we booked a table!
 So much chatter, and happy people.
-We only waited a short time for milkshakes and our amazing meals- the kids couldn&#x27;t even finish the massive…”</p><footer>★★★★★ Laura Bancroft (Lola)</footer></blockquote><blockquote><p>“So happy we found this place. Great location in Manly and a very friendly atmosphere. The food was excellent and very reasonably priced. I was especially happy ( overjoyed actually ) to find one of my favourite South African dishes, mutton bunny chow, on the menu. It…”</p><footer>★★★★★ Nico Smit</footer></blockquote><blockquote><p>“Wow, what a great find, it gets super busy because its so good. The decor and outlook are fantastic inside. Where the casual outdoor areas have booths, chairs and tables are uneven because if the ground but still comfy with nice warm gas fires scattered in between. The…”</p><footer>★★★★★ Sally Taylor</footer></blockquote></div>
-</section>
+We only waited a short time for milkshakes and our amazing meals- the kids couldn&#x27;t even finish the massive…”</p><footer>★★★★★ Laura Bancroft (Lola)</footer></blockquote><blockquote><p>“So happy we found this place. Great location in Manly and a very friendly atmosphere. The food was excellent and very reasonably priced. I was especially happy ( overjoyed actually ) to find one of my favourite South African dishes, mutton bunny chow, on the menu. It…”</p><footer>★★★★★ Nico Smit</footer></blockquote><blockquote><p>“Wow, what a great find, it gets super busy because its so good. The decor and outlook are fantastic inside. Where the casual outdoor areas have booths, chairs and tables are uneven because if the ground but still comfy with nice warm gas fires scattered in between. The…”</p><footer>★★★★★ Sally Taylor</footer></blockquote></div></section><section class="wrap" id="menu"><h2>Menu</h2><div id="menu-body"><p class="menu-note"><a class="btn" href="https://www.manlydeck.com.au/lunch-menu/">View our menu</a></p></div></section><section class="wrap content" id="about-us"><h2>About Us</h2><p>Manly Deck is Manly Harbour&#x27;s funky, modern and relaxing bar. There&#x27;s a cruisey atmosphere, quality food and friendly staff, and the best part is the prime location. We offer a variety of food and drinks throughout the week, with tasty meals at discounted prices.</p><h3>Choose Local</h3><p>We&#x27;re proud to support our local farming community and choose local. We make sure every ingredient that goes into our dishes is fresh. Eating local means supporting farmers and producers and investing food dollars close to home.</p><h3>Live Music</h3><p>There are very talented musicians in and around Manly, and you&#x27;ll hear them at the Deck every Tuesday to Sunday.</p><h3>Trading Hours</h3><p>We&#x27;re open 7 days a week for lunch and dinner. Our self-serve buffet is on hold until further notice.</p><h3>Manly Village</h3><p>Manly was once a fishing village and is now a beautiful boat harbour. There&#x27;s sailing, bird-watching, cycling and swimming, plus a wide range of food and shopping options, so there&#x27;s plenty to do before or after a meal with us.</p></section><section class="wrap content" id="functions"><h2>Functions</h2><p>Planning a function? Look no further than the Deck. It can be booked exclusively for a birthday, an anniversary, an office party or any other occasion you want to celebrate. We host gatherings of up to 150 people, so if you&#x27;re already looking for a spot for your Christmas party, let us know.</p><p>There are two Deck booking slots every day: lunch and dinner. You&#x27;ll need a minimum of 30 people for bookings Monday to Thursday, and a minimum of 40 people for Friday, Saturday or Sunday.</p><h3>Good to know</h3><ul><li>Your booking fee includes use of the running tab and service from our bar and wait staff</li><li>Choose from hot and cold platters, a 2-course or 3-course meal, or a buffet</li><li>You can run a bar tab at your function</li><li>You&#x27;re welcome to bring cake and decorations. A cleaning fee may apply at management&#x27;s discretion if decorations and rubbish are left behind</li><li>Your booking is secured once the fee is paid</li></ul><p>Give us a call on 3396 3824 to chat about your function.</p></section><section class="wrap" id="hours"><div class="grid"><div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>11:30 AM – 9:30 PM</td></tr><tr><th>Tuesday</th><td>11:30 AM – 9:30 PM</td></tr><tr><th>Wednesday</th><td>12:00 – 10:00 PM</td></tr><tr><th>Thursday</th><td>11:30 AM – 11:00 PM</td></tr><tr><th>Friday</th><td>11:30 AM – 12:00 AM</td></tr><tr><th>Saturday</th><td>12:00 PM – 12:00 AM</td></tr><tr><th>Sunday</th><td>11:30 AM – 10:00 PM</td></tr></table></div><div class="card"><h2>Find us</h2><p>1/45 Cambridge Parade, Manly QLD 4179, Australia</p><p><a href="https://maps.google.com/?cid=5657614037330287085&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0733963824">Call (07) 3396 3824</a> <a class="btn ghost" href="mailto:info@manlydeck.com.au">Email us</a> <a class="btn ghost" href="https://order.manlydeck.com.au/index.php/product/manly-deck-seafood-festival/" rel="noopener">Order online</a></div></div></section><section class="wrap"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=1/45%20Cambridge%20Parade%2C%20Manly%20QLD%204179%2C%20Australia&output=embed" title="Map"></iframe></section>
 
-<section class="wrap" id="menu" >
-  <h2>Menu</h2>
-  <div id="menu-body"><p class="menu-note"><a class="btn" href="https://www.manlydeck.com.au/lunch-menu/">View our menu</a></p></div>
-</section>
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/ManlyDeck" rel="noopener">Facebook</a></div>&copy; 2026 Manly Deck &middot; Restaurant</footer>
 <script>
 // Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
 fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
   if (!m || !m.length) return;
   const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+  const body = document.getElementById('menu-body'); if (!body) return;
+  body.innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
     '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
-  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  document.getElementById('menu').removeAttribute('hidden');
   if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
 }).catch(() => {});
 </script>
-
-<section class="wrap content" id="about-us"><h2>About Us</h2><p>Manly Deck is Manly Harbour&#x27;s funky, modern and relaxing bar. There&#x27;s a cruisey atmosphere, quality food and friendly staff, and the best part is the prime location. We offer a variety of food and drinks throughout the week, with tasty meals at discounted prices.</p><h3>Choose Local</h3><p>We&#x27;re proud to support our local farming community and choose local. We make sure every ingredient that goes into our dishes is fresh. Eating local means supporting farmers and producers and investing food dollars close to home.</p><h3>Live Music</h3><p>There are very talented musicians in and around Manly, and you&#x27;ll hear them at the Deck every Tuesday to Sunday.</p><h3>Trading Hours</h3><p>We&#x27;re open 7 days a week for lunch and dinner. Our self-serve buffet is on hold until further notice.</p><h3>Manly Village</h3><p>Manly was once a fishing village and is now a beautiful boat harbour. There&#x27;s sailing, bird-watching, cycling and swimming, plus a wide range of food and shopping options, so there&#x27;s plenty to do before or after a meal with us.</p></section><section class="wrap content" id="functions"><h2>Functions</h2><p>Planning a function? Look no further than the Deck. It can be booked exclusively for a birthday, an anniversary, an office party or any other occasion you want to celebrate. We host gatherings of up to 150 people, so if you&#x27;re already looking for a spot for your Christmas party, let us know.</p><p>There are two Deck booking slots every day: lunch and dinner. You&#x27;ll need a minimum of 30 people for bookings Monday to Thursday, and a minimum of 40 people for Friday, Saturday or Sunday.</p><h3>Good to know</h3><ul><li>Your booking fee includes use of the running tab and service from our bar and wait staff</li><li>Choose from hot and cold platters, a 2-course or 3-course meal, or a buffet</li><li>You can run a bar tab at your function</li><li>You&#x27;re welcome to bring cake and decorations. A cleaning fee may apply at management&#x27;s discretion if decorations and rubbish are left behind</li><li>Your booking is secured once the fee is paid</li></ul><p>Give us a call on 3396 3824 to chat about your function.</p></section>
-
-<section class="wrap" >
-  <h2>Gallery</h2>
-  <div class="gallery"><img src="https://www.manlydeck.com.au/wp-content/uploads/2013/01/About-Us.jpg" alt="Manly Deck"><img src="https://www.manlydeck.com.au/wp-content/uploads/2013/01/Trading-Hours.jpg" alt="Manly Deck"><img src="https://www.manlydeck.com.au/wp-content/themes/ManlyDeck/images/events/home/thumb-live-music-home.png" alt="Manly Deck"><img src="https://www.manlydeck.com.au/wp-content/themes/ManlyDeck/images/events/home/home-looking-for-gigs.jpg" alt="Manly Deck"><img src="https://www.manlydeck.com.au/wp-content/uploads/2025/11/wednesday-deal-thumb.png" alt="Manly Deck"><img src="https://www.manlydeck.com.au/wp-content/uploads/2024/02/thursdaythumb.jpg" alt="Manly Deck"><img src="https://www.manlydeck.com.au/wp-content/uploads/2025/03/friday-deal-sm.png" alt="Manly Deck"><img src="https://www.manlydeck.com.au/wp-content/uploads/2025/03/saturday-thumb.png" alt="Manly Deck"></div>
-</section>
-
-<section class="wrap" id="hours">
-  <div class="grid">
-    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>11:30 AM – 9:30 PM</td></tr><tr><th>Tuesday</th><td>11:30 AM – 9:30 PM</td></tr><tr><th>Wednesday</th><td>12:00 – 10:00 PM</td></tr><tr><th>Thursday</th><td>11:30 AM – 11:00 PM</td></tr><tr><th>Friday</th><td>11:30 AM – 12:00 AM</td></tr><tr><th>Saturday</th><td>12:00 PM – 12:00 AM</td></tr><tr><th>Sunday</th><td>11:30 AM – 10:00 PM</td></tr></table></div>
-    <div class="card"><h2>Find us</h2><p>1/45 Cambridge Parade, Manly QLD 4179, Australia</p><p><a href="https://maps.google.com/?cid=5657614037330287085&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0733963824">Call (07) 3396 3824</a> <a class="btn ghost" href="mailto:info@manlydeck.com.au">Email us</a></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=1/45%20Cambridge%20Parade%2C%20Manly%20QLD%204179%2C%20Australia&output=embed" title="Map"></iframe>
-</section>
-
-<footer class="site"><div class="socials"><a href="https://www.facebook.com/ManlyDeck" rel="noopener">Facebook</a></div>&copy; 2026 Manly Deck &middot; Restaurant</footer>
 </body>
 </html>

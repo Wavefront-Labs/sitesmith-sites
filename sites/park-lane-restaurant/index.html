@@ -8,13 +8,26 @@
 <title>Park Lane Restaurant</title>
 <meta name="description" content="Award-winning modern Australian dining in the heart of Bundaberg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#7A2E2A;--bg:#F7F3EC;--ink:#2A2420;--card:#FFFDF8;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Cormorant Garamond', Georgia, serif;--body:'Lora', Georgia, serif;--r:16px;--rs:12px;--rb:999px}
+:root{--accent:#7A2E2E;--bg:#F7F3EE;--ink:#2A2420;--card:#FFFDFA;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Playfair Display', Georgia, serif;--body:'Source Sans 3', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
 body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
-h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
-.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
-/* hero variants */
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--body)}
+h1,h2,h3,nav.top a{font-family:var(--disp)}a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}
+/* hero */
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:var(--rb);font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:var(--rs)}
 body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
 body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
 body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
@@ -22,44 +35,32 @@ body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object
 body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
 body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
 body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}img{max-width:100%;display:block}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
-header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
-header.hero .wrap{position:relative;padding:48px 16px}
-h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
-.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
-.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
-.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
-.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
-section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
-h2{font-size:1.6rem;margin:0 0 20px}
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}h2{font-size:1.6rem;margin:0 0 20px}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
-blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
-.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
-ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
-iframe{width:100%;height:320px;border:0;border-radius:16px}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.feature blockquote{background:transparent;border:0;border-left:4px solid var(--accent);border-radius:0;padding:8px 0 8px 24px}.feature blockquote p{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.35}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--rs);width:100%}
+.gallery.lead img:first-child{grid-column:1/-1;aspect-ratio:21/9}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:var(--rb);padding:4px 12px;font-size:.9rem}
+body.sharp ul.tags li{background:transparent;border:0;border-bottom:2px solid var(--accent);border-radius:0;padding:2px 0;font-weight:600}
+body.pill ul.tags li{background:var(--accent);color:#fff;border:0}
+iframe{width:100%;height:320px;border:0;border-radius:var(--r)}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
-nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
-nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}
-@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
-.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
-.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
-.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
-footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:var(--rs);margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 </style>
 </head>
-<body class="hero-split sharp">
-<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#dinner-at-park-lane">Dinner at Park Lane</a><a href="#save-5-on-your-bill">Save 5% on Your Bill</a><a href="#functions-and-motel-guests">Functions and Motel Guests</a><a href="#hours">Hours &amp; location</a></div></nav>
+<body class="hero-fullbleed sharp layout-classic">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#dinner-at-park-lane">Dinner at Park Lane</a><a href="#save-5-on-your-bill">Save 5% on Your Bill</a><a href="#functions-and-motel-guests">Functions and Motel Guests</a><a href="#gallery">Gallery</a><a href="#hours">Hours &amp; location</a></div></nav>
 
-<header class="hero" >
+<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdMxG287KVt5jaGfZ5wB82dAciIG7GFIU-wR62xXY4iiRIKcgyCsmmEJC4YAnnHguka0ks0qklaZwRsQY_jdkYCvih5Fc4_BD9f_QSb0_upNvZQR4JAFOVqJKH9GopXsQHBovm2Uw=s4800-w1600)">
   <div class="wrap">
-    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLdMxG287KVt5jaGfZ5wB82dAciIG7GFIU-wR62xXY4iiRIKcgyCsmmEJC4YAnnHguka0ks0qklaZwRsQY_jdkYCvih5Fc4_BD9f_QSb0_upNvZQR4JAFOVqJKH9GopXsQHBovm2Uw=s4800-w1600" alt="Park Lane Restaurant">
+    
     <div>
     <img class="logo" src="http://parklanemotel.com.au/wp-content/themes/econolodge/library/images/logo.png" alt="Park Lane Restaurant logo">
     <h1>Park Lane Restaurant</h1>
@@ -70,53 +71,22 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap" id="about">
-  <h2>About</h2>
-  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Bookings</li><li>Vegetarian options</li></ul>
-  <p>Park Lane Restaurant serves modern Australian food made with fresh, seasonal, locally sourced ingredients. Whether you&#x27;re after steak, seafood or something lighter, we do it all, in a small, well-run dining room at the back of EconoLodge Park Lane on Bourbong Street. We&#x27;re a favourite with locals and visitors alike, and a proud recipient of the Choice Gold Hospitality Award, which recognises excellence in quality, service and guest satisfaction.</p><p>We&#x27;re independently owned and run by the Ward family. Greg, a chef by trade, has spent 30 years in hospitality, 20 of them at Park Lane: first as the chef, then as owner of the restaurant for 15 years, and now as owner of the whole motel. Chef Aaron cooks our award-winning food for guests and visiting diners, and Jonathan manages the restaurant to make sure your night out is a memorable one.</p>
-</section>
-
-<section class="wrap" >
-  <h2>What people say</h2>
-  <div class="grid"><blockquote><p>“We (literally) stumbled upon this place whilst we were looking for a place to dine in at the last minute, after checking in to our accommodation (we didn&#x27;t stay at Park Lane).
+<section class="wrap" id="about"><h2>About</h2><ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Bookings</li><li>Vegetarian options</li></ul><p>Park Lane Restaurant serves modern Australian food made with fresh, seasonal, locally sourced ingredients. Whether you&#x27;re after steak, seafood or something lighter, we do it all, in a small, well-run dining room at the back of EconoLodge Park Lane on Bourbong Street. We&#x27;re a favourite with locals and visitors alike, and a proud recipient of the Choice Gold Hospitality Award, which recognises excellence in quality, service and guest satisfaction.</p><p>We&#x27;re independently owned and run by the Ward family. Greg, a chef by trade, has spent 30 years in hospitality, 20 of them at Park Lane: first as the chef, then as owner of the restaurant for 15 years, and now as owner of the whole motel. Chef Aaron cooks our award-winning food for guests and visiting diners, and Jonathan manages the restaurant to make sure your night out is a memorable one.</p></section><section class="wrap" id="reviews"><h2>From our customers</h2><div class="grid"><blockquote><p>“We (literally) stumbled upon this place whilst we were looking for a place to dine in at the last minute, after checking in to our accommodation (we didn&#x27;t stay at Park Lane).
 The meals here were amazing! Between 4 adults and one child, we ordered a t-bone steak with…”</p><footer>★★★★★ Michael Dickman</footer></blockquote><blockquote><p>“Spent 3 nights in Bundaberg at the Oscar motel, we managed to stumble apon the park lane restaurant by chance, and it was the best thing we ever did! 2 out of the 3 nights, we ended up dining in at the restaurant. The food was outstanding!
-Athough the menu was small…”</p><footer>★★★★★ Justine Stevens</footer></blockquote><blockquote><p>“This is a small but well run restaurant in the very back of the Park Lane Econolodge. With only a few customers the service was excellent.  They might need another server to cope with a full house. The menu had a good range and we both had the Barra special which was…”</p><footer>★★★★ Owl Richmon</footer></blockquote></div>
-</section>
+Athough the menu was small…”</p><footer>★★★★★ Justine Stevens</footer></blockquote><blockquote><p>“This is a small but well run restaurant in the very back of the Park Lane Econolodge. With only a few customers the service was excellent.  They might need another server to cope with a full house. The menu had a good range and we both had the Barra special which was…”</p><footer>★★★★ Owl Richmon</footer></blockquote></div></section><section class="wrap" id="menu" hidden><h2>Menu</h2><div id="menu-body"></div></section><section class="wrap content" id="dinner-at-park-lane"><h2>Dinner at Park Lane</h2><p>Join us for dinner from 6pm to 8pm, Monday to Thursday. You can dine in or take away, and we have vegetarian options.</p><p>Bookings are welcome. Call us on (07) 4151 2341.</p><p>You&#x27;ll find us at 247 Bourbong St, Bundaberg, in the EconoLodge Park Lane. We&#x27;re just across the road from Alexandra Park and the Burnett River, in the Bundaberg CBD.</p><p>We also cater to the Chalet Motor Inn, Bundaberg City Motor Inn and Acacia Motor Inn.</p></section><section class="wrap content" id="save-5-on-your-bill"><h2>Save 5% on Your Bill</h2><p>Book by phone on (07) 4151 2341 and mention the promo code WINTER to instantly save 5% on your restaurant bill.</p></section><section class="wrap content" id="functions-and-motel-guests"><h2>Functions and Motel Guests</h2><p>Planning a get-together? Our function room is available with full catering.</p><p>Staying with us at EconoLodge Park Lane? Breakfast and dinner can be served to your unit, and the restaurant is just a few steps from your room.</p></section><section class="wrap" id="gallery"><h2>Gallery</h2><div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdQAFUloHdR2bBKwcLCzyV8QY1KR2SPAe2PsGbgzam2rrkTkB4ERrcJeCpiQmUQ0WC3SN2iULghJH8VuU9Saxgc63iAeNY19TpzGujhYflJeYaD6EwemHyMkqNEVzpuBzplGorwZQ=s4800-w1600" alt="Park Lane Restaurant"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLexliKVfnhqDiCKNh2AJ9iUnx_3JDn1w5Vu7Aj4xmN0VPqMjjsiAb3JexOtgDWvTr5NhIRFeSvlhjrqIVP_Dih9mwNyNECKI_21mcNbCKYNUI_aFYqKxQH_DjIRIK01K5-411wzNYWZKdjH=s4800-w1600" alt="Park Lane Restaurant"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLf8ARugzjrCkcZZDPU3qSZ0jo27aMkuyF30byR9Ap5vAWDLFeyVr3d8IGIA5a254L3aIQqotP9ZdgvobGK91Yto4moG8xocWwZhm4BDtgpvFkewaVx9HiMHrND_m0cNCpLOV_w3biNXVGU=s4800-w1600" alt="Park Lane Restaurant"></div></section><section class="wrap" id="hours"><div class="grid"><div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>6:00 – 8:30 PM</td></tr><tr><th>Tuesday</th><td>6:00 – 8:30 PM</td></tr><tr><th>Wednesday</th><td>6:00 – 8:30 PM</td></tr><tr><th>Thursday</th><td>6:00 – 8:30 PM</td></tr><tr><th>Friday</th><td>Closed</td></tr><tr><th>Saturday</th><td>Closed</td></tr><tr><th>Sunday</th><td>Closed</td></tr></table></div><div class="card"><h2>Find us</h2><p>247 Bourbong St, Bundaberg West QLD 4670, Australia</p><p><a href="https://maps.google.com/?cid=8866631171574988426&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0741512341">Call (07) 4151 2341</a> <a class="btn ghost" href="mailto:info@parklanemotel.com.au">Email us</a></div></div></section><section class="wrap"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=247%20Bourbong%20St%2C%20Bundaberg%20West%20QLD%204670%2C%20Australia&output=embed" title="Map"></iframe></section>
 
-<section class="wrap" id="menu" hidden>
-  <h2>Menu</h2>
-  <div id="menu-body"></div>
-</section>
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/ChoiceHotelsAustralia" rel="noopener">Facebook</a></div>&copy; 2026 Park Lane Restaurant &middot; Restaurant</footer>
 <script>
 // Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
 fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
   if (!m || !m.length) return;
   const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+  const body = document.getElementById('menu-body'); if (!body) return;
+  body.innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
     '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
-  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  document.getElementById('menu').removeAttribute('hidden');
   if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
 }).catch(() => {});
 </script>
-
-<section class="wrap content" id="dinner-at-park-lane"><h2>Dinner at Park Lane</h2><p>Join us for dinner from 6pm to 8pm, Monday to Thursday. You can dine in or take away, and we have vegetarian options.</p><p>Bookings are welcome. Call us on (07) 4151 2341.</p><p>You&#x27;ll find us at 247 Bourbong St, Bundaberg, in the EconoLodge Park Lane. We&#x27;re just across the road from Alexandra Park and the Burnett River, in the Bundaberg CBD.</p><p>We also cater to the Chalet Motor Inn, Bundaberg City Motor Inn and Acacia Motor Inn.</p></section><section class="wrap content" id="save-5-on-your-bill"><h2>Save 5% on Your Bill</h2><p>Book by phone on (07) 4151 2341 and mention the promo code WINTER to instantly save 5% on your restaurant bill.</p></section><section class="wrap content" id="functions-and-motel-guests"><h2>Functions and Motel Guests</h2><p>Planning a get-together? Our function room is available with full catering.</p><p>Staying with us at EconoLodge Park Lane? Breakfast and dinner can be served to your unit, and the restaurant is just a few steps from your room.</p></section>
-
-<section class="wrap" >
-  <h2>Gallery</h2>
-  <div class="gallery"><img src="http://parklanemotel.com.au/wp-content/uploads/Accommodation-Bundaberg.jpg" alt="Park Lane Restaurant"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdQAFUloHdR2bBKwcLCzyV8QY1KR2SPAe2PsGbgzam2rrkTkB4ERrcJeCpiQmUQ0WC3SN2iULghJH8VuU9Saxgc63iAeNY19TpzGujhYflJeYaD6EwemHyMkqNEVzpuBzplGorwZQ=s4800-w1600" alt="Park Lane Restaurant"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLexliKVfnhqDiCKNh2AJ9iUnx_3JDn1w5Vu7Aj4xmN0VPqMjjsiAb3JexOtgDWvTr5NhIRFeSvlhjrqIVP_Dih9mwNyNECKI_21mcNbCKYNUI_aFYqKxQH_DjIRIK01K5-411wzNYWZKdjH=s4800-w1600" alt="Park Lane Restaurant"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLf8ARugzjrCkcZZDPU3qSZ0jo27aMkuyF30byR9Ap5vAWDLFeyVr3d8IGIA5a254L3aIQqotP9ZdgvobGK91Yto4moG8xocWwZhm4BDtgpvFkewaVx9HiMHrND_m0cNCpLOV_w3biNXVGU=s4800-w1600" alt="Park Lane Restaurant"></div>
-</section>
-
-<section class="wrap" id="hours">
-  <div class="grid">
-    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>6:00 – 8:30 PM</td></tr><tr><th>Tuesday</th><td>6:00 – 8:30 PM</td></tr><tr><th>Wednesday</th><td>6:00 – 8:30 PM</td></tr><tr><th>Thursday</th><td>6:00 – 8:30 PM</td></tr><tr><th>Friday</th><td>Closed</td></tr><tr><th>Saturday</th><td>Closed</td></tr><tr><th>Sunday</th><td>Closed</td></tr></table></div>
-    <div class="card"><h2>Find us</h2><p>247 Bourbong St, Bundaberg West QLD 4670, Australia</p><p><a href="https://maps.google.com/?cid=8866631171574988426&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0741512341">Call (07) 4151 2341</a> <a class="btn ghost" href="mailto:info@parklanemotel.com.au">Email us</a></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=247%20Bourbong%20St%2C%20Bundaberg%20West%20QLD%204670%2C%20Australia&output=embed" title="Map"></iframe>
-</section>
-
-<footer class="site"><div class="socials"><a href="https://www.facebook.com/ChoiceHotelsAustralia" rel="noopener">Facebook</a></div>&copy; 2026 Park Lane Restaurant &middot; Restaurant</footer>
 </body>
 </html>

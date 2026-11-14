@@ -10,11 +10,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#0B7A3E;--bg:#FBF6E9;--ink:#1F2A24;--card:#FFFDF7;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+:root{--accent:#0B7A3E;--bg:#FBF8EC;--ink:#1E2A22;--card:#FFFFFF;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
 body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
-h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
-.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
-/* hero variants */
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--body)}
+h1,h2,h3,nav.top a{font-family:var(--disp)}a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}
+/* hero */
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:var(--rb);font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:var(--rs)}
 body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
 body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
 body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
@@ -22,42 +35,30 @@ body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object
 body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
 body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
 body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}img{max-width:100%;display:block}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
-header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
-header.hero .wrap{position:relative;padding:48px 16px}
-h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
-.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
-.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
-.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
-.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
-section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
-h2{font-size:1.6rem;margin:0 0 20px}
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}h2{font-size:1.6rem;margin:0 0 20px}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
-blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
-.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
-ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
-iframe{width:100%;height:320px;border:0;border-radius:16px}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.feature blockquote{background:transparent;border:0;border-left:4px solid var(--accent);border-radius:0;padding:8px 0 8px 24px}.feature blockquote p{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.35}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--rs);width:100%}
+.gallery.lead img:first-child{grid-column:1/-1;aspect-ratio:21/9}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:var(--rb);padding:4px 12px;font-size:.9rem}
+body.sharp ul.tags li{background:transparent;border:0;border-bottom:2px solid var(--accent);border-radius:0;padding:2px 0;font-weight:600}
+body.pill ul.tags li{background:var(--accent);color:#fff;border:0}
+iframe{width:100%;height:320px;border:0;border-radius:var(--r)}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
-nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
-nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}
-@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
-.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
-.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
-.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
-footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:var(--rs);margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 </style>
 </head>
-<body class="hero-fullbleed rounded">
-<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#what-s-on">What&#x27;s On</a><a href="#our-food-and-drinks">Our Food and Drinks</a><a href="#hours">Hours &amp; location</a></div></nav>
-
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLe1UvR5Z4L31pGfTN7wRZ8Uz1pH76c8UKgo1aYGVkfoc_l7bGl8szhfxpq4vnRiSAWxs2DEA9oCJkASeJixRXiSfLg48ClPqpoz4a_Di_yPZTQdVVpqzLsOvu7co2rT9qve-gHCbg=s4800-w1440)">
+<body class="hero-band rounded layout-story-first">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#what-s-on">What&#x27;s On</a><a href="#our-food-and-drinks">Our Food and Drinks</a><a href="#gallery">Gallery</a><a href="#hours">Hours &amp; location</a><a class="book" href="https://www.buteko.com.au/wp-content/plugins/order-delivery-date-for-woocommerce/build/style-index.css?ver=ded14adcec7169e50367" rel="noopener">Order online</a></div></nav>
+<div class="band" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLe1UvR5Z4L31pGfTN7wRZ8Uz1pH76c8UKgo1aYGVkfoc_l7bGl8szhfxpq4vnRiSAWxs2DEA9oCJkASeJixRXiSfLg48ClPqpoz4a_Di_yPZTQdVVpqzLsOvu7co2rT9qve-gHCbg=s4800-w1440)"></div>
+<header class="hero" >
   <div class="wrap">
     
     <div>
@@ -65,57 +66,25 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
     <h1>Buteko - Brazilian Restaurant</h1>
     <p class="tag">Scarborough&#x27;s first and only Brazilian restaurant, right by the beach</p>
     <p class="rating">4.4 ★ on Google (900 reviews)</p>
-    <a class="btn" href="tel:0892455575">Call (08) 9245 5575</a> <a class="btn ghost" href="mailto:bookings@buteko.com.au">Email us</a>
+    <a class="btn" href="tel:0892455575">Call (08) 9245 5575</a> <a class="btn ghost" href="mailto:bookings@buteko.com.au">Email us</a> <a class="btn ghost" href="https://www.buteko.com.au/wp-content/plugins/order-delivery-date-for-woocommerce/build/style-index.css?ver=ded14adcec7169e50367" rel="noopener">Order online</a>
     </div>
   </div>
 </header>
 
-<section class="wrap" id="about">
-  <h2>About</h2>
-  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
-  <p>Buteko is traditionally known as a chill-out venue where great drinks and food are served: a place to share good vibes, laughs and a chat without obligation. We&#x27;re family friendly, and yes, that includes your four-legged members too.</p><p>As the first and only Brazilian restaurant in Scarborough, we&#x27;re the place to be all year long, with free live music and entertainment, daily specials, good meals, drinks and specialty cocktails. Come and say hi, meet our friendly team and share the Buteko experience.</p>
-</section>
+<section class="wrap" id="about"><h2>About</h2><ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Delivery</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul><p>Buteko is traditionally known as a chill-out venue where great drinks and food are served: a place to share good vibes, laughs and a chat without obligation. We&#x27;re family friendly, and yes, that includes your four-legged members too.</p><p>As the first and only Brazilian restaurant in Scarborough, we&#x27;re the place to be all year long, with free live music and entertainment, daily specials, good meals, drinks and specialty cocktails. Come and say hi, meet our friendly team and share the Buteko experience.</p></section><section class="wrap content" id="what-s-on"><h2>What&#x27;s On</h2><p>Australia&#x27;s first Buteko by the beach, offering a full and unique Brazilian experience at Scarborough Beach. Sharing is caring, so make the best moments with your best people.</p><h3>Fridays: Brazilian Live Music</h3><p>Join us for Brazilian live music on Fridays. Live music is on every weekend in summer, and it&#x27;s always free.</p><h3>Fridays, Saturdays and Sundays: $65 Bottomless Fun Weekend</h3><p>Gather your crew and head to Scarborough Beach for our $65 Bottomless Fun Weekend.</p><h3>Every day (closed Tuesdays): Brazilian BBQ Board</h3><p>Something special to share with your crew. Got a big appetite? Bring your friends and family and dig into our Brazilian BBQ Board.</p><h3>Seafood Board and Giant Fishbowl</h3><p>Have you tried our Seafood Board for 2 paired with a 1.8L Giant Fishbowl? Pick your favourite:</p><ul><li>Green: Brazilian Mojito</li><li>Blue: The Drunken Barber</li><li>Red: Strawberry Storm</li><li>Yellow: Scarbs Passion</li></ul></section><section class="wrap content" id="our-food-and-drinks"><h2>Our Food and Drinks</h2><p>A taste of what you&#x27;ll find at Buteko:</p><ul><li>$16.90 Weekday Brazilian Set Meal (PF)</li><li>Brazilian BBQ Board for 2+</li><li>Brazilian Picanha Steak</li><li>Brazilian Salgados</li><li>Brazilian Chips (Cassava)</li><li>Smoked Sausage &amp; Chips</li><li>Salt &amp; Pepper Calamari</li><li>Tempura Prawns</li><li>Chicken Parmi</li><li>Lunch Bites</li><li>Handcrafted Sauces</li><li>Dessert: Sweet Pinnacles</li><li>Guarana (Brazilian soft drink)</li><li>Our delicious mocktails</li></ul></section><section class="wrap feature" id="reviews"><h2>From our customers</h2><blockquote><p>“Visiting from Melbourne, we were absolutely blown away by our experience at Buteko Brazilian Restaurant. The food is incredible—truly authentic, traditional Brazilian cooking served in very generous portions at remarkably fair prices. Beyond the fantastic meal, the…”</p><footer>★★★★★ Wagner Junior</footer></blockquote></section><section class="wrap" id="menu" hidden><h2>Menu</h2><div id="menu-body"></div></section><section class="wrap" id="gallery"><h2>Gallery</h2><div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcmq8VDwxlvjz0_4rP7Y8wGusN2Dn1iF6uf3HNvb9Ykts6d_BSSXl8qkEET29MXYjsAfeZkHxKLINoqC4KP3mRaNdC9a7XO87q-m501_yd5zVADgaka7rvMIeRIpwcSzVdO1HGJTA=s4800-w1600" alt="Buteko - Brazilian Restaurant"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLd5Se7u40OhxcFlu97nKVcZVop8UkDdY0-Dq8ixB83tUDa_4PrBaRh9-K4Km5p2o_HIN63QJ6oEwvau0e4ZK9U50gs5q8IZMqqYPI3HZs552RXwDTf2XqqJ4OprNoM8HHmKw-gxLnfUxd_n=s4800-w1600" alt="Buteko - Brazilian Restaurant"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfJv3uXkdDiL-MNtjcC3TWUETOyy6toUgP25bYJW-znTE66D0RL1Hg8fcACHtS4jA4Pe5qHLIe6wtNttNubbqfGrxhc6mqOVBSQ82fP_ZQi_xNNGIzSbS72RWbwzTCGOgAcE0VBozBIqhEo=s4800-w1600" alt="Buteko - Brazilian Restaurant"><img src="https://lh3.googleusercontent.com/places/ANXAkqEz2wyL7xrDGO22xIFAvQjV5enyjaVdN3jpokiJEyO-_wzNvHiwg3e4KUKFmStZORhWNAaZvH_CBTGXivLYBN_KQPGs5CRALZ0=s1600-w300-h300" alt="Buteko - Brazilian Restaurant"><img src="https://www.buteko.com.au/wp-content/uploads/2023/09/ChIJy9sCMdWoMioR01DOg8zKXIk_8d79b7225e3ccd6f9145ddbd4b4b749d.jpg" alt="Buteko - Brazilian Restaurant"><img src="https://www.buteko.com.au/wp-content/uploads/2023/09/ChIJy9sCMdWoMioR01DOg8zKXIk_663624827e13fdf14636f3b2a81a5006.jpg" alt="Buteko - Brazilian Restaurant"><img src="https://www.buteko.com.au/wp-content/uploads/2023/09/ChIJy9sCMdWoMioR01DOg8zKXIk_350cedc572ac4d55756ddf8485b1f49b.jpg" alt="Buteko - Brazilian Restaurant"><img src="https://www.buteko.com.au/wp-content/uploads/2023/09/ChIJy9sCMdWoMioR01DOg8zKXIk_3f1730d5454f67553f1978748a465987.jpg" alt="Buteko - Brazilian Restaurant"></div></section><section class="wrap" id="hours"><div class="grid"><div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>Closed</td></tr><tr><th>Tuesday</th><td>Closed</td></tr><tr><th>Wednesday</th><td>11:30 AM – 8:30 PM</td></tr><tr><th>Thursday</th><td>11:30 AM – 8:30 PM</td></tr><tr><th>Friday</th><td>11:30 AM – 9:00 PM</td></tr><tr><th>Saturday</th><td>11:30 AM – 9:00 PM</td></tr><tr><th>Sunday</th><td>11:30 AM – 9:00 PM</td></tr></table></div><div class="card"><h2>Find us</h2><p>3 Scarborough Beach Rd, Scarborough WA 6019, Australia</p><p><a href="https://maps.google.com/?cid=9898009060786983123&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0892455575">Call (08) 9245 5575</a> <a class="btn ghost" href="mailto:bookings@buteko.com.au">Email us</a> <a class="btn ghost" href="https://www.buteko.com.au/wp-content/plugins/order-delivery-date-for-woocommerce/build/style-index.css?ver=ded14adcec7169e50367" rel="noopener">Order online</a></div></div></section><section class="wrap"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=3%20Scarborough%20Beach%20Rd%2C%20Scarborough%20WA%206019%2C%20Australia&output=embed" title="Map"></iframe></section>
 
-<section class="wrap" >
-  <h2>What people say</h2>
-  <div class="grid"><blockquote><p>“Visiting from Melbourne, we were absolutely blown away by our experience at Buteko Brazilian Restaurant. The food is incredible—truly authentic, traditional Brazilian cooking served in very generous portions at remarkably fair prices. Beyond the fantastic meal, the…”</p><footer>★★★★★ Wagner Junior</footer></blockquote><blockquote><p>“The steak was lovely and nicely cooked, but for a Brazilian restaurant, I was expecting a bit more flavour and that distinctive flame-grilled, smoky taste. The portion was also on the smaller side.
-Would I return? Yes, definitely for the steak — but next time I’d be…”</p><footer>★★★★ Nazanin N</footer></blockquote><blockquote><p>“Couldn’t have asked for a more authentic Brazilian meal than the one we had at Buteko. Under the new management, the service was truly five-star, and the heated alfresco area made for a warm and cozy dining experience. We’ll definitely be back! PS steak perfectly…”</p><footer>★★★★★ Juliana Proença</footer></blockquote></div>
-</section>
-
-<section class="wrap" id="menu" hidden>
-  <h2>Menu</h2>
-  <div id="menu-body"></div>
-</section>
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/butekoscarborough" rel="noopener">Facebook</a></div>&copy; 2026 Buteko - Brazilian Restaurant &middot; Brazilian Restaurant</footer>
 <script>
 // Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
 fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
   if (!m || !m.length) return;
   const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+  const body = document.getElementById('menu-body'); if (!body) return;
+  body.innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
     '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
-  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  document.getElementById('menu').removeAttribute('hidden');
   if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
 }).catch(() => {});
 </script>
-
-<section class="wrap content" id="what-s-on"><h2>What&#x27;s On</h2><p>Australia&#x27;s first Buteko by the beach, offering a full and unique Brazilian experience at Scarborough Beach. Sharing is caring, so make the best moments with your best people.</p><h3>Fridays: Brazilian Live Music</h3><p>Join us for Brazilian live music on Fridays. Live music is on every weekend in summer, and it&#x27;s always free.</p><h3>Fridays, Saturdays and Sundays: $65 Bottomless Fun Weekend</h3><p>Gather your crew and head to Scarborough Beach for our $65 Bottomless Fun Weekend.</p><h3>Every day (closed Tuesdays): Brazilian BBQ Board</h3><p>Something special to share with your crew. Got a big appetite? Bring your friends and family and dig into our Brazilian BBQ Board.</p><h3>Seafood Board and Giant Fishbowl</h3><p>Have you tried our Seafood Board for 2 paired with a 1.8L Giant Fishbowl? Pick your favourite:</p><ul><li>Green: Brazilian Mojito</li><li>Blue: The Drunken Barber</li><li>Red: Strawberry Storm</li><li>Yellow: Scarbs Passion</li></ul></section><section class="wrap content" id="our-food-and-drinks"><h2>Our Food and Drinks</h2><p>A taste of what you&#x27;ll find at Buteko:</p><ul><li>$16.90 Weekday Brazilian Set Meal (PF)</li><li>Brazilian BBQ Board for 2+</li><li>Brazilian Picanha Steak</li><li>Brazilian Salgados</li><li>Brazilian Chips (Cassava)</li><li>Smoked Sausage &amp; Chips</li><li>Salt &amp; Pepper Calamari</li><li>Tempura Prawns</li><li>Chicken Parmi</li><li>Lunch Bites</li><li>Handcrafted Sauces</li><li>Dessert: Sweet Pinnacles</li><li>Guarana (Brazilian soft drink)</li><li>Our delicious mocktails</li></ul></section>
-
-<section class="wrap" >
-  <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/places/ANXAkqEz2wyL7xrDGO22xIFAvQjV5enyjaVdN3jpokiJEyO-_wzNvHiwg3e4KUKFmStZORhWNAaZvH_CBTGXivLYBN_KQPGs5CRALZ0=s1600-w300-h300" alt="Buteko - Brazilian Restaurant"><img src="https://www.buteko.com.au/wp-content/uploads/2023/09/ChIJy9sCMdWoMioR01DOg8zKXIk_8d79b7225e3ccd6f9145ddbd4b4b749d.jpg" alt="Buteko - Brazilian Restaurant"><img src="https://www.buteko.com.au/wp-content/uploads/2023/09/ChIJy9sCMdWoMioR01DOg8zKXIk_663624827e13fdf14636f3b2a81a5006.jpg" alt="Buteko - Brazilian Restaurant"><img src="https://www.buteko.com.au/wp-content/uploads/2023/09/ChIJy9sCMdWoMioR01DOg8zKXIk_350cedc572ac4d55756ddf8485b1f49b.jpg" alt="Buteko - Brazilian Restaurant"><img src="https://www.buteko.com.au/wp-content/uploads/2023/09/ChIJy9sCMdWoMioR01DOg8zKXIk_3f1730d5454f67553f1978748a465987.jpg" alt="Buteko - Brazilian Restaurant"><img src="https://www.buteko.com.au/wp-content/uploads/2023/09/ChIJy9sCMdWoMioR01DOg8zKXIk_d6372bbfdfe49e35a2b7bd16489ab329.jpg" alt="Buteko - Brazilian Restaurant"><img src="https://www.buteko.com.au/wp-content/uploads/2023/09/ChIJy9sCMdWoMioR01DOg8zKXIk_3516ea6dac709d03b64f1411a7c809e5.jpg" alt="Buteko - Brazilian Restaurant"><img src="https://www.buteko.com.au/wp-content/uploads/2023/09/ChIJy9sCMdWoMioR01DOg8zKXIk_6293063eb2a0bd72c87b5220df086fa3.jpg" alt="Buteko - Brazilian Restaurant"></div>
-</section>
-
-<section class="wrap" id="hours">
-  <div class="grid">
-    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>Closed</td></tr><tr><th>Tuesday</th><td>Closed</td></tr><tr><th>Wednesday</th><td>11:30 AM – 8:30 PM</td></tr><tr><th>Thursday</th><td>11:30 AM – 8:30 PM</td></tr><tr><th>Friday</th><td>11:30 AM – 9:00 PM</td></tr><tr><th>Saturday</th><td>11:30 AM – 9:00 PM</td></tr><tr><th>Sunday</th><td>11:30 AM – 9:00 PM</td></tr></table></div>
-    <div class="card"><h2>Find us</h2><p>3 Scarborough Beach Rd, Scarborough WA 6019, Australia</p><p><a href="https://maps.google.com/?cid=9898009060786983123&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0892455575">Call (08) 9245 5575</a> <a class="btn ghost" href="mailto:bookings@buteko.com.au">Email us</a></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=3%20Scarborough%20Beach%20Rd%2C%20Scarborough%20WA%206019%2C%20Australia&output=embed" title="Map"></iframe>
-</section>
-
-<footer class="site"><div class="socials"><a href="https://www.facebook.com/butekoscarborough" rel="noopener">Facebook</a></div>&copy; 2026 Buteko - Brazilian Restaurant &middot; Brazilian Restaurant</footer>
 </body>
 </html>

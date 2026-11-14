@@ -10,11 +10,24 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#B23A1E;--bg:#F6F0E4;--ink:#2A1F1A;--card:#FFFAF1;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+:root{--accent:#B5361C;--bg:#F6F0E4;--ink:#22201B;--card:#FFFBF3;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'Oswald', Impact, sans-serif;--body:'Work Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
 body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
-h1,h2,h3,nav.top a{font-family:var(--disp)}body{font-family:var(--body)}
-.card,blockquote,iframe,.content img{border-radius:var(--r)}.gallery img,.hero .logo{border-radius:var(--rs)}.btn,ul.tags li{border-radius:var(--rb)}
-/* hero variants */
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--body)}
+h1,h2,h3,nav.top a{font-family:var(--disp)}a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}
+/* hero */
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:var(--rb);font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:var(--rs)}
 body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
 body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
 body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
@@ -22,42 +35,30 @@ body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object
 body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
 body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
 body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-a{color:var(--accent)}img{max-width:100%;display:block}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
-header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
-header.hero .wrap{position:relative;padding:48px 16px}
-h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
-.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}
-.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
-.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:999px;font-weight:600;margin:4px 8px 4px 0}
-.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
-section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}
-h2{font-size:1.6rem;margin:0 0 20px}
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}h2{font-size:1.6rem;margin:0 0 20px}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
-blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
-.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;width:100%}
-ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.9rem}
-iframe{width:100%;height:320px;border:0;border-radius:16px}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.feature blockquote{background:transparent;border:0;border-left:4px solid var(--accent);border-radius:0;padding:8px 0 8px 24px}.feature blockquote p{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.35}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--rs);width:100%}
+.gallery.lead img:first-child{grid-column:1/-1;aspect-ratio:21/9}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:var(--rb);padding:4px 12px;font-size:.9rem}
+body.sharp ul.tags li{background:transparent;border:0;border-bottom:2px solid var(--accent);border-radius:0;padding:2px 0;font-weight:600}
+body.pill ul.tags li{background:var(--accent);color:#fff;border:0}
+iframe{width:100%;height:320px;border:0;border-radius:var(--r)}
 .menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
 .menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
 .menu-note{color:var(--muted);font-size:.9rem}
-nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
-nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}
-@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
-.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:12px}
-.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:12px;margin:12px 0;max-height:420px;object-fit:cover;width:100%}
-.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
-footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:var(--rs);margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
 </style>
 </head>
-<body class="hero-fullbleed sharp">
-<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#cafe">Cafe</a><a href="#bt-alfresco">BT Alfresco</a><a href="#live-music-venue">Live Music Venue</a><a href="#hours">Hours &amp; location</a></div></nav>
+<body class="hero-fullbleed sharp layout-gallery-first">
+<nav class="top" ><div class="wrap"><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#cafe">Cafe</a><a href="#bt-alfresco">BT Alfresco</a><a href="#live-music-venue">Live Music Venue</a><a href="#hours">Hours &amp; location</a></div></nav>
 
-<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdRT23qsLFWlBiAkoB5CSpN8A01qbFQrtljbkQzzLSRMF9qHrtKvdk3P0edjVGfXZkGI8cBvDeFZQ8g1E3cY7DNZrMOei_8sZLV_Iw8PzvH8uR6u3xDJzocSOsQthYAcATZqpoMOi-PL1Q=s4800-w1600)">
+<header class="hero" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLfAOcaCVNSulEcYej2_dnIsWn0hpDeL4fnxs1b5iw3qnHCzb5FMTu-IxEmekldijBPLeTHctn0nT9ubrPcBd8iNLn-j_N_Omyt34Dr6eshIAFvbTLMWWNpSlG5XFNAJzO4www9i8rxLmPwh=s4800-w1600)">
   <div class="wrap">
     
     <div>
@@ -70,51 +71,20 @@ footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center
   </div>
 </header>
 
-<section class="wrap" id="about">
-  <h2>About</h2>
-  <ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul>
-  <p>Bustard Town is Darwin&#x27;s award-winning live music venue: 1000sqm in the heart of the city, with a tropical alfresco bar and garden, a retro café and a renowned Bandroom set in a refurbished wartime hut.</p><p>We&#x27;re independently owned and locally operated by industry veterans who love music. Come for a coffee and a French pastry in the morning, stay for wood-fired food, icy cocktails and a band at night.</p>
-</section>
+<section class="wrap" id="gallery"><h2>Gallery</h2><div class="gallery lead"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdRT23qsLFWlBiAkoB5CSpN8A01qbFQrtljbkQzzLSRMF9qHrtKvdk3P0edjVGfXZkGI8cBvDeFZQ8g1E3cY7DNZrMOei_8sZLV_Iw8PzvH8uR6u3xDJzocSOsQthYAcATZqpoMOi-PL1Q=s4800-w1600" alt="Bustard Town"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdDydHWf5EdKYhCQRY5k3yObYjoi2YYJicRZNdbb8dhN_qA-XpWqhHzrUJFl5D3LSXhm5Xolm2_b-aswkHFh9fbJz2OqijltNJsd8LtOfvDqoN1hYce5V3TaPfslQwaOCHbwUu2yQybWoat=s4800-w1600" alt="Bustard Town"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLct09raUNm5qEzBMZKWduvV2CCY8oWpVTuMvgd0fQDv2IoFB61K3Owj8-qGsyUii9G8z78SR5Iy1LL-jyZCdZtz4_2iA3eed8T0TMxd1CGw9QY6nXT949APfSjZVroeOF6y6s3YLDV0kR7n=s4800-w1600" alt="Bustard Town"></div></section><section class="wrap" id="about"><h2>About</h2><ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul><p>Bustard Town is Darwin&#x27;s award-winning live music venue: 1000sqm in the heart of the city, with a tropical alfresco bar and garden, a retro café and a renowned Bandroom set in a refurbished wartime hut.</p><p>We&#x27;re independently owned and locally operated by industry veterans who love music. Come for a coffee and a French pastry in the morning, stay for wood-fired food, icy cocktails and a band at night.</p></section><section class="wrap feature" id="reviews"><h2>Reviews</h2><blockquote><p>“What a hidden gem! We came here for my partners work do over christmas and it was incredible. Great music and vibes, and delicious food and cocktails! We recently found out they have a bakery out the front too that make their own classic french croissants and pastries!…”</p><footer>★★★★★ Lucy Goggin</footer></blockquote></section><section class="wrap" id="menu" hidden><h2>Menu</h2><div id="menu-body"></div></section><section class="wrap content" id="cafe"><h2>Cafe</h2><p>Step into our cosy little retro café or sink into a shady seat in our troppo courtyard. It&#x27;s the perfect spot to chill, chat, or catch up on some reading.</p><p>We&#x27;re serving Melbourne&#x27;s finest Genovese coffee, alongside Darwin&#x27;s best in-house baked French patisserie.</p></section><section class="wrap content" id="bt-alfresco"><h2>BT Alfresco</h2><p>Bustard Town serves up relaxed alfresco dining in the heart of Darwin, surrounded by lush greenery and tropical breezes.</p><p>Our chefs fire up the wood oven and grill, serving smoky Mediterranean flavours, bold spices and unique dishes you won&#x27;t find anywhere else, from wood-fired pizzas to open-flame Argentinean barbecue.</p><p>With icy cocktails, local brews from the outdoor bar and live music setting the tone, it&#x27;s a dining experience like no other.</p></section><section class="wrap content" id="live-music-venue"><h2>Live Music Venue</h2><p>Darwin&#x27;s award-winning live music venue has a 450pax capacity and a distinctive atmosphere. We&#x27;re not bound by genre and are known to work with a &#x27;broad church&#x27; of styles and artists.</p><h3>The spaces</h3><ul><li>Band Room: a refurbished wartime hut for 250, with a distinctive river bar, green room and efficient air conditioning for even the hottest Darwin days</li><li>Al Fresco stage: a tropical outdoor setting for 150 people, with standing and smoking areas and a seated restaurant area</li><li>Back Bar: an intimate space for 70 with capable aircon, popular with singer songwriters, spoken word and vinyl selectors/DJs</li></ul><p>Comfortable lounges are placed throughout the venue, and our extensive drink menu means there&#x27;s something for everyone.</p><h3>For artists</h3><p>We love to collaborate and help produce the room. Over 3000 customers come through the venue each week, and we promote each gig across street press, social media, posters and radio. Our ticketing is commission free, giving punters and artists better value for money.</p><p>We ask artists to send a Facebook tile (1200 x 628 pixels), an Instagram tile (1080 x 1080 pixels), a bio under 100 words and links to media content such as Soundcloud or Spotify. We also expect artists to promote gigs on their own social media and to be available for media interviews. Printed A4 or A3 posters are encouraged.</p><p>Bustard Town is flexible with the venue deal. We aim for fair.</p><ul><li>Option 1, just roll up and play: we can do ticketing, provide stage tech, back line, sound person, door and security, and help with promo. 75/25 door split</li><li>Option 2, DJs/bands take the door: we provide the space, you manage the door and pay for sound</li></ul><h3>Tech on hand</h3><ul><li>Drum mic kit, including 1 Sennheiser e602 MKII and 2 Sennheiser e614</li><li>10 stands</li><li>DJ Pioneer XDK XZ</li><li>8 DIs, with adequate XLR, jack leads and adapters</li><li>Assorted DMX controlled fixtures</li></ul></section><section class="wrap" id="hours"><div class="grid"><div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>7:00 AM – 12:00 PM</td></tr><tr><th>Tuesday</th><td>7:00 AM – 12:00 PM</td></tr><tr><th>Wednesday</th><td>7:00 AM – 12:00 PM</td></tr><tr><th>Thursday</th><td>7:00 AM – 1:00 PM, 4:00 – 11:00 PM</td></tr><tr><th>Friday</th><td>7:00 AM – 1:00 PM, 4:00 PM – 2:00 AM</td></tr><tr><th>Saturday</th><td>4:00 PM – 2:00 AM</td></tr><tr><th>Sunday</th><td>Closed</td></tr></table></div><div class="card"><h2>Find us</h2><p>Nuttall Pl, Darwin City NT 0800, Australia</p><p><a href="https://maps.google.com/?cid=15550522630892784349&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p> <a class="btn ghost" href="mailto:contact@bustardtown.com">Email us</a></div></div></section><section class="wrap"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Nuttall%20Pl%2C%20Darwin%20City%20NT%200800%2C%20Australia&output=embed" title="Map"></iframe></section>
 
-<section class="wrap" >
-  <h2>What people say</h2>
-  <div class="grid"><blockquote><p>“What a hidden gem! We came here for my partners work do over christmas and it was incredible. Great music and vibes, and delicious food and cocktails! We recently found out they have a bakery out the front too that make their own classic french croissants and pastries!…”</p><footer>★★★★★ Lucy Goggin</footer></blockquote><blockquote><p>“Best surpise I&#x27;ve had since my ex said something nice to me. The sandwich and coffee were both really excellent. And im harder to please in this realm than said ex of mine. That says it all. Terrific team that actually listen and deliver. No repeating orders, weird…”</p><footer>★★★★★ Kitchen Insider</footer></blockquote><blockquote><p>“Hats off to amazingly friendly and professional staff who made the best wood-fired pizza in Darwin with all handmade dough 😍 Wow!!”</p><footer>★★★★★ Tammy</footer></blockquote></div>
-</section>
-
-<section class="wrap" id="menu" hidden>
-  <h2>Menu</h2>
-  <div id="menu-body"></div>
-</section>
+<footer class="site"><div class="socials"><a href="https://www.facebook.com/bustardtown" rel="noopener">Facebook</a><a href="https://www.instagram.com/bustardtown" rel="noopener">Instagram</a></div>&copy; 2026 Bustard Town &middot; Restaurant</footer>
 <script>
 // Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
 fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
   if (!m || !m.length) return;
   const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  document.getElementById('menu-body').innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+  const body = document.getElementById('menu-body'); if (!body) return;
+  body.innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
     '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
-  const sec = document.getElementById('menu'); sec.removeAttribute('hidden');
+  document.getElementById('menu').removeAttribute('hidden');
   if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
 }).catch(() => {});
 </script>
-
-<section class="wrap content" id="cafe"><h2>Cafe</h2><p>Step into our cosy little retro café or sink into a shady seat in our troppo courtyard. It&#x27;s the perfect spot to chill, chat, or catch up on some reading.</p><p>We&#x27;re serving Melbourne&#x27;s finest Genovese coffee, alongside Darwin&#x27;s best in-house baked French patisserie.</p></section><section class="wrap content" id="bt-alfresco"><h2>BT Alfresco</h2><p>Bustard Town serves up relaxed alfresco dining in the heart of Darwin, surrounded by lush greenery and tropical breezes.</p><p>Our chefs fire up the wood oven and grill, serving smoky Mediterranean flavours, bold spices and unique dishes you won&#x27;t find anywhere else, from wood-fired pizzas to open-flame Argentinean barbecue.</p><p>With icy cocktails, local brews from the outdoor bar and live music setting the tone, it&#x27;s a dining experience like no other.</p></section><section class="wrap content" id="live-music-venue"><h2>Live Music Venue</h2><p>Darwin&#x27;s award-winning live music venue has a 450pax capacity and a distinctive atmosphere. We&#x27;re not bound by genre and are known to work with a &#x27;broad church&#x27; of styles and artists.</p><h3>The spaces</h3><ul><li>Band Room: a refurbished wartime hut for 250, with a distinctive river bar, green room and efficient air conditioning for even the hottest Darwin days</li><li>Al Fresco stage: a tropical outdoor setting for 150 people, with standing and smoking areas and a seated restaurant area</li><li>Back Bar: an intimate space for 70 with capable aircon, popular with singer songwriters, spoken word and vinyl selectors/DJs</li></ul><p>Comfortable lounges are placed throughout the venue, and our extensive drink menu means there&#x27;s something for everyone.</p><h3>For artists</h3><p>We love to collaborate and help produce the room. Over 3000 customers come through the venue each week, and we promote each gig across street press, social media, posters and radio. Our ticketing is commission free, giving punters and artists better value for money.</p><p>We ask artists to send a Facebook tile (1200 x 628 pixels), an Instagram tile (1080 x 1080 pixels), a bio under 100 words and links to media content such as Soundcloud or Spotify. We also expect artists to promote gigs on their own social media and to be available for media interviews. Printed A4 or A3 posters are encouraged.</p><p>Bustard Town is flexible with the venue deal. We aim for fair.</p><ul><li>Option 1, just roll up and play: we can do ticketing, provide stage tech, back line, sound person, door and security, and help with promo. 75/25 door split</li><li>Option 2, DJs/bands take the door: we provide the space, you manage the door and pay for sound</li></ul><h3>Tech on hand</h3><ul><li>Drum mic kit, including 1 Sennheiser e602 MKII and 2 Sennheiser e614</li><li>10 stands</li><li>DJ Pioneer XDK XZ</li><li>8 DIs, with adequate XLR, jack leads and adapters</li><li>Assorted DMX controlled fixtures</li></ul></section>
-
-<section class="wrap" >
-  <h2>Gallery</h2>
-  <div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfAOcaCVNSulEcYej2_dnIsWn0hpDeL4fnxs1b5iw3qnHCzb5FMTu-IxEmekldijBPLeTHctn0nT9ubrPcBd8iNLn-j_N_Omyt34Dr6eshIAFvbTLMWWNpSlG5XFNAJzO4www9i8rxLmPwh=s4800-w1600" alt="Bustard Town"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdDydHWf5EdKYhCQRY5k3yObYjoi2YYJicRZNdbb8dhN_qA-XpWqhHzrUJFl5D3LSXhm5Xolm2_b-aswkHFh9fbJz2OqijltNJsd8LtOfvDqoN1hYce5V3TaPfslQwaOCHbwUu2yQybWoat=s4800-w1600" alt="Bustard Town"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLct09raUNm5qEzBMZKWduvV2CCY8oWpVTuMvgd0fQDv2IoFB61K3Owj8-qGsyUii9G8z78SR5Iy1LL-jyZCdZtz4_2iA3eed8T0TMxd1CGw9QY6nXT949APfSjZVroeOF6y6s3YLDV0kR7n=s4800-w1600" alt="Bustard Town"></div>
-</section>
-
-<section class="wrap" id="hours">
-  <div class="grid">
-    <div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>7:00 AM – 12:00 PM</td></tr><tr><th>Tuesday</th><td>7:00 AM – 12:00 PM</td></tr><tr><th>Wednesday</th><td>7:00 AM – 12:00 PM</td></tr><tr><th>Thursday</th><td>7:00 AM – 1:00 PM, 4:00 – 11:00 PM</td></tr><tr><th>Friday</th><td>7:00 AM – 1:00 PM, 4:00 PM – 2:00 AM</td></tr><tr><th>Saturday</th><td>4:00 PM – 2:00 AM</td></tr><tr><th>Sunday</th><td>Closed</td></tr></table></div>
-    <div class="card"><h2>Find us</h2><p>Nuttall Pl, Darwin City NT 0800, Australia</p><p><a href="https://maps.google.com/?cid=15550522630892784349&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p> <a class="btn ghost" href="mailto:contact@bustardtown.com">Email us</a></div>
-  </div>
-</section>
-
-<section class="wrap">
-  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Nuttall%20Pl%2C%20Darwin%20City%20NT%200800%2C%20Australia&output=embed" title="Map"></iframe>
-</section>
-
-<footer class="site"><div class="socials"><a href="https://www.facebook.com/bustardtown" rel="noopener">Facebook</a><a href="https://www.instagram.com/bustardtown" rel="noopener">Instagram</a></div>&copy; 2026 Bustard Town &middot; Restaurant</footer>
 </body>
 </html>
