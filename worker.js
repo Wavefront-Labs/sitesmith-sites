@@ -1,6 +1,10 @@
 // Host header picks the site folder. Previews are unlisted: X-Robots-Tag noindex on every response.
 // Owner self-service (13 Nov 2026): /edit is a menu editor reached by a magic link (?t=token, emailed by sitesmith/mail.py grant), the
 // saved menu lives in KV as menu:<slug> and the site renders it live via /api/menu. No passwords, no accounts.
+import HOSTS from './hosts.json'; // client domains: hostname (no www) -> slug, written by sitesmith/onboard.py
+
+const PAUSED = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Site paused</title></head><body style="font:18px/1.5 system-ui,sans-serif;max-width:32rem;margin:15vh auto;padding:0 20px;color:#222"><h1 style="font-size:1.5rem">This site is paused</h1><p>The hosting subscription for this website has lapsed. If you own it, email hello@wavefrontlabs.dev and we will have it back up straight away.</p></body></html>`;
+
 const EDITOR = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Edit menu</title>
 <style>body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f6f3ee;color:#1f1a16}.wrap{max-width:760px;margin:0 auto;padding:16px}h1{font-size:1.4rem;margin:8px 0 4px}p.m{color:#6b6560;margin:0 0 16px;font-size:.95rem}
 .sec{background:#fff;border:1px solid #e3ddd3;border-radius:12px;padding:12px;margin-bottom:14px}.sec input.t{font-weight:700;font-size:1.05rem;border:0;border-bottom:1px solid #e3ddd3;width:100%;padding:6px 0;margin-bottom:8px}
@@ -28,8 +32,9 @@ export default {
   async fetch(req, env) {
     const url = new URL(req.url);
     const m = url.hostname.match(/^([a-z0-9-]+)-preview\.wavefrontlabs\.dev$/);
-    if (!m) return new Response('not found', { status: 404 });
-    const slug = m[1];
+    const slug = m ? m[1] : HOSTS[url.hostname.replace(/^www\./, '')]; // a client domain is live: indexed, not marked noindex
+    if (!slug) return new Response('not found', { status: 404 });
+    if (m && (await env.SITEDATA.get(`paused:${slug}`)) !== null) return new Response(PAUSED, { status: 503, headers: { ...H, 'content-type': 'text/html; charset=utf-8', 'Retry-After': '86400' } });
     const cookie = req.headers.get('cookie') || '';
     const tok = (cookie.match(/(?:^|;\s*)edit=([A-Za-z0-9_-]+)/) || [])[1];
     const authed = async () => tok && (await env.SITEDATA.get(`token:${slug}:${tok}`)) !== null;
@@ -61,9 +66,11 @@ export default {
     let status = r.status;
     if (status === 404) { r = await env.ASSETS.fetch(new URL('/404.html', url)); status = 404; }
     const h = new Headers(r.headers);
-    h.set('X-Robots-Tag', 'noindex, nofollow');
+    if (m) h.set('X-Robots-Tag', 'noindex, nofollow');
     h.set('Cache-Control', 'no-cache');
     if (status >= 300 && status < 400 && h.get('location')) h.set('location', h.get('location').replace(`/${slug}/`, '/'));
+    if (!m && (h.get('content-type') || '').includes('text/html')) // live on a client domain: drop the preview's <meta name=robots noindex>
+      return new HTMLRewriter().on('meta[name="robots"]', { element(e) { e.remove(); } }).transform(new Response(r.body, { status, headers: h }));
     return new Response(r.body, { status, headers: h });
   },
 };
