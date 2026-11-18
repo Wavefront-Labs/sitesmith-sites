@@ -34,7 +34,7 @@ export default {
     const m = url.hostname.match(/^([a-z0-9-]+)-preview\.wavefrontlabs\.dev$/);
     const slug = m ? m[1] : HOSTS[url.hostname.replace(/^www\./, '')]; // a client domain is live: indexed, not marked noindex
     if (!slug) return new Response('not found', { status: 404 });
-    if (m && (await env.SITEDATA.get(`paused:${slug}`)) !== null) return new Response(PAUSED, { status: 503, headers: { ...H, 'content-type': 'text/html; charset=utf-8', 'Retry-After': '86400' } });
+    if ((await env.SITEDATA.get(`paused:${slug}`)) !== null) return new Response(PAUSED, { status: 503, headers: { ...H, 'content-type': 'text/html; charset=utf-8', 'Retry-After': '86400' } });
     const cookie = req.headers.get('cookie') || '';
     const tok = (cookie.match(/(?:^|;\s*)edit=([A-Za-z0-9_-]+)/) || [])[1];
     const authed = async () => tok && (await env.SITEDATA.get(`token:${slug}:${tok}`)) !== null;
