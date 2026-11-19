@@ -53,9 +53,37 @@ iframe{width:100%;height:320px;border:0;border-radius:var(--r)}
 .menu-note{color:var(--muted);font-size:.9rem}
 .content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:var(--rs);margin:12px 0;max-height:420px;object-fit:cover;width:100%}
 footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+/* themes (t-classic = the rules above). full-bleed band behind a .wrap section: box-shadow + clip-path */
+/* editorial: magazine feel, centred headings with a rule, reading column, no boxes */
+body.t-editorial{font-size:18px}body.t-editorial h1,body.t-editorial h2{font-weight:400;letter-spacing:-.02em}
+body.t-editorial section{border-top:0;padding:72px 16px}body.t-editorial section#about,body.t-editorial section.content,body.t-editorial section#reviews{max-width:760px}
+body.t-editorial h2{font-size:clamp(1.9rem,4vw,2.7rem);text-align:center;margin-bottom:36px}body.t-editorial h2:after{content:"";display:block;width:48px;height:2px;background:var(--accent);margin:16px auto 0}
+body.t-editorial .card,body.t-editorial blockquote{background:transparent;border:0;border-top:1px solid var(--ink);border-radius:0;padding:20px 0}body.t-editorial .feature blockquote{border-left:0;text-align:center;padding:0}
+body.t-editorial nav.top a{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-family:var(--body)}@media(min-width:721px){body.t-editorial nav.top .wrap{justify-content:center}}
+body.t-editorial ul.tags{justify-content:center}body.t-editorial .menu h3{font-family:var(--disp);font-weight:400;font-size:1.4rem;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:6px}
+@media(min-width:721px){body.t-editorial .gallery:has(img:nth-child(5)){grid-template-columns:2fr 1fr 1fr}body.t-editorial .gallery:has(img:nth-child(5)) img:first-child{grid-row:span 2;aspect-ratio:auto;height:100%}}
+/* bold: loud uppercase type, dark full-width bands, square buttons, edge-to-edge photo strip */
+body.t-bold{--rb:6px}body.t-bold h1,body.t-bold h2{text-transform:uppercase;letter-spacing:.01em;font-weight:800}body.t-bold h2{font-size:clamp(2rem,5vw,3.1rem);line-height:1}
+body.t-bold section{border-top:0}body.t-bold #reviews,body.t-bold #hours{background:var(--ink);color:var(--bg);box-shadow:0 0 0 100vmax var(--ink);clip-path:inset(0 -100vmax)}
+body.t-bold #reviews blockquote{background:transparent;border-color:rgba(255,255,255,.2);color:var(--bg)}body.t-bold #reviews footer,body.t-bold .feature blockquote footer{color:rgba(255,255,255,.65)}
+body.t-bold #hours .card{color:var(--ink)}body.t-bold .menu h3{display:inline-block;background:var(--accent);color:#fff;padding:4px 10px;text-transform:uppercase;letter-spacing:.04em}
+body.t-bold .gallery{gap:4px}body.t-bold .gallery img{border-radius:0}body.t-bold ul.tags li{text-transform:uppercase;font-size:.78rem;letter-spacing:.06em;font-weight:700}
+/* board: dark page like a takeaway menu board, menu first-class, bright accent text */
+body.t-board{--hi:color-mix(in srgb,var(--accent) 45%,#fff);background:var(--ink);color:var(--bg);--card:color-mix(in srgb,var(--ink) 90%,#fff);--line:rgba(255,255,255,.14);--muted:rgba(255,255,255,.66)}
+body.t-board a{color:var(--hi)}body.t-board nav.top{background:color-mix(in srgb,var(--ink) 90%,transparent)}body.t-board nav.top a{color:var(--bg)}body.t-board nav.top a.book{color:var(--hi)}
+body.t-board.hero-band header.hero{background:var(--ink);color:var(--bg)}body.t-board.hero-band .btn.ghost,body.t-board .card .btn.ghost{color:var(--hi);border-color:var(--hi)}
+body.t-board h2{text-transform:uppercase;letter-spacing:.06em;color:var(--hi)}body.t-board .menu h3{color:var(--hi);text-transform:uppercase;letter-spacing:.06em;font-size:1.2rem}
+body.t-board .menu .item{border-bottom:0;align-items:baseline}body.t-board .menu .item>span:first-child{flex:1;display:flex;flex-wrap:wrap;align-items:baseline}
+body.t-board .menu .item>span:first-child:after{content:"";flex:1;border-bottom:2px dotted var(--line);margin:0 6px;min-width:20px}body.t-board .menu .item small{flex-basis:100%;order:3}
+body.t-board .menu .price{color:var(--hi);font-size:1.05rem}body.t-board ul.tags li{color:var(--bg)}body.t-board.pill ul.tags li{color:#fff}body.t-board.sharp ul.tags li{border-color:var(--hi)}
+/* airy: lots of white space, small label headings, soft shadows, big intro text, square photos */
+body.t-airy section{border-top:0;padding:60px 16px}body.t-airy h2{font:700 .8rem/1.2 var(--body);text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:18px}
+body.t-airy #about p:first-of-type{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.4}body.t-airy .content h3{font-size:1.5rem}
+body.t-airy .card,body.t-airy blockquote{border:0;box-shadow:0 12px 32px rgba(0,0,0,.07)}body.t-airy .feature blockquote{box-shadow:none}
+body.t-airy .gallery{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}body.t-airy .gallery img{aspect-ratio:1}body.t-airy .gallery.lead img:first-child{aspect-ratio:16/9}
 </style>
 </head>
-<body class="hero-band rounded layout-story-first">
+<body class="hero-band rounded layout-story-first t-bold">
 <nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#hours">Hours &amp; location</a></div></nav>
 <div class="band" style="background-image:url(https://lh3.googleusercontent.com/grass-cs/AABkmLdxxBrRTHQJJke4d2dgCFetwbI3XIOh-JzAwv6d3-W73mgF2OGfl38QtJbfJ1uP2Uq49f13j7pj6w9ZN2JQ0L3KH4D5fPqa_3sdMPZW0ARPdZxJ8phq05iTLBV0LF794jmd8Iz6K6SwPeTz=s4800-w1600);filter:brightness(0.95) contrast(1.12) saturate(1.03)"></div>
 <header class="hero" >
