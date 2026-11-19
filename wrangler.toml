@@ -6,7 +6,7 @@ name = "sitesmith-sites"
 main = "worker.js"
 compatibility_date = "2026-01-01"
 workers_dev = false
-routes = [{ pattern = "*-preview.wavefrontlabs.dev/*", zone_name = "wavefrontlabs.dev" }]
+routes = [{ pattern = "*-preview.wavefrontlabs.dev/*", zone_name = "wavefrontlabs.dev" }, { pattern = "go.wavefrontlabs.dev/*", zone_name = "wavefrontlabs.dev" }]
 
 [assets]
 directory = "./sites"   # only the site folders (plus sites/404.html) are uploaded; repo files stay out

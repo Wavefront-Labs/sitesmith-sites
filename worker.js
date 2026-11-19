@@ -1,6 +1,7 @@
 // Host header picks the site folder. Previews are unlisted: X-Robots-Tag noindex on every response.
 // Owner self-service (13 Nov 2026): /edit is a menu editor reached by a magic link (?t=token, emailed by sitesmith/mail.py grant), the
 // saved menu lives in KV as menu:<slug> and the site renders it live via /api/menu. No passwords, no accounts.
+import SHORT from './short.json'; // go.wavefrontlabs.dev/<code> -> slug, written by sitesmith/publish.py (SMS links)
 import HOSTS from './hosts.json'; // client domains: hostname (no www) -> slug, written by sitesmith/onboard.py
 
 const PAUSED = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Site paused</title></head><body style="font:18px/1.5 system-ui,sans-serif;max-width:32rem;margin:15vh auto;padding:0 20px;color:#222"><h1 style="font-size:1.5rem">This site is paused</h1><p>The hosting subscription for this website has lapsed. If you own it, email hello@wavefrontlabs.dev and we will have it back up straight away.</p></body></html>`;
@@ -31,6 +32,10 @@ const H = { 'X-Robots-Tag': 'noindex, nofollow', 'Cache-Control': 'no-store' };
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
+    if (url.hostname === 'go.wavefrontlabs.dev') {
+      const s = SHORT[url.pathname.slice(1).toLowerCase()];
+      return s ? Response.redirect(`https://${s}-preview.wavefrontlabs.dev/`, 302) : Response.redirect('https://wavefrontlabs.dev/', 302);
+    }
     const m = url.hostname.match(/^([a-z0-9-]+)-preview\.wavefrontlabs\.dev$/);
     const slug = m ? m[1] : HOSTS[url.hostname.replace(/^www\./, '')]; // a client domain is live: indexed, not marked noindex
     if (!slug) return new Response('not found', { status: 404 });
