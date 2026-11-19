@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="robots" content="noindex, nofollow">
+<title>River Cruz Cafe</title>
+<meta name="description" content="Cafe in Bundaberg Central">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#2c5f8a;--bg:#f1f6fb;--ink:#121b24;--card:#ffffff;--muted:#6b6560;--line:rgba(0,0,0,.08);--disp:'DM Serif Display', Georgia, serif;--body:'DM Sans', system-ui, sans-serif;--r:16px;--rs:12px;--rb:999px}
+body.sharp{--r:4px;--rs:2px;--rb:4px}body.pill{--r:28px;--rs:20px;--rb:999px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--body)}
+h1,h2,h3,nav.top a{font-family:var(--disp)}a{color:var(--accent)}img{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* nav */
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}nav.top[hidden]{display:none}
+nav.top .wrap{display:flex;gap:4px 18px;flex-wrap:wrap;padding:10px 16px;font-size:.95rem}nav.top a{text-decoration:none;color:var(--ink);font-weight:600;white-space:nowrap}nav.top a.book{color:var(--accent)}
+@media(max-width:720px){nav.top .wrap{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:40px;mask-image:linear-gradient(90deg,#000 90%,transparent)}nav.top .wrap::-webkit-scrollbar{display:none}}
+/* hero */
+header.hero{min-height:72vh;display:flex;align-items:flex-end;background:var(--ink) center/cover no-repeat;position:relative;color:#fff}
+header.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),rgba(0,0,0,.15))}
+header.hero .wrap{position:relative;padding:48px 16px}
+h1{font-size:clamp(2rem,6vw,3.6rem);margin:0 0 8px;line-height:1.05;letter-spacing:-.01em}
+.tag{font-size:1.15rem;opacity:.92;margin:0 0 20px}.rating{font-size:.95rem;opacity:.85;margin:0 0 20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:var(--rb);font-weight:600;margin:4px 8px 4px 0}
+.btn.ghost{background:transparent;border:2px solid #fff}.card .btn.ghost{color:var(--accent);border-color:var(--accent)}
+.hero .logo{max-height:96px;width:auto;margin-bottom:16px;background:rgba(255,255,255,.9);padding:8px;border-radius:var(--rs)}
+body.hero-split header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-split header.hero:before{display:none}
+body.hero-split header.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr 1fr;align-items:center;padding:40px 16px}
+body.hero-split header.hero .wrap>img.heroimg{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+@media(max-width:720px){body.hero-split header.hero .wrap{grid-template-columns:1fr}}
+body.hero-minimal header.hero{min-height:0;background:var(--accent);color:#fff}body.hero-minimal header.hero:before{display:none}body.hero-minimal header.hero .wrap{padding:72px 16px}body.hero-minimal h1{font-size:clamp(2.4rem,8vw,4.6rem)}
+body.hero-band header.hero{min-height:0;background:var(--bg);color:var(--ink)}body.hero-band header.hero:before{display:none}
+body.hero-band .band{height:38vh;min-height:220px;background:var(--ink) center/cover no-repeat}body.hero-band header.hero .wrap{padding:32px 16px}body.hero-band .btn.ghost{color:var(--accent);border-color:var(--accent)}body.hero-band .rating,body.hero-band .tag{opacity:.8}
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}section[hidden]{display:none}h2{font-size:1.6rem;margin:0 0 20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:600;padding:8px 12px 8px 0;white-space:nowrap}td{padding:8px 0;color:var(--muted)}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}blockquote p{margin:0 0 12px}blockquote footer{color:var(--muted);font-size:.9rem}
+.feature blockquote{background:transparent;border:0;border-left:4px solid var(--accent);border-radius:0;padding:8px 0 8px 24px}.feature blockquote p{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.8rem);line-height:1.35}
+.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}.gallery img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--rs);width:100%}
+.gallery.lead img:first-child{grid-column:1/-1;aspect-ratio:21/9}
+ul.tags{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}ul.tags li{background:var(--card);border:1px solid var(--line);border-radius:var(--rb);padding:4px 12px;font-size:.9rem}
+body.sharp ul.tags li{background:transparent;border:0;border-bottom:2px solid var(--accent);border-radius:0;padding:2px 0;font-weight:600}
+body.pill ul.tags li{background:var(--accent);color:#fff;border:0}
+iframe{width:100%;height:320px;border:0;border-radius:var(--r)}
+.menu{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.menu h3{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+.menu .item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed var(--line)}.menu .item small{display:block;color:var(--muted);font-size:.85rem}.menu .price{white-space:nowrap;font-weight:600}
+.menu-note{color:var(--muted);font-size:.9rem}
+.content h3{margin:22px 0 8px;font-size:1.15rem}.content p{margin:0 0 12px}.content ul{margin:0 0 12px;padding-left:20px}.content img{border-radius:var(--rs);margin:12px 0;max-height:420px;object-fit:cover;width:100%}
+footer.site{padding:32px 0;color:var(--muted);font-size:.85rem;text-align:center}.socials{margin-bottom:10px}.socials a{margin:0 8px;text-decoration:none;color:var(--accent);font-weight:600}
+/* themes (t-classic = the rules above). full-bleed band behind a .wrap section: box-shadow + clip-path */
+/* editorial: magazine feel, centred headings with a rule, reading column, no boxes */
+body.t-editorial{font-size:18px}body.t-editorial h1,body.t-editorial h2{font-weight:400;letter-spacing:-.02em}
+body.t-editorial section{border-top:0;padding:72px 16px}body.t-editorial section#about,body.t-editorial section.content,body.t-editorial section#reviews{max-width:760px}
+body.t-editorial h2{font-size:clamp(1.9rem,4vw,2.7rem);text-align:center;margin-bottom:36px}body.t-editorial h2:after{content:"";display:block;width:48px;height:2px;background:var(--accent);margin:16px auto 0}
+body.t-editorial .card,body.t-editorial blockquote{background:transparent;border:0;border-top:1px solid var(--ink);border-radius:0;padding:20px 0}body.t-editorial .feature blockquote{border-left:0;text-align:center;padding:0}
+body.t-editorial nav.top a{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-family:var(--body)}@media(min-width:721px){body.t-editorial nav.top .wrap{justify-content:center}}
+body.t-editorial ul.tags{justify-content:center}body.t-editorial .menu h3{font-family:var(--disp);font-weight:400;font-size:1.4rem;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:6px}
+@media(min-width:721px){body.t-editorial .gallery:has(img:nth-child(5)){grid-template-columns:2fr 1fr 1fr}body.t-editorial .gallery:has(img:nth-child(5)) img:first-child{grid-row:span 2;aspect-ratio:auto;height:100%}}
+/* bold: loud uppercase type, dark full-width bands, square buttons, edge-to-edge photo strip */
+body.t-bold{--rb:6px}body.t-bold h1,body.t-bold h2{text-transform:uppercase;letter-spacing:.01em;font-weight:800}body.t-bold h2{font-size:clamp(2rem,5vw,3.1rem);line-height:1}
+body.t-bold section{border-top:0}body.t-bold #reviews,body.t-bold #hours{background:var(--ink);color:var(--bg);box-shadow:0 0 0 100vmax var(--ink);clip-path:inset(0 -100vmax)}
+body.t-bold #reviews blockquote{background:transparent;border-color:rgba(255,255,255,.2);color:var(--bg)}body.t-bold #reviews footer,body.t-bold .feature blockquote footer{color:rgba(255,255,255,.65)}
+body.t-bold #hours .card{color:var(--ink)}body.t-bold .menu h3{display:inline-block;background:var(--accent);color:#fff;padding:4px 10px;text-transform:uppercase;letter-spacing:.04em}
+body.t-bold .gallery{gap:4px}body.t-bold .gallery img{border-radius:0}body.t-bold ul.tags li{text-transform:uppercase;font-size:.78rem;letter-spacing:.06em;font-weight:700}
+/* board: dark page like a takeaway menu board, menu first-class, bright accent text */
+body.t-board{--hi:color-mix(in srgb,var(--accent) 45%,#fff);background:var(--ink);color:var(--bg);--card:color-mix(in srgb,var(--ink) 90%,#fff);--line:rgba(255,255,255,.14);--muted:rgba(255,255,255,.66)}
+body.t-board a{color:var(--hi)}body.t-board nav.top{background:color-mix(in srgb,var(--ink) 90%,transparent)}body.t-board nav.top a{color:var(--bg)}body.t-board nav.top a.book{color:var(--hi)}
+body.t-board.hero-band header.hero{background:var(--ink);color:var(--bg)}body.t-board.hero-band .btn.ghost,body.t-board .card .btn.ghost{color:var(--hi);border-color:var(--hi)}
+body.t-board h2{text-transform:uppercase;letter-spacing:.06em;color:var(--hi)}body.t-board .menu h3{color:var(--hi);text-transform:uppercase;letter-spacing:.06em;font-size:1.2rem}
+body.t-board .menu .item{border-bottom:0;align-items:baseline}body.t-board .menu .item>span:first-child{flex:1;display:flex;flex-wrap:wrap;align-items:baseline}
+body.t-board .menu .item>span:first-child:after{content:"";flex:1;border-bottom:2px dotted var(--line);margin:0 6px;min-width:20px}body.t-board .menu .item small{flex-basis:100%;order:3}
+body.t-board .menu .price{color:var(--hi);font-size:1.05rem}body.t-board ul.tags li{color:var(--bg)}body.t-board.pill ul.tags li{color:#fff}body.t-board.sharp ul.tags li{border-color:var(--hi)}
+/* airy: lots of white space, small label headings, soft shadows, big intro text, square photos */
+body.t-airy section{border-top:0;padding:60px 16px}body.t-airy h2{font:700 .8rem/1.2 var(--body);text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:18px}
+body.t-airy #about p:first-of-type{font-family:var(--disp);font-size:clamp(1.3rem,2.6vw,1.75rem);line-height:1.4}body.t-airy .content h3{font-size:1.5rem}
+body.t-airy .card,body.t-airy blockquote{border:0;box-shadow:0 12px 32px rgba(0,0,0,.07)}body.t-airy .feature blockquote{box-shadow:none}
+body.t-airy .gallery{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}body.t-airy .gallery img{aspect-ratio:1}body.t-airy .gallery.lead img:first-child{aspect-ratio:16/9}
+</style>
+</head>
+<body class="hero-split pill layout-story-first t-classic">
+<nav class="top" ><div class="wrap"><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#hours">Hours &amp; location</a></div></nav>
+
+<header class="hero" >
+  <div class="wrap">
+    <img class="heroimg" src="https://lh3.googleusercontent.com/grass-cs/AABkmLc5pkWeOo8dTudcaAUsyBgXeruJdTGPKAwWJlXekC0SweDPQAs9Mc34bkYbqfioKykMCBayXRBphTibSC8IZXAIUYfFYTe9wRQ2XBVWU__sNaMXOIjUcsKR3ueO1duiZGyQp75HGCUDyWro=s4800-w1600" style="filter:brightness(1.12) contrast(1) saturate(1.12)" alt="River Cruz Cafe">
+    <div>
+    
+    <h1>River Cruz Cafe</h1>
+    <p class="tag">Cafe in Bundaberg Central</p>
+    <p class="rating">4.2 ★ on Google (969 reviews)</p>
+    <a class="btn" href="tel:0488793055">Call 0488 793 055</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="about"><h2>About</h2><ul class="tags"><li>Dine in</li><li>Takeaway</li><li>Bookings</li><li>Outdoor seating</li><li>Vegetarian options</li></ul><p>River Cruz Cafe is a local cafe in Bundaberg Central, rated 4.2 from 969 Google reviews.</p></section><section class="wrap feature" id="reviews"><h2>From our customers</h2><blockquote><p>“Although we visited on Monday the place was well supported by locals and travellers ( judging by cars innear by car park).
+There was a nice selection of slices although I found out when I got my cheese cake it wasn&#x27;t chilled.
+The service was very quick and the cheese…”</p><footer>★★★★★ Toowoomba Resident</footer></blockquote></section><section class="wrap" id="menu" hidden><h2>Menu</h2><div id="menu-body"></div></section><section class="wrap" id="gallery"><h2>Gallery</h2><div class="gallery"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLckhCisLwe-Np-rX6ICPmLmLJWOwBsiGWO9XcOULRi-eilO3DI3tfwxqUySsf3haj2GVIErBKGr7ybOf6JnHBsUdFSIGcE1RwPFa0Mbrjdl4AW_2z-z8uJEUgiCMeJMjPvsRbt3DNxgH825=s4800-w1600" style="filter:brightness(0.95) contrast(1.1) saturate(1.12)" alt="River Cruz Cafe"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLdeF4_vg77FKQfbFjJ5NxGY2jUhcevcQzoway2bbe6dmkg_FQAOrt9zNQSpKUy96QyGQfBKPuHT79LoEII0YxtkK6YeEyodRMoDeheyhlWbkNbJB2h_RXBHsz5fT31eOi9q_jxMeGW3TefS=s4800-w1600" style="filter:brightness(1.2) contrast(1) saturate(1.12)" alt="River Cruz Cafe"><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLfZboBLUMcZHFn-TXBfbktAyeqWpAcIqFtJBl7r-vgFFIsSjRhgE0ceFO79K9NS0OQLe4HxnfNPB5p1KKdr3aJSDsRMGJDgXKfO87I44SpMu5eafFOm9pl7I8fbNFkrQYxflvU7xnDYOKqO=s4800-w1600" style="filter:brightness(1.2) contrast(1.03) saturate(1.12)" alt="River Cruz Cafe"></div></section><section class="wrap" id="hours"><div class="grid"><div class="card"><h2>Opening hours</h2><table><tr><th>Monday</th><td>5:30 AM – 4:00 PM</td></tr><tr><th>Tuesday</th><td>5:30 AM – 4:00 PM</td></tr><tr><th>Wednesday</th><td>5:30 AM – 4:00 PM</td></tr><tr><th>Thursday</th><td>5:30 AM – 4:00 PM</td></tr><tr><th>Friday</th><td>5:30 AM – 4:00 PM</td></tr><tr><th>Saturday</th><td>5:30 AM – 4:00 PM</td></tr><tr><th>Sunday</th><td>5:30 AM – 4:00 PM</td></tr></table></div><div class="card"><h2>Find us</h2><p>3 Quay St, Bundaberg Central QLD 4670, Australia</p><p><a href="https://maps.google.com/?cid=11934860791664085196&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA">Open in Google Maps</a></p><a class="btn" href="tel:0488793055">Call 0488 793 055</a></div></div></section><section class="wrap"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=3%20Quay%20St%2C%20Bundaberg%20Central%20QLD%204670%2C%20Australia&output=embed" title="Map"></iframe></section>
+
+<footer class="site">&copy; 2026 River Cruz Cafe &middot; Cafe</footer>
+<script>
+// Owner-edited menu (saved at /edit) replaces the built-in one; nothing changes when there is none.
+fetch('/api/menu').then(r => r.ok ? r.json() : null).then(m => {
+  if (!m || !m.length) return;
+  const e = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const body = document.getElementById('menu-body'); if (!body) return;
+  body.innerHTML = '<div class="menu">' + m.map(s => '<div><h3>' + e(s.title) + '</h3>' + s.items.map(i =>
+    '<div class="item"><span>' + e(i.name) + (i.desc ? '<small>' + e(i.desc) + '</small>' : '') + '</span><span class="price">' + e(i.price) + '</span></div>').join('') + '</div>').join('') + '</div>';
+  document.getElementById('menu').removeAttribute('hidden');
+  if (!document.querySelector('nav.top a[href="#menu"]')) { const a = document.createElement('a'); a.href = '#menu'; a.textContent = 'Menu'; const nav = document.querySelector('nav.top .wrap'); if (nav) nav.insertBefore(a, nav.children[1] || null); }
+}).catch(() => {});
+</script>
+</body>
+</html>
